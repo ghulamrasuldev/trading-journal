@@ -5,6 +5,15 @@ import { Box } from "@mui/material";
 import AggregatePL from "./AggredatePL/AggregatePL";
 import PerTradeAverage from "./PerTradeAverage/PerTradeAverage";
 import DaysAndTimes from './DaysAndTimes/DaysAndTimes'
+import Instrument from "./Instrument/Instrument";
+import MarketBehaviour from "./Marketbehaviour/MarketBehaviour";
+import WinLossExpectation from './WinLossExpectation/WinLossExpectation'
+
+
+
+
+
+
 const Detail = () => {
   const [showComponent, setShowComponent] = useState("0");
 
@@ -147,6 +156,15 @@ const Detail = () => {
                   }
                   {
                       (showComponent=='2')? <DaysAndTimes/>:null
+                  }
+                  {
+                      (showComponent=='4')? <Instrument/>:null
+                  }
+                  {
+                      (showComponent=='5')? <MarketBehaviour/>:null
+                  }
+                  {
+                      (showComponent=='6')? <WinLossExpectation/>:null
                   }
               </div>
       </Box>

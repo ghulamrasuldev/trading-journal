@@ -234,7 +234,7 @@ const DaysAndTimes = () => {
   
   
   })
-  const [tradeDistributionByDurationGraph, setTradeDistributionByDurationGraph] = useState({
+  const [tradeDistributionByMonthGraph, setTradeDistributionByMonthGraph] = useState({
     series: [{
       data: [4,9,3, ,5, , ,7, ,4 , ,9]
     }],
@@ -346,9 +346,9 @@ const DaysAndTimes = () => {
   
   
   })
-  const [tradeDistributionByDurationChangeGraph, setTradeDistributionByDurationChangeGraph] = useState({
+  const [tradeDistributionByDurationGraph, setTradeDistributionByDurationGraph] = useState({
     series: [{
-      data: [4,9,3, ,5, , ,7, ,4 , ,9]
+      data: [30,,]
     }],
     options: {
       
@@ -366,7 +366,7 @@ const DaysAndTimes = () => {
           borderRadius: 4,
           distributed: true,
           horizontal: true,
-          // barHeight: '80%'
+          // barHeight: '100%'
         }
       },
       
@@ -377,7 +377,7 @@ const DaysAndTimes = () => {
         enabled: false
       },
       xaxis: {
-        categories: ['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'],
+        categories: ['IntoDay','MultiDay'],
       },
       grid: {
         yaxis: {
@@ -398,8 +398,177 @@ const DaysAndTimes = () => {
   
   
   })
+  const [performanceDurationGraph, setPerformanceDurationGraph] = useState({
+    series: [{
+      data: [30,,]
+    }],
+    options: {
+      
+      chart: {
+        toolbar: {
+          show:false
+        },
+        type: 'bar',
+        height: 350
+      },
+      plotOptions: {
+        
+        bar: {
+          borderRadius: 4,
+          distributed: true,
+          horizontal: true,
+        }
+      },
+      
+      fill: {
+       colors:['#EDC161','#6CB9AD','#FF696D','#5D45DB','#689BE2'],
+      },
+      dataLabels: {
+        enabled: false
+      },
+      xaxis: {
+        categories: ['IntroDay','MultiDay'],
+        // labels: {
+        //   formatter: function (x) {
+        //     return "$" + x.toFixed(0);
+        //   },
+        // },
+        // min:500
+      },
 
+      grid: {
+        yaxis: {
+          lines: {
+            show: false
+          }
+        },
+        xaxis: {
+          lines: {
+            show: true
+          }
+        }
+      },
+      yaxis: {
+        tickAmount: 3,
+        reversed: true,
+        
+      },
+     
+    },
+  
+  
+  })
+  const [tradeDistributionByIntrDayGraph, setTradeDistributionByIntraDayGraph] = useState({
+    series: [{
+      data: [4,5,9,7,5,2,6,1,5, ,]
+    }],
+    options: {
+      
+      chart: {
+        toolbar: {
+          show: false,
+          stacked: true
+        },
+        type: 'bar',
+        // height: 350
+      },
+      plotOptions: {
+        
+        bar: {
+          borderRadius: 4,
+          distributed: true,
+          horizontal: true,
+          // barHeight: '100%'
+        }
+      },
+      
+      fill: {
+       colors:['#EDC161','#6CB9AD','#FF696D','#5D45DB','#689BE2'],
+      },
+      dataLabels: {
+        enabled: false
+      },
+      xaxis: {
+        categories: ['Under 1:00','1:00-1:59','2:00-4:59','5:00-9:59','10:00-19:59','20:00-39:59','40:00-59:59','1:00:00-1:50:50','2:00:00-3:59:59','4:00:00-Send Over'],
+      },
+      grid: {
+        yaxis: {
+          lines: {
+            show: false
+          }
+        },
+        xaxis: {
+          lines: {
+            show: true
+          }
+        }
+      },
+      yaxis: {
+        tickAmount:3
+      }
+    },
+  
+  
+  })
+  const [performanceIntraDayGraph, setPerformanceIntraDayGraph] = useState({
+    series: [{
+      data: [-4,5,-9,7,5,-2,-6,1,5, ,]
+    }],
+    options: {
+      
+      chart: {
+        toolbar: {
+          show:false
+        },
+        type: 'bar',
+        height: 350
+      },
+      plotOptions: {
+        
+        bar: {
+          borderRadius: 4,
+          distributed: true,
+          horizontal: true,
+        }
+      },
+      
+      fill: {
+       colors:['#EDC161','#6CB9AD','#FF696D','#5D45DB','#689BE2'],
+      },
+      dataLabels: {
+        enabled: false
+      },
+      xaxis: {
+        categories: ['Under 1:00','1:00-1:59','2:00-4:59','5:00-9:59','10:00-19:59','20:00-39:59','40:00-59:59','1:00:00-1:50:50','2:00:00-3:59:59','4:00:00-Send Over'],
+        labels: {
+          formatter: function (x) {
+            return "$" + x.toFixed(0);
+          },
+        },
+        // min:500
+      },
 
+      grid: {
+        yaxis: {
+          lines: {
+            show: false
+          }
+        },
+        xaxis: {
+          lines: {
+            show: true
+          }
+        }
+      },
+      yaxis: {
+        tickAmount: 3,
+        
+      },
+     
+    },
+  
+  
+  })
 
 
 
@@ -443,7 +612,7 @@ const DaysAndTimes = () => {
         <Grid container columnGap={4} rowGap={4} my={3}>
           <Grid item lg={5.5} md={12} sm={12} sx={gridItem}>
           <p style={{color:`${lightTheme.headingTextColor}`,fontWeight:'500',fontSize:'16px',marginLeft:'20px',marginTop:'10px'}}>Trade Distribution By Duration</p>
-          <Chart options={tradeDistributionByDurationGraph.options} series={tradeDistributionByDurationGraph.series} type="bar" height={350} />
+          <Chart options={tradeDistributionByMonthGraph.options} series={tradeDistributionByMonthGraph.series} type="bar" height={350} />
           </Grid>
           <Grid item lg={5.5} md={12} sm={12} sx={gridItem}>
           <p style={{color:`${lightTheme.headingTextColor}`,fontWeight:'500',fontSize:'16px',marginLeft:'20px',marginTop:'10px'}}>Performance by month of year</p>
@@ -452,12 +621,22 @@ const DaysAndTimes = () => {
         </Grid>
         <Grid container columnGap={4} rowGap={4} my={3}>
           <Grid item lg={5.5} md={12} sm={12} sx={gridItem}>
-          <p style={{color:`${lightTheme.headingTextColor}`,fontWeight:'500',fontSize:'16px',marginLeft:'20px',marginTop:'10px'}}>Trade Distribution By Duration*</p>
-          <Chart options={tradeDistributionByDurationChangeGraph.options} series={tradeDistributionByDurationChangeGraph.series} type="bar" height={350} />
+          <p style={{color:`${lightTheme.headingTextColor}`,fontWeight:'500',fontSize:'16px',marginLeft:'20px',marginTop:'10px'}}>Trade Distribution By Duration</p>
+          <Chart options={tradeDistributionByDurationGraph.options} series={tradeDistributionByDurationGraph.series} type="bar" height={350} />
           </Grid>
           <Grid item lg={5.5} md={12} sm={12} sx={gridItem}>
           <p style={{color:`${lightTheme.headingTextColor}`,fontWeight:'500',fontSize:'16px',marginLeft:'20px',marginTop:'10px'}}>Performance by month of year</p>
-          <Chart options={performanceMonthGraph.options} series={performanceMonthGraph.series} type="bar" height={350} />
+          <Chart options={performanceDurationGraph.options} series={performanceDurationGraph.series} type="bar" height={350} />
+          </Grid>
+        </Grid>
+        <Grid container columnGap={4} rowGap={4} my={3}>
+          <Grid item lg={5.5} md={12} sm={12} sx={gridItem}>
+          <p style={{color:`${lightTheme.headingTextColor}`,fontWeight:'500',fontSize:'16px',marginLeft:'20px',marginTop:'10px'}}>Trade Distribution by intraday Duration</p>
+          <Chart options={tradeDistributionByIntrDayGraph.options} series={tradeDistributionByIntrDayGraph.series} type="bar" height={350} />
+          </Grid>
+          <Grid item lg={5.5} md={12} sm={12} sx={gridItem}>
+          <p style={{color:`${lightTheme.headingTextColor}`,fontWeight:'500',fontSize:'16px',marginLeft:'20px',marginTop:'10px'}}>Trade Distribution by intraday Duration</p>
+          <Chart options={performanceIntraDayGraph.options} series={performanceIntraDayGraph.series} type="bar" height={350} />
           </Grid>
         </Grid>
       </Box>
