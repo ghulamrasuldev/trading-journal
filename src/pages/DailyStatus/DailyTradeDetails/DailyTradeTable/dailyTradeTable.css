@@ -1,0 +1,28 @@
+/* .tradeTableMain{
+    padding-bottom:20px;
+} */
+.addBtn{
+    background-color:#022658;
+    color: white;
+    padding:5px 15px;
+    font-size:15px;
+    font-weight: 500;
+    border-radius:10px;
+    cursor: pointer;
+}
+.profit{
+    /* background-color:#3CD856; */
+    color: white;
+    font-size:13px;
+    /* font-weight: 500; */
+    padding:5px 10px;
+    border-radius:8px;
+}
+.loss{
+    /* background-color:#d83c3c; */
+    color: white;
+    font-size:13px;
+    /* font-weight: 500; */
+    padding:5px 10px;
+    border-radius:8px;
+}

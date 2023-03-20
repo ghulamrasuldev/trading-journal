@@ -1,0 +1,73 @@
+.TradeLogTopSection{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding:18px 15px;
+}
+.graphTitle{
+    font-size:15px;
+    font-weight:500;
+}
+.graphSubTitle{
+    font-size:13px;
+    font-weight:300;
+}
+.profitTopGraph{
+    color: #22894E;
+    font-weight: 500;
+    font-size:10px;
+    text-align: right;
+}
+.lossTopGraph{
+    color: #D94848;
+    font-weight: 500;
+    font-size:10px;
+    text-align: right;
+}
+.pieChartTradeLog{
+    /* border: 1px solid black; */
+    /* width: 80%; */
+    /* margin-left:10px; */
+}
+.tradeLogPieChartDiv{
+    /* border: 1px solid red; */
+    display:flex;
+    justify-content: space-between;
+    align-items: center;
+    /* padding:15px; */
+}
+.winnerTradeLog{
+    /* text-align: center; */
+    font-weight: 300;
+    /* font-family: Overpass; */
+    font-size:15px;
+    color: #22894E;
+    margin-top:15px;
+}
+.winnerValueTradeLog{
+    margin-bottom:15px;
+    /* text-align: center; */
+    font-weight: 700;
+    /* font-family: Overpass; */
+    font-size:16px;
+    letter-spacing:1px;
+    color: #22894E;
+}
+.loserTradeLog{
+    /* margin-top:30px; */
+    /* text-align: center; */
+    font-weight: 300;
+    /* font-family: Overpass; */
+    font-size:15px;
+    color: #D94848;
+    margin-top:5px;
+}
+.loserValueTradeLog{
+    /* margin-bottom:; */
+    /* text-align: center; */
+    font-weight: 700;
+    /* font-family: Overpass; */
+    font-size:16px;
+    letter-spacing:1px;
+    color: #D94848;
+}

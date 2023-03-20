@@ -1,0 +1,111 @@
+*{
+    margin: 0;
+    padding: 0;
+    text-decoration:none;
+}
+.container{
+    display: flex;
+}
+.sidebar{
+    /* background-color:rgb(255, 255, 255); */
+    width:250px;
+    min-height:100vh;
+    /* border: 1px solid black; */
+    box-shadow:rgba(99, 99, 99, 0.37) 0px 2px 8px 0px;
+    transition: all 0.2s;
+    padding-bottom:15px;
+    position: sticky;
+}
+.topSection{
+    /* border: 1px solid black; */
+  padding-top:5px;
+}
+.name{
+    font-family: Archivo;
+    font-weight: 500;
+    /* color: #a8a8a8; */
+    font-size:18px;
+}
+.logoImg{
+    height:40px;
+    width:50px;
+    border-radius:12px;
+    /* margin-right:5px; */
+    /* border: 1px solid black; */
+}
+.logoSection{
+    display: flex;
+    align-items: center;
+    padding:0 15px;
+}
+.openArrow{
+    float: right;
+    cursor: pointer;
+    position: relative;
+    left:15px;
+    /* color:#022658; */
+    
+}
+.menuItems{
+    /* padding:0px 15px; */
+    /* border: 1px solid red; */
+    /* padding-top:30px; */
+    padding-bottom:20px;
+}
+.link {
+    display: flex;
+    align-items: center;
+    /* color: #b8b7b7; */
+    padding: 10px 15px;
+    /* margin:0 6px; */
+    font-weight:500;
+    gap: 10px;
+    transition: all 0.25s;
+    border-radius:8px;
+    
+  }
+  .link:hover {
+    background:#E2E2E2;
+    color: #000;
+    transition: all 0.25s;
+  }
+  .active {
+    background: rgba(215, 215, 218, 0.527);
+    color: #000;
+  }
+.icon{
+    font-size:20px;
+    font-weight: 500;
+    /* color: gray; */
+    font-family: archivo;
+}
+.sidebarImages{
+    height:20px;
+    /* width:25px; */
+}
+.link_text{
+    font-family: archivo;
+    font-weight:300;
+    margin-bottom:5px;
+}
+.news{
+    border: 1px solid #E2E2E2;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding:8px 8px;
+    margin:5px 8px;
+    border-radius:10px;
+    height:15rem;
+    overflow-y: scroll;
+    -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+.news::-webkit-scrollbar{
+    display: none;
+}
+.setting{
+    margin-top:95px;
+    position:relative;
+    bottom: 0%;
+}

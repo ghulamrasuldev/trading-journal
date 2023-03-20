@@ -1,0 +1,24 @@
+.monthlyGrpahMain{
+    box-shadow:0px 4px 4px rgba(0, 0, 0, 0.02);
+    background-color:#FFFFFF;
+    border-radius:8px;
+   
+}
+.dailyAndMonthlyDiv{
+    display: flex;
+    padding:0 20px;
+    padding-top:20px;
+}
+.dailyM{
+font-weight: 600;
+font-size: 16px;
+padding-right:10px;
+color: #022658;
+}
+.monthlyM{
+    padding-left:10px;
+    font-weight:600;
+    font-size: 16px;
+    color:#636578;
+}
+

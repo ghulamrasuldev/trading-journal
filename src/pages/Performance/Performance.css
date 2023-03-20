@@ -1,0 +1,19 @@
+.performanceMain{
+
+    /* border-radius:8px; */
+    border-top-right-radius: 8px;
+    border-top-left-radius: 8px;
+}
+.ReportBtns{
+    padding:15px;
+}
+.performanceBTnDiv{
+    border-radius:8px;
+    margin:10px 0;
+}
+.performanceBtn{
+    padding:15px 25px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+}

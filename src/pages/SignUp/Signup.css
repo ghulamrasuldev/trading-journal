@@ -1,0 +1,178 @@
+.mainContainer {
+  /* background-color: #ebebeb; */
+  height: 40rem !important;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  /* flex-direction: column; */
+  /* border: 1px solid black; */
+}
+.insideMain {
+  width: 100%;
+  height: 75% !important;
+  /* border: 1px solid rgb(221, 3, 3); */
+}
+.grid {
+  height: 100% !important;
+  display: flex;
+  justify-content: center;
+  /* border: 1px solid yellow; */
+}
+.imageDiv {
+  height: 100%;
+  /* border: 1px soli black; */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.img {
+  height: 460px;
+}
+.formDiv {
+  background-color: white;
+  height: 100%;
+  /* display: flex;
+    flex-direction: column;
+    justify-content: center; */
+  /* align-items: center; */
+  /* border: 1px solid black; */
+  padding: 30px;
+  box-shadow: rgba(129, 129, 129, 0.37) 0px 2px 8px 0px;
+  border-radius: 10px;
+}
+.welcome {
+  font-family: Overpass;
+  font-weight: 500;
+  font-size: 23px;
+  letter-spacing: 1px;
+  color: #4c4e64;
+}
+.journaltrade {
+  font-family: Overpass;
+  font-weight: 900;
+  font-size: 27px;
+  letter-spacing: 1px;
+  margin-top: 8px;
+  color: #4c4e64;
+}
+.userDivS {
+  display: flex;
+  align-items: center;
+  /* border: 1px solid black; */
+  background-color: #e2e2e2;
+  padding: 5px 5px;
+  border-radius: 5px;
+  margin-top: 20px;
+}
+.mailDivS {
+  display: flex;
+  align-items: center;
+  /* border: 1px solid black; */
+  background-color: #e2e2e2;
+  padding: 5px 5px;
+  border-radius: 5px;
+  margin-top: 20px;
+}
+.mailIcon {
+  height: 15px;
+  padding-left: 5px;
+  color: #4c4e64;
+}
+.mailInputBox {
+  padding-left: 20px;
+}
+.mailtext {
+  font-family: Overpass;
+  font-size: 10px;
+  margin-top: 3px;
+}
+.mailInput {
+  border: none;
+  background: none;
+  font-family: Overpass;
+  font-weight: 700;
+  color: #4c4e64;
+  padding: 5px 0;
+}
+.mailInput:focus {
+  outline: none;
+}
+.passwordDivS {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  /* border: 1px solid black; */
+  background-color: #e2e2e2;
+  padding: 5px 5px;
+  border-radius: 5px;
+  margin-top: 20px;
+}
+.insdePasswordDiv {
+  display: flex;
+  align-items: center;
+}
+.passwordIcon {
+  height: 15px;
+  padding-left: 5px;
+}
+.passwordInputBox {
+  padding-left: 20px;
+}
+.passwordtext {
+  font-family: Overpass;
+  font-size: 10px;
+  margin-top: 3px;
+}
+.passwordInput {
+  border: none;
+  background: none;
+  font-family: Overpass;
+  font-weight: 700;
+  color: #4c4e64;
+  padding: 5px 0;
+}
+.passwordInput:focus {
+  outline: none;
+}
+.showHide {
+  color: #4c4e64;
+  margin-right: 5px;
+  cursor: pointer;
+}
+.SignupBtnDiv {
+  background-color: #022658;
+  padding: 15px 0;
+  border-radius: 5px;
+  margin-top:25px;
+}
+.signupBtn {
+  width: 100%;
+  border: none;
+  background: none;
+  color: white;
+  font-size: 12px;
+  cursor: pointer;
+}
+.haveAccount{
+    font-family: Overpass;
+    font-weight:500;
+    font-size: 12px;
+    margin-top: 15px;
+    text-align: center;
+    }
+    .register{
+        color:#022658;
+        cursor: pointer;
+    }
+    .error{
+        color: red;
+        font-family: Overpass;
+        font-size:13px;
+        font-weight: 400;
+        /* float: right; */
+        text-align: right;
+        width:95%;
+        /* border: 1px solid black; */
+        /* margin-bottom:-8px; */
+    }

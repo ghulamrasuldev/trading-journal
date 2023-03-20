@@ -1,0 +1,11 @@
+.overViewMain{
+    display: flex;
+    padding:10px 0;
+}
+.insideOverViewMain{
+    display: flex;
+    align-items: center;
+    padding-left: 20px;
+    cursor: pointer;
+   
+}

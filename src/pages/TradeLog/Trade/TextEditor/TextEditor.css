@@ -1,0 +1,28 @@
+.ck-editor__editable_inline{
+    min-height:300px;
+}
+.addNoteDiv{
+    /* border: 1px solid red; */
+    display: flex;
+    justify-content:space-between;
+    padding:10px 0;
+}
+.addNote{
+    padding: 10px 25px;
+    border-radius: 8px;
+    border: none;
+    font-size:15px;
+    font-weight:500;
+    cursor: pointer;
+}
+.documentDiv{
+    display: flex;
+    justify-content:space-evenly;
+}
+.Document{
+    border: 1px solid black;
+    padding: 10px 10px;
+    margin-left:10px;
+    border-radius:8px;
+    
+}

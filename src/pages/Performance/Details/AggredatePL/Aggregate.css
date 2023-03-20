@@ -1,0 +1,12 @@
+.plBtn{
+    padding:15px 20px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+
+}
+.plBtnDiv{
+    border-radius:8px;
+    /* border: 1px solid black; */
+    margin:0 5px;
+}

@@ -1,0 +1,32 @@
+.notificationBox::-webkit-scrollbar{
+    display: none;
+}
+.notificationBox{
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+}
+
+@media only screen and (min-width:1440px) {
+    .notificationBox{
+        position: absolute;
+        top:40%!important;
+        left:73%!important;
+        /* border:3px solid black */
+    }
+}
+@media only screen and (max-width:1024px) {
+    .notificationBox{
+        position: absolute;
+        top:56%!important;
+        left:63%!important;
+        /* border:3px solid black */
+    }
+}
+@media only screen and (min-width:2560px) {
+    .notificationBox{
+        position: absolute;
+        top:23%!important;
+        left:85%!important;
+        /* border:3px solid black */
+    }
+}

@@ -1,0 +1,56 @@
+.dailyStatus{
+    /* border:1px solid black; */
+}
+.dailyStatusTop{
+    padding:15px 15px;
+}
+.pieChart{
+    /* align-self: center; */
+    /* display: flex; */
+    /* justify-content: center; */
+    /* border: 1px solid black; */
+}
+.daily{
+    font-family:Overpass;
+    font-weight:500;
+    font-size: 15px;
+}
+.winLoss{
+    font-family:Overpass;
+    font-weight:500;
+    font-size: 12px;
+    margin-top:5px;
+}
+.winLossPercentage{
+    display: flex;
+    justify-content: space-around;
+   
+}
+.win{
+    text-align: center;
+    font-weight: 300;
+    font-family: Overpass;
+    font-size:13px;
+    color: #22894E;
+}
+.winValue{
+    text-align: center;
+    font-weight: 500;
+    font-family: Overpass;
+    font-size:13px;
+    color: #22894E;
+}
+.lossPie{
+    text-align: center;
+    font-weight: 300;
+    font-family: Overpass;
+    font-size:13px;
+    color: #D94848;
+}
+.lossValue{
+    text-align: center;
+    font-weight: 500;
+    font-family: Overpass;
+    font-size:13px;
+    color: #D94848;
+}

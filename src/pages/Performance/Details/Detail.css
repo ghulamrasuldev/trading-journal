@@ -1,0 +1,19 @@
+.detailMain{
+
+    /* border-radius:8px; */
+    /* border-bottom-right-radius: 8px;
+    border-bottom-left-radius: 8px; */
+}
+.detailBtns{
+    padding:15px;
+}
+.detailBTnDiv{
+    border-radius:8px;
+    margin:10px 0;
+}
+.detailBtn{
+    padding:15px 25px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+}

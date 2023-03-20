@@ -1,19 +1,20 @@
 import React from "react";
 import { Box, Grid, Badge, Stack,Avatar } from "@mui/material";
 import { styled } from '@mui/material/styles';
-import { HiOutlineMenuAlt2 } from "react-icons/hi";
-import { AiOutlineBell } from "react-icons/ai";
 import person from '../../assets/person.png'
+import NotificationMenu from "./NotificationMenu/NotificationMenu";
+import Filter from "./Filters/Filter";
+import { lightTheme } from '../../Theme/theme';
 
 
 
-const NavBar = () => {
+const NavBar = ({name}) => {
 
 
   const BoxStyle = {
     width: "100%",
     height: 50,
-    backgroundColor: "white",
+    backgroundColor:`${lightTheme.ComponentBackgroundColor}`,
     boxShadow: 'rgba(99, 99, 99, 0.2) 0px 2px 8px 0px',
     borderRadius: '10px',
     padding:'5px 0'
@@ -82,24 +83,23 @@ const NavBar = () => {
   },
 }));
 
+  const openModal = () => {
+    // <NotificationMenu />
+  }
 
   return (
     <Box sx={BoxStyle}>
       <Grid container sx={navbarStyle}>
-        <Grid item lg={2} sm={2} xs={2}px={2} border>
-          <h4 style={{ color: '#022658', fontFamily: 'Archivo'}}>Dashboard</h4>
+        <Grid item lg={2} sm={2} xs={2} px={2} >
+          <h4 style={{ marginTop: '10px', color:`${lightTheme.headingTextColor}`, fontFamily: 'Archivo' }}>{name}</h4>
         </Grid>
         <Grid item lg={10} sm={10} xs={10} sx={infoSide}>
-          <HiOutlineMenuAlt2 size={25} style={{paddingRight:'5px',cursor:'pointer'}} color="gray"/>
-          <Badge badgeContent={4} color='error' style={{ paddingLeft: '10px', marginRight: '5px',cursor:'pointer'}}>
-            <AiOutlineBell size={20} color="gray"/>
-          </Badge>
-         
-            
+          <Filter/>
+          <NotificationMenu/>
           <Stack sx={personInfo}>
             <Box sx={ NameandDesignation }>
-              <p style={{ marginBottom: '-5px', marginTop: '6px', fontWeight: '600', letterSpacing: '0.5px', fontFamily: 'Archivo', textAlign:'right',color:'gray'}}>john doe</p>
-              <p style={{ fontWeight: '500',letterSpacing: '1px', textAlign: 'right', color:'#E2E2E2'}}>Admin</p>
+              <p style={{ fontWeight: '600', letterSpacing: '0.5px', fontFamily: 'Archivo', textAlign:'right',color:`${lightTheme.textColor}`}}>john doe</p>
+              <p style={{ fontWeight: '500',letterSpacing: '1px', textAlign: 'right', color:`${lightTheme.textColor}`}}>Admin</p>
           </Box>
             <StyledBadge
               overlap="circular"

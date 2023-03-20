@@ -1,0 +1,30 @@
+.tradeGraphOptions{
+    /* background-color:white;
+    box-shadow:rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+    border-radius:10px; */
+padding:15px 15px;
+}
+.optionDiv{
+    border-radius:10px;
+    background-color:rgba(215, 215, 218, 0.327);
+    display: flex;
+    justify-content: space-between;
+    padding:15px;
+}
+.option{
+    /* border-radius:10px; */
+    /* background-color:rgba(215, 215, 218, 0.327); */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding:15px;
+}
+.setupTabs{
+    display: flex;
+    align-items: center;
+    background-color:#022658;
+    color:#e2e2e2;
+    padding:10px;
+    border-radius:8px;
+    margin:0 1px;
+}

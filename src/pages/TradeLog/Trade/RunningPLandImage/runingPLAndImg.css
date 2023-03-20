@@ -1,0 +1,47 @@
+.apexcharts-legend-text{
+    display:none!important;
+}
+.apexcharts-legend-marker{
+    display:none!important;
+    
+}
+.apexcharts-legend.apx-legend-position-bottom{
+    display:none!important;
+    /* background-color:yellow!important; */
+
+}
+.imgUpload{
+    /* border:3px solid #e2e2e2; */
+    /* border-style: dashed; */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top:10px;
+}
+.ImgUploadDiv{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+}
+.image-item{
+    display: flex!important;
+}
+.uploadImg{
+    width: 100%!important;
+}
+#large{
+    position: absolute!important;
+    top:50%!important;
+    bottom:50%!important;
+    left:10%!important; 
+    right:0%!important; 
+    height:80vh!important;
+    width: auto!important;
+}
+#small{
+    /* position: relative!important; */
+    /* height:100!important; */
+    width:100px!important;
+    height:60px!important;
+}
