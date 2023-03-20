@@ -182,7 +182,7 @@ const PriceVolume = () => {
   const [performanceVolumeTradedGraph, setPerformanceVolumeTradedGraph] = useState({
     series: [
       {
-        data: [-80, -60, , , , ,],
+        data: [-80, -40, , , , ,],
       },
     ],
     options: {

@@ -6,6 +6,7 @@ import AggregatePL from './AggredatePL/AggregatePL';
 import PerTradeAverage from './PerTradeAverage/PerTradeAverage';
 import DaysAndTimes from './DaysAndTimes/DaysAndTimes';
 import PriceVolume from './PriceVolume/PriceVolume';
+import Liquidity from './Liquidity/Liquidity';
 const Detail = () => {
   const [showComponent, setShowComponent] = useState('0');
 
@@ -141,6 +142,7 @@ const Detail = () => {
           {showComponent == '1' ? <PerTradeAverage /> : null}
           {showComponent == '2' ? <DaysAndTimes /> : null}
           {showComponent == '3' ? <PriceVolume /> : null}
+          {showComponent == '7' ? <Liquidity /> : null}
         </div>
       </Box>
     </div>
