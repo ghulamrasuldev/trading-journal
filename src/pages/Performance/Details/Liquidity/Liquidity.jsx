@@ -4,6 +4,8 @@ import { lightTheme } from '../../../../Theme/theme';
 import Chart from 'react-apexcharts';
 
 const Liquidity = () => {
+
+
   const [tradeDistributionAllSharesGraph, setTradeDistributionAllSharesGraph] = useState({
     series: [
       {
@@ -297,15 +299,16 @@ const Liquidity = () => {
           lines: {
             show: true,
           },
-          labels: {
-            formatter: function (x) {
-              return '$' + x.toFixed(0);
-            },
-          },
+         
         },
       },
       xaxis: {
         categories: ['0', '1-25%', '26-50%', '51-75%', '76-99%', '100%'],
+        labels: {
+          formatter: function (x) {
+            return '$' + x.toFixed(0);
+          },
+        },
       },
 
       yaxis: {
@@ -313,6 +316,8 @@ const Liquidity = () => {
       },
     },
   });
+
+
   // styling
   const mainDiv = {
     padding: '25px 15px',
@@ -369,6 +374,8 @@ const Liquidity = () => {
               height={300}
             />
           </Grid>
+          </Grid>
+          <Grid container columnGap={4} rowGap={4} my={3}>
           <Grid item lg={5.5} md={12} sm={12} sx={gridItem}>
             <p
               style={{
@@ -407,6 +414,8 @@ const Liquidity = () => {
               height={300}
             />
           </Grid>
+          </Grid>
+          <Grid container columnGap={4} rowGap={4} my={3}>
           <Grid item lg={5.5} md={12} sm={12} sx={gridItem}>
             <p
               style={{
@@ -445,7 +454,9 @@ const Liquidity = () => {
               height={300}
             />
           </Grid>
-        </Grid>
+          </Grid>
+          
+        
       </Box>
     </div>
   );

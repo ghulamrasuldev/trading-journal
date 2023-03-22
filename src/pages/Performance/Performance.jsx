@@ -8,7 +8,9 @@ import Overview from './Overview/OverView';
 import Detail from './Details/Detail';
 import TradeLogTopGraph from '../TradeLog/TradeLogTopGraphs/TradeLogTopGraphs';
 import Compare from './Compare/Compare';
+import WinVSLossDays from './WinVSLossDays/WinVSLossDays';
 import Drawdown from './DrawDown/Drawdown';
+import TagBreakDown from './TagBreakDown/TagBreakDown';
 
 const Performance = () => {
   const [showComponent, setShowComponent] = useState('0');
@@ -27,14 +29,19 @@ const Performance = () => {
           <div className="ReportBtns">
             <p>Reports</p>
             <div
-              style={{ backgroundColor: `${lightTheme.performanceButtonsBackground}` }}
+              style={{
+                backgroundColor: `${lightTheme.performanceButtonsBackground}`,
+              }}
               className="performanceBTnDiv"
             >
               <button
                 className="performanceBtn"
                 style={
                   showComponent == '0'
-                    ? { backgroundColor: `${lightTheme.headingTextColor}`, color: `${lightTheme.whiteText}` }
+                    ? {
+                        backgroundColor: `${lightTheme.headingTextColor}`,
+                        color: `${lightTheme.whiteText}`,
+                      }
                     : { background: 'none', color: `${lightTheme.textColor}` }
                 }
                 onClick={() => setShowComponent('0')}
@@ -45,7 +52,10 @@ const Performance = () => {
                 className="performanceBtn"
                 style={
                   showComponent == '1'
-                    ? { backgroundColor: `${lightTheme.headingTextColor}`, color: `${lightTheme.whiteText}` }
+                    ? {
+                        backgroundColor: `${lightTheme.headingTextColor}`,
+                        color: `${lightTheme.whiteText}`,
+                      }
                     : { background: 'none', color: `${lightTheme.textColor}` }
                 }
                 onClick={() => setShowComponent('1')}
@@ -56,7 +66,10 @@ const Performance = () => {
                 className="performanceBtn"
                 style={
                   showComponent == '2'
-                    ? { backgroundColor: `${lightTheme.headingTextColor}`, color: `${lightTheme.whiteText}` }
+                    ? {
+                        backgroundColor: `${lightTheme.headingTextColor}`,
+                        color: `${lightTheme.whiteText}`,
+                      }
                     : { background: 'none', color: `${lightTheme.textColor}` }
                 }
               >
@@ -66,7 +79,10 @@ const Performance = () => {
                 className="performanceBtn"
                 style={
                   showComponent == '3'
-                    ? { backgroundColor: `${lightTheme.headingTextColor}`, color: `${lightTheme.whiteText}` }
+                    ? {
+                        backgroundColor: `${lightTheme.headingTextColor}`,
+                        color: `${lightTheme.whiteText}`,
+                      }
                     : { background: 'none', color: `${lightTheme.textColor}` }
                 }
               >
@@ -76,9 +92,13 @@ const Performance = () => {
                 className="performanceBtn"
                 style={
                   showComponent == '4'
-                    ? { backgroundColor: `${lightTheme.headingTextColor}`, color: `${lightTheme.whiteText}` }
+                    ? {
+                        backgroundColor: `${lightTheme.headingTextColor}`,
+                        color: `${lightTheme.whiteText}`,
+                      }
                     : { background: 'none', color: `${lightTheme.textColor}` }
                 }
+                onClick={() => setShowComponent('4')}
               >
                 Wins VS Losses
               </button>
@@ -86,43 +106,57 @@ const Performance = () => {
                 className="performanceBtn"
                 style={
                   showComponent == '5'
-                    ? { backgroundColor: `${lightTheme.headingTextColor}`, color: `${lightTheme.whiteText}` }
+                    ? {
+                        backgroundColor: `${lightTheme.headingTextColor}`,
+                        color: `${lightTheme.whiteText}`,
+                      }
                     : { background: 'none', color: `${lightTheme.textColor}` }
                 }
                 onClick={() => setShowComponent('5')}
+              >
+                Drawdown
+              </button>
+              <button
+                className="performanceBtn"
+                style={
+                  showComponent == '6'
+                    ? {
+                        backgroundColor: `${lightTheme.headingTextColor}`,
+                        color: `${lightTheme.whiteText}`,
+                      }
+                    : { background: 'none', color: `${lightTheme.textColor}` }
+                }
+                onClick={() => setShowComponent('6')}
               >
                 Compare
               </button>
               <button
                 className="performanceBtn"
                 style={
-                  showComponent == '6'
-                    ? { backgroundColor: `${lightTheme.headingTextColor}`, color: `${lightTheme.whiteText}` }
-                    : { background: 'none', color: `${lightTheme.textColor}` }
-                }
-              >
-                Market Behavior
-              </button>
-              <button
-                className="performanceBtn"
-                style={
                   showComponent == '7'
-                    ? { backgroundColor: `${lightTheme.headingTextColor}`, color: `${lightTheme.whiteText}` }
+                    ? {
+                        backgroundColor: `${lightTheme.headingTextColor}`,
+                        color: `${lightTheme.whiteText}`,
+                      }
                     : { background: 'none', color: `${lightTheme.textColor}` }
                 }
+                onClick={() => setShowComponent('7')}
               >
-                Calendar
+                Tag BreakDown
               </button>
               <button
                 className="performanceBtn"
                 style={
                   showComponent == '8'
-                    ? { backgroundColor: `${lightTheme.headingTextColor}`, color: `${lightTheme.whiteText}` }
+                    ? {
+                        backgroundColor: `${lightTheme.headingTextColor}`,
+                        color: `${lightTheme.whiteText}`,
+                      }
                     : { background: 'none', color: `${lightTheme.textColor}` }
                 }
                 onClick={() => setShowComponent('8')}
               >
-                Drawdown
+                Calendar
               </button>
             </div>
           </div>
@@ -130,11 +164,10 @@ const Performance = () => {
         <div>
           {showComponent == '0' ? <Overview /> : null}
           {showComponent == '1' ? <Detail /> : null}
-          {showComponent == '5' ? <Compare /> : null}
-          {showComponent == '8' ? <Drawdown /> : null}
-          {/* {
-                showComponent=1?  <Compare/>:null
-              } */}
+          {showComponent == '4' ? <WinVSLossDays /> : null}
+          {showComponent == '6' ? <Compare /> : null}
+          {showComponent == '5' ? <Drawdown /> : null}
+          {showComponent == '7' ? <TagBreakDown /> : null}
         </div>
       </Box>
     </div>

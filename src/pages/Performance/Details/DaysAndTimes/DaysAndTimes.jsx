@@ -71,7 +71,7 @@ const DaysAndTimes = () => {
   })
   const [performanceGraph, setPerformanceGraph] = useState({
     series: [{
-      data: [4,7,3,8,9]
+      data: [-4,-7,-3,-8,-9]
     }],
     options: {
       
@@ -110,7 +110,7 @@ const DaysAndTimes = () => {
         }
       },
       yaxis: {
-        reversed: true,
+        // reversed: true,
       },
       xaxis: {
         categories: ['Mon', 'Tue', 'Wed', 'Thus', 'Fri'],
@@ -288,7 +288,7 @@ const DaysAndTimes = () => {
   })
   const [performanceMonthGraph, setPerformanceMonthGraph] = useState({
     series: [{
-      data: [4,,,,,3,9,5,,,]
+      data: [-4,,,,,-3,-9,-5,,,]
     }],
     options: {
       
@@ -316,11 +316,11 @@ const DaysAndTimes = () => {
       },
       xaxis: {
         categories: ['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'],
-        // labels: {
-        //   formatter: function (x) {
-        //     return "$" + x.toFixed(0);
-        //   },
-        // },
+        labels: {
+          formatter: function (x) {
+            return "$" + x.toFixed(0);
+          },
+        },
         // min:500
       },
 
@@ -338,7 +338,7 @@ const DaysAndTimes = () => {
       },
       yaxis: {
         tickAmount: 3,
-        reversed: true,
+        // reversed: true,
         
       },
      
@@ -400,7 +400,7 @@ const DaysAndTimes = () => {
   })
   const [performanceDurationGraph, setPerformanceDurationGraph] = useState({
     series: [{
-      data: [30,,]
+      data: [-30,,]
     }],
     options: {
       
@@ -428,11 +428,11 @@ const DaysAndTimes = () => {
       },
       xaxis: {
         categories: ['IntroDay','MultiDay'],
-        // labels: {
-        //   formatter: function (x) {
-        //     return "$" + x.toFixed(0);
-        //   },
-        // },
+        labels: {
+          formatter: function (x) {
+            return "$" + x.toFixed(0);
+          },
+        },
         // min:500
       },
 
@@ -450,7 +450,7 @@ const DaysAndTimes = () => {
       },
       yaxis: {
         tickAmount: 3,
-        reversed: true,
+        // reversed: true,
         
       },
      
