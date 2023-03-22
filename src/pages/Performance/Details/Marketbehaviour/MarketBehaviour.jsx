@@ -212,7 +212,7 @@ const MarketBehaviour = () => {
         enabled: false
       },
       xaxis: {
-        categories: ['less then -2%','-1% to -2%','0% to -1%','0% to +1%','+1% to +2%','Cover +2%'],
+        categories: ['less then -2%','-1% to -2%','0% to -1%','0% to +1%','+1% to +2%','over +2%'],
         labels: {
           formatter: function (x) {
             return "$" + x.toFixed(0);

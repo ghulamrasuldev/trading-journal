@@ -1,6 +1,5 @@
 import { Box, Grid, Divider } from "@mui/material";
 import React, { useState } from "react";
-import lockImg from "/lockIcon.png";
 import "./Aggregate.css";
 import { lightTheme } from "../../../../Theme/theme";
 import { MdOutlineLock } from "react-icons/md";

@@ -1,19 +1,56 @@
-.detailMain{
-
-    /* border-radius:8px; */
-    /* border-bottom-right-radius: 8px;
+.detailMain {
+  /* border-radius:8px; */
+  /* border-bottom-right-radius: 8px;
     border-bottom-left-radius: 8px; */
 }
-.detailBtns{
-    padding:15px;
+/* .detailBtns {
+  padding: 15px;
 }
-.detailBTnDiv{
-    border-radius:8px;
-    margin:10px 0;
+.detailBTnDiv {
+  border-radius: 8px;
+  margin: 10px 0;
 }
-.detailBtn{
-    padding:15px 25px;
-    border: none;
-    border-radius: 8px;
-    cursor: pointer;
+.detailBtn {
+  padding: 15px 15px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+} */
+.detailMain {
+}
+.detailBtns {
+  padding: 15px;
+  display: inline-block;
+}
+.detailBTnDiv {
+  margin: 10px 0;
+  border-radius: 9999px 9999px 9999px 9999px;
+}
+.detailBtn {
+  padding: 15px 25px;
+  border: none;
+  cursor: pointer;
+  border-radius: 0px;
+}
+.button-row button:first-child {
+  padding: 15px 25px;
+  border: none;
+  cursor: pointer;
+}
+.button-row button:last-child {
+  padding: 15px 25px;
+  border: none;
+  cursor: pointer;
+}
+.left-rounded {
+  border-radius: 9999px 100px 100px 9999px;
+  padding: 15px 25px;
+  border: none;
+  cursor: pointer;
+}
+.right-rounded {
+  border-radius: 100px 9999px 9999px 100px;
+  padding: 15px 25px;
+  border: none;
+  cursor: pointer;
 }

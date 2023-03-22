@@ -185,7 +185,7 @@ const Instrument = () => {
   })
   const [performanceByInstrumentVolumeGraph, setperformanceByInstrumentVolumeGraph] = useState({
     series: [{
-      data: [6,3,9,7,5]
+      data: [-6,-3,-9,-7,-5]
     }],
     options: {
       
@@ -235,7 +235,7 @@ const Instrument = () => {
       },
       yaxis: {
         tickAmount: 3,
-        reversed:true
+        // reversed:true
         
       },
      
@@ -304,7 +304,7 @@ const Instrument = () => {
   })
   const [performanceByEntryPriceGraph, setperformanceByEntryPriceGraph] = useState({
     series: [{
-      data: [2,3,9,,4,5]
+      data: [-2,-3,-9,,-4,-5]
     }],
     options: {
       
@@ -354,7 +354,7 @@ const Instrument = () => {
       },
       yaxis: {
         tickAmount: 3,
-        reversed:true
+        // reversed:true
         
       },
      
