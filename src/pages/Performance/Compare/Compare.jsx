@@ -4,7 +4,8 @@ import { lightTheme } from '../../../Theme/theme';
 import { MdOutlineLock } from 'react-icons/md';
 import DaysAndTimes from './DaysAndTimes/DaysAndTimes';
 import PriceVolume from './PriceVolume/PriceVolume';
-import CompareAggregate from "./AggregatePL/CompareAggregate";
+import CompareAggregate from './AggregatePL/CompareAggregate';
+import PerTradeAverage from './PerTradeAverage/PerTradeAverage.jsx';
 
 const Compare = () => {
   const [showLock, setShowLock] = useState(true);
