@@ -24,7 +24,7 @@ const PriceVolume = () => {
       plotOptions: {
         bar: {
           borderRadius: 4,
-          distributed: true,
+          // distributed: true,
           horizontal: true,
         },
       },
@@ -85,7 +85,7 @@ const PriceVolume = () => {
       plotOptions: {
         bar: {
           borderRadius: 4,
-          distributed: true,
+          // distributed: true,
           horizontal: true,
         },
       },
@@ -156,7 +156,7 @@ const PriceVolume = () => {
       plotOptions: {
         bar: {
           borderRadius: 4,
-          distributed: true,
+          // distributed: true,
           horizontal: true,
         },
       },
@@ -208,7 +208,7 @@ const PriceVolume = () => {
       plotOptions: {
         bar: {
           borderRadius: 4,
-          distributed: true,
+          // distributed: true,
           horizontal: true,
         },
       },
@@ -265,7 +265,7 @@ const PriceVolume = () => {
       plotOptions: {
         bar: {
           borderRadius: 4,
-          distributed: true,
+          // distributed: true,
           horizontal: true,
         },
       },
@@ -326,7 +326,7 @@ const PriceVolume = () => {
       plotOptions: {
         bar: {
           borderRadius: 4,
-          distributed: true,
+          // distributed: true,
           horizontal: true,
         },
       },

@@ -24,7 +24,7 @@ const DaysAndTimes = () => {
       plotOptions: {
         bar: {
           borderRadius: 4,
-          distributed: true,
+          // distributed: true,
           horizontal: true,
         },
       },
@@ -87,7 +87,7 @@ const DaysAndTimes = () => {
       plotOptions: {
         bar: {
           borderRadius: 4,
-          distributed: true,
+          // distributed: true,
           horizontal: true,
         },
       },
@@ -145,7 +145,7 @@ const DaysAndTimes = () => {
       plotOptions: {
         bar: {
           borderRadius: 4,
-          distributed: true,
+          // distributed: true,
           horizontal: true,
           // barHeight: '80%'
         },
@@ -197,7 +197,7 @@ const DaysAndTimes = () => {
       plotOptions: {
         bar: {
           borderRadius: 4,
-          distributed: true,
+          // distributed: true,
           horizontal: true,
         },
       },
@@ -257,7 +257,7 @@ const DaysAndTimes = () => {
       plotOptions: {
         bar: {
           borderRadius: 4,
-          distributed: true,
+          // distributed: true,
           horizontal: true,
           // barHeight: '100%'
         },
@@ -320,7 +320,7 @@ const DaysAndTimes = () => {
       plotOptions: {
         bar: {
           borderRadius: 4,
-          distributed: true,
+          // distributed: true,
           horizontal: true,
         },
       },
