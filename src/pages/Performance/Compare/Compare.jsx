@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { Box, Divider, Grid, TextField } from "@mui/material";
 import { lightTheme } from "../../../Theme/theme";
 import { MdOutlineLock } from "react-icons/md";
+import CompareAggregate from "./AggregatePL/CompareAggregate";
 
 const Compare = () => {
   const [showLock, setShowLock] = useState(true);
@@ -66,7 +67,7 @@ const Compare = () => {
   ];
 
   // styling
- const mainDiv = {
+  const mainDiv = {
     padding: "25px 15px",
     backgroundColor: `${lightTheme.ComponentBackgroundColor}`,
 
@@ -692,7 +693,12 @@ const Compare = () => {
               </button>
             </div>
           </div>
-              </div>
+        </div>
+        <div>
+          {
+            (showComponent=='0')? <CompareAggregate/>: null
+          }
+        </div>
          
       </Box>
     </div>
