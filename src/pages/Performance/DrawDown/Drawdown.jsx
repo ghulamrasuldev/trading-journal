@@ -1,12 +1,12 @@
-import React, { useState } from "react";
-import { Box, Divider, Grid, TextField } from "@mui/material";
-import { lightTheme } from "../../../Theme/theme";
-import { MdOutlineLock } from "react-icons/md";
-import Chart from "react-apexcharts";
+import React, { useState } from 'react';
+import { Box, Divider, Grid, TextField } from '@mui/material';
+import { lightTheme } from '../../../Theme/theme';
+import { MdOutlineLock } from 'react-icons/md';
+import Chart from 'react-apexcharts';
 
 const Drawdown = () => {
   const [showLock, setShowLock] = useState(true);
-  const [applyFllter, setApplyFilter] = useState("0");
+  const [applyFllter, setApplyFilter] = useState('0');
   const [tradeDistributionGraph, setTradeDistributionGraph] = useState({
     series: [
       {
@@ -18,7 +18,7 @@ const Drawdown = () => {
         toolbar: {
           show: false,
         },
-        type: "bar",
+        type: 'bar',
         height: 350,
       },
       plotOptions: {
@@ -30,7 +30,7 @@ const Drawdown = () => {
       },
 
       fill: {
-        colors: ["#EDC161", "#6CB9AD", "#FF696D", "#5D45DB", "#689BE2"],
+        colors: ['#EDC161', '#6CB9AD', '#FF696D', '#5D45DB', '#689BE2'],
       },
       dataLabels: {
         enabled: false,
@@ -48,7 +48,7 @@ const Drawdown = () => {
         },
       },
       xaxis: {
-        categories: ["Sun", "Mon", "Tue", "Wed", "Thus", "Fri"],
+        categories: ['Sun', 'Mon', 'Tue', 'Wed', 'Thus', 'Fri'],
       },
       // grid: {
       //   yaxis: {
@@ -78,7 +78,7 @@ const Drawdown = () => {
         toolbar: {
           show: false,
         },
-        type: "bar",
+        type: 'bar',
         height: 350,
       },
       plotOptions: {
@@ -90,7 +90,7 @@ const Drawdown = () => {
       },
 
       fill: {
-        colors: ["#EDC161", "#6CB9AD", "#FF696D", "#5D45DB", "#689BE2"],
+        colors: ['#EDC161', '#6CB9AD', '#FF696D', '#5D45DB', '#689BE2'],
       },
       dataLabels: {
         enabled: false,
@@ -111,11 +111,11 @@ const Drawdown = () => {
         // reversed: true,
       },
       xaxis: {
-        categories: ["Sun", "Mon", "Tue", "Wed", "Thus", "Fri"],
+        categories: ['Sun', 'Mon', 'Tue', 'Wed', 'Thus', 'Fri'],
 
         labels: {
           formatter: function (x) {
-            return "$" + x.toFixed(0);
+            return '$' + x.toFixed(0);
           },
         },
       },
@@ -124,19 +124,18 @@ const Drawdown = () => {
   const [volatilityGraph, setVolatility] = useState({
     series: [
       {
-        name: "Desktops",
+        name: 'Desktops',
         data: [
-          130, 241, 315, 544, 649, 262, 169, 91, 48, 12, 90, 98, 134, 32, 56,
-          864, 333, 12, 34, 45, 654, 23, 11, 22, 98, 12, 56, 34, 14, 130, 241,
-          315, 544, 649, 262, 169, 91, 48, 12, 90, 98, 134, 32, 56, 864, 333,
-          12, 34, 45, 654, 23, 11, 22, 98, 12, 56, 34, 14,
+          130, 241, 315, 544, 649, 262, 169, 91, 48, 12, 90, 98, 134, 32, 56, 864, 333, 12, 34, 45, 654, 23, 11, 22, 98,
+          12, 56, 34, 14, 130, 241, 315, 544, 649, 262, 169, 91, 48, 12, 90, 98, 134, 32, 56, 864, 333, 12, 34, 45, 654,
+          23, 11, 22, 98, 12, 56, 34, 14,
         ],
       },
     ],
     options: {
       chart: {
         height: 350,
-        type: "line",
+        type: 'line',
         zoom: {
           enabled: false,
         },
@@ -148,15 +147,15 @@ const Drawdown = () => {
         enabled: false,
       },
       stroke: {
-        curve: "straight",
+        curve: 'straight',
       },
       title: {
-        text: "Product Trends by Month",
-        align: "left",
+        text: 'Product Trends by Month',
+        align: 'left',
       },
       grid: {
         row: {
-          colors: ["#f3f3f3", "transparent"], // takes an array which will be repeated on columns
+          colors: ['#f3f3f3', 'transparent'], // takes an array which will be repeated on columns
           opacity: 0.5,
         },
       },
@@ -171,46 +170,46 @@ const Drawdown = () => {
   // statistics Data
   const DrawdownData = [
     {
-      name: "Average Drawdown:",
-      val: "1",
-      lock: "./lockIcon.png",
+      name: 'Average Drawdown:',
+      val: '1',
+      lock: './lockIcon.png',
     },
     {
-      name: "Average number of days in drawdown:",
-      val: "2",
-      lock: "./lockIcon.png",
+      name: 'Average number of days in drawdown:',
+      val: '2',
+      lock: './lockIcon.png',
     },
     {
-      name: "Average trades in Drawdown:",
-      val: "3",
-      lock: "./lockIcon.png",
+      name: 'Average trades in Drawdown:',
+      val: '3',
+      lock: './lockIcon.png',
     },
     {
-      name: "Biggest Drawdown:",
-      val: "4",
-      lock: "./lockIcon.png",
+      name: 'Biggest Drawdown:',
+      val: '4',
+      lock: './lockIcon.png',
     },
     {
-      name: "Number of days in Drawdown:",
-      val: "5",
-      lock: "./lockIcon.png",
+      name: 'Number of days in Drawdown:',
+      val: '5',
+      lock: './lockIcon.png',
     },
   ];
 
   // styling
   const mainDiv = {
-    padding: "25px 15px",
+    padding: '25px 15px',
     backgroundColor: `${lightTheme.ComponentBackgroundColor}`,
 
-    borderBottomLeftRadius: "8px",
-    borderBottomRightRadius: "8px",
+    borderBottomLeftRadius: '8px',
+    borderBottomRightRadius: '8px',
   };
 
   const gridItem = {
-    marginTop: "30px",
+    marginTop: '30px',
     border: `1px solid ${lightTheme.borderColor}`,
     backgroundColor: `${lightTheme.ComponentBackgroundColor}`,
-    borderRadius: "8px",
+    borderRadius: '8px',
   };
 
   return (
@@ -219,32 +218,30 @@ const Drawdown = () => {
         <div>
           <p
             style={{
-              fontSize: "18px",
-              fontWeight: "500",
+              fontSize: '18px',
+              fontWeight: '500',
               color: `${lightTheme.textColor}`,
-              textAlign: "center",
-              padding: "5px 0",
+              textAlign: 'center',
+              padding: '5px 0',
             }}
           >
             These reports are only available for silver and gold users.
-            <span style={{ color: `${lightTheme.headingTextColor}` }}>
-              Upgrade now!
-            </span>
+            <span style={{ color: `${lightTheme.headingTextColor}` }}>Upgrade now!</span>
           </p>
           {/* P & L type filters */}
           <div
             style={{
-              display: "flex",
-              justifyContent: "flex-end",
-              alignItems: "center",
-              padding: "10px 20px",
+              display: 'flex',
+              justifyContent: 'flex-end',
+              alignItems: 'center',
+              padding: '10px 20px',
             }}
           >
             <p
               style={{
                 color: `${lightTheme.headingTextColor}`,
-                fontWeight: "500",
-                fontSize: "14px",
+                fontWeight: '500',
+                fontSize: '14px',
               }}
             >
               P&L Type :
@@ -258,51 +255,49 @@ const Drawdown = () => {
               <button
                 className="plBtn"
                 style={
-                  applyFllter == "0"
+                  applyFllter == '0'
                     ? {
                         backgroundColor: `${lightTheme.headingTextColor}`,
                         color: `${lightTheme.whiteText}`,
                       }
-                    : { background: "none", color: `${lightTheme.textColor}` }
+                    : { background: 'none', color: `${lightTheme.textColor}` }
                 }
-                onClick={() => setApplyFilter("0")}
+                onClick={() => setApplyFilter('0')}
               >
                 $
               </button>
               <button
                 className="plBtn"
                 style={
-                  applyFllter == "1"
+                  applyFllter == '1'
                     ? {
                         backgroundColor: `${lightTheme.headingTextColor}`,
                         color: `${lightTheme.whiteText}`,
                       }
-                    : { background: "none", color: `${lightTheme.textColor}` }
+                    : { background: 'none', color: `${lightTheme.textColor}` }
                 }
-                onClick={() => setApplyFilter("1")}
+                onClick={() => setApplyFilter('1')}
               >
                 T
               </button>
               <button
                 className="plBtn"
                 style={
-                  applyFllter == "2"
+                  applyFllter == '2'
                     ? {
                         backgroundColor: `${lightTheme.headingTextColor}`,
                         color: `${lightTheme.whiteText}`,
                       }
-                    : { background: "none", color: `${lightTheme.textColor}` }
+                    : { background: 'none', color: `${lightTheme.textColor}` }
                 }
-                onClick={() => setApplyFilter("2")}
+                onClick={() => setApplyFilter('2')}
               >
-                R{" "}
+                R{' '}
                 <MdOutlineLock
                   color="red"
                   size={10}
                   style={
-                    applyFllter == "2"
-                      ? { color: `${lightTheme.whiteText}` }
-                      : { color: `${lightTheme.textColor}` }
+                    applyFllter == '2' ? { color: `${lightTheme.whiteText}` } : { color: `${lightTheme.textColor}` }
                   }
                 />
               </button>
@@ -311,7 +306,7 @@ const Drawdown = () => {
               href="#"
               style={{
                 color: `${lightTheme.linkColor}`,
-                textDecoration: "underline",
+                textDecoration: 'underline',
               }}
             >
               Help
@@ -320,39 +315,38 @@ const Drawdown = () => {
           <p
             style={{
               color: `${lightTheme.headingTextColor}`,
-              fontSize: "20px",
-              fontWeight: "500",
-              marginLeft: "10px",
-              marginBottom:'35px'
+              fontSize: '20px',
+              fontWeight: '500',
+              marginLeft: '10px',
+              marginBottom: '35px',
             }}
           >
             Statistics
           </p>
-          <Grid container spacing={2} >
-          {DrawdownData.map((data, index) => {
-                  return (
-                    <>
-                      <Grid item lg={6} md={12} sm={12} style={{paddingTop:'0px'}}>
-              {/* statictics data maping */}
-              <div
-                style={{
-                  border: `1px solid ${lightTheme.borderColor}`,
-                  
-                }}
-              >
+          <Grid container spacing={2}>
+            {DrawdownData.map((data, index) => {
+              return (
+                <>
+                  <Grid item lg={6} md={12} sm={12} style={{ paddingTop: '0px' }}>
+                    {/* statictics data maping */}
+                    <div
+                      style={{
+                        border: `1px solid ${lightTheme.borderColor}`,
+                      }}
+                    >
                       <div
                         key={index}
                         style={{
-                          display: "flex",
-                          justifyContent: "space-between",
-                          alignItems: "center",
-                          padding: "15px 15px",
+                          display: 'flex',
+                          justifyContent: 'space-between',
+                          alignItems: 'center',
+                          padding: '15px 15px',
                         }}
                       >
                         <p
                           style={{
-                            fontWeight: "500",
-                            fontSize: "16px",
+                            fontWeight: '500',
+                            fontSize: '16px',
                             color: `${lightTheme.headingTextColor}`,
                           }}
                         >
@@ -360,26 +354,21 @@ const Drawdown = () => {
                         </p>
                         <p
                           style={{
-                            fontWeight: "400",
-                            fontSize: "16px",
+                            fontWeight: '400',
+                            fontSize: '16px',
                             color: `${lightTheme.textColor}`,
                           }}
                         >
-                          {showLock ? (
-                            <img src={data.lock} alt="lockIcon" height={20} />
-                          ) : (
-                            `${data.val}`
-                          )}
+                          {showLock ? <img src={data.lock} alt="lockIcon" height={20} /> : `${data.val}`}
                         </p>
                       </div>
                       {/* <Divider /> */}
-              </div>
-            </Grid>
-                
-                    </>
-                  );
-                })}
-            
+                    </div>
+                  </Grid>
+                </>
+              );
+            })}
+
             {/* <Grid item lg={5.5} md={12} sm={12} sx={gridItem}>
               
               <div
@@ -435,10 +424,10 @@ const Drawdown = () => {
               <p
                 style={{
                   color: `${lightTheme.headingTextColor}`,
-                  fontWeight: "500",
-                  fontSize: "16px",
-                  marginLeft: "20px",
-                  marginTop: "10px",
+                  fontWeight: '500',
+                  fontSize: '16px',
+                  marginLeft: '20px',
+                  marginTop: '10px',
                 }}
               >
                 Drawdown Increase Distribution By Day Of Week
@@ -454,30 +443,20 @@ const Drawdown = () => {
               <p
                 style={{
                   color: `${lightTheme.headingTextColor}`,
-                  fontWeight: "500",
-                  fontSize: "16px",
-                  marginLeft: "20px",
-                  marginTop: "10px",
+                  fontWeight: '500',
+                  fontSize: '16px',
+                  marginLeft: '20px',
+                  marginTop: '10px',
                 }}
               >
                 Performance by day of week
               </p>
-              <Chart
-                options={performanceGraph.options}
-                series={performanceGraph.series}
-                type="bar"
-                height={300}
-              />
+              <Chart options={performanceGraph.options} series={performanceGraph.series} type="bar" height={300} />
             </Grid>
           </Grid>
           <Grid container>
             <Grid item lg={5.8} md={12} sm={12} sx={gridItem}>
-              <Chart
-                options={volatilityGraph.options}
-                series={volatilityGraph.series}
-                type="line"
-                height={350}
-              />
+              <Chart options={volatilityGraph.options} series={volatilityGraph.series} type="line" height={350} />
             </Grid>
           </Grid>
         </div>
