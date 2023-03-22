@@ -139,7 +139,7 @@ const WinVSLossDays = () => {
                 Wins/Loss/Expectation
               </button>
               <button
-                className="left-rounded"
+                className="right-rounded"
                 style={
                   showComponent == "7"
                     ? {
