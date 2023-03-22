@@ -6,6 +6,7 @@ import DaysAndTimes from './DaysAndTimes/DaysAndTimes';
 import PriceVolume from './PriceVolume/PriceVolume';
 import CompareAggregate from './AggregatePL/CompareAggregate';
 import PerTradeAverage from './PerTradeAverage/PerTradeAverage.jsx';
+import WinLossExpectation from './WinLossExpectation/WinLossExpectation';
 
 const Compare = () => {
   const [showLock, setShowLock] = useState(true);
@@ -311,6 +312,7 @@ const Compare = () => {
           {showComponent == '1' ? <PerTradeAverage /> : null}
           {showComponent == '2' ? <DaysAndTimes /> : null}
           {showComponent == '3' ? <PriceVolume /> : null}
+          {showComponent == '6' ? <WinLossExpectation /> : null}
         </div>
       </Box>
     </div>
