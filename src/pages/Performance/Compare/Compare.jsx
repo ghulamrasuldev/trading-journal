@@ -4,6 +4,7 @@ import { lightTheme } from '../../../Theme/theme';
 import { MdOutlineLock } from 'react-icons/md';
 import DaysAndTimes from './DaysAndTimes/DaysAndTimes';
 import PriceVolume from './PriceVolume/PriceVolume';
+import CompareAggregate from "./AggregatePL/CompareAggregate";
 
 const Compare = () => {
   const [showLock, setShowLock] = useState(true);
@@ -305,6 +306,7 @@ const Compare = () => {
           </div>
         </div>
         <div>
+          {showComponent == '0' ? <CompareAggregate /> : null}
           {showComponent == '1' ? <PerTradeAverage /> : null}
           {showComponent == '2' ? <DaysAndTimes /> : null}
           {showComponent == '3' ? <PriceVolume /> : null}

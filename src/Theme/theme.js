@@ -26,12 +26,12 @@ export const lightTheme = {
   rattingStarColor: '#FFD600',
   performanceButtonsBackground: '#EDF2F6',
   borderColor: 'rgba(101,120,99,0.1)',
-  // borderColor: '#F8F9FA',
   positiveBar: '#3366CC',
   nagativeBar: '#F57C7E',
   newsHeading: '#05004E',
   linkColor: '#3366CC',
-  // testColor:rgba(101,120,99,0.1)
+  staticGroupOne:'#5072C0',
+  staticGroupTwo:'#FF9600',
 };
 export const darkTheme = {
   ComponentBackgroundColor: "#022658",
