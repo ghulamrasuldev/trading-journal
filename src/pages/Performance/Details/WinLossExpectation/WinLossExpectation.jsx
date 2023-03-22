@@ -58,6 +58,7 @@ const WinLossExpectation = () => {
           borderRadius: 4,
           distributed: true,
           horizontal: true,
+          barHeight:'40%'
         }
       },
       
@@ -117,7 +118,7 @@ const WinLossExpectation = () => {
           borderRadius: 4,
           distributed: true,
           horizontal: true,
-          barHeight: '40%',
+          barHeight: '30%',
         }
       },
       
@@ -250,7 +251,53 @@ const WinLossExpectation = () => {
       <Box sx={mainDiv}>
         <Grid container columnGap={4} rowGap={4} my={3}>
         <Grid item lg={5.5} md={12} sm={12} sx={gridItem}>
+        <div style={{display:'flex',justifyContent:'space-between',alignItems:'center'}}>
             <p style={{ color: `${lightTheme.headingTextColor}`, fontWeight: '500', fontSize: '16px', marginLeft: '20px', marginTop: '10px' }}>Win/Loss Ratio</p>
+              <div>
+              <div style={{ display: "flex", alignItems: "center",textAlign:'left',marginTop:'5px'}}>
+            <p
+              style={{
+                backgroundColor: `${lightTheme.profit}`,
+                height: "25px",
+                width: "25px",
+                borderRadius: "50%",
+              }}
+            ></p>
+            <p
+              style={{
+                color: `${lightTheme.profit}`,
+                fontWeight: "500",
+                fontSize: "16px",
+                padding: "0 5px",
+              }}
+            >
+              Winning Days
+            </p>
+          </div>
+          <div
+            style={{ display: "flex", alignItems: "center",marginTop:'5px',textAlign:'left' }}
+          >
+            <p
+              style={{
+                backgroundColor: `${lightTheme.loss}`,
+                height: "25px",
+                width: "25px",
+                borderRadius: "50%",
+              }}
+            ></p>
+            <p
+              style={{
+                color: `${lightTheme.loss}`,
+                fontWeight: "500",
+                fontSize: "16px",
+                padding: "0 5px",
+              }}
+            >
+              Losing Days
+            </p>
+          </div>
+              </div>
+            </div>
             <Chart options={winLossRatio.options} series={winLossRatio.series} type="pie" width={350} />
           </Grid>
           <Grid item lg={5.5} md={12} sm={12} sx={gridItem}>

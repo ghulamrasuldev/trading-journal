@@ -62,7 +62,7 @@ const Compare = () => {
   ];
 
   // styling
-  const mainDiv = {
+ const mainDiv = {
     padding: "25px 15px",
     backgroundColor: `${lightTheme.ComponentBackgroundColor}`,
 
@@ -75,7 +75,7 @@ const Compare = () => {
     border: `1px solid ${lightTheme.borderColor}`,
     backgroundColor: `${lightTheme.ComponentBackgroundColor}`,
     borderRadius: "8px",
-  };
+  }; 
 
   return (
     <div>
@@ -348,7 +348,7 @@ const Compare = () => {
         </Grid>
       </Box>
       <Box>
-        <Grid container columnGap={12} rowGap={4}>
+        <Grid container columnGap={11} rowGap={4}>
           <Grid item lg={5.5} md={12} sm={12} sx={gridItem}>
             <div
               style={{
