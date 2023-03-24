@@ -126,8 +126,8 @@ const TradeLogTopGraphs = () => {
 
   return (
     <Box>
-      <Grid container columnGap={5} mt={5} mb={5} rowGap={4}>
-        <Grid item lg={3} md={12} sm={12} xm={12} sx={topGraphStyle} >
+      <Grid container columnGap={3} mt={5} mb={5} rowGap={4}>
+        <Grid item lg={3.5} md={12} sm={12} xm={12} sx={topGraphStyle} >
           <div className="TradeLogTopSection">
             <div>
               <p className="graphTitle" style={{color:`${lightTheme.headingTextColor}`}}>Net Cumulative PL</p>
