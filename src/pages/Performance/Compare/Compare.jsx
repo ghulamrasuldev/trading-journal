@@ -9,6 +9,7 @@ import PerTradeAverage from './PerTradeAverage/PerTradeAverage.jsx';
 import Instrument from './Instrument/Instrument.jsx';
 import WinLossExpectation from './WinLossExpectation/WinLossExpectation';
 import Liquidity from './Liquidity/Liquidity';
+import MarketBehaviour from './Marketbehaviour/MarketBehaviour'
 
 const Compare = () => {
   const [showLock, setShowLock] = useState(true);
@@ -315,6 +316,7 @@ const Compare = () => {
           {showComponent == '2' ? <DaysAndTimes /> : null}
           {showComponent == '3' ? <PriceVolume /> : null}
           {showComponent == '4' ? <Instrument /> : null}
+          {showComponent == '5' ? <MarketBehaviour /> : null}
           {showComponent == '6' ? <WinLossExpectation /> : null}
           {showComponent == '7' ? <Liquidity /> : null}
         </div>
