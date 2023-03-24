@@ -128,7 +128,7 @@ const Compare = () => {
             }}
           >
             <button
-              className="plBtn"
+              className="left-roundedPLType"
               style={
                 applyFllter == '0'
                   ? {
@@ -156,7 +156,7 @@ const Compare = () => {
               T
             </button>
             <button
-              className="plBtn"
+              className="right-roundedPLType"
               style={
                 applyFllter == '2'
                   ? {

@@ -253,7 +253,7 @@ const Drawdown = () => {
               }}
             >
               <button
-                className="plBtn"
+                className="left-roundedPLType"
                 style={
                   applyFllter == '0'
                     ? {
@@ -281,7 +281,7 @@ const Drawdown = () => {
                 T
               </button>
               <button
-                className="plBtn"
+                className="right-roundedPLType"
                 style={
                   applyFllter == '2'
                     ? {
