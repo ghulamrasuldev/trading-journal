@@ -35,7 +35,7 @@ const Performance = () => {
               className="performanceBTnDiv"
             >
               <button
-                className="performanceBtn"
+                className="left-roundedPerformance"
                 style={
                   showComponent == '0'
                     ? {
@@ -145,7 +145,7 @@ const Performance = () => {
                 Tag BreakDown
               </button>
               <button
-                className="performanceBtn"
+                className="right-roundedPLType"
                 style={
                   showComponent == '8'
                     ? {
