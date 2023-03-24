@@ -1,19 +1,31 @@
-.performanceMain{
+.performanceMain {
+  /* border-radius:8px; */
+  border-top-right-radius: 8px;
+  border-top-left-radius: 8px;
+}
+.ReportBtns {
+  padding: 15px;
+}
+.performanceBTnDiv {
+  border-radius: 8px;
+  margin: 10px 0;
+}
+.performanceBtn {
+  padding: 15px 25px;
+  border: none;
+  border-radius: 0px;
+  cursor: pointer;
+}
 
-    /* border-radius:8px; */
-    border-top-right-radius: 8px;
-    border-top-left-radius: 8px;
+.left-roundedPerformance {
+  border-radius: 8px 0px 0px 8px;
+  padding: 15px 25px;
+  border: none;
+  cursor: pointer;
 }
-.ReportBtns{
-    padding:15px;
-}
-.performanceBTnDiv{
-    border-radius:8px;
-    margin:10px 0;
-}
-.performanceBtn{
-    padding:15px 25px;
-    border: none;
-    border-radius: 8px;
-    cursor: pointer;
+.right-roundedPerformance {
+  border-radius: 0px 8px 8px 0px;
+  padding: 15px 25px;
+  border: none;
+  cursor: pointer;
 }
