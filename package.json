@@ -25,7 +25,8 @@
     "react-images-uploading": "^3.1.7",
     "react-quill": "^2.0.0",
     "react-router-dom": "^6.8.1",
-    "react-select": "^5.7.0"
+    "react-select": "^5.7.0",
+    "react-select-currency": "^1.0.7"
   },
   "devDependencies": {
     "@types/react": "^18.0.27",
