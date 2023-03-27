@@ -15,27 +15,33 @@ import CustomButton from '../../../components/common/CustomButton';
 const PrivacyAndPublicProfile = () => {
   const mainAccordion = {
     borderRadius: '8px 8px 0px 0px',
-    marginBottom: '10px',
+    marginBottom: '30px',
     '&:before': {
       display: 'none',
     },
   };
   const accordionDetail = {
     padding: '10px 20px 10px 20px',
-    border: '1px solid rgba(226, 226, 226, 0.4)',
+    border: `1px solid ${lightTheme.borderColor}`,
     borderRadius: '0px 0px 8px 8px',
   };
   const accordionLastDetail = {
     padding: '10px 10px 10px 20px',
-    border: '1px solid rgba(226, 226, 226, 0.4)',
+    // border: '1px solid rgba(226, 226, 226, 0.4)',
+    border: `1px solid ${lightTheme.borderColor}`,
     borderRadius: '0px 0px 8px 8px',
   };
   const accordionAboveDetail = {
     padding: '5px 10px 5px 20px',
-    border: '1px solid rgba(226, 226, 226, 0.4)',
+    // border: '1px solid rgba(226, 226, 226, 0.4)',
+    border: `1px solid ${lightTheme.borderColor}`,
     borderRadius: '0px 0px 0px 0px',
   };
-
+  const typoStyling = {
+    color: `${lightTheme.headingTextColor}`,
+    fontSize: '14px',
+    fontWeight: '500',
+  };
   const accordionHeader = {
     color: `${lightTheme.headingTextColor}`,
     background: `${lightTheme.PageBackgroundColor}`,
@@ -45,20 +51,14 @@ const PrivacyAndPublicProfile = () => {
     color: `${lightTheme.textColor}`,
     padding: '0px 20px 0px 0px',
   };
-
+  const checkBoxColor = {
+    color: `${lightTheme.headingTextColor}`,
+  };
   return (
     <div>
       <Accordion elevation={0} sx={mainAccordion}>
         <AccordionSummary aria-controls="panel1a-content" id="panel1a-header" style={accordionHeader}>
-          <Typography
-            style={{
-              color: `${lightTheme.headingTextColor}`,
-              fontSize: '16px',
-              fontWeight: '500',
-            }}
-          >
-            Public Profile
-          </Typography>
+          <Typography style={typoStyling}>Public Profile</Typography>
         </AccordionSummary>
         <AccordionDetails style={accordionDetail}>
           <Typography style={accordionTypo}>
@@ -73,25 +73,9 @@ const PrivacyAndPublicProfile = () => {
           </Typography>
         </AccordionDetails>
       </Accordion>
-      <Accordion
-        elevation={0}
-        sx={mainAccordion}
-        // sx={{
-        //   '&:before': {
-        //     display: 'none',
-        //   },
-        // }}
-      >
+      <Accordion elevation={0} sx={mainAccordion}>
         <AccordionSummary aria-controls="panel1a-content" id="panel1a-header" style={accordionHeader}>
-          <Typography
-            style={{
-              color: `${lightTheme.headingTextColor}`,
-              fontSize: '16px',
-              fontWeight: '500',
-            }}
-          >
-            Trades
-          </Typography>
+          <Typography style={typoStyling}>Trades</Typography>
         </AccordionSummary>
         <AccordionDetails style={accordionAboveDetail}>
           <Typography style={accordionTypo}>
@@ -113,7 +97,9 @@ const PrivacyAndPublicProfile = () => {
                   Private
                 </p>
               </div>
-              <FormControlLabel control={<Checkbox /*checked={allChecked? true: false}*/ size="medium" />} />
+              <FormControlLabel
+                control={<Checkbox style={checkBoxColor} /*checked={allChecked? true: false}*/ size="medium" />}
+              />
             </div>
           </Typography>
         </AccordionDetails>
@@ -137,7 +123,15 @@ const PrivacyAndPublicProfile = () => {
                   Public
                 </p>
               </div>
-              <FormControlLabel control={<Checkbox /*checked={allChecked? true: false}*/ size="medium" />} />
+              <FormControlLabel
+                control={
+                  <Checkbox
+                    /*checked={allChecked? true: false}*/
+                    style={checkBoxColor}
+                    size="medium"
+                  />
+                }
+              />
             </div>
           </Typography>
         </AccordionDetails>
@@ -149,15 +143,7 @@ const PrivacyAndPublicProfile = () => {
       </Accordion>
       <Accordion elevation={0} sx={mainAccordion}>
         <AccordionSummary aria-controls="panel1a-content" id="panel1a-header" style={accordionHeader}>
-          <Typography
-            style={{
-              color: `${lightTheme.headingTextColor}`,
-              fontSize: '16px',
-              fontWeight: '500',
-            }}
-          >
-            Share URL List
-          </Typography>
+          <Typography style={typoStyling}>Share URL List</Typography>
         </AccordionSummary>
 
         <AccordionDetails style={accordionDetail}>
@@ -168,7 +154,7 @@ const PrivacyAndPublicProfile = () => {
               id="panel1a-header"
               style={accordionHeader}
             >
-              <Typography>Name</Typography>
+              <Typography style={{ fontSize: '14px', fontWeight: '400' }}>Name</Typography>
             </AccordionSummary>
 
             <AccordionDetails style={accordionDetail}>
@@ -181,15 +167,7 @@ const PrivacyAndPublicProfile = () => {
 
       <Accordion elevation={0} sx={mainAccordion}>
         <AccordionSummary aria-controls="panel1a-content" id="panel1a-header" style={accordionHeader}>
-          <Typography
-            style={{
-              color: `${lightTheme.headingTextColor}`,
-              fontSize: '16px',
-              fontWeight: '500',
-            }}
-          >
-            Trade Detail Date to Share
-          </Typography>
+          <Typography style={typoStyling}>Trade Detail Date to Share</Typography>
         </AccordionSummary>
 
         {tradeDetail &&
@@ -218,7 +196,9 @@ const PrivacyAndPublicProfile = () => {
                         {val.name}
                       </p>
                     </div>
-                    <FormControlLabel control={<Checkbox /*checked={allChecked? true: false}*/ size="medium" />} />
+                    <FormControlLabel
+                      control={<Checkbox style={checkBoxColor} /*checked={allChecked? true: false}*/ size="medium" />}
+                    />
                   </div>
                 </Typography>
               </AccordionDetails>
@@ -227,15 +207,7 @@ const PrivacyAndPublicProfile = () => {
       </Accordion>
       <Accordion elevation={0} sx={mainAccordion}>
         <AccordionSummary aria-controls="panel1a-content" id="panel1a-header" style={accordionHeader}>
-          <Typography
-            style={{
-              color: `${lightTheme.headingTextColor}`,
-              fontSize: '16px',
-              fontWeight: '500',
-            }}
-          >
-            Metrics
-          </Typography>
+          <Typography style={typoStyling}>Metrics</Typography>
         </AccordionSummary>
         <AccordionDetails style={accordionAboveDetail}>
           <Typography style={accordionTypo}>
@@ -267,7 +239,9 @@ const PrivacyAndPublicProfile = () => {
                   Group executions by the instrument when falling within a certain period of time.
                 </p>
               </div>
-              <FormControlLabel control={<Checkbox /*checked={allChecked? true: false}*/ size="medium" />} />
+              <FormControlLabel
+                control={<Checkbox style={checkBoxColor} /*checked={allChecked? true: false}*/ size="medium" />}
+              />
             </div>
           </Typography>
         </AccordionDetails>
@@ -302,7 +276,9 @@ const PrivacyAndPublicProfile = () => {
                   that are public
                 </p>
               </div>
-              <FormControlLabel control={<Checkbox /*checked={allChecked? true: false}*/ size="medium" />} />
+              <FormControlLabel
+                control={<Checkbox style={checkBoxColor} /*checked={allChecked? true: false}*/ size="medium" />}
+              />
             </div>
           </Typography>
         </AccordionDetails>
@@ -336,22 +312,16 @@ const PrivacyAndPublicProfile = () => {
                   Metric will be generated only based on public trades
                 </p>
               </div>
-              <FormControlLabel control={<Checkbox /*checked={allChecked? true: false}*/ size="medium" />} />
+              <FormControlLabel
+                control={<Checkbox style={checkBoxColor} /*checked={allChecked? true: false}*/ size="medium" />}
+              />
             </div>
           </Typography>
         </AccordionDetails>
       </Accordion>
       <Accordion elevation={0} sx={mainAccordion}>
         <AccordionSummary aria-controls="panel1a-content" id="panel1a-header" style={accordionHeader}>
-          <Typography
-            style={{
-              color: `${lightTheme.headingTextColor}`,
-              fontSize: '16px',
-              fontWeight: '500',
-            }}
-          >
-            Filtered Shared Data
-          </Typography>
+          <Typography style={typoStyling}>Filtered Shared Data</Typography>
         </AccordionSummary>
         <AccordionDetails style={accordionDetail}>
           <Typography style={accordionTypo}>
@@ -364,16 +334,8 @@ const PrivacyAndPublicProfile = () => {
       <Accordion elevation={0} sx={mainAccordion}>
         <AccordionSummary aria-controls="panel1a-content" id="panel1a-header" style={accordionHeader}>
           <div style={{ display: 'flex', flexDirection: 'column' }}>
-            <Typography
-              style={{
-                color: `${lightTheme.headingTextColor}`,
-                fontSize: '16px',
-                fontWeight: '500',
-              }}
-            >
-              Trade Table to Share
-            </Typography>
-            <p>Select which data to be shared with the wotld</p>
+            <Typography style={typoStyling}>Trade Table to Share</Typography>
+            <p style={{ fontSize: '12px', fontWeight: '400' }}>Select which data to be shared with the wotld</p>
           </div>
         </AccordionSummary>
 
@@ -403,7 +365,9 @@ const PrivacyAndPublicProfile = () => {
                         {val.name}
                       </p>
                     </div>
-                    <FormControlLabel control={<Checkbox /*checked={allChecked? true: false}*/ size="medium" />} />
+                    <FormControlLabel
+                      control={<Checkbox style={checkBoxColor} /*checked={allChecked? true: false}*/ size="medium" />}
+                    />
                   </div>
                 </Typography>
               </AccordionDetails>

@@ -27,7 +27,7 @@ const InputTextFieldButton = ({ placeholder = '', showSideButton, writable, butt
             textTransform: 'none',
             borderRadius: '0px 5px 5px 0px',
             padding: '5px 5px',
-            background: `${lightTheme.newsHeading}`,
+            background: `${lightTheme.headingTextColor}`,
             color: `${lightTheme.whiteText}`,
             cursor: 'pointer',
           }}

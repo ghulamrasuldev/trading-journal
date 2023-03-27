@@ -8,7 +8,7 @@ const CustomButton = ({ buttonTitle, disabled }) => {
       style={{
         borderRadius: '6px 6px 6px 6px',
         padding: '6px 20px',
-        background: `${lightTheme.newsHeading}`,
+        background: `${lightTheme.headingTextColor}`,
         color: `${lightTheme.whiteText}`,
         cursor: 'pointer',
         margin: '5px 0px 5px 0px',
