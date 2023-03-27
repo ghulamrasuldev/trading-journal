@@ -41,7 +41,8 @@ const TradeSetting = () => {
   };
 
   const accordianStyle = {
-    margin: "30px 0",
+    // margin: "30px 0",
+    marginBottom:'30px',
     "&:before": {
       display: "none",
     },
