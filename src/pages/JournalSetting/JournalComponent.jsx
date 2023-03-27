@@ -1,59 +1,61 @@
-import React, { useState } from 'react';
-import { Box } from '@mui/material';
-import { lightTheme } from '../../Theme/theme';
-import '../Journal/journal.css';
-import PrivacyAndPublicProfile from './PrivacyAndPublicProfile/PrivacyAndPublicProfile';
+import React, { useState } from "react";
+import { Box } from "@mui/material";
+import { lightTheme } from "../../Theme/theme";
+import "../Journal/journal.css";
+import PrivacyAndPublicProfile from "./PrivacyAndPublicProfile/PrivacyAndPublicProfile";
+import TradeSetting from "./TradeSetting/TradeSetting";
+
 const JournalComponent = ({ setNavbarTitle }) => {
-  const [showComponent, setShowComponent] = useState('0');
+  const [showComponent, setShowComponent] = useState("0");
 
   // styling
   const mainDiv = {
-    marginTop: '25px',
-    borderRadius: '8px',
+    marginTop: "25px",
+    borderRadius: "8px",
   };
   const sideBarStyle = {
     backgroundColor: `${lightTheme.ComponentBackgroundColor}`,
-    padding: '15px 15px',
-    display: 'flex',
-    flexDirection: 'column',
-    borderRadius: '8px',
-    width: '250px',
-    flex: '0 1 30%',
-    maxHeight: '550px',
+    padding: "15px 15px",
+    display: "flex",
+    flexDirection: "column",
+    borderRadius: "8px",
+    width: "250px",
+    flex: "0 1 30%",
+    maxHeight: "550px",
   };
   const sideBarContentStyle = {
     backgroundColor: `${lightTheme.ComponentBackgroundColor}`,
-    padding: '30px 30px',
-    display: 'flex',
-    flexDirection: 'column',
-    borderRadius: '8px',
-    flex: '0 1 70%',
+    padding: "30px 30px",
+    display: "flex",
+    flexDirection: "column",
+    borderRadius: "8px",
+    flex: "0 1 70%",
   };
 
   return (
     <Box sx={mainDiv}>
       <div
         style={{
-          display: 'flex',
-          flexDirection: 'row',
-          justifyContent: 'space-between',
-          columnGap: '30px',
+          display: "flex",
+          flexDirection: "row",
+          justifyContent: "space-between",
+          columnGap: "30px",
         }}
       >
         <div style={sideBarStyle}>
           <button
             className="JournalBtn"
             style={
-              showComponent == '0'
+              showComponent == "0"
                 ? {
                     color: `${lightTheme.textColor}`,
                     background: `${lightTheme.PageBackgroundColor}`,
                   }
-                : { color: `${lightTheme.textColor}`, background: 'none' }
+                : { color: `${lightTheme.textColor}`, background: "none" }
             }
             onClick={() => {
-              setShowComponent('0');
-              setNavbarTitle('Trade Setting');
+              setShowComponent("0");
+              setNavbarTitle("Trade Setting");
             }}
           >
             Trade Setting
@@ -61,16 +63,16 @@ const JournalComponent = ({ setNavbarTitle }) => {
           <button
             className="JournalBtn"
             style={
-              showComponent == '1'
+              showComponent == "1"
                 ? {
                     color: `${lightTheme.textColor}`,
                     background: `${lightTheme.PageBackgroundColor}`,
                   }
-                : { color: `${lightTheme.textColor}`, background: 'none' }
+                : { color: `${lightTheme.textColor}`, background: "none" }
             }
             onClick={() => {
-              setShowComponent('1');
-              setNavbarTitle('Privacy & Public Profile');
+              setShowComponent("1");
+              setNavbarTitle("Privacy & Public Profile");
             }}
           >
             Privacy & Public Profile
@@ -78,16 +80,16 @@ const JournalComponent = ({ setNavbarTitle }) => {
           <button
             className="JournalBtn"
             style={
-              showComponent == '2'
+              showComponent == "2"
                 ? {
                     color: `${lightTheme.textColor}`,
                     background: `${lightTheme.PageBackgroundColor}`,
                   }
-                : { color: `${lightTheme.textColor}`, background: 'none' }
+                : { color: `${lightTheme.textColor}`, background: "none" }
             }
             onClick={() => {
-              setShowComponent('2');
-              setNavbarTitle('Portfolio');
+              setShowComponent("2");
+              setNavbarTitle("Portfolio");
             }}
           >
             Portfolio
@@ -95,16 +97,16 @@ const JournalComponent = ({ setNavbarTitle }) => {
           <button
             className="JournalBtn"
             style={
-              showComponent == '3'
+              showComponent == "3"
                 ? {
                     color: `${lightTheme.textColor}`,
                     background: `${lightTheme.PageBackgroundColor}`,
                   }
-                : { color: `${lightTheme.textColor}`, background: 'none' }
+                : { color: `${lightTheme.textColor}`, background: "none" }
             }
             onClick={() => {
-              setShowComponent('3');
-              setNavbarTitle('Commissions');
+              setShowComponent("3");
+              setNavbarTitle("Commissions");
             }}
           >
             Commissions
@@ -112,16 +114,16 @@ const JournalComponent = ({ setNavbarTitle }) => {
           <button
             className="JournalBtn"
             style={
-              showComponent == '4'
+              showComponent == "4"
                 ? {
                     color: `${lightTheme.textColor}`,
                     background: `${lightTheme.PageBackgroundColor}`,
                   }
-                : { color: `${lightTheme.textColor}`, background: 'none' }
+                : { color: `${lightTheme.textColor}`, background: "none" }
             }
             onClick={() => {
-              setShowComponent('4');
-              setNavbarTitle('Fees');
+              setShowComponent("4");
+              setNavbarTitle("Fees");
             }}
           >
             Fees
@@ -129,16 +131,16 @@ const JournalComponent = ({ setNavbarTitle }) => {
           <button
             className="JournalBtn"
             style={
-              showComponent == '5'
+              showComponent == "5"
                 ? {
                     color: `${lightTheme.textColor}`,
                     background: `${lightTheme.PageBackgroundColor}`,
                   }
-                : { color: `${lightTheme.textColor}`, background: 'none' }
+                : { color: `${lightTheme.textColor}`, background: "none" }
             }
             onClick={() => {
-              setShowComponent('5');
-              setNavbarTitle('Chart Settings');
+              setShowComponent("5");
+              setNavbarTitle("Chart Settings");
             }}
           >
             Chart Settings
@@ -146,16 +148,16 @@ const JournalComponent = ({ setNavbarTitle }) => {
           <button
             className="JournalBtn"
             style={
-              showComponent == '6'
+              showComponent == "6"
                 ? {
                     color: `${lightTheme.textColor}`,
                     background: `${lightTheme.PageBackgroundColor}`,
                   }
-                : { color: `${lightTheme.textColor}`, background: 'none' }
+                : { color: `${lightTheme.textColor}`, background: "none" }
             }
             onClick={() => {
-              setShowComponent('6');
-              setNavbarTitle('Custom Spread');
+              setShowComponent("6");
+              setNavbarTitle("Custom Spread");
             }}
           >
             Custom Spread
@@ -163,16 +165,16 @@ const JournalComponent = ({ setNavbarTitle }) => {
           <button
             className="JournalBtn"
             style={
-              showComponent == '7'
+              showComponent == "7"
                 ? {
                     color: `${lightTheme.textColor}`,
                     background: `${lightTheme.PageBackgroundColor}`,
                   }
-                : { color: `${lightTheme.textColor}`, background: 'none' }
+                : { color: `${lightTheme.textColor}`, background: "none" }
             }
             onClick={() => {
-              setShowComponent('7');
-              setNavbarTitle('Trades Widgets');
+              setShowComponent("7");
+              setNavbarTitle("Trades Widgets");
             }}
           >
             Trades Widgets
@@ -180,16 +182,16 @@ const JournalComponent = ({ setNavbarTitle }) => {
           <button
             className="JournalBtn"
             style={
-              showComponent == '8'
+              showComponent == "8"
                 ? {
                     color: `${lightTheme.textColor}`,
                     background: `${lightTheme.PageBackgroundColor}`,
                   }
-                : { color: `${lightTheme.textColor}`, background: 'none' }
+                : { color: `${lightTheme.textColor}`, background: "none" }
             }
             onClick={() => {
-              setShowComponent('8');
-              setNavbarTitle('Market Replay Settings');
+              setShowComponent("8");
+              setNavbarTitle("Market Replay Settings");
             }}
           >
             Market Replay Settings
@@ -197,24 +199,25 @@ const JournalComponent = ({ setNavbarTitle }) => {
           <button
             className="JournalBtn"
             style={
-              showComponent == '9'
+              showComponent == "9"
                 ? {
                     color: `${lightTheme.textColor}`,
                     background: `${lightTheme.PageBackgroundColor}`,
                   }
-                : { color: `${lightTheme.textColor}`, background: 'none' }
+                : { color: `${lightTheme.textColor}`, background: "none" }
             }
             onClick={() => {
-              setShowComponent('9');
-              setNavbarTitle('Theme');
+              setShowComponent("9");
+              setNavbarTitle("Theme");
             }}
           >
             Theme
           </button>
         </div>
         <div style={sideBarContentStyle}>
-          <div style={{ padding: '20px', width: '70%' }}>
-            {showComponent == '1' ? <PrivacyAndPublicProfile /> : null}
+          <div style={{ padding: "20px", width: "70%" }}>
+            {showComponent == "0" ? <TradeSetting /> : null}
+            {showComponent == "1" ? <PrivacyAndPublicProfile /> : null}
           </div>
         </div>
       </div>

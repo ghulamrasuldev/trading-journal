@@ -1,0 +1,30 @@
+/* .css-sh22l5-MuiButtonBase-root-MuiAccordionSummary-root {
+    padding:0 0!important
+} */
+select::-ms-expand{
+    display:'none'
+}
+select::-webkit-outer-spin-button,
+select::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+select {
+    border: none;
+  }
+  select {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    background-image: none;
+    cursor: pointer;
+  }:focus{
+    outline:none
+  }
+
+  /* select:focus option:hover, select:active option:hover {
+    background-color: #b60f0f;
+  }
+  select.decoration option:hover { 
+    box-shadow: 0 0 10px 100px #1882A8 inset; 
+} */
