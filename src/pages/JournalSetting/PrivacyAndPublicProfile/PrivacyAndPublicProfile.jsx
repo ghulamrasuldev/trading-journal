@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import Accordion from '@mui/material/Accordion';
 import AccordionSummary from '@mui/material/AccordionSummary';
 import AccordionDetails from '@mui/material/AccordionDetails';
@@ -13,6 +13,12 @@ import InputTextField from '../../../components/common/InputTextField';
 import CustomButton from '../../../components/common/CustomButton';
 
 const PrivacyAndPublicProfile = () => {
+  const [expanded, setExpanded] = useState('panel1');
+
+  const handleChange = (panel) => (event, isExpanded) => {
+    setExpanded(isExpanded ? panel : false);
+  };
+
   const mainAccordion = {
     borderRadius: '8px 8px 0px 0px',
     marginBottom: '30px',
@@ -56,7 +62,7 @@ const PrivacyAndPublicProfile = () => {
   };
   return (
     <div>
-      <Accordion elevation={0} sx={mainAccordion}>
+      <Accordion expanded={expanded === 'panel1'} onChange={handleChange('panel1')} elevation={0} sx={mainAccordion}>
         <AccordionSummary aria-controls="panel1a-content" id="panel1a-header" style={accordionHeader}>
           <Typography style={typoStyling}>Public Profile</Typography>
         </AccordionSummary>
@@ -73,7 +79,7 @@ const PrivacyAndPublicProfile = () => {
           </Typography>
         </AccordionDetails>
       </Accordion>
-      <Accordion elevation={0} sx={mainAccordion}>
+      <Accordion expanded={expanded === 'panel2'} onChange={handleChange('panel2')} elevation={0} sx={mainAccordion}>
         <AccordionSummary aria-controls="panel1a-content" id="panel1a-header" style={accordionHeader}>
           <Typography style={typoStyling}>Trades</Typography>
         </AccordionSummary>
@@ -141,7 +147,7 @@ const PrivacyAndPublicProfile = () => {
           </Typography>
         </AccordionDetails>
       </Accordion>
-      <Accordion elevation={0} sx={mainAccordion}>
+      <Accordion expanded={expanded === 'panel3'} onChange={handleChange('panel3')} elevation={0} sx={mainAccordion}>
         <AccordionSummary aria-controls="panel1a-content" id="panel1a-header" style={accordionHeader}>
           <Typography style={typoStyling}>Share URL List</Typography>
         </AccordionSummary>
@@ -165,7 +171,7 @@ const PrivacyAndPublicProfile = () => {
         </AccordionDetails>
       </Accordion>
 
-      <Accordion elevation={0} sx={mainAccordion}>
+      <Accordion expanded={expanded === 'panel4'} onChange={handleChange('panel4')} elevation={0} sx={mainAccordion}>
         <AccordionSummary aria-controls="panel1a-content" id="panel1a-header" style={accordionHeader}>
           <Typography style={typoStyling}>Trade Detail Date to Share</Typography>
         </AccordionSummary>
@@ -205,7 +211,7 @@ const PrivacyAndPublicProfile = () => {
             );
           })}
       </Accordion>
-      <Accordion elevation={0} sx={mainAccordion}>
+      <Accordion expanded={expanded === 'panel5'} onChange={handleChange('panel5')} elevation={0} sx={mainAccordion}>
         <AccordionSummary aria-controls="panel1a-content" id="panel1a-header" style={accordionHeader}>
           <Typography style={typoStyling}>Metrics</Typography>
         </AccordionSummary>
@@ -319,7 +325,7 @@ const PrivacyAndPublicProfile = () => {
           </Typography>
         </AccordionDetails>
       </Accordion>
-      <Accordion elevation={0} sx={mainAccordion}>
+      <Accordion expanded={expanded === 'panel6'} onChange={handleChange('panel6')} elevation={0} sx={mainAccordion}>
         <AccordionSummary aria-controls="panel1a-content" id="panel1a-header" style={accordionHeader}>
           <Typography style={typoStyling}>Filtered Shared Data</Typography>
         </AccordionSummary>
@@ -331,7 +337,7 @@ const PrivacyAndPublicProfile = () => {
           </Typography>
         </AccordionDetails>
       </Accordion>
-      <Accordion elevation={0} sx={mainAccordion}>
+      <Accordion expanded={expanded === 'panel7'} onChange={handleChange('panel7')} elevation={0} sx={mainAccordion}>
         <AccordionSummary aria-controls="panel1a-content" id="panel1a-header" style={accordionHeader}>
           <div style={{ display: 'flex', flexDirection: 'column' }}>
             <Typography style={typoStyling}>Trade Table to Share</Typography>
