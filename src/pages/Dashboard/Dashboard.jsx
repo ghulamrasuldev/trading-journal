@@ -37,7 +37,7 @@ const Dashboard = () => {
             <Grid item lg={4} md={12} sm={12} sx={Graphs}>
                 <SideGraphs/>
             </Grid>
-            <Grid item lg={7} md={12} sm={12}  >
+            <Grid item lg={7.5} md={12} sm={12}  >
               <MonthlyGraph />
               <CalendarComponent/>
             </Grid>

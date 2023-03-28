@@ -12,6 +12,7 @@ export const lightTheme = {
   purpleAreaGraph: '#314473',
   greenAreaGraph: '#4EA292',
   redAreaGraph: '#EA3943',
+  netPL: '#4EA292',
   profit: '#22894E',
   loss: '#D94848',
   darkGreencolorGraph: '#22894E',

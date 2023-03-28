@@ -105,17 +105,18 @@ const DailyGraph = () => {
     // marginTop:'15px'
     borderRadius: "8px",
   };
+  const graphTitle={
+    color: `${lightTheme.headingTextColor}`,
+    fontSize: "20px",
+    fontWeight: "600",
+  }
   return (
     <div>
       <Box sx={mainDiv}>
-        <Grid container columnGap={4} rowGap={4}>
-          <Grid item lg={5.5} md={12} sm={12} sx={GridItem}>
+        <Grid container columnGap={5} rowGap={4}>
+          <Grid item lg={5.8} md={12} sm={12} sx={GridItem}>
             <p
-              style={{
-                color: `${lightTheme.headingTextColor}`,
-                fontSize: "20px",
-                fontWeight: "600",
-              }}
+              style={graphTitle}
             >
               Gross Daily P&L (Lasts 30 Trading Days)
             </p>
@@ -128,13 +129,9 @@ const DailyGraph = () => {
               />
             </div>
           </Grid>
-          <Grid item lg={5.5} md={12} sm={12} sx={GridItem}>
+          <Grid item lg={5.8} md={12} sm={12} sx={GridItem}>
             <p
-              style={{
-                color: `${lightTheme.headingTextColor}`,
-                fontSize: "20px",
-                fontWeight: "600",
-              }}
+              style={graphTitle}
             >
               Gross Daily P&L (Lasts 30 Trading Days)
             </p>

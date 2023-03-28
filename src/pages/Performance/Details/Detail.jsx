@@ -14,6 +14,16 @@ import WinLossExpectation from "./WinLossExpectation/WinLossExpectation";
 const Detail = () => {
   const [showComponent, setShowComponent] = useState("0");
 
+  // styling
+  const selected = {
+    backgroundColor: `${lightTheme.headingTextColor}`,
+    color: `${lightTheme.whiteText}`,
+  };
+  const notSelected = {
+    background: "none",
+    color: `${lightTheme.textColor}`,
+  };
+
   return (
     <div>
       <Box>
@@ -31,14 +41,7 @@ const Detail = () => {
             >
               <button
                 className="left-rounded"
-                style={
-                  showComponent == "0"
-                    ? {
-                        backgroundColor: `${lightTheme.headingTextColor}`,
-                        color: `${lightTheme.whiteText}`,
-                      }
-                    : { background: "none", color: `${lightTheme.textColor}` }
-                }
+                style={showComponent == "0" ? selected : notSelected}
                 onClick={() => setShowComponent("0")}
               >
                 Aggregate P&L
@@ -47,11 +50,8 @@ const Detail = () => {
                 className="detailBtn"
                 style={
                   showComponent == "1"
-                    ? {
-                        backgroundColor: `${lightTheme.headingTextColor}`,
-                        color: `${lightTheme.whiteText}`,
-                      }
-                    : { background: "none", color: `${lightTheme.textColor}` }
+                    ? selected
+                    : notSelected
                 }
                 onClick={() => setShowComponent("1")}
               >
@@ -61,11 +61,8 @@ const Detail = () => {
                 className="detailBtn"
                 style={
                   showComponent == "2"
-                    ? {
-                        backgroundColor: `${lightTheme.headingTextColor}`,
-                        color: `${lightTheme.whiteText}`,
-                      }
-                    : { background: "none", color: `${lightTheme.textColor}` }
+                    ? selected
+                    : notSelected
                 }
                 onClick={() => setShowComponent("2")}
               >
@@ -75,11 +72,8 @@ const Detail = () => {
                 className="detailBtn"
                 style={
                   showComponent == "3"
-                    ? {
-                        backgroundColor: `${lightTheme.headingTextColor}`,
-                        color: `${lightTheme.whiteText}`,
-                      }
-                    : { background: "none", color: `${lightTheme.textColor}` }
+                    ? selected
+                    : notSelected
                 }
                 onClick={() => setShowComponent("3")}
               >
@@ -89,11 +83,8 @@ const Detail = () => {
                 className="detailBtn"
                 style={
                   showComponent == "4"
-                    ? {
-                        backgroundColor: `${lightTheme.headingTextColor}`,
-                        color: `${lightTheme.whiteText}`,
-                      }
-                    : { background: "none", color: `${lightTheme.textColor}` }
+                    ? selected
+                    : notSelected
                 }
                 onClick={() => setShowComponent("4")}
               >
@@ -103,11 +94,8 @@ const Detail = () => {
                 className="detailBtn"
                 style={
                   showComponent == "5"
-                    ? {
-                        backgroundColor: `${lightTheme.headingTextColor}`,
-                        color: `${lightTheme.whiteText}`,
-                      }
-                    : { background: "none", color: `${lightTheme.textColor}` }
+                    ? selected
+                    : notSelected
                 }
                 onClick={() => setShowComponent("5")}
               >
@@ -117,11 +105,8 @@ const Detail = () => {
                 className="detailBtn"
                 style={
                   showComponent == "6"
-                    ? {
-                        backgroundColor: `${lightTheme.headingTextColor}`,
-                        color: `${lightTheme.whiteText}`,
-                      }
-                    : { background: "none", color: `${lightTheme.textColor}` }
+                    ? selected
+                    : notSelected
                 }
                 onClick={() => setShowComponent("6")}
               >
@@ -131,11 +116,8 @@ const Detail = () => {
                 className="right-rounded"
                 style={
                   showComponent == "7"
-                    ? {
-                        backgroundColor: `${lightTheme.headingTextColor}`,
-                        color: `${lightTheme.whiteText}`,
-                      }
-                    : { background: "none", color: `${lightTheme.textColor}` }
+                    ? selected
+                    : notSelected
                 }
                 onClick={() => setShowComponent("7")}
               >
@@ -149,10 +131,10 @@ const Detail = () => {
           {showComponent == "1" ? <PerTradeAverage /> : null}
           {showComponent == "2" ? <DaysAndTimes /> : null}
           {showComponent == "3" ? <PriceVolume /> : null}
-          {showComponent == "7" ? <Liquidity /> : null}
           {showComponent == "4" ? <Instrument /> : null}
           {showComponent == "5" ? <MarketBehaviour /> : null}
           {showComponent == "6" ? <WinLossExpectation /> : null}
+          {showComponent == "7" ? <Liquidity /> : null}
         </div>
       </Box>
     </div>
