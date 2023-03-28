@@ -1,9 +1,33 @@
-import React from 'react'
+import React, { useState } from 'react';
+import CustomModal from '../../../components/common/CustomModal';
+import CustomButton from '../../../components/common/CustomButton';
+import ShareWithAnyOne from './ShareWithAnyOne';
+import ApplyCommission from './ApplyCommission';
+import SettingAndConfigurations from './SettingAndConfigurations';
 
 const Commission = () => {
-  return (
-    <div>Commission</div>
-  )
-}
+  const [modalOpen, setModalOpen] = useState(false);
 
-export default Commission
+  const handleModalOpen = () => {
+    setModalOpen(true);
+  };
+
+  const handleModalClose = () => {
+    setModalOpen(false);
+  };
+
+  return (
+    <>
+      <CustomModal
+        modalHeading="Configure Automatic Commissions"
+        open={modalOpen}
+        handleClose={handleModalClose}
+        components={[<ShareWithAnyOne />, <ApplyCommission />, <SettingAndConfigurations />]}
+      />
+
+      <button onClick={handleModalOpen}>open</button>
+    </>
+  );
+};
+
+export default Commission;

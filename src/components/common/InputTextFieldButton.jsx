@@ -30,6 +30,7 @@ const InputTextFieldButton = ({ placeholder = '', showSideButton, writable, butt
             background: `${lightTheme.headingTextColor}`,
             color: `${lightTheme.whiteText}`,
             cursor: 'pointer',
+            border: 'none',
           }}
         >
           {buttonTitle}
