@@ -7,6 +7,7 @@ import Modal from "@mui/material/Modal";
 import { HiOutlineMenuAlt2 } from "react-icons/hi";
 import Select from "react-select";
 import { Divider, Grid } from "@mui/material";
+import navMenu from '../../../assets/navMenu.png'
 
 const style = {
   position: "absolute",
@@ -46,11 +47,7 @@ const Filter = () => {
   return (
     <div>
       <Button onClick={handleOpen} sx={filterBtn}>
-        <HiOutlineMenuAlt2
-          size={25}
-          style={{ cursor: "pointer" }}
-          color="gray"
-        />
+        <img src={navMenu} alt="menuIcon" height={15} style={{cursor:'pointer',marginRight:'20px'}}/>
       </Button>
       <Modal
         open={open}

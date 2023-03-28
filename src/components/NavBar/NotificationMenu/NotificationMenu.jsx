@@ -43,7 +43,7 @@ const NotificationMenu = () => {
         <Badge
           badgeContent={notificationArray.length}
           color="error"
-          style={{ paddingLeft: "10px", marginRight: "5px", cursor: "pointer" }}
+          style={{ paddingLeft: "10px", marginRight: "20px", cursor: "pointer" }}
         >
           <AiOutlineBell size={20} color="gray" onClick={() => openModal()} />
         </Badge>

@@ -39,6 +39,7 @@ import Performance from "../pages/Performance/Performance";
 import Journal from "../pages/Journal/Journal";
 import "./App.css";
 import News from "../pages/News/News";
+import DailyStats from '../pages/DailyStatus/DailyStats/DailyStats'
 
 const App = () => {
   return (
@@ -146,6 +147,7 @@ const App = () => {
           <Route path="/performance" element={<Performance />} />
           <Route path="/journal" element={<Journal />} />
           <Route path="/news" element={<News />} />
+          <Route path="/dailyStats" element={<DailyStats />} />
         </Routes>
       </Sidebar>
     </Router>

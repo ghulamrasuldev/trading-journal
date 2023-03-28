@@ -365,6 +365,13 @@ const DaysAndTimes = () => {
     borderRadius: '8px',
     padding: '10px 10px',
   };
+  const graphTitle={
+    color: `${lightTheme.headingTextColor}`,
+    fontWeight: '500',
+    fontSize: '16px',
+    marginLeft: '20px',
+    marginTop: '10px',
+  }
 
   return (
     <div>
@@ -372,13 +379,7 @@ const DaysAndTimes = () => {
         <Grid container columnGap={4} rowGap={4} my={3}>
           <Grid item lg={5.5} md={12} sm={12} sx={gridItem}>
             <p
-              style={{
-                color: `${lightTheme.headingTextColor}`,
-                fontWeight: '500',
-                fontSize: '16px',
-                marginLeft: '20px',
-                marginTop: '10px',
-              }}
+              style={graphTitle}
             >
               Trade Distribution by day of week
             </p>
@@ -391,13 +392,7 @@ const DaysAndTimes = () => {
           </Grid>
           <Grid item lg={5.5} md={12} sm={12} sx={gridItem}>
             <p
-              style={{
-                color: `${lightTheme.headingTextColor}`,
-                fontWeight: '500',
-                fontSize: '16px',
-                marginLeft: '20px',
-                marginTop: '10px',
-              }}
+              style={graphTitle}
             >
               Performance by day of week
             </p>
@@ -407,13 +402,7 @@ const DaysAndTimes = () => {
         <Grid container columnGap={4} rowGap={4} my={3}>
           <Grid item lg={5.5} md={12} sm={12} sx={gridItem}>
             <p
-              style={{
-                color: `${lightTheme.headingTextColor}`,
-                fontWeight: '500',
-                fontSize: '16px',
-                marginLeft: '20px',
-                marginTop: '10px',
-              }}
+              style={graphTitle}
             >
               Trade Distribution By Month Of Year
             </p>
@@ -426,13 +415,7 @@ const DaysAndTimes = () => {
           </Grid>
           <Grid item lg={5.5} md={12} sm={12} sx={gridItem}>
             <p
-              style={{
-                color: `${lightTheme.headingTextColor}`,
-                fontWeight: '500',
-                fontSize: '16px',
-                marginLeft: '20px',
-                marginTop: '10px',
-              }}
+              style={graphTitle}
             >
               Performance By Month Of Year
             </p>
@@ -447,13 +430,7 @@ const DaysAndTimes = () => {
         <Grid container columnGap={4} rowGap={4} my={3}>
           <Grid item lg={5.5} md={12} sm={12} sx={gridItem}>
             <p
-              style={{
-                color: `${lightTheme.headingTextColor}`,
-                fontWeight: '500',
-                fontSize: '16px',
-                marginLeft: '20px',
-                marginTop: '10px',
-              }}
+              style={graphTitle}
             >
               Trade Distribution by intraday Duration
             </p>
@@ -466,13 +443,7 @@ const DaysAndTimes = () => {
           </Grid>
           <Grid item lg={5.5} md={12} sm={12} sx={gridItem}>
             <p
-              style={{
-                color: `${lightTheme.headingTextColor}`,
-                fontWeight: '500',
-                fontSize: '16px',
-                marginLeft: '20px',
-                marginTop: '10px',
-              }}
+              style={graphTitle}
             >
               Trade Distribution by intraday Duration
             </p>
