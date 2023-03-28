@@ -163,7 +163,7 @@ const TopGraphs = () => {
                 />
               </div>
             </Grid>
-            <Grid item lg={2} md={12} sm={12} rowGap={4} className="rMultipleAndOpen">
+            <Grid item lg={2.5} md={12} sm={12} rowGap={4} className="rMultipleAndOpen">
               <div className="rMultipleMain">
                 <p className="rMultiple" style={{color:`${lightTheme.headingTextColor}`}}>R. Multiple</p>
                 <div>
