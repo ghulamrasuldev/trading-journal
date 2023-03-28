@@ -1,0 +1,7 @@
+.modalClass::-webkit-scrollbar {
+  display: none;
+}
+.modalClass {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}

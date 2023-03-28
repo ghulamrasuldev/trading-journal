@@ -33,6 +33,8 @@ export const lightTheme = {
   staticGroupOne: '#5072C0',
   staticGroupTwo: '#FF9600',
   badgeBackColor: '#F0F0F0',
+  badgeBackColorRGBA: 'rgba(240, 240, 240, 0.5)',
+  lightgrey: '#BFBFBF',
 };
 export const darkTheme = {
   ComponentBackgroundColor: '#022658',

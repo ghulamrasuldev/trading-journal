@@ -5,6 +5,7 @@ import '../Journal/journal.css';
 import PrivacyAndPublicProfile from './PrivacyAndPublicProfile/PrivacyAndPublicProfile';
 import TradeSetting from './TradeSetting/TradeSetting';
 import Portfolio from './Portfolio/Portfolio';
+import Commission from './Commision/Commission';
 
 const JournalComponent = ({ setNavbarTitle }) => {
   const [showComponent, setShowComponent] = useState('0');
@@ -221,6 +222,7 @@ const JournalComponent = ({ setNavbarTitle }) => {
             {showComponent == '1' ? <PrivacyAndPublicProfile /> : null}
           </div>
           <div>{showComponent == '2' ? <Portfolio /> : null}</div>
+          <div>{showComponent == '3' ? <Commission /> : null}</div>
         </div>
       </div>
     </Box>
