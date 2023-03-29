@@ -158,7 +158,6 @@ const [showLock, setShowLock] = useState(true);
   const resetBtn={
     color: `${lightTheme.headingTextColor}`,
     backgroundColor: `${lightTheme.ComponentBackgroundColor}`,
-    border: "none",
     borderRadius: "8px",
     padding: "10px 0",
     width: "130px",

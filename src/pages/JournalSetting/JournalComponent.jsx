@@ -33,27 +33,30 @@ const JournalComponent = ({ setNavbarTitle }) => {
     borderRadius: '8px',
     flex: '0 1 70%',
   };
+  const mainJournalCom={
+    display: 'flex',
+    flexDirection: 'row',
+    justifyContent: 'space-between',
+    columnGap: '30px',
+  }
+  const selected={
+    color: `${lightTheme.textColor}`,
+    background: `${lightTheme.PageBackgroundColor}`,
+  }
 
+  const notSelected={ color: `${lightTheme.textColor}`, background: 'none' }
   return (
     <Box sx={mainDiv}>
       <div
-        style={{
-          display: 'flex',
-          flexDirection: 'row',
-          justifyContent: 'space-between',
-          columnGap: '30px',
-        }}
+        style={mainJournalCom}
       >
         <div style={sideBarStyle}>
           <button
             className="JournalBtn"
             style={
               showComponent == '0'
-                ? {
-                    color: `${lightTheme.textColor}`,
-                    background: `${lightTheme.PageBackgroundColor}`,
-                  }
-                : { color: `${lightTheme.textColor}`, background: 'none' }
+                ? selected
+                : notSelected
             }
             onClick={() => {
               setShowComponent('0');
@@ -66,11 +69,8 @@ const JournalComponent = ({ setNavbarTitle }) => {
             className="JournalBtn"
             style={
               showComponent == '1'
-                ? {
-                    color: `${lightTheme.textColor}`,
-                    background: `${lightTheme.PageBackgroundColor}`,
-                  }
-                : { color: `${lightTheme.textColor}`, background: 'none' }
+                ? selected
+                : notSelected
             }
             onClick={() => {
               setShowComponent('1');
@@ -83,11 +83,8 @@ const JournalComponent = ({ setNavbarTitle }) => {
             className="JournalBtn"
             style={
               showComponent == '2'
-                ? {
-                    color: `${lightTheme.textColor}`,
-                    background: `${lightTheme.PageBackgroundColor}`,
-                  }
-                : { color: `${lightTheme.textColor}`, background: 'none' }
+                ? selected
+                : notSelected
             }
             onClick={() => {
               setShowComponent('2');
@@ -100,11 +97,8 @@ const JournalComponent = ({ setNavbarTitle }) => {
             className="JournalBtn"
             style={
               showComponent == '3'
-                ? {
-                    color: `${lightTheme.textColor}`,
-                    background: `${lightTheme.PageBackgroundColor}`,
-                  }
-                : { color: `${lightTheme.textColor}`, background: 'none' }
+                ? selected
+                : notSelected
             }
             onClick={() => {
               setShowComponent('3');
@@ -117,11 +111,8 @@ const JournalComponent = ({ setNavbarTitle }) => {
             className="JournalBtn"
             style={
               showComponent == '4'
-                ? {
-                    color: `${lightTheme.textColor}`,
-                    background: `${lightTheme.PageBackgroundColor}`,
-                  }
-                : { color: `${lightTheme.textColor}`, background: 'none' }
+                ? selected
+                : notSelected
             }
             onClick={() => {
               setShowComponent('4');
@@ -134,11 +125,8 @@ const JournalComponent = ({ setNavbarTitle }) => {
             className="JournalBtn"
             style={
               showComponent == '5'
-                ? {
-                    color: `${lightTheme.textColor}`,
-                    background: `${lightTheme.PageBackgroundColor}`,
-                  }
-                : { color: `${lightTheme.textColor}`, background: 'none' }
+                ? selected
+                : notSelected
             }
             onClick={() => {
               setShowComponent('5');
@@ -151,11 +139,8 @@ const JournalComponent = ({ setNavbarTitle }) => {
             className="JournalBtn"
             style={
               showComponent == '6'
-                ? {
-                    color: `${lightTheme.textColor}`,
-                    background: `${lightTheme.PageBackgroundColor}`,
-                  }
-                : { color: `${lightTheme.textColor}`, background: 'none' }
+                ? selected
+                : notSelected
             }
             onClick={() => {
               setShowComponent('6');
@@ -168,11 +153,8 @@ const JournalComponent = ({ setNavbarTitle }) => {
             className="JournalBtn"
             style={
               showComponent == '7'
-                ? {
-                    color: `${lightTheme.textColor}`,
-                    background: `${lightTheme.PageBackgroundColor}`,
-                  }
-                : { color: `${lightTheme.textColor}`, background: 'none' }
+                ? selected
+                : notSelected
             }
             onClick={() => {
               setShowComponent('7');
@@ -185,11 +167,8 @@ const JournalComponent = ({ setNavbarTitle }) => {
             className="JournalBtn"
             style={
               showComponent == '8'
-                ? {
-                    color: `${lightTheme.textColor}`,
-                    background: `${lightTheme.PageBackgroundColor}`,
-                  }
-                : { color: `${lightTheme.textColor}`, background: 'none' }
+                ? selected
+                : notSelected
             }
             onClick={() => {
               setShowComponent('8');
@@ -202,11 +181,8 @@ const JournalComponent = ({ setNavbarTitle }) => {
             className="JournalBtn"
             style={
               showComponent == '9'
-                ? {
-                    color: `${lightTheme.textColor}`,
-                    background: `${lightTheme.PageBackgroundColor}`,
-                  }
-                : { color: `${lightTheme.textColor}`, background: 'none' }
+                ? selected
+                : notSelected
             }
             onClick={() => {
               setShowComponent('9');
