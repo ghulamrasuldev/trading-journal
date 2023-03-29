@@ -9,7 +9,7 @@ import { lightTheme } from '../../Theme/theme';
 const NavBar = ({ name }) => {
   const BoxStyle = {
     width: '100%',
-    height: 62,
+    height: 50,
     backgroundColor: `${lightTheme.ComponentBackgroundColor}`,
     boxShadow: 'rgba(99, 99, 99, 0.2) 0px 2px 8px 0px',
     borderRadius: '10px',
