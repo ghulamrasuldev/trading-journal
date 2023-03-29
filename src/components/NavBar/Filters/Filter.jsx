@@ -56,13 +56,14 @@ const Filter = () => {
   const id = open ? 'simple-popover' : undefined;
 
   return (
-    <div>
+    <>
       <Badge
         aria-describedby={id}
         variant="contained"
         onClick={handleOpen}
         color="error"
-        style={{ paddingLeft: '10px', marginRight: '20px', cursor: 'pointer' }}
+        style={{ paddingLeft: '10px', cursor: 'pointer' }}
+        // style={{ paddingLeft: '10px', marginRight: '20px', cursor: 'pointer' }}
       >
         <img src={navMenu} alt="menuIcon" height={15} style={{ cursor: 'pointer', marginRight: '20px' }} />
       </Badge>
@@ -139,7 +140,7 @@ const Filter = () => {
           </div>
         </div>
       </Popover>
-    </div>
+    </>
   );
 };
 

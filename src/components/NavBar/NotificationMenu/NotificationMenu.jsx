@@ -36,14 +36,15 @@ const NotificationMenu = () => {
   const open = Boolean(anchorEl);
   const id = open ? 'simple-popover' : undefined;
   return (
-    <div>
+    <>
       <Badge
         aria-describedby={id}
         variant="contained"
         onClick={handleOpen}
         badgeContent={notificationArray.length}
         color="error"
-        style={{ paddingLeft: '10px', marginRight: '20px', cursor: 'pointer' }}
+        style={{ marginRight: '30px', cursor: 'pointer' }}
+        // style={{ paddingLeft: '10px', marginRight: '20px', cursor: 'pointer' }}
       >
         <AiOutlineBell size={20} color="gray" />
       </Badge>
@@ -89,7 +90,7 @@ const NotificationMenu = () => {
           })}
         </div>
       </Popover>
-    </div>
+    </>
   );
 };
 
