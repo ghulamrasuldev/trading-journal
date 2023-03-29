@@ -1,7 +1,16 @@
-.modalClass::-webkit-scrollbar {
-  display: none;
-}
 .modalClass {
   -ms-overflow-style: none;
   scrollbar-width: none;
+}
+
+.modalClass::-webkit-scrollbar {
+  width: 10px;
+}
+
+.modalClass::-webkit-scrollbar-thumb {
+  background-color: #bfbfbf;
+  border-radius: 20px;
+}
+.modalClass::-webkit-scrollbar-button {
+  height: 25px;
 }

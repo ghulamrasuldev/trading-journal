@@ -1,78 +1,78 @@
-.allFilters{
-    border:1px solid #E2E2E2;
-    border-radius:8px;
-    margin:15px;
-    padding-top:50px;
-    /* text-align: center; */
-    padding-left:25px;
-    padding-bottom:15px;
+.allFilters {
+  border: 1px solid rgba(0, 0, 0, 0.05);
+  border-radius: 8px;
+  margin: 15px;
+  padding-top: 50px;
+  /* text-align: center; */
+  padding-left: 25px;
+  padding-bottom: 15px;
 }
-.symbolFilter{
-    width:93%;
-    margin-bottom:10px;
+.symbolFilter {
+  width: 93%;
+  margin-bottom: 10px;
 }
-.filter{
-    margin:15px 0;
+.filter {
+  margin: 15px 0;
 }
-.noFilter{
-width:40%;
-/* float:right; */
+.noFilter {
+  width: 40%;
+  /* float:right; */
 }
-.filterBtns{
-    display: flex;
-    justify-content: flex-end;
-    /* border:1px solid red; */
-    width:93%;
+.filterBtns {
+  display: flex;
+  justify-content: flex-end;
+  /* border:1px solid red; */
+  width: 93%;
 }
-.clearFilter{
-    padding:10px 15px;
-    color:#636578;
-    background-color:white;
-    border:1px solid #e2e2e2;
-    border-radius: 8px;
-    cursor: pointer;
-    margin-right:10px;
+.clearFilter {
+  padding: 10px 15px;
+  color: #636578;
+  background-color: white;
+  border: 1px solid #e2e2e2;
+  border-radius: 8px;
+  cursor: pointer;
+  margin-right: 10px;
 }
-.clearFilter:hover{
-    color:white;
-    background-color:#022658;
-    border:none;
+.clearFilter:hover {
+  color: white;
+  background-color: #022658;
+  border: none;
 }
-.applyFilter{
-    padding:10px 15px;
-    color:white;
-    background-color:#022658;
-    border:none;
-    border-radius: 8px;
-    cursor: pointer;
+.applyFilter {
+  padding: 10px 15px;
+  color: white;
+  background-color: #022658;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
 }
-.applyFilter:hover{
-    color:#636578;
-    background-color:white;
-    border:1px solid #e2e2e2;
+.applyFilter:hover {
+  color: #636578;
+  background-color: white;
+  border: 1px solid #e2e2e2;
 }
 
-@media only screen and (min-width:1440px) {
-    .filterBox{
-        position: absolute;
-        top:40%!important;
-        left:73%!important;
-        /* border:3px solid black */
-    }
+@media only screen and (min-width: 1440px) {
+  .filterBox {
+    position: absolute;
+    top: 40% !important;
+    left: 73% !important;
+    /* border:3px solid black */
+  }
 }
-@media only screen and (max-width:1024px) {
-    .filterBox{
-        position: absolute;
-        top:56%!important;
-        left:63%!important;
-        /* border:3px solid black */
-    }
+@media only screen and (max-width: 1024px) {
+  .filterBox {
+    position: absolute;
+    top: 56% !important;
+    left: 63% !important;
+    /* border:3px solid black */
+  }
 }
-@media only screen and (min-width:2560px) {
-    .filterBox{
-        position: absolute;
-        top:23%!important;
-        left:85%!important;
-        /* border:3px solid black */
-    }
+@media only screen and (min-width: 2560px) {
+  .filterBox {
+    position: absolute;
+    top: 23% !important;
+    left: 85% !important;
+    /* border:3px solid black */
+  }
 }
