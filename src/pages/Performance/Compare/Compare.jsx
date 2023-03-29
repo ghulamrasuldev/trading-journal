@@ -88,37 +88,44 @@ const Compare = () => {
     backgroundColor: `${lightTheme.ComponentBackgroundColor}`,
     borderRadius: '8px',
   };
-
+  const silverGold={
+    fontSize: '18px',
+    fontWeight: '500',
+    color: `${lightTheme.textColor}`,
+    textAlign: 'center',
+    padding: '5px 0',
+  }
+  const plMain={
+    display: 'flex',
+    justifyContent: 'flex-end',
+    alignItems: 'center',
+    padding: '10px 20px',
+  }
+  const plType={
+    color: `${lightTheme.headingTextColor}`,
+    fontWeight: '500',
+    fontSize: '14px',
+  }
+  const selected={
+    backgroundColor: `${lightTheme.headingTextColor}`,
+    color: `${lightTheme.whiteText}`,
+  }
+  const notSelected={ background: 'none', color: `${lightTheme.textColor}` }
   return (
     <div>
       <Box sx={mainDiv}>
         <p
-          style={{
-            fontSize: '18px',
-            fontWeight: '500',
-            color: `${lightTheme.textColor}`,
-            textAlign: 'center',
-            padding: '5px 0',
-          }}
+          style={silverGold}
         >
           These reports are only available for silver and gold users.
           <span style={{ color: `${lightTheme.headingTextColor}` }}>Upgrade now!</span>
         </p>
         {/* P & L type filters button */}
         <div
-          style={{
-            display: 'flex',
-            justifyContent: 'flex-end',
-            alignItems: 'center',
-            padding: '10px 20px',
-          }}
+          style={plMain}
         >
           <p
-            style={{
-              color: `${lightTheme.headingTextColor}`,
-              fontWeight: '500',
-              fontSize: '14px',
-            }}
+            style={plType}
           >
             P&L Type :
           </p>
@@ -132,11 +139,8 @@ const Compare = () => {
               className="left-roundedPLType"
               style={
                 applyFllter == '0'
-                  ? {
-                      backgroundColor: `${lightTheme.headingTextColor}`,
-                      color: `${lightTheme.whiteText}`,
-                    }
-                  : { background: 'none', color: `${lightTheme.textColor}` }
+                  ? selected
+                  : notSelected
               }
               onClick={() => setApplyFilter('0')}
             >
@@ -146,11 +150,8 @@ const Compare = () => {
               className="plBtn"
               style={
                 applyFllter == '1'
-                  ? {
-                      backgroundColor: `${lightTheme.headingTextColor}`,
-                      color: `${lightTheme.whiteText}`,
-                    }
-                  : { background: 'none', color: `${lightTheme.textColor}` }
+                  ? selected
+                  : notSelected
               }
               onClick={() => setApplyFilter('1')}
             >
@@ -160,11 +161,8 @@ const Compare = () => {
               className="right-roundedPLType"
               style={
                 applyFllter == '2'
-                  ? {
-                      backgroundColor: `${lightTheme.headingTextColor}`,
-                      color: `${lightTheme.whiteText}`,
-                    }
-                  : { background: 'none', color: `${lightTheme.textColor}` }
+                  ? selected
+                  : notSelected
               }
               onClick={() => setApplyFilter('2')}
             >
@@ -199,11 +197,8 @@ const Compare = () => {
                 className="left-rounded"
                 style={
                   showComponent == '0'
-                    ? {
-                        backgroundColor: `${lightTheme.headingTextColor}`,
-                        color: `${lightTheme.whiteText}`,
-                      }
-                    : { background: 'none', color: `${lightTheme.textColor}` }
+                    ? selected
+                    : notSelected
                 }
                 onClick={() => setShowComponent('0')}
               >
@@ -213,11 +208,8 @@ const Compare = () => {
                 className="winlossBtn"
                 style={
                   showComponent == '1'
-                    ? {
-                        backgroundColor: `${lightTheme.headingTextColor}`,
-                        color: `${lightTheme.whiteText}`,
-                      }
-                    : { background: 'none', color: `${lightTheme.textColor}` }
+                    ? selected
+                    : notSelected
                 }
                 onClick={() => setShowComponent('1')}
               >
@@ -227,11 +219,8 @@ const Compare = () => {
                 className="winlossBtn"
                 style={
                   showComponent == '2'
-                    ? {
-                        backgroundColor: `${lightTheme.headingTextColor}`,
-                        color: `${lightTheme.whiteText}`,
-                      }
-                    : { background: 'none', color: `${lightTheme.textColor}` }
+                    ? selected
+                    : notSelected
                 }
                 onClick={() => setShowComponent('2')}
               >
@@ -241,11 +230,8 @@ const Compare = () => {
                 className="winlossBtn"
                 style={
                   showComponent == '3'
-                    ? {
-                        backgroundColor: `${lightTheme.headingTextColor}`,
-                        color: `${lightTheme.whiteText}`,
-                      }
-                    : { background: 'none', color: `${lightTheme.textColor}` }
+                    ? selected
+                    : notSelected
                 }
                 onClick={() => setShowComponent('3')}
               >
@@ -255,11 +241,8 @@ const Compare = () => {
                 className="winlossBtn"
                 style={
                   showComponent == '4'
-                    ? {
-                        backgroundColor: `${lightTheme.headingTextColor}`,
-                        color: `${lightTheme.whiteText}`,
-                      }
-                    : { background: 'none', color: `${lightTheme.textColor}` }
+                    ? selected
+                    : notSelected
                 }
                 onClick={() => setShowComponent('4')}
               >
@@ -269,11 +252,8 @@ const Compare = () => {
                 className="winlossBtn"
                 style={
                   showComponent == '5'
-                    ? {
-                        backgroundColor: `${lightTheme.headingTextColor}`,
-                        color: `${lightTheme.whiteText}`,
-                      }
-                    : { background: 'none', color: `${lightTheme.textColor}` }
+                    ? selected
+                    : notSelected
                 }
                 onClick={() => setShowComponent('5')}
               >
@@ -283,11 +263,8 @@ const Compare = () => {
                 className="winlossBtn"
                 style={
                   showComponent == '6'
-                    ? {
-                        backgroundColor: `${lightTheme.headingTextColor}`,
-                        color: `${lightTheme.whiteText}`,
-                      }
-                    : { background: 'none', color: `${lightTheme.textColor}` }
+                    ? selected
+                    : notSelected
                 }
                 onClick={() => setShowComponent('6')}
               >
@@ -297,11 +274,8 @@ const Compare = () => {
                 className="right-rounded"
                 style={
                   showComponent == '7'
-                    ? {
-                        backgroundColor: `${lightTheme.headingTextColor}`,
-                        color: `${lightTheme.whiteText}`,
-                      }
-                    : { background: 'none', color: `${lightTheme.textColor}` }
+                    ? selected
+                    : notSelected
                 }
                 onClick={() => setShowComponent('7')}
               >
