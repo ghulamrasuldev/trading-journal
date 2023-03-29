@@ -10,12 +10,11 @@ import { Badge, Divider, Grid, Popover } from '@mui/material';
 import navMenu from '../../../assets/navMenu.png';
 import SecondaryButton from '../../common/SecondaryButton';
 import PrimaryButton from '../../common/PrimaryButton';
+import CustomSelect from '../../common/CustomSelect';
 
 const filterBtn = {
-  // border: '1px solid black',
   padding: '0!important',
   minWidth: '10px!important',
-  // marginLeft:'10px'
 };
 const notificationMenuStyling = {
   maxWidth: '440px',
@@ -25,6 +24,24 @@ const options = [
   { value: 'chocolate', label: 'Chocolate' },
   { value: 'strawberry', label: 'Strawberry' },
   { value: 'vanilla', label: 'Vanilla' },
+];
+
+const symbolOptions = [
+  { value: 'Symbol', label: 'Symbol' },
+  { value: 'strawberry', label: 'Strawberry' },
+  { value: 'vanilla', label: 'Vanilla' },
+];
+const mutualOptionsLeft = [
+  { value: 'Open/Closed', label: 'Open/Closed' },
+  { value: 'Setups', label: 'Setups' },
+  { value: 'Custom', label: 'Custom' },
+  { value: 'Open/Closed', label: 'Open/Closed' },
+];
+const mutualOptionsRight = [
+  { value: 'Mistake', label: 'Mistake' },
+  { value: 'Open/Closed', label: 'Open/Closed' },
+  { value: 'Status', label: 'Status' },
+  { value: 'Side', label: 'Side' },
 ];
 
 const Filter = () => {
@@ -37,7 +54,7 @@ const Filter = () => {
   };
   const open = Boolean(anchorEl);
   const id = open ? 'simple-popover' : undefined;
-  const [selectedOption, setSelectedOption] = useState(null);
+
   return (
     <div>
       <Badge
@@ -79,10 +96,7 @@ const Filter = () => {
               justifyContent: 'flex-end',
             }}
           >
-            <Select
-              defaultValue={selectedOption}
-              onChange={setSelectedOption}
-              options={options}
+            <CustomSelect
               className="noFilter"
               placeholder={
                 <div style={{ display: 'flex', alignItems: 'center' }}>
@@ -90,23 +104,25 @@ const Filter = () => {
                   <p style={{ paddingLeft: '5px', fontSize: '15px' }}>No Filter</p>
                 </div>
               }
-              isSearchable={false}
+              options={options}
             />
           </div>
           <div className="allFilters">
             <div>
-              <Select className="symbolFilter" placeholder="Symbol" />
+              <CustomSelect className="symbolFilter" options={symbolOptions} defaultValue={[symbolOptions[0]]} />
             </div>
             <Grid container columnGap={5}>
               <Grid item lg={5}>
-                <Select className="filter" placeholder="Setups" />
-                <Select className="filter" placeholder="Open/Closed" />
-                <Select className="filter" placeholder="Custom" />
+                <CustomSelect className="filter" options={mutualOptionsLeft} defaultValue={[mutualOptionsLeft[0]]} />
+                <CustomSelect className="filter" options={mutualOptionsLeft} defaultValue={[mutualOptionsLeft[1]]} />
+                <CustomSelect className="filter" options={mutualOptionsLeft} defaultValue={[mutualOptionsLeft[2]]} />
+                <CustomSelect className="filter" options={mutualOptionsLeft} defaultValue={[mutualOptionsLeft[3]]} />
               </Grid>
               <Grid item lg={5}>
-                <Select className="filter" placeholder="Status" />
-                <Select className="filter" placeholder="Open/Closed" />
-                <Select className="filter" placeholder="Side" />
+                <CustomSelect className="filter" options={mutualOptionsRight} defaultValue={[mutualOptionsRight[0]]} />
+                <CustomSelect className="filter" options={mutualOptionsRight} defaultValue={[mutualOptionsRight[1]]} />
+                <CustomSelect className="filter" options={mutualOptionsRight} defaultValue={[mutualOptionsRight[2]]} />
+                <CustomSelect className="filter" options={mutualOptionsRight} defaultValue={[mutualOptionsRight[3]]} />
               </Grid>
             </Grid>
             <div
