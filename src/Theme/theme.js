@@ -2,7 +2,9 @@ export const lightTheme = {
   ComponentBackgroundColor: 'white',
   whiteText: 'white',
   PageBackgroundColor: '#E2E2E2',
+  lightPageBackground: 'rgba(226, 226, 226, 0.4)',
   hoverColor: '#E2E2E2',
+  userPost: '#B9B9C3',
   sidebarArrow: '#022658',
   headingTextColor: '#022658',
   textColor: '#636578',
@@ -36,6 +38,8 @@ export const lightTheme = {
   badgeBackColor: '#F0F0F0',
   badgeBackColorRGBA: 'rgba(240, 240, 240, 0.5)',
   lightgrey: '#BFBFBF',
+  avatarBackground: '#7367F0',
+  avatarBackgroundRGBA: 'rgba(115, 103, 240, 0.5)',
 };
 export const darkTheme = {
   ComponentBackgroundColor: '#022658',

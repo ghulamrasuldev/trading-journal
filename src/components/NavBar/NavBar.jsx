@@ -1,45 +1,47 @@
 import React from 'react';
 import { Box, Grid, Badge, Stack, Avatar } from '@mui/material';
 import { styled } from '@mui/material/styles';
-import person from '../../assets/person.png';
+import avatar from '../../assets/avatar.png';
 import NotificationMenu from './NotificationMenu/NotificationMenu';
 import Filter from './Filters/Filter';
 import { lightTheme } from '../../Theme/theme';
 
 const NavBar = ({ name }) => {
-  const BoxStyle = {
-    width: '100%',
-    height: 50,
-    backgroundColor: `${lightTheme.ComponentBackgroundColor}`,
-    boxShadow: 'rgba(99, 99, 99, 0.2) 0px 2px 8px 0px',
-    borderRadius: '10px',
-    padding: '5px 0',
-  };
-  const navbarStyle = {
-    // border: '1px solid black',
-    // backgroundColor: 'red',
-  };
-  const infoSide = {
+  const mainDiv = {
     display: 'flex',
-    justifyContent: 'flex-end',
+    justifyContent: 'space-between',
     alignItems: 'center',
-    // paddingRight: '15px',
-    paddingBottom: '10px',
+    paddingLeft: '20px',
+    paddingRight: '20px',
+    width: '100%',
+    height: '62px',
+    backgroundColor: `${lightTheme.ComponentBackgroundColor}`,
+    boxShadow: 'rgba(99, 99, 99, 0.3) 0px 2px 8px 0px',
+    borderRadius: '6px',
   };
+  const rightDiv = {
+    display: 'flex',
+    alignItems: 'center',
+  };
+  const filterAndNotify = {
+    display: 'flex',
+  };
+  const leftDiv = {
+    color: `${lightTheme.headingTextColor}`,
+  };
+
   const personInfo = {
     display: 'flex',
     justifyContent: 'space-between',
     alignItems: 'center',
     flexDirection: 'row',
-    // border:'1px solid red',
-    padding: '0 15px',
   };
 
   const NameandDesignation = {
     fontSize: '12px',
+    paddingTop: '2px',
     marginRight: '10px',
-    // paddingTop: "5px",
-    lineHeight: '17px',
+    lineHeight: '15px',
   };
 
   const StyledBadge = styled(Badge)(({ theme }) => ({
@@ -81,38 +83,34 @@ const NavBar = ({ name }) => {
     fontWeight: '500',
     letterSpacing: '1px',
     textAlign: 'right',
-    color: `${lightTheme.textColor}`,
+    color: `${lightTheme.userPost}`,
   };
 
   return (
-    <Box sx={BoxStyle}>
-      <Grid container sx={navbarStyle}>
-        <Grid item lg={2} sm={2} xs={2} px={2}>
-          <h4
-            style={{
-              marginTop: '10px',
-              color: `${lightTheme.headingTextColor}`,
-              fontFamily: 'Archivo',
-            }}
-          >
-            {name}
-          </h4>
-        </Grid>
-        <Grid item lg={10} sm={10} xs={10} sx={infoSide}>
+    <div style={mainDiv}>
+      <div>
+        <h4 style={leftDiv}>{name}</h4>
+      </div>
+      <div style={rightDiv}>
+        <div style={filterAndNotify}>
           <Filter />
           <NotificationMenu />
-          <Stack sx={personInfo}>
-            <Box sx={NameandDesignation}>
-              <p style={userStyle}>john doe</p>
-              <p style={admin}>Admin</p>
-            </Box>
-            <StyledBadge overlap="circular" anchorOrigin={{ vertical: 'bottom', horizontal: 'right' }} variant="dot">
-              <Avatar alt="Remy Sharp" srcSet={person} style={{ border: '1px solid #e2e2e2' }} />
-            </StyledBadge>
-          </Stack>
-        </Grid>
-      </Grid>
-    </Box>
+        </div>
+        <Stack sx={personInfo}>
+          <Box sx={NameandDesignation}>
+            <p style={userStyle}>John Doe</p>
+            <p style={admin}>Admin</p>
+          </Box>
+          <StyledBadge overlap="circular" anchorOrigin={{ vertical: 'bottom', horizontal: 'right' }} variant="dot">
+            <Avatar
+              alt="Remy Sharp"
+              srcSet={avatar}
+              style={{ border: '1px solid #e2e2e2', backgroundColor: `${lightTheme.avatarBackgroundRGBA}` }}
+            />
+          </StyledBadge>
+        </Stack>
+      </div>
+    </div>
   );
 };
 

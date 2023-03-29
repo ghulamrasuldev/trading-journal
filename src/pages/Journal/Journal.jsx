@@ -9,7 +9,7 @@ const Journal = () => {
   const [navbarTitle, setNavbarTitle] = useState('Trade Setting');
   const mainDiv = {
     padding: '30px 25px',
-    backgroundColor: `${lightTheme.PageBackgroundColor}`,
+    backgroundColor: `${lightTheme.lightPageBackground}`,
     // border:'1px solid black',
 
     borderBottomLeftRadius: '8px',
