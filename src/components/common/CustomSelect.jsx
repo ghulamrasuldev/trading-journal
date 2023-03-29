@@ -2,7 +2,7 @@ import React from 'react';
 import Select from 'react-select';
 import { lightTheme } from '../../Theme/theme';
 
-const CustomSelect = ({ options, selectedOption, mode, isMulti, placeholder = '' }) => {
+const CustomSelect = ({ ...inputProps }) => {
   const customStyles = {
     control: (provided, state) => ({
       ...provided,
@@ -10,6 +10,7 @@ const CustomSelect = ({ options, selectedOption, mode, isMulti, placeholder = ''
       '&:hover': {
         borderColor: 'none',
       },
+      cursor: 'pointer',
     }),
     indicatorSeparator: (provided, state) => ({
       ...provided,
@@ -22,6 +23,7 @@ const CustomSelect = ({ options, selectedOption, mode, isMulti, placeholder = ''
       '&:hover': {
         backgroundColor: 'lightgray',
       },
+      cursor: 'pointer',
     }),
     singleValue: (provided, state) => ({
       ...provided,
@@ -31,19 +33,7 @@ const CustomSelect = ({ options, selectedOption, mode, isMulti, placeholder = ''
 
   return (
     <>
-      <Select
-        placeholder={placeholder}
-        isMulti={isMulti ? isMulti : false}
-        styles={customStyles}
-        defaultValue={{
-          value: mode,
-          label: mode,
-        }}
-        onChange={(value) => {
-          selectedOption.set(value.value);
-        }}
-        options={options}
-      />
+      <Select {...inputProps} styles={customStyles} />
     </>
   );
 };
