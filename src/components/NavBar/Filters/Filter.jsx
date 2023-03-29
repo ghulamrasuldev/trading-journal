@@ -35,7 +35,7 @@ const mutualOptionsLeft = [
   { value: 'Open/Closed', label: 'Open/Closed' },
   { value: 'Setups', label: 'Setups' },
   { value: 'Custom', label: 'Custom' },
-  { value: 'Open/Closed', label: 'Open/Closed' },
+  { value: 'Open/closed', label: 'Open/Closed' },
 ];
 const mutualOptionsRight = [
   { value: 'Mistake', label: 'Mistake' },
