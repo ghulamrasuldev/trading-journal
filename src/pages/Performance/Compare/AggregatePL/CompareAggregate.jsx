@@ -146,7 +146,66 @@ const [showLock, setShowLock] = useState(true);
     backgroundColor: `${lightTheme.ComponentBackgroundColor}`,
     borderRadius: "8px",
   };
+  const generateReportBtn={
+    color: `${lightTheme.whiteText}`,
+    backgroundColor: `${lightTheme.headingTextColor}`,
+    borderRadius: "8px",
+    padding: "10px 0",
+    width: "130px",
+    border: "none",
+    cursor: "pointer",
+  }
+  const resetBtn={
+    color: `${lightTheme.headingTextColor}`,
+    backgroundColor: `${lightTheme.ComponentBackgroundColor}`,
+    border: "none",
+    borderRadius: "8px",
+    padding: "10px 0",
+    width: "130px",
+    marginLeft: "10px",
+    cursor: "pointer",
+    border: `1px solid ${lightTheme.borderColor}`,
+  }
+  const formMain={
+    display: "flex",
+    justifyContent: "space-between",
+    alignItems: "center",
+    margin: "20px 0",
+  }
+  const formInputText = {
+    color: `${lightTheme.textColor}`,
+    fontSize: "14px",
+    fontWeight: "500",
+    paddingBottom: "10px",
+  }
+  const staticGroupOne={
+    backgroundColor: `${lightTheme.staticGroupOne}`,
+    padding: "15px 15px",
+    borderTopLeftRadius: "8px",
+    borderTopRightRadius: "8px",
+  }
+  const staticGroupText={
+    fontSize: "16px",
+    fontWeight: "600",
+    color: `${lightTheme.whiteText}`,
+  }
+  const name={
+    fontWeight: "500",
+    fontSize: "16px",
+    color: `${lightTheme.headingTextColor}`,
+  }
 
+  const value={
+    fontWeight: "400",
+    fontSize: "16px",
+    color: `${lightTheme.textColor}`,
+  }
+  const staticGroupTwo={
+    backgroundColor: `${lightTheme.staticGroupTwo}`,
+    padding: "15px 15px",
+    borderTopLeftRadius: "8px",
+    borderTopRightRadius: "8px",
+  }
   return (
     <div>
       <Box sx={mainDiv}>
@@ -167,35 +226,17 @@ const [showLock, setShowLock] = useState(true);
           }}
         >
           Note: this report ignores the global filter settings above; set
-          specifice group filters below.
+          specific group filters below.
         </p>
         {/* generate button  */}
         <div style={{ display: "flex", alignItems: "center" }}>
           <button
-            style={{
-              color: `${lightTheme.whiteText}`,
-              backgroundColor: `${lightTheme.headingTextColor}`,
-              borderRadius: "8px",
-              padding: "10px 0",
-              width: "130px",
-              border: "none",
-              cursor: "pointer",
-            }}
+            style={generateReportBtn}
           >
             Generate Report
           </button>
           <button
-            style={{
-              color: `${lightTheme.headingTextColor}`,
-              backgroundColor: `${lightTheme.ComponentBackgroundColor}`,
-              border: "none",
-              borderRadius: "8px",
-              padding: "10px 0",
-              width: "130px",
-              marginLeft: "10px",
-              cursor: "pointer",
-              border: `1px solid ${lightTheme.borderColor}`,
-            }}
+            style={resetBtn}
           >
             Reset
           </button>
@@ -214,21 +255,11 @@ const [showLock, setShowLock] = useState(true);
             p={2}
           >
             <div
-              style={{
-                display: "flex",
-                justifyContent: "space-between",
-                alignItems: "center",
-                margin: "20px 0",
-              }}
+              style={formMain}
             >
               <div>
                 <p
-                  style={{
-                    color: `${lightTheme.textColor}`,
-                    fontSize: "14px",
-                    fontWeight: "500",
-                    paddingBottom: "10px",
-                  }}
+                  style={formInputText}
                 >
                   Symbol
                 </p>
@@ -236,12 +267,7 @@ const [showLock, setShowLock] = useState(true);
               </div>
               <div>
                 <p
-                  style={{
-                    color: `${lightTheme.textColor}`,
-                    fontSize: "14px",
-                    fontWeight: "500",
-                    paddingBottom: "10px",
-                  }}
+                  style={formInputText}
                 >
                   Tag
                 </p>
@@ -249,21 +275,11 @@ const [showLock, setShowLock] = useState(true);
               </div>
             </div>
             <div
-              style={{
-                display: "flex",
-                justifyContent: "space-between",
-                alignItems: "center",
-                margin: "20px 0",
-              }}
+              style={formMain}
             >
               <div>
                 <p
-                  style={{
-                    color: `${lightTheme.textColor}`,
-                    fontSize: "14px",
-                    fontWeight: "500",
-                    paddingBottom: "10px",
-                  }}
+                  style={formInputText}
                 >
                   Slide
                 </p>
@@ -271,12 +287,7 @@ const [showLock, setShowLock] = useState(true);
               </div>
               <div>
                 <p
-                  style={{
-                    color: `${lightTheme.textColor}`,
-                    fontSize: "14px",
-                    fontWeight: "500",
-                    paddingBottom: "10px",
-                  }}
+                  style={formInputText}
                 >
                   Start Date
                 </p>
@@ -284,21 +295,11 @@ const [showLock, setShowLock] = useState(true);
               </div>
             </div>
             <div
-              style={{
-                display: "flex",
-                justifyContent: "space-between",
-                alignItems: "center",
-                margin: "20px 0",
-              }}
+              style={formMain}
             >
               <div>
                 <p
-                  style={{
-                    color: `${lightTheme.textColor}`,
-                    fontSize: "14px",
-                    fontWeight: "500",
-                    paddingBottom: "10px",
-                  }}
+                  style={formInputText}
                 >
                   Duration
                 </p>
@@ -306,12 +307,7 @@ const [showLock, setShowLock] = useState(true);
               </div>
               <div>
                 <p
-                  style={{
-                    color: `${lightTheme.textColor}`,
-                    fontSize: "14px",
-                    fontWeight: "500",
-                    paddingBottom: "10px",
-                  }}
+                  style={formInputText}
                 >
                   End Date
                 </p>
@@ -319,21 +315,11 @@ const [showLock, setShowLock] = useState(true);
               </div>
             </div>
             <div
-              style={{
-                display: "flex",
-                justifyContent: "space-between",
-                alignItems: "center",
-                margin: "20px 0",
-              }}
+              style={formMain}
             >
               <div>
                 <p
-                  style={{
-                    color: `${lightTheme.textColor}`,
-                    fontSize: "14px",
-                    fontWeight: "500",
-                    paddingBottom: "10px",
-                  }}
+                  style={formInputText}
                 >
                   Trade P&L
                 </p>
@@ -353,21 +339,11 @@ const [showLock, setShowLock] = useState(true);
             p={2}
           >
             <div
-              style={{
-                display: "flex",
-                justifyContent: "space-between",
-                alignItems: "center",
-                margin: "20px 0",
-              }}
+              style={formMain}
             >
               <div>
                 <p
-                  style={{
-                    color: `${lightTheme.textColor}`,
-                    fontSize: "14px",
-                    fontWeight: "500",
-                    paddingBottom: "10px",
-                  }}
+                  style={formInputText}
                 >
                   Symbol
                 </p>
@@ -375,12 +351,7 @@ const [showLock, setShowLock] = useState(true);
               </div>
               <div>
                 <p
-                  style={{
-                    color: `${lightTheme.textColor}`,
-                    fontSize: "14px",
-                    fontWeight: "500",
-                    paddingBottom: "10px",
-                  }}
+                  style={formInputText}
                 >
                   Tag
                 </p>
@@ -388,21 +359,11 @@ const [showLock, setShowLock] = useState(true);
               </div>
             </div>
             <div
-              style={{
-                display: "flex",
-                justifyContent: "space-between",
-                alignItems: "center",
-                margin: "20px 0",
-              }}
+              style={formMain}
             >
               <div>
                 <p
-                  style={{
-                    color: `${lightTheme.textColor}`,
-                    fontSize: "14px",
-                    fontWeight: "500",
-                    paddingBottom: "10px",
-                  }}
+                  style={formInputText}
                 >
                   Slide
                 </p>
@@ -410,12 +371,7 @@ const [showLock, setShowLock] = useState(true);
               </div>
               <div>
                 <p
-                  style={{
-                    color: `${lightTheme.textColor}`,
-                    fontSize: "14px",
-                    fontWeight: "500",
-                    paddingBottom: "10px",
-                  }}
+                  style={formInputText}
                 >
                   Start Date
                 </p>
@@ -423,21 +379,11 @@ const [showLock, setShowLock] = useState(true);
               </div>
             </div>
             <div
-              style={{
-                display: "flex",
-                justifyContent: "space-between",
-                alignItems: "center",
-                margin: "20px 0",
-              }}
+              style={formMain}
             >
               <div>
                 <p
-                  style={{
-                    color: `${lightTheme.textColor}`,
-                    fontSize: "14px",
-                    fontWeight: "500",
-                    paddingBottom: "10px",
-                  }}
+                  style={formInputText}
                 >
                   Duration
                 </p>
@@ -445,12 +391,7 @@ const [showLock, setShowLock] = useState(true);
               </div>
               <div>
                 <p
-                  style={{
-                    color: `${lightTheme.textColor}`,
-                    fontSize: "14px",
-                    fontWeight: "500",
-                    paddingBottom: "10px",
-                  }}
+                  style={formInputText}
                 >
                   End Date
                 </p>
@@ -458,21 +399,11 @@ const [showLock, setShowLock] = useState(true);
               </div>
             </div>
             <div
-              style={{
-                display: "flex",
-                justifyContent: "space-between",
-                alignItems: "center",
-                margin: "20px 0",
-              }}
+              style={formMain}
             >
               <div>
                 <p
-                  style={{
-                    color: `${lightTheme.textColor}`,
-                    fontSize: "14px",
-                    fontWeight: "500",
-                    paddingBottom: "10px",
-                  }}
+                  style={formInputText}
                 >
                   Trade P&L
                 </p>
@@ -489,19 +420,10 @@ const [showLock, setShowLock] = useState(true);
                 }}
               >
                 <div
-                  style={{
-                    backgroundColor: `${lightTheme.staticGroupOne}`,
-                    padding: "15px 15px",
-                    borderTopLeftRadius: "8px",
-                    borderTopRightRadius: "8px",
-                  }}
+                  style={staticGroupOne}
                 >
                   <p
-                    style={{
-                      fontSize: "16px",
-                      fontWeight: "600",
-                      color: `${lightTheme.whiteText}`,
-                    }}
+                    style={staticGroupText}
                   >
                    Statistics Group 1 
                   </p>
@@ -520,20 +442,12 @@ const [showLock, setShowLock] = useState(true);
                         }}
                       >
                         <p
-                          style={{
-                            fontWeight: "500",
-                            fontSize: "16px",
-                            color: `${lightTheme.headingTextColor}`,
-                          }}
+                          style={name}
                         >
                           {data.name}
                         </p>
                         <p
-                          style={{
-                            fontWeight: "400",
-                            fontSize: "16px",
-                            color: `${lightTheme.textColor}`,
-                          }}
+                          style={value}
                         >
                           {showLock ? (
                             <img src={data.lock} alt="lockIcon" height={20} />
@@ -556,19 +470,10 @@ const [showLock, setShowLock] = useState(true);
                 }}
               >
                 <div
-                  style={{
-                    backgroundColor: `${lightTheme.staticGroupTwo}`,
-                    padding: "15px 15px",
-                    borderTopLeftRadius: "8px",
-                    borderTopRightRadius: "8px",
-                  }}
+                  style={staticGroupTwo}
                 >
                   <p
-                    style={{
-                      fontSize: "16px",
-                      fontWeight: "600",
-                      color: `${lightTheme.whiteText}`,
-                    }}
+                    style={staticGroupText}
                   >
                     Statistics Group 2
                   </p>
@@ -587,20 +492,12 @@ const [showLock, setShowLock] = useState(true);
                         }}
                       >
                         <p
-                          style={{
-                            fontWeight: "500",
-                            fontSize: "16px",
-                            color: `${lightTheme.headingTextColor}`,
-                          }}
+                          style={name}
                         >
                           {data.name}
                         </p>
                         <p
-                          style={{
-                            fontWeight: "400",
-                            fontSize: "16px",
-                            color: `${lightTheme.textColor}`,
-                          }}
+                          style={value}
                         >
                           {showLock ? (
                             <img src={data.lock} alt="lockIcon" height={20} />

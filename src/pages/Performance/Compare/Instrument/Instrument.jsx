@@ -1234,7 +1234,13 @@ const Instrument = () => {
     borderRadius: '8px',
     padding: '10px 10px',
   };
-
+const graphTitle={
+  color: `${lightTheme.headingTextColor}`,
+  fontWeight: '500',
+  fontSize: '16px',
+  marginLeft: '20px',
+  marginTop: '10px',
+}
   return (
     <div>
       <Box sx={mainDiv}>
@@ -1253,13 +1259,7 @@ const Instrument = () => {
         <Grid container columnGap={4} rowGap={4} my={3}>
           <Grid item lg={5.5} md={12} sm={12} sx={gridItem}>
             <p
-              style={{
-                color: `${lightTheme.headingTextColor}`,
-                fontWeight: '500',
-                fontSize: '16px',
-                marginLeft: '20px',
-                marginTop: '10px',
-              }}
+              style={graphTitle}
             >
               Distribution by Instrument Volume
             </p>
@@ -1272,13 +1272,7 @@ const Instrument = () => {
           </Grid>
           <Grid item lg={5.5} md={12} sm={12} sx={gridItem}>
             <p
-              style={{
-                color: `${lightTheme.headingTextColor}`,
-                fontWeight: '500',
-                fontSize: '16px',
-                marginLeft: '20px',
-                marginTop: '10px',
-              }}
+              style={graphTitle}
             >
               Performance by Instrument Volume
             </p>
@@ -1288,13 +1282,7 @@ const Instrument = () => {
         <Grid container columnGap={4} rowGap={4} my={3}>
           <Grid item lg={5.5} md={12} sm={12} sx={gridItem}>
             <p
-              style={{
-                color: `${lightTheme.headingTextColor}`,
-                fontWeight: '500',
-                fontSize: '16px',
-                marginLeft: '20px',
-                marginTop: '10px',
-              }}
+              style={graphTitle}
             >
               Distribution By Instrument Relative Volume (% Of 50ma)
             </p>
@@ -1307,13 +1295,7 @@ const Instrument = () => {
           </Grid>
           <Grid item lg={5.5} md={12} sm={12} sx={gridItem}>
             <p
-              style={{
-                color: `${lightTheme.headingTextColor}`,
-                fontWeight: '500',
-                fontSize: '16px',
-                marginLeft: '20px',
-                marginTop: '10px',
-              }}
+              style={graphTitle}
             >
               Performance By Instrument Relative Volume (% Of 50ma)
             </p>
@@ -1328,13 +1310,7 @@ const Instrument = () => {
         <Grid container columnGap={4} rowGap={4} my={3}>
           <Grid item lg={5.5} md={12} sm={12} sx={gridItem}>
             <p
-              style={{
-                color: `${lightTheme.headingTextColor}`,
-                fontWeight: '500',
-                fontSize: '16px',
-                marginLeft: '20px',
-                marginTop: '10px',
-              }}
+              style={graphTitle}
             >
               Distribution By Instrument Relative Volume (% Of 50ma)
             </p>
@@ -1347,13 +1323,7 @@ const Instrument = () => {
           </Grid>
           <Grid item lg={5.5} md={12} sm={12} sx={gridItem}>
             <p
-              style={{
-                color: `${lightTheme.headingTextColor}`,
-                fontWeight: '500',
-                fontSize: '16px',
-                marginLeft: '20px',
-                marginTop: '10px',
-              }}
+              style={graphTitle}
             >
               Performance By Instrument Relative Volume (% Of 50ma)
             </p>
@@ -1368,13 +1338,7 @@ const Instrument = () => {
         <Grid container columnGap={4} rowGap={4} my={3}>
           <Grid item lg={5.5} md={12} sm={12} sx={gridItem}>
             <p
-              style={{
-                color: `${lightTheme.headingTextColor}`,
-                fontWeight: '500',
-                fontSize: '16px',
-                marginLeft: '20px',
-                marginTop: '10px',
-              }}
+              style={graphTitle}
             >
               Trade Distribution by Instrument Movement
             </p>
@@ -1387,13 +1351,7 @@ const Instrument = () => {
           </Grid>
           <Grid item lg={5.5} md={12} sm={12} sx={gridItem}>
             <p
-              style={{
-                color: `${lightTheme.headingTextColor}`,
-                fontWeight: '500',
-                fontSize: '16px',
-                marginLeft: '20px',
-                marginTop: '10px',
-              }}
+              style={graphTitle}
             >
               Trade Distribution by Instrument Movement
             </p>
@@ -1408,13 +1366,7 @@ const Instrument = () => {
         <Grid container columnGap={4} rowGap={4} my={3}>
           <Grid item lg={5.5} md={12} sm={12} sx={gridItem}>
             <p
-              style={{
-                color: `${lightTheme.headingTextColor}`,
-                fontWeight: '500',
-                fontSize: '16px',
-                marginLeft: '20px',
-                marginTop: '10px',
-              }}
+              style={graphTitle}
             >
               Trade Distribution by Instrument Opening Gap
             </p>
@@ -1427,13 +1379,7 @@ const Instrument = () => {
           </Grid>
           <Grid item lg={5.5} md={12} sm={12} sx={gridItem}>
             <p
-              style={{
-                color: `${lightTheme.headingTextColor}`,
-                fontWeight: '500',
-                fontSize: '16px',
-                marginLeft: '20px',
-                marginTop: '10px',
-              }}
+              style={graphTitle}
             >
               Trade Distribution by Instrument Day Type
             </p>
@@ -1448,13 +1394,7 @@ const Instrument = () => {
         <Grid container columnGap={4} rowGap={4} my={3}>
           <Grid item lg={5.5} md={12} sm={12} sx={gridItem}>
             <p
-              style={{
-                color: `${lightTheme.headingTextColor}`,
-                fontWeight: '500',
-                fontSize: '16px',
-                marginLeft: '20px',
-                marginTop: '10px',
-              }}
+              style={graphTitle}
             >
               Performance by Instrument Opening Gap
             </p>
@@ -1467,13 +1407,7 @@ const Instrument = () => {
           </Grid>
           <Grid item lg={5.5} md={12} sm={12} sx={gridItem}>
             <p
-              style={{
-                color: `${lightTheme.headingTextColor}`,
-                fontWeight: '500',
-                fontSize: '16px',
-                marginLeft: '20px',
-                marginTop: '10px',
-              }}
+              style={graphTitle}
             >
               Trade Distribution by Instrument Avg True Range
             </p>
@@ -1488,13 +1422,7 @@ const Instrument = () => {
         <Grid container columnGap={4} rowGap={4} my={3}>
           <Grid item lg={5.5} md={12} sm={12} sx={gridItem}>
             <p
-              style={{
-                color: `${lightTheme.headingTextColor}`,
-                fontWeight: '500',
-                fontSize: '16px',
-                marginLeft: '20px',
-                marginTop: '10px',
-              }}
+              style={graphTitle}
             >
               Performance by Instrument Day Type
             </p>
@@ -1507,13 +1435,7 @@ const Instrument = () => {
           </Grid>
           <Grid item lg={5.5} md={12} sm={12} sx={gridItem}>
             <p
-              style={{
-                color: `${lightTheme.headingTextColor}`,
-                fontWeight: '500',
-                fontSize: '16px',
-                marginLeft: '20px',
-                marginTop: '10px',
-              }}
+              style={graphTitle}
             >
               Trade Distribution by Entry % OF ATR
             </p>
@@ -1528,13 +1450,7 @@ const Instrument = () => {
         <Grid container columnGap={4} rowGap={4} my={3}>
           <Grid item lg={5.5} md={12} sm={12} sx={gridItem}>
             <p
-              style={{
-                color: `${lightTheme.headingTextColor}`,
-                fontWeight: '500',
-                fontSize: '16px',
-                marginLeft: '20px',
-                marginTop: '10px',
-              }}
+              style={graphTitle}
             >
               Performance by Instrument Avg True Range
             </p>
@@ -1547,13 +1463,7 @@ const Instrument = () => {
           </Grid>
           <Grid item lg={5.5} md={12} sm={12} sx={gridItem}>
             <p
-              style={{
-                color: `${lightTheme.headingTextColor}`,
-                fontWeight: '500',
-                fontSize: '16px',
-                marginLeft: '20px',
-                marginTop: '10px',
-              }}
+              style={graphTitle}
             >
               Trade Distribution by Relative Volatility (TR ATR)
             </p>
@@ -1568,13 +1478,7 @@ const Instrument = () => {
         <Grid container columnGap={4} rowGap={4} my={3}>
           <Grid item lg={5.5} md={12} sm={12} sx={gridItem}>
             <p
-              style={{
-                color: `${lightTheme.headingTextColor}`,
-                fontWeight: '500',
-                fontSize: '16px',
-                marginLeft: '20px',
-                marginTop: '10px',
-              }}
+              style={graphTitle}
             >
               Trade Distribution By Entry % OF ATR
             </p>
@@ -1587,13 +1491,7 @@ const Instrument = () => {
           </Grid>
           <Grid item lg={5.5} md={12} sm={12} sx={gridItem}>
             <p
-              style={{
-                color: `${lightTheme.headingTextColor}`,
-                fontWeight: '500',
-                fontSize: '16px',
-                marginLeft: '20px',
-                marginTop: '10px',
-              }}
+              style={graphTitle}
             >
               Performance by Relative Volatility (TR ATR)
             </p>
@@ -1608,13 +1506,7 @@ const Instrument = () => {
         <Grid container columnGap={4} rowGap={4} my={3}>
           <Grid item lg={5.5} md={12} sm={12} sx={gridItem}>
             <p
-              style={{
-                color: `${lightTheme.headingTextColor}`,
-                fontWeight: '500',
-                fontSize: '16px',
-                marginLeft: '20px',
-                marginTop: '10px',
-              }}
+              style={graphTitle}
             >
               Trade Distribution By Entry Price VS 50-Day SMA
             </p>
@@ -1627,13 +1519,7 @@ const Instrument = () => {
           </Grid>
           <Grid item lg={5.5} md={12} sm={12} sx={gridItem}>
             <p
-              style={{
-                color: `${lightTheme.headingTextColor}`,
-                fontWeight: '500',
-                fontSize: '16px',
-                marginLeft: '20px',
-                marginTop: '10px',
-              }}
+              style={graphTitle}
             >
               Performance By Entry Price VS 50-Day SMA
             </p>

@@ -337,20 +337,20 @@ const Liquidity = () => {
     borderRadius: '8px',
     padding: '10px 10px',
   };
-
+  const graphTitle={
+    color: `${lightTheme.headingTextColor}`,
+    fontWeight: '500',
+    fontSize: '16px',
+    marginLeft: '20px',
+    marginTop: '10px',
+  }
   return (
     <div>
       <Box sx={mainDiv}>
         <Grid container columnGap={4} rowGap={4} my={3}>
           <Grid item lg={5.5} md={12} sm={12} sx={gridItem}>
             <p
-              style={{
-                color: `${lightTheme.headingTextColor}`,
-                fontWeight: '500',
-                fontSize: '16px',
-                marginLeft: '20px',
-                marginTop: '10px',
-              }}
+              style={graphTitle}
             >
               Trade Distribution by All Shares Adding Liquidity
             </p>
@@ -363,13 +363,7 @@ const Liquidity = () => {
           </Grid>
           <Grid item lg={5.5} md={12} sm={12} sx={gridItem}>
             <p
-              style={{
-                color: `${lightTheme.headingTextColor}`,
-                fontWeight: '500',
-                fontSize: '16px',
-                marginLeft: '20px',
-                marginTop: '10px',
-              }}
+              style={graphTitle}
             >
               Performance by All Shares Adding Liquidity
             </p>
@@ -384,13 +378,7 @@ const Liquidity = () => {
         <Grid container columnGap={4} rowGap={4} my={3}>
           <Grid item lg={5.5} md={12} sm={12} sx={gridItem}>
             <p
-              style={{
-                color: `${lightTheme.headingTextColor}`,
-                fontWeight: '500',
-                fontSize: '16px',
-                marginLeft: '20px',
-                marginTop: '10px',
-              }}
+              style={graphTitle}
             >
               Trade Distribution by Entry Shares Adding Liquidity
             </p>
@@ -403,13 +391,7 @@ const Liquidity = () => {
           </Grid>
           <Grid item lg={5.5} md={12} sm={12} sx={gridItem}>
             <p
-              style={{
-                color: `${lightTheme.headingTextColor}`,
-                fontWeight: '500',
-                fontSize: '16px',
-                marginLeft: '20px',
-                marginTop: '10px',
-              }}
+              style={graphTitle}
             >
               Performance by Entry Shares Adding Liquidity
             </p>
@@ -424,13 +406,7 @@ const Liquidity = () => {
         <Grid container columnGap={4} rowGap={4} my={3}>
           <Grid item lg={5.5} md={12} sm={12} sx={gridItem}>
             <p
-              style={{
-                color: `${lightTheme.headingTextColor}`,
-                fontWeight: '500',
-                fontSize: '16px',
-                marginLeft: '20px',
-                marginTop: '10px',
-              }}
+              style={graphTitle}
             >
               Trade Distribution by Exit Shares Adding Liquidity
             </p>
@@ -443,13 +419,7 @@ const Liquidity = () => {
           </Grid>
           <Grid item lg={5.5} md={12} sm={12} sx={gridItem}>
             <p
-              style={{
-                color: `${lightTheme.headingTextColor}`,
-                fontWeight: '500',
-                fontSize: '16px',
-                marginLeft: '20px',
-                marginTop: '10px',
-              }}
+              style={graphTitle}
             >
               Performance by Exit Shares Adding Liquidity
             </p>

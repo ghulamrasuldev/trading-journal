@@ -38,6 +38,7 @@ export const lightTheme = {
   badgeBackColor: '#F0F0F0',
   badgeBackColorRGBA: 'rgba(240, 240, 240, 0.5)',
   lightgrey: '#BFBFBF',
+  reportDataColor: '#f2e9ef',
   avatarBackground: '#7367F0',
   avatarBackgroundRGBA: 'rgba(115, 103, 240, 0.5)',
 };

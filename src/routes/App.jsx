@@ -25,7 +25,7 @@ import PriceVolumeD from '../pages/Performance/Details/PriceVolume/PriceVolume';
 import WinLossExpectationD from '../pages/Performance/Details/WinLossExpectation/WinLossExpectation';
 import Drawdown from '../pages/Performance/DrawDown/Drawdown';
 import OverView from '../pages/Performance/Overview/OverView';
-import OverViewReport from '../pages/Performance/Overview/Reports/Reports';
+import Reports from '../pages/Performance/Reports/Reports'
 import TagBreakDown from '../pages/Performance/TagBreakDown/TagBreakDown';
 import DaysAndTimesWLD from '../pages/Performance/WinVSLossDays/DaysAndTimes/DaysAndTimes';
 import InstrumentWLD from '../pages/Performance/WinVSLossDays/Instrument/Instrument';
@@ -40,6 +40,7 @@ import Journal from '../pages/Journal/Journal';
 import './App.css';
 import News from '../pages/News/News';
 import DailyStats from '../pages/DailyStatus/DailyStats/DailyStats';
+// import Reports from '../pages/Performance/Reports/Reports'
 
 const App = () => {
   return (
@@ -71,7 +72,7 @@ const App = () => {
           <Route path="/performance/detail/winlossexpectation" element={<WinLossExpectationD />} />
           <Route path="/performance/drawdown" element={<Drawdown />} />
           <Route path="/performance/overview" element={<OverView />} />
-          <Route path="/performance/overview/report" element={<OverViewReport />} />
+          <Route path="/report" element={<Reports />} />
           <Route path="/performance/tagbreakdown" element={<TagBreakDown />} />
           <Route path="/performance/winvslossday/daysandtimes" element={<DaysAndTimesWLD />} />
           <Route path="/performance/winvslossday/instrument" element={<InstrumentWLD />} />
