@@ -1,0 +1,3 @@
+.data:nth-child(even){
+    background-color: blueviolet;
+}

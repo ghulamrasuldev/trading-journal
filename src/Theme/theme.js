@@ -36,6 +36,7 @@ export const lightTheme = {
   badgeBackColor: '#F0F0F0',
   badgeBackColorRGBA: 'rgba(240, 240, 240, 0.5)',
   lightgrey: '#BFBFBF',
+  reportDataColor:'#f2e9ef'
 };
 export const darkTheme = {
   ComponentBackgroundColor: '#022658',
