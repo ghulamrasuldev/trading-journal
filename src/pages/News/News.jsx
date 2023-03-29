@@ -18,7 +18,18 @@ const News = () => {
     marginTop: '25px',
     borderRadius: '8px',
   };
-
+  const newsHeading = {
+    color: `${lightTheme.newsHeading}`,
+    fontSize: '13px',
+    fontWeight: '500',
+    padding: '10px 5px',
+  }
+  const newsFeed={
+    color: `${lightTheme.textColor}`,
+    fontSize: '12px',
+    fontWeight: '400',
+    paddingLeft: '10px',
+  }
   return (
     <div>
       <Box sx={mainDiv}>
@@ -33,22 +44,12 @@ const News = () => {
                       <img src={NewsImg} alt="" style={{ borderRadius: '8px' }} height={120} width={210} />
                       <div>
                         <p
-                          style={{
-                            color: `${lightTheme.newsHeading}`,
-                            fontSize: '13px',
-                            fontWeight: '500',
-                            padding: '10px 5px',
-                          }}
+                          style={newsHeading}
                         >
                           {news.heading}
                         </p>
                         <p
-                          style={{
-                            color: `${lightTheme.textColor}`,
-                            fontSize: '12px',
-                            fontWeight: '400',
-                            paddingLeft: '10px',
-                          }}
+                          style={newsFeed}
                         >
                           {news.news}
                         </p>
