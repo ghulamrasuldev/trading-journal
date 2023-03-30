@@ -1,17 +1,19 @@
-.tradeBarGraphMain{
-    box-shadow:0px 4px 4px rgba(0, 0, 0, 0.02);
-    background-color:#FFFFFF;
-    border-radius:8px;
-    padding:5px 0;
-    margin-top:20px;
+.tradeBarGraphMain {
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.02);
+  background-color: #ffffff;
+  border-radius: 8px;
+  padding: 5px 0;
+  margin-top: 20px;
+  max-height: 386px;
+  min-height: 386px;
 }
-.tradeDiv{
-    /* border: 1px solid black; */
-    padding-top:20px;
+.tradeDiv {
+  /* border: 1px solid black; */
+  padding-top: 20px;
 }
-.totalTrade{
-    font-family: Overpass;
-    font-weight: 500;
-    font-size: 15px;
-    padding:5px 15px;
+.totalTrade {
+  font-family: Overpass;
+  font-weight: 500;
+  font-size: 15px;
+  padding: 5px 15px;
 }
