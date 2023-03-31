@@ -2,9 +2,14 @@ import React, { useState } from 'react';
 import { Box, Grid } from '@mui/material';
 import Chart from 'react-apexcharts';
 import './TradeLogTopGraph.css';
+import { useAtom } from 'jotai';
+
+import { isOpenAtom } from '../../../atom/atom.js';
 import { lightTheme } from '../../../Theme/theme';
 
 const TradeLogTopGraphs = () => {
+  const [isOpen] = useAtom(isOpenAtom);
+  const spacing = isOpen ? 2.8 : 3;
   // first top graph
   const [graphData, setGraphData] = useState({
     seriesSpark1: [
@@ -127,7 +132,7 @@ const TradeLogTopGraphs = () => {
 
   return (
     <Box>
-      <Grid container columnGap={3} mt={5} mb={5} rowGap={4}>
+      <Grid container columnGap={spacing} mt={5} mb={5} rowGap={4}>
         <Grid item lg={3.5} md={12} sm={12} xm={12} sx={topGraphStyle}>
           <div className="TradeLogTopSection">
             <div>

@@ -36,7 +36,7 @@ const Dashboard = () => {
     borderRadius: '8px',
     minWidth: '397px',
     maxHeight: '386px',
-    marginTop: '40px',
+    marginTop: '50px',
   };
 
   return (

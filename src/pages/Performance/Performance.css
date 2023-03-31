@@ -1,5 +1,6 @@
 .performanceMain {
   /* border-radius:8px; */
+
   border-top-right-radius: 8px;
   border-top-left-radius: 8px;
 }
@@ -9,6 +10,9 @@
 .performanceBTnDiv {
   border-radius: 8px;
   margin: 10px 0;
+  /* max-width: 100px; */
+  display: inline-block;
+  max-width: 100%;
 }
 .performanceBtn {
   padding: 15px 25px;

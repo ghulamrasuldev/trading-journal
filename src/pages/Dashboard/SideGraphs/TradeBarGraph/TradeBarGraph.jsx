@@ -42,7 +42,10 @@ const TradeBarGraph = () => {
     },
   });
   return (
-    <div className="tradeBarGraphMain" style={{ backgroundColor: `${lightTheme.ComponentBackgroundColor}` }}>
+    <div
+      className="tradeBarGraphMain"
+      style={{ backgroundColor: `${lightTheme.ComponentBackgroundColor}`, marginTop: '30px' }}
+    >
       <div className="tradeDiv">
         <p className="totalTrade" style={{ color: `${lightTheme.headingTextColor}` }}>
           Total number of trades:

@@ -1,23 +1,22 @@
-
-.winlossBtns{
-    padding:15px;
+.winlossBtns {
+  padding: 15px;
 }
-.winlossBTnDiv{
-    border-radius:8px;
-    margin:10px 0;
+.winlossBTnDiv {
+  border-radius: 8px;
+  margin: 10px 0;
 }
-.winlossBtn{
-    padding:15px 25px;
-    border: none;
-    border-radius: 8px;
-    cursor: pointer;
+.winlossBtn {
+  padding: 15px 25px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
 }
 .detailMain {
-    /* border-radius:8px; */
-    /* border-bottom-right-radius: 8px;
+  /* border-radius:8px; */
+  /* border-bottom-right-radius: 8px;
       border-bottom-left-radius: 8px; */
-  }
-  /* .detailBtns {
+}
+/* .detailBtns {
     padding: 15px;
   }
   .detailBTnDiv {
@@ -30,42 +29,41 @@
     border-radius: 8px;
     cursor: pointer;
   } */
-  .detailMain {
-  }
-  .winlossBtns {
-    padding: 15px;
-    display: inline-block;
-  }
-  .winlossBTnDiv {
-    margin: 10px 0;
-    border-radius: 9999px 9999px 9999px 9999px;
-  }
-  .winlossBtn {
-    padding: 15px 25px;
-    border: none;
-    cursor: pointer;
-    border-radius: 0px;
-  }
-  .button-row button:first-child {
-    padding: 15px 25px;
-    border: none;
-    cursor: pointer;
-  }
-  .button-row button:last-child {
-    padding: 15px 25px;
-    border: none;
-    cursor: pointer;
-  }
-  .left-rounded {
-    border-radius: 9999px 100px 100px 9999px;
-    padding: 15px 25px;
-    border: none;
-    cursor: pointer;
-  }
-  .right-rounded {
-    border-radius: 100px 9999px 9999px 100px;
-    padding: 15px 25px;
-    border: none;
-    cursor: pointer;
-  }
-  
+.detailMain {
+}
+.winlossBtns {
+  padding: 15px;
+  display: inline-block;
+}
+.winlossBTnDiv {
+  margin: 10px 0;
+  border-radius: 9999px 9999px 9999px 9999px;
+}
+.winlossBtn {
+  padding: 15px 15px;
+  border: none;
+  cursor: pointer;
+  border-radius: 0px;
+}
+.button-row button:first-child {
+  padding: 15px 25px;
+  border: none;
+  cursor: pointer;
+}
+.button-row button:last-child {
+  padding: 15px 25px;
+  border: none;
+  cursor: pointer;
+}
+.left-rounded {
+  border-radius: 9999px 100px 100px 9999px;
+  padding: 15px 25px;
+  border: none;
+  cursor: pointer;
+}
+.right-rounded {
+  border-radius: 100px 9999px 9999px 100px;
+  padding: 15px 25px;
+  border: none;
+  cursor: pointer;
+}

@@ -14,7 +14,7 @@ import { isOpenAtom } from '../../atom/atom.js';
 
 const DailyStatus = () => {
   const [isOpen] = useAtom(isOpenAtom);
-  const spacing = isOpen ? 1 : 6;
+  const spacing = isOpen ? 10 : 12;
 
   const mainDivStyle = {
     padding: '30px 25px',
@@ -27,11 +27,11 @@ const DailyStatus = () => {
         <NavBar name={'Daily Status'} />
         <TopGraphs />
         <Grid container columnGap={spacing} rowGap={6}>
-          <Grid item lg={7} md={12} sm={12}>
+          <Grid item lg={8} md={12} sm={12}>
             <DailyTradeGraph />
             <DailyTradeDetails />
           </Grid>
-          <Grid item lg={4.5} md={12} sm={12}>
+          <Grid item lg={3} md={12} sm={12}>
             <DailyCalendar />
             <TradeBarGraph />
           </Grid>
