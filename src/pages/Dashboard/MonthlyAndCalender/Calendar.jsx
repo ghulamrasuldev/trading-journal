@@ -1,9 +1,9 @@
-import React, { useState } from "react";
-import Calendar from "react-calendar";
-import "react-calendar/dist/Calendar.css";
-import CalendarMonthSharpIcon from "@mui/icons-material/CalendarMonthSharp";
-import "./calendar.css";
-import {lightTheme} from '../../../Theme/theme'
+import React, { useState } from 'react';
+import Calendar from 'react-calendar';
+import 'react-calendar/dist/Calendar.css';
+import CalendarMonthSharpIcon from '@mui/icons-material/CalendarMonthSharp';
+import './calendar.css';
+import { lightTheme } from '../../../Theme/theme';
 
 const CalendarComponent = () => {
   const [check, setCheck] = useState(false);
@@ -24,38 +24,40 @@ const CalendarComponent = () => {
 
   const profitLossData = [
     {
-      profit: "true",
-      value: "$212",
-      trades: "2 Trades",
+      profit: 'true',
+      value: '$212',
+      trades: '2 Trades',
     },
     {
-      profit: "true",
-      value: "$312",
-      trades: "3 Trades",
+      profit: 'true',
+      value: '$312',
+      trades: '3 Trades',
     },
     {
-      profit: "false",
-      value: "$-212",
-      trades: "2 Trades",
+      profit: 'false',
+      value: '$-212',
+      trades: '2 Trades',
     },
     {
-      profit: "false",
-      value: "$-12",
-      trades: "1 Trades",
+      profit: 'false',
+      value: '$-12',
+      trades: '1 Trades',
     },
     {
-      profit: "true",
-      value: "$512",
-      trades: "5 Trades",
+      profit: 'true',
+      value: '$512',
+      trades: '5 Trades',
     },
   ];
 
   return (
-    <div className="calendarMain" style={{backgroundColor:`${lightTheme.ComponentBackgroundColor}`}}>
+    <div className="calendarMain" style={{ backgroundColor: `${lightTheme.ComponentBackgroundColor}` }}>
       <div className="calendarDiv">
         <div className="dateDiv">
           <CalendarMonthSharpIcon color={`${lightTheme.textColor}`} fontSize="small" />
-          <p className="currentDate" style={{color:`${lightTheme.textColor}`}}> {date.toDateString()}</p>
+          <p className="currentDate" style={{ color: `${lightTheme.textColor}` }}>
+            {date.toDateString()}
+          </p>
         </div>
 
         <Calendar
@@ -64,30 +66,18 @@ const CalendarComponent = () => {
           prev2Label={null}
           next2Label={null}
           onClickDay={() => checkTradeFunc(1)}
-          
-         
           tileContent={({ activeStartDate, date, view }) => {
-            return (
-              view === "month"? 
-                <div className="tileContent">
-                  <p>{profitLossData.map((val, index) => {
-                    return (
-                      <p>{val.value}</p>
-                    )
-                  })}</p>
-                  <p>{profitLossData.trades}</p>
-                </div>
-                : null
-              
-            );
+            return view === 'month' ? (
+              <div className="tileContent">
+                <p>
+                  {/* {profitLossData.map((val, index) => {
+                    return <p>{val.value}</p>;
+                  })} */}
+                </p>
+                <p>{profitLossData.trades}</p>
+              </div>
+            ) : null;
           }}
-          //   tileContent={({ date, view }) => view === 'day' &&
-          //       mark.find(x=>x===4)? "profit": "loss"
-          //   }
-          //   tileClassName={({ date, view }) => view === 'month' &&
-          //       mark? "tileContentProfit":"tileContentLoss"
-          //   }
-
           className="calendar"
         />
       </div>

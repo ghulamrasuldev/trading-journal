@@ -9,7 +9,7 @@ import PerTradeAverage from './PerTradeAverage/PerTradeAverage.jsx';
 import Instrument from './Instrument/Instrument.jsx';
 import WinLossExpectation from './WinLossExpectation/WinLossExpectation';
 import Liquidity from './Liquidity/Liquidity';
-import MarketBehaviour from './Marketbehaviour/MarketBehaviour'
+import MarketBehaviour from './Marketbehaviour/MarketBehaviour';
 
 const Compare = () => {
   const [showLock, setShowLock] = useState(true);
@@ -88,47 +88,39 @@ const Compare = () => {
     backgroundColor: `${lightTheme.ComponentBackgroundColor}`,
     borderRadius: '8px',
   };
-  const silverGold={
+  const silverGold = {
     fontSize: '18px',
     fontWeight: '500',
     color: `${lightTheme.textColor}`,
     textAlign: 'center',
     padding: '5px 0',
-  }
-  const plMain={
+  };
+  const plMain = {
     display: 'flex',
     justifyContent: 'flex-end',
     alignItems: 'center',
     padding: '10px 20px',
-  }
-  const plType={
+  };
+  const plType = {
     color: `${lightTheme.headingTextColor}`,
     fontWeight: '500',
     fontSize: '14px',
-  }
-  const selected={
+  };
+  const selected = {
     backgroundColor: `${lightTheme.headingTextColor}`,
     color: `${lightTheme.whiteText}`,
-  }
-  const notSelected={ background: 'none', color: `${lightTheme.textColor}` }
+  };
+  const notSelected = { background: 'none', color: `${lightTheme.textColor}` };
   return (
     <div>
       <Box sx={mainDiv}>
-        <p
-          style={silverGold}
-        >
+        <p style={silverGold}>
           These reports are only available for silver and gold users.
           <span style={{ color: `${lightTheme.headingTextColor}` }}>Upgrade now!</span>
         </p>
         {/* P & L type filters button */}
-        <div
-          style={plMain}
-        >
-          <p
-            style={plType}
-          >
-            P&L Type :
-          </p>
+        <div style={plMain}>
+          <p style={plType}>P&L Type :</p>
           <div
             className="plBtnDiv"
             style={{
@@ -137,33 +129,21 @@ const Compare = () => {
           >
             <button
               className="left-roundedPLType"
-              style={
-                applyFllter == '0'
-                  ? selected
-                  : notSelected
-              }
+              style={applyFllter == '0' ? selected : notSelected}
               onClick={() => setApplyFilter('0')}
             >
               $
             </button>
             <button
               className="plBtn"
-              style={
-                applyFllter == '1'
-                  ? selected
-                  : notSelected
-              }
+              style={applyFllter == '1' ? selected : notSelected}
               onClick={() => setApplyFilter('1')}
             >
               T
             </button>
             <button
               className="right-roundedPLType"
-              style={
-                applyFllter == '2'
-                  ? selected
-                  : notSelected
-              }
+              style={applyFllter == '2' ? selected : notSelected}
               onClick={() => setApplyFilter('2')}
             >
               R{' '}
@@ -195,88 +175,56 @@ const Compare = () => {
             >
               <button
                 className="left-rounded"
-                style={
-                  showComponent == '0'
-                    ? selected
-                    : notSelected
-                }
+                style={showComponent == '0' ? selected : notSelected}
                 onClick={() => setShowComponent('0')}
               >
                 Aggregate P&L
               </button>
               <button
                 className="winlossBtn"
-                style={
-                  showComponent == '1'
-                    ? selected
-                    : notSelected
-                }
+                style={showComponent == '1' ? selected : notSelected}
                 onClick={() => setShowComponent('1')}
               >
                 Per-Trade Average
               </button>
               <button
                 className="winlossBtn"
-                style={
-                  showComponent == '2'
-                    ? selected
-                    : notSelected
-                }
+                style={showComponent == '2' ? selected : notSelected}
                 onClick={() => setShowComponent('2')}
               >
                 Days/Times
               </button>
               <button
                 className="winlossBtn"
-                style={
-                  showComponent == '3'
-                    ? selected
-                    : notSelected
-                }
+                style={showComponent == '3' ? selected : notSelected}
                 onClick={() => setShowComponent('3')}
               >
                 Price/Volume
               </button>
               <button
                 className="winlossBtn"
-                style={
-                  showComponent == '4'
-                    ? selected
-                    : notSelected
-                }
+                style={showComponent == '4' ? selected : notSelected}
                 onClick={() => setShowComponent('4')}
               >
                 Instrument
               </button>
               <button
                 className="winlossBtn"
-                style={
-                  showComponent == '5'
-                    ? selected
-                    : notSelected
-                }
+                style={showComponent == '5' ? selected : notSelected}
                 onClick={() => setShowComponent('5')}
               >
                 Market Behaviour
               </button>
               <button
                 className="winlossBtn"
-                style={
-                  showComponent == '6'
-                    ? selected
-                    : notSelected
-                }
+                style={showComponent == '6' ? selected : notSelected}
                 onClick={() => setShowComponent('6')}
               >
                 Wins/Loss/Expectation
               </button>
               <button
                 className="right-rounded"
-                style={
-                  showComponent == '7'
-                    ? selected
-                    : notSelected
-                }
+                style={showComponent == '7' ? selected : notSelected}
                 onClick={() => setShowComponent('7')}
               >
                 Liquidity

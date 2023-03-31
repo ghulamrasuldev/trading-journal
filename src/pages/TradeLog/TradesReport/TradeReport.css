@@ -1,70 +1,70 @@
-.topDivTradeReprot{
-    display: flex;
-    justify-content:space-between;
-    align-items: center;
-    padding:15px;
+.topDivTradeReprot {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px;
 }
-.tradeReportSelectDiv{
-    display: flex;
-    align-items: center;
-    /* justify-content: space-between; */
-    /* padding: inherit; */
+.tradeReportSelectDiv {
+  display: flex;
+  align-items: center;
+  /* justify-content: space-between; */
+  /* padding: inherit; */
 }
-.tradeReportSelect{
-    /* width:100%; */
-    margin-right:10px;
+.tradeReportSelect {
+  /* width:100%; */
+  margin-right: 10px;
 }
-.TradeReportSetup{
-    background-color:#022658;
-    color: #e2e2e2;
-    font-size:10px;
-    padding:5px;
-    border-radius:8px;
+.TradeReportSetup {
+  background-color: #022658;
+  color: #e2e2e2;
+  font-size: 10px;
+  padding: 5px;
+  border-radius: 8px;
 }
-.selectCheckBox{
-    display: flex;
-    /* justify-content: center; */
-    align-items: center;
-    padding:10px 15px;
+.selectCheckBox {
+  display: flex;
+  /* justify-content: center; */
+  align-items: center;
+  padding: 10px 15px;
 }
-.MuiFormControlLabel-label{
-    font-size:15px!important;
-    color: #636578!important;
-    font-weight:500!important;
+.MuiFormControlLabel-label {
+  font-size: 15px !important;
+  color: #636578 !important;
+  font-weight: 500 !important;
 }
-.checkBoxBtns{
-    /* float: right; */
-    /* border: 1px solid black; */
-    display: flex;
-    justify-content:flex-end;
-    padding:10px 25px;
+.checkBoxBtns {
+  /* float: right; */
+  /* border: 1px solid black; */
+  display: flex;
+  justify-content: flex-end;
+  padding: 10px 25px;
 }
-.checkBoxCancelBtn{
-    padding:15px 25px;
-    background-color: white;
-    color: #636578;
-    font-size:20px;
-    font-weight: 700;
-    border: none;
-    margin-right:10px;
-    /* border: 1px solid #e2e2e2; */
+.checkBoxCancelBtn {
+  padding: 15px 25px;
+  background-color: white;
+  color: #636578;
+  font-size: 20px;
+  font-weight: 700;
+  border: none;
+  margin-right: 10px;
+  /* border: 1px solid #e2e2e2; */
 }
-.checkBoxSaveBtn{
-    padding:15px 30px;
-    background-color:#022658;
-    color: #e2e2e2;
-    font-size:20px;
-    font-weight: 700;
-    border: none;
-    border-radius:8px;
-    /* border: 1px solid #e2e2e2; */
+.checkBoxSaveBtn {
+  padding: 15px 30px;
+  background-color: #022658;
+  color: #e2e2e2;
+  font-size: 20px;
+  font-weight: 700;
+  border: none;
+  border-radius: 8px;
+  /* border: 1px solid #e2e2e2; */
 }
-.checkBoxSaveBtn:hover{
-    background-color: white;
-    color: #636578;
+.checkBoxSaveBtn:hover {
+  background-color: white;
+  color: #636578;
 }
-.checkBoxCancelBtn:hover{
-    border-radius:8px;
-    background-color:#022658;
-    color: #e2e2e2;
+.checkBoxCancelBtn:hover {
+  border-radius: 8px;
+  background-color: #022658;
+  color: #e2e2e2;
 }
