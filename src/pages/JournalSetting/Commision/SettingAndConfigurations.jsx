@@ -3,9 +3,11 @@ import React from 'react';
 
 import PrimaryButton from '../../../components/common/PrimaryButton';
 import SecondaryButton from '../../../components/common/SecondaryButton';
-import { lightTheme } from '../../../Theme/theme';
+import ModeChange from '../../../Theme/ChangeMode';
+// import { lightTheme } from '../../../Theme/theme';
 
 const SettingAndConfigurations = () => {
+  const lightTheme = ModeChange();
   const divWithBorderBottom = {
     display: 'flex',
     justifyContent: 'space-between',

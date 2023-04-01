@@ -2,9 +2,11 @@ import React,{useState} from 'react'
 import { Box, Grid } from "@mui/material";
 import Chart from "react-apexcharts";
 import './TopGraph.css'
-import {lightTheme} from '../../../Theme/theme'
+import ModeChange from '../../../Theme/ChangeMode';
+// import {lightTheme} from '../../../Theme/theme'
 
 const TopGraphs = () => {
+  const lightTheme = ModeChange();
     const [graphData, setGraphData] = useState({
         seriesSpark1: [
           {
@@ -101,7 +103,10 @@ const TopGraphs = () => {
         backgroundColor:`${lightTheme.ComponentBackgroundColor}`,
         // border: '1px solid black',
         borderRadius: "8px",
-      };
+  };
+  const rlMultipleAndOpen = {
+    backgroundColor:`${lightTheme.ComponentBackgroundColor}`
+  }
   return (
       <Box>
           <Grid container columnGap={2}  rowGap={4} mt={5} mb={5} >
@@ -111,7 +116,7 @@ const TopGraphs = () => {
                   <p className="graphTitle" style={{color:`${lightTheme.headingTextColor}`}}>Accumulative Performance</p>
                   <p className="graphSubTitle" style={{color:`${lightTheme.headingColor}`}}>
                     Total Trades:
-                    <span style={{ fontWeight: "500", paddingLeft: "5px" }}>
+                    <span style={{ fontWeight: "500", paddingLeft: "5px" ,color:`${lightTheme.lightDarkBlue}`}}>
                       83
                     </span>
                   </p>
@@ -164,14 +169,14 @@ const TopGraphs = () => {
               </div>
             </Grid>
             <Grid item lg={2.5} md={12} sm={12} rowGap={4} className="rMultipleAndOpen">
-              <div className="rMultipleMain">
+              <div className="rMultipleMain" style={rlMultipleAndOpen}>
                 <p className="rMultiple" style={{color:`${lightTheme.headingTextColor}`}}>R. Multiple</p>
                 <div>
                   <p className="profitTopGraph" style={{color:`${lightTheme.profit}`}}>$35,520.80</p>
                   <p className="lossTopGraph" style={{color:`${lightTheme.loss}`}}>-5.65%</p>
                 </div>
               </div>
-              <div className="openMain">
+              <div className="openMain" style={rlMultipleAndOpen}>
                 <p className="open" style={{color:`${lightTheme.headingTextColor}`}}>Open</p>
                 <div>
                   <p className="profitTopGraph" style={{color:`${lightTheme.profit}`}}>$35,520.80</p>

@@ -7,9 +7,11 @@ import DailyTradeGraph from './DailyTradeGraph/DailyTradeGraph';
 import DailyTradeDetails from './DailyTradeDetails/DailyTradeDetails';
 import DailyCalendar from '../../components/common/DailyCalendar/DailyCalendar';
 import TradeBarGraph from '../Dashboard/SideGraphs/TradeBarGraph/TradeBarGraph';
-import { lightTheme } from '../../Theme/theme';
+import ModeChange from '../../Theme/ChangeMode';
+// import { lightTheme } from '../../Theme/theme';
 
 const DailyStatus = () => {
+  const lightTheme = ModeChange();
   const mainDivStyle = {
     padding: '30px 25px',
     backgroundColor: `${lightTheme.lightPageBackground}`,

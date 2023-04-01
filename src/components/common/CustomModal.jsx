@@ -1,9 +1,11 @@
 import React from 'react';
 import { Modal, Fade, Box } from '@mui/material';
-import { lightTheme } from '../../Theme/theme';
+// import { lightTheme } from '../../Theme/theme';
 import './CustomModal.css';
+import ModeChange from '../../Theme/ChangeMode';
 
 const CustomModal = ({ open, handleClose, components, modalHeading = '' }) => {
+  const lightTheme=ModeChange()
   const handleModalClose = () => {
     handleClose();
   };

@@ -1,12 +1,13 @@
 import React,{useState} from 'react'
 import './tradeBarGraph.css'
 import Chart from "react-apexcharts";
-import { lightTheme } from '../../../../Theme/theme';
-import { light } from '@mui/material/styles/createPalette';
+import ModeChange from '../../../../Theme/ChangeMode';
+// import { lightTheme } from '../../../../Theme/theme';
 
 
 
 const TradeBarGraph = () => {
+  const lightTheme = ModeChange();
     const [tradeChart, setTradeChart] = useState({
         series: [
           {
@@ -55,7 +56,7 @@ const TradeBarGraph = () => {
       <div className='tradeBarGraphMain' style={{backgroundColor:`${lightTheme.ComponentBackgroundColor}`}}>
       <div className="tradeDiv">
     <p className="totalTrade" style={{color:`${lightTheme.headingTextColor}`}}>
-      Total number of trades:<span style={{fontWeight:'300',paddingLeft:'5px',color:`${lightTheme.textColor}`}}>8</span>
+      Total number of trades:<span style={{fontWeight:'300',paddingLeft:'5px',color:`${lightTheme.lightDarkBlue}`}}>8</span>
     </p>
     <div className="tradeChart">
       <Chart

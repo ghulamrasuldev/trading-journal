@@ -1,19 +1,22 @@
 import React, { useState } from 'react';
 import { Box } from '@mui/material';
-import { lightTheme } from '../../Theme/theme';
+// import { lightTheme } from '../../Theme/theme';
 import '../Journal/journal.css';
 import PrivacyAndPublicProfile from './PrivacyAndPublicProfile/PrivacyAndPublicProfile';
 import TradeSetting from './TradeSetting/TradeSetting';
 import Portfolio from './Portfolio/Portfolio';
 import Commission from './Commision/Commission';
+import ModeChange from '../../Theme/ChangeMode';
 
 const JournalComponent = ({ setNavbarTitle }) => {
+  const lightTheme=ModeChange()
   const [showComponent, setShowComponent] = useState('0');
 
   // styling
   const mainDiv = {
     marginTop: '25px',
     borderRadius: '8px',
+    // background:`${lightTheme.lightPageBackground}`
   };
   const sideBarStyle = {
     backgroundColor: `${lightTheme.ComponentBackgroundColor}`,
@@ -38,6 +41,7 @@ const JournalComponent = ({ setNavbarTitle }) => {
     flexDirection: 'row',
     justifyContent: 'space-between',
     columnGap: '30px',
+    // backgroundColor:`${lightTheme.lightPageBackground}`
   }
   const selected={
     color: `${lightTheme.textColor}`,

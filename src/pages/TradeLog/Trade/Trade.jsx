@@ -5,15 +5,16 @@ import { Box, Grid,Divider,Rating,Slider} from '@mui/material'
 import EyeView from '../../../assets/EyeView.png'
 import Select from 'react-select'
 import { RxCross2 } from 'react-icons/rx'
-import { lightTheme } from '../../../Theme/theme'
+// import { lightTheme } from '../../../Theme/theme'
 import RuningPlAndImg from './RunningPLandImage/RuningPlAndImg'
 import TradeTable from './TradeTable/TradeTable'
 import TextEditor from './TextEditor/TextEditor'
+import ModeChange from '../../../Theme/ChangeMode'
 
 const Trade = () => {
 
 
-
+  const lightTheme = ModeChange();
 
 // styling
   const mainTradeDiv = {

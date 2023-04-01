@@ -1,29 +1,30 @@
-.dailyCalendarMain{
-    box-shadow:0px 4px 4px rgba(0, 0, 0, 0.02);
-    background-color:#FFFFFF;
-    border-radius:8px;
-    padding:5px 0;
-    /* margin-top:40px; */
-    /* border: 1px solid black; */
+.dailyCalendarMain {
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.02);
+  background-color: #ffffff;
+  border-radius: 8px;
+  padding: 5px 0;
 }
-.calendarDiv{
-    /* border: 1px solid black; */
-    margin-top:30px;
-    padding:5px 20px;
-    }
-    .dailyCalendar{
-    border: none!important; 
-    width:100%!important;
-    padding:10px 15px!important;
-    }
-    /* .react-calendar__month-view__days{
-        border:none;
-        border-radius:8px;
-    } */
-    .second{
-        border:none!important;
-        padding-top:10px!important;
-        padding-left:5px!important;
-        padding-bottom:15px!important;
-        text-align:center!important;
-    }
+.calendarDiv {
+  margin-top: 30px;
+  padding: 5px 20px;
+}
+.dailyCalendar {
+  border: none !important;
+  width: 100% !important;
+  padding: 10px 15px !important;
+  background-color:white;
+}
+.react-calendarDaily{
+  border: none !important;
+  width: 100% !important;
+  padding: 10px 15px !important;
+  background-color:#30334E;
+}
+.second {
+  border: none !important;
+  padding-top: 10px !important;
+  padding-left: 5px !important;
+  padding-bottom: 15px !important;
+  text-align: center !important;
+}
+

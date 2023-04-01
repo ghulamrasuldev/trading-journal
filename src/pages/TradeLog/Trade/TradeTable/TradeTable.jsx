@@ -10,9 +10,11 @@ import TableRow from "@mui/material/TableRow";
 import Paper from "@mui/material/Paper";
 import EyeIcon from "../../../../assets/EyeView.png";
 import DelIcon from "../../../../assets/delBaskit.png";
-import { lightTheme } from "../../../../Theme/theme";
+import ModeChange from "../../../../Theme/ChangeMode";
+// import { lightTheme } from "../../../../Theme/theme";
 
 const TradeTable = () => {
+  const lightTheme = ModeChange();
   const mainDiv = {
     backgroundColor: `${lightTheme.ComponentBackgroundColor}`,
     marginTop: "25px",

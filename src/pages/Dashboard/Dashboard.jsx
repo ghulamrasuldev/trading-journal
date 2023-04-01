@@ -7,9 +7,12 @@ import './Dashboard.css';
 import SideGraphs from './SideGraphs/SideGraphs.jsx';
 import MonthlyGraph from './MonthlyAndCalender/MonthlyGraph';
 import CalendarComponent from './MonthlyAndCalender/Calendar';
-import { lightTheme } from '../../Theme/theme';
+import ModeChange from '../../Theme/ChangeMode';
+// import { lightTheme } from '../../Theme/theme';
 
 const Dashboard = () => {
+
+  const lightTheme = ModeChange();
   // styling props
   const mainDivStyle = {
     padding: '30px 25px',
@@ -33,7 +36,7 @@ const Dashboard = () => {
             <Grid item lg={4} md={12} sm={12} sx={Graphs}>
               <SideGraphs />
             </Grid>
-            <Grid item lg={7.5} md={12} sm={12}>
+            <Grid item lg={7.5} md={12} sm={12} >
               <MonthlyGraph />
               <CalendarComponent />
             </Grid>

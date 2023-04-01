@@ -4,10 +4,12 @@ import Accordion from '@mui/material/Accordion';
 import AccordionDetails from '@mui/material/AccordionDetails';
 import AccordionSummary from '@mui/material/AccordionSummary';
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
-import { lightTheme } from '../../../Theme/theme';
+// import { lightTheme } from '../../../Theme/theme';
 import './TradeSetting.css';
+import ModeChange from '../../../Theme/ChangeMode';
 
 const TradeSetting = () => {
+  const lightTheme = ModeChange();
   const [expanded, setExpanded] = useState('panel1');
   const [selectedCurrency, setSelectedCurrency] = useState('united state');
 

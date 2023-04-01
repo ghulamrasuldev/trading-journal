@@ -1,11 +1,13 @@
 import React, { useState } from 'react';
 import { Box, Grid } from '@mui/material';
 import NavBar from '../../components/NavBar/NavBar';
-import { lightTheme } from '../../Theme/theme';
+// import { lightTheme } from '../../Theme/theme';
 import { NewsContent } from '../../components/sideBar/NewsContent.js';
 import NewsImg from '../../assets/news.png';
+import ModeChange from '../../Theme/ChangeMode';
 
 const News = () => {
+  const lightTheme = ModeChange();
   const [news, setNews] = useState(NewsContent);
 
   const mainDiv = {
@@ -19,7 +21,7 @@ const News = () => {
     borderRadius: '8px',
   };
   const newsHeading = {
-    color: `${lightTheme.newsHeading}`,
+    color: `${lightTheme.lightDarkBlue}`,
     fontSize: '13px',
     fontWeight: '500',
     padding: '10px 5px',

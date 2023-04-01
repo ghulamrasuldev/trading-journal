@@ -4,9 +4,19 @@ import { styled } from '@mui/material/styles';
 import avatar from '../../assets/avatar.png';
 import NotificationMenu from './NotificationMenu/NotificationMenu';
 import Filter from './Filters/Filter';
-import { lightTheme } from '../../Theme/theme';
+import SwitchMode from './Switch/SwitchMode';
+// import { lightTheme } from '../../Theme/theme';
+
+import ModeChange from '../../Theme/ChangeMode';
 
 const NavBar = ({ name }) => {
+
+  const lightTheme = ModeChange();
+
+
+  
+
+
   const mainDiv = {
     display: 'flex',
     justifyContent: 'space-between',
@@ -16,7 +26,7 @@ const NavBar = ({ name }) => {
     width: '100%',
     height: '62px',
     backgroundColor: `${lightTheme.ComponentBackgroundColor}`,
-    boxShadow: 'rgba(99, 99, 99, 0.3) 0px 2px 8px 0px',
+    boxShadow:`${lightTheme.boxShadow}`,
     borderRadius: '6px',
   };
   const rightDiv = {
@@ -86,12 +96,15 @@ const NavBar = ({ name }) => {
     color: `${lightTheme.userPost}`,
   };
 
+
+
   return (
     <div style={mainDiv}>
       <div>
         <h4 style={leftDiv}>{name}</h4>
       </div>
       <div style={rightDiv}>
+          <SwitchMode/>
         <div style={filterAndNotify}>
           <Filter />
           <NotificationMenu />

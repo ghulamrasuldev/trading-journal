@@ -3,9 +3,12 @@ import Calendar from "react-calendar";
 import "react-calendar/dist/Calendar.css";
 import CalendarMonthSharpIcon from "@mui/icons-material/CalendarMonthSharp";
 import "./calendar.css";
-import {lightTheme} from '../../../Theme/theme'
+import ModeChange from "../../../Theme/ChangeMode";
+import { useSelector } from "react-redux";
+// import {lightTheme} from '../../../Theme/theme'
 
 const CalendarComponent = () => {
+  const lightTheme=ModeChange()
   const [check, setCheck] = useState(false);
   const [date, setDate] = useState(new Date());
 
@@ -50,12 +53,15 @@ const CalendarComponent = () => {
     },
   ];
 
+  const dateDiv = {backgroundColor:`${lightTheme.currentDateDiv}`,border:`1px solid ${lightTheme.dateBorderColor}`}
+
+  const mode =useSelector(state=>state.mode)
   return (
     <div className="calendarMain" style={{backgroundColor:`${lightTheme.ComponentBackgroundColor}`}}>
-      <div className="calendarDiv">
-        <div className="dateDiv">
+      <div className="calendarDiv" style={{backgroundColor:`${lightTheme.ComponentBackgroundColor}`}}>
+        <div className="dateDiv" style={dateDiv}>
           <CalendarMonthSharpIcon color={`${lightTheme.textColor}`} fontSize="small" />
-          <p className="currentDate" style={{color:`${lightTheme.textColor}`}}> {date.toDateString()}</p>
+          <p className="currentDate" style={{color: `${lightTheme.textColor}`}}> {date.toDateString()}</p>
         </div>
 
         <Calendar
@@ -65,7 +71,7 @@ const CalendarComponent = () => {
           next2Label={null}
           onClickDay={() => checkTradeFunc(1)}
           
-         
+        //  style={{textColor:'red'}}
           tileContent={({ activeStartDate, date, view }) => {
             return (
               view === "month"? 
@@ -88,7 +94,8 @@ const CalendarComponent = () => {
           //       mark? "tileContentProfit":"tileContentLoss"
           //   }
 
-          className="calendar"
+
+          className={mode? "react-calendarDashboard":"calendarDashboard"}
         />
       </div>
     </div>

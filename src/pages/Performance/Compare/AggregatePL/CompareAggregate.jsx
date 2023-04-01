@@ -1,12 +1,14 @@
 import React, { useState } from "react";
 import { Box, Divider, Grid, TextField } from "@mui/material";
-import { lightTheme } from "../../../../Theme/theme";
+// import { lightTheme } from "../../../../Theme/theme";
 import { MdOutlineLock } from "react-icons/md";
 import Select from "react-select";
 import "./CompareAggregate.css";
+import ModeChange from "../../../../Theme/ChangeMode";
 
 const CompareAggregate = () => {
 
+  const lightTheme = ModeChange();
 const [showLock, setShowLock] = useState(true);
 
 

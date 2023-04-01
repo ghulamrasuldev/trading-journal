@@ -1,8 +1,10 @@
 import React from 'react';
-import { lightTheme } from '../../../Theme/theme';
+// import { lightTheme } from '../../../Theme/theme';
 import Select from 'react-select';
 import { Checkbox, FormControlLabel } from '@mui/material';
+import ModeChange from '../../../Theme/ChangeMode';
 const ShareWithAnyOne = () => {
+  const lightTheme = ModeChange();
   const headerStyling = {
     fontSize: '20px',
     fontWeight: 500,

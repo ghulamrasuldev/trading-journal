@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import "./WinVSLossDays.css";
-import { lightTheme } from "../../../Theme/theme";
+// import { lightTheme } from "../../../Theme/theme";
 import { Box } from "@mui/material";
 import WinLossAggregatePL from "./AggregatePL/WinLossAggregatePL";
 import DaysAndTimes from "./DaysAndTimes/DaysAndTimes";
@@ -9,8 +9,10 @@ import Instrument from "./Instrument/Instrument";
 import MarketBehaviour from "./Marketbehaviour/MarketBehaviour";
 import WinLossExpectation from "./WinLossExpectation/WinLossExpectation";
 import Liquidity from "./Liquidity/Liquidity";
+import ModeChange from "../../../Theme/ChangeMode";
 
 const WinVSLossDays = () => {
+  const lightTheme = ModeChange();
   const [showComponent, setShowComponent] = useState("0");
 
   // styling

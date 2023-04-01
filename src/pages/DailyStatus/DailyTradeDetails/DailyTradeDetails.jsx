@@ -4,9 +4,11 @@ import { Box, Divider } from "@mui/material";
 import EditImg from "../../../assets/editNotes.png";
 import DailyTradeGraph from '../DailyTradeGraph/DailyTradeGraph'
 import DailyTradeTable from "./DailyTradeTable/DailyTradeTable";
-import { lightTheme } from "../../../Theme/theme";
+import ModeChange from "../../../Theme/ChangeMode";
+// import { lightTheme } from "../../../Theme/theme";
 
 const DailyTradeDetails = () => {
+  const lightTheme = ModeChange();
   const Graphs = {
     boxShadow: "0px 4px 4px rgba(0, 0, 0, 0.02)",
     backgroundColor:`${lightTheme.ComponentBackgroundColor}`,
@@ -22,7 +24,7 @@ const DailyTradeDetails = () => {
                   
         <div className="EditNotesDiv">
           <p className="editNote" style={{color:`${lightTheme.headingTextColor}`}}>Edit Notes</p>
-          <img src={EditImg} alt="EditNote" height={20} />
+          <img src={EditImg} alt="EditNote" height={20} style={{color:'red'}}/>
               </div>
               <Divider />
         </div>

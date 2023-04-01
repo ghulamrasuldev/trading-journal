@@ -1,10 +1,12 @@
 import React, { useState } from "react";
 import { Box, Divider, Grid, TextField } from "@mui/material";
-import { lightTheme } from "../../../Theme/theme";
+// import { lightTheme } from "../../../Theme/theme";
 import { MdOutlineLock } from "react-icons/md";
 import Chart from "react-apexcharts";
+import ModeChange from "../../../Theme/ChangeMode";
 
 const Drawdown = () => {
+  const lightTheme = ModeChange();
   const [showLock, setShowLock] = useState(true);
   const [applyFllter, setApplyFilter] = useState("0");
   const [tradeDistributionGraph, setTradeDistributionGraph] = useState({

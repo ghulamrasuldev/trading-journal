@@ -2,9 +2,11 @@ import React, { useState } from "react";
 import "./dailyTradeGraph.css";
 import Chart from "react-apexcharts";
 import { Divider, Grid } from "@mui/material";
-import { lightTheme } from "../../../Theme/theme";
+import ModeChange from "../../../Theme/ChangeMode";
+// import { lightTheme } from "../../../Theme/theme";
 
 const DailyTradeGraph = () => {
+  const lightTheme = ModeChange();
   const date = new Date().toDateString();
   const [dailyGraph, setDailyGraph] = useState({
     series: [
@@ -37,11 +39,21 @@ const DailyTradeGraph = () => {
           "0.33232",
           "0.99999",
         ],
+        labels: {
+          style: {
+            colors:`${lightTheme.graphLabels}`
+          }
+        }
       },
       yaxis: {
         min: 0,
         max: 2500,
         tickAmount: 5,
+        labels: {
+          style: {
+            colors:`${lightTheme.graphLabels}`
+          }
+        }
       },
       grid: {
         position: "front",
@@ -103,11 +115,11 @@ const DailyTradeGraph = () => {
               <>
               <div className="insideTradeDetail">
                 <div>
-                  <p style={{color:`${lightTheme.headingTextColor}`}}>Total Trades</p>
+                  <p style={{color:`${lightTheme.lightDarkBlue}`}}>Total Trades</p>
                         <p className="noOfTrade" style={{color:`${lightTheme.textColor}`}}>{ trade.trades}</p>
                 </div>
                 <div>
-                  <p style={{color:`${lightTheme.headingTextColor}`}}>Total Trades</p>
+                  <p style={{color:`${lightTheme.lightDarkBlue}`}}>Total Trades</p>
                         <p className="tradePercentage" style={{color:`${lightTheme.textColor}`}}>{trade.percentage}</p>
                     </div>
               </div>

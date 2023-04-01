@@ -29,7 +29,7 @@
 }
 .MuiFormControlLabel-label{
     font-size:15px!important;
-    color: #636578!important;
+    /* color: #636578!important; */
     font-weight:500!important;
 }
 .checkBoxBtns{
@@ -41,8 +41,8 @@
 }
 .checkBoxCancelBtn{
     padding:15px 25px;
-    background-color: white;
-    color: #636578;
+    /* background-color: white; */
+    /* color: #636578; */
     font-size:20px;
     font-weight: 700;
     border: none;
@@ -51,8 +51,8 @@
 }
 .checkBoxSaveBtn{
     padding:15px 30px;
-    background-color:#022658;
-    color: #e2e2e2;
+    /* background-color:#022658;
+    color: #e2e2e2; */
     font-size:20px;
     font-weight: 700;
     border: none;
@@ -60,11 +60,11 @@
     /* border: 1px solid #e2e2e2; */
 }
 .checkBoxSaveBtn:hover{
-    background-color: white;
-    color: #636578;
+    /* background-color: white;
+    color: #636578; */
 }
 .checkBoxCancelBtn:hover{
     border-radius:8px;
-    background-color:#022658;
-    color: #e2e2e2;
+    /* background-color:#022658;
+    color: #e2e2e2; */
 }

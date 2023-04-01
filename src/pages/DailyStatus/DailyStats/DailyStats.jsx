@@ -1,13 +1,14 @@
 import React, { useState } from "react";
 import NavBar from "../../../components/NavBar/NavBar";
 import { Box, Divider, Grid } from "@mui/material";
-import { lightTheme } from "../../../Theme/theme";
+// import { lightTheme } from "../../../Theme/theme";
 import { RiArrowDropRightLine } from "react-icons/ri";
 import { MdOutlineNoteAdd } from "react-icons/md";
 import Chart from "react-apexcharts";
 import DailyCalendar from "../../../components/common/DailyCalendar/DailyCalendar";
 
 const DailyStats = () => {
+  const lightTheme = ModeChange();
   const [areaChart, setAreaChart] = useState({
     series: [
       {
@@ -28,21 +29,22 @@ const DailyStats = () => {
         curve: "straight",
       },
       xaxis: {
-        //   categories: [
-        //     "0.9284",
-        //     "0.987650",
-        //     "0.456700",
-        //     "0.987654",
-        //     "0.4444",
-        //     "0.9812",
-        //     "0.23333",
-        //     "0.33232",
-        //     "0.99999",
-        //   ],
+        categories: [
+          "0.9284",
+          "0.987650",
+          "0.456700",
+          "0.987654",
+          "0.4444",
+          "0.9812",
+          "0.23333",
+          "0.33232",
+          "0.99999",
+        ],
         show: false,
 
         labels: {
           show: false,
+          
         },
       },
 
@@ -164,8 +166,6 @@ const DailyStats = () => {
     color: `${lightTheme.headingTextColor}`,
     fontSize: "14px",
     fontWeight: "600",
-    // padding:'0 20px'
-    //   paddingLeft:'40px'
   };
 
   const mainStatDiv = {
@@ -175,7 +175,6 @@ const DailyStats = () => {
     columnGap: "30px",
     width: "100%",
     margin: "25px 0",
-    // border: "1px solid orange",
   };
   const graphDiv = {
     backgroundColor: `${lightTheme.ComponentBackgroundColor}`,
@@ -189,14 +188,8 @@ const DailyStats = () => {
     marginBottom:'10px'
   };
   const graphMain = {
-    // backgroundColor: `${lightTheme.ComponentBackgroundColor}`,
-    // borderRadius: "8px",
-    // padding: "10px 10px",
-    // flexDirection:'column',
-    // maxHeight: "230px",
       width:'75%',
     flex: "0 1 75%",
-    // border: "1px solid black",
   };
   const calendarDiv = {
     backgroundColor: `${lightTheme.ComponentBackgroundColor}`,

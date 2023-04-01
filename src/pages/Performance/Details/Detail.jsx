@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import "./Detail.css";
-import { lightTheme } from "../../../Theme/theme";
+// import { lightTheme } from "../../../Theme/theme";
 import { Box } from "@mui/material";
 import AggregatePL from "./AggredatePL/AggregatePL";
 import PerTradeAverage from "./PerTradeAverage/PerTradeAverage";
@@ -10,8 +10,10 @@ import Liquidity from "./Liquidity/Liquidity";
 import Instrument from "./Instrument/Instrument";
 import MarketBehaviour from "./Marketbehaviour/MarketBehaviour";
 import WinLossExpectation from "./WinLossExpectation/WinLossExpectation";
+import ModeChange from "../../../Theme/ChangeMode";
 
 const Detail = () => {
+  const lightTheme = ModeChange();
   const [showComponent, setShowComponent] = useState("0");
 
   // styling

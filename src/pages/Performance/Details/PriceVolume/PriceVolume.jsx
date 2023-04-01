@@ -1,9 +1,10 @@
 import { Box, Grid } from "@mui/material";
 import React, { useState } from "react";
-import { lightTheme } from "../../../../Theme/theme";
+// import { lightTheme } from "../../../../Theme/theme";
 import Chart from "react-apexcharts";
 
 const PriceVolume = () => {
+  const lightTheme=ModeChange();
   const [tradeDistributionPriceGraph, setTradeDistributionPriceGraph] =
     useState({
       series: [

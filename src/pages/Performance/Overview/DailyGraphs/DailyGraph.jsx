@@ -1,9 +1,11 @@
 import React, { useState } from "react";
 import { Grid, Box } from "@mui/material";
-import { lightTheme } from "../../../../Theme/theme";
+// import { lightTheme } from "../../../../Theme/theme";
 import Chart from "react-apexcharts";
+import ModeChange from "../../../../Theme/ChangeMode";
 
 const DailyGraph = () => {
+  const lightTheme = ModeChange();
   const [DailyPLGraph, setDailyPLGraph] = useState({
     series: [
       {

@@ -1,9 +1,11 @@
 import { Box, Grid } from "@mui/material";
 import React, { useState } from "react";
-import { lightTheme } from "../../../../Theme/theme";
+// import { lightTheme } from "../../../../Theme/theme";
 import Chart from "react-apexcharts";
+import ModeChange from "../../../../Theme/ChangeMode";
 
 const Instrument = () => {
+  const lightTheme = ModeChange();
   const [performanceBySymbolTopGraph, setPerformanceBySymbolTopGraph] =
     useState({
       series: [

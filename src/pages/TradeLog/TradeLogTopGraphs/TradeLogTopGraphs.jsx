@@ -2,10 +2,12 @@ import React, { useState } from "react";
 import { Box, Grid } from "@mui/material";
 import Chart from "react-apexcharts";
 import "./TradeLogTopGraph.css";
-import { lightTheme } from "../../../Theme/theme";
+import ModeChange from "../../../Theme/ChangeMode";
+// import { lightTheme } from "../../../Theme/theme";
 
 const TradeLogTopGraphs = () => {
 
+  const lightTheme = ModeChange();
   // first top graph
   const [graphData, setGraphData] = useState({
     seriesSpark1: [
@@ -133,7 +135,7 @@ const TradeLogTopGraphs = () => {
               <p className="graphTitle" style={{color:`${lightTheme.headingTextColor}`}}>Net Cumulative PL</p>
               <p className="graphSubTitle" style={{color:`${lightTheme.headingColor}`}}>
                 Total Trades:
-                <span style={{ fontWeight: "500", paddingLeft: "5px",color:`${lightTheme.textColor}` }}>
+                <span style={{ fontWeight: "500", paddingLeft: "5px",color:`${lightTheme.lightDarkBlue}` }}>
                   83
                 </span>
               </p>
@@ -181,14 +183,14 @@ const TradeLogTopGraphs = () => {
               <p className="graphTitle" style={{color:`${lightTheme.headingTextColor}`}}>Net Daily P&L</p>
               <p className="graphSubTitle" style={{color:`${lightTheme.headingColor}`}}>
                 Total Trades:
-                <span style={{ fontWeight: "500", paddingLeft: "5px",color:`${lightTheme.textColor}` }}>
+                <span style={{ fontWeight: "500", paddingLeft: "5px",color:`${lightTheme.lightDarkBlue}` }}>
                   83
                 </span>
               </p>
             </div>
             <div>
-              <p className="profitTopGraph"><span style={{fontWeight:'700',marginRight:'5px',color:'#022658',fontSize:'10px'}}>Profit:</span>$35,520.80</p>
-              <p className="lossTopGraph"><span style={{fontWeight:'700',marginRight:'5px',color:'#022658',fontSize:'10px'}}>Lost:</span>$35,520.80</p>
+              <p className="profitTopGraph"><span style={{fontWeight:'700',marginRight:'5px',color:'#022658',fontSize:'10px',color:`${lightTheme.profitloss}`}}>Profit:</span>$35,520.80</p>
+              <p className="lossTopGraph"><span style={{fontWeight:'700',marginRight:'5px',color:'#022658',fontSize:'10px',color:`${lightTheme.profitloss}`}}>Lost:</span>$35,520.80</p>
             </div>
             </div>
             <div>
