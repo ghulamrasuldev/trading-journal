@@ -25,19 +25,19 @@ const News = () => {
     fontSize: '13px',
     fontWeight: '500',
     padding: '10px 5px',
-  }
-  const newsFeed={
+  };
+  const newsFeed = {
     color: `${lightTheme.textColor}`,
     fontSize: '12px',
     fontWeight: '400',
     paddingLeft: '10px',
-  }
+  };
   return (
     <div>
       <Box sx={mainDiv}>
         <NavBar name={'News'} />
         <div>
-          <Grid container columnGap={4} rowGap={2}>
+          <Grid container justifyContent="space-between" alignItems="center" rowGap={2}>
             {news.map((news, index) => {
               return (
                 <>
@@ -45,16 +45,8 @@ const News = () => {
                     <div style={{ display: 'flex' }}>
                       <img src={NewsImg} alt="" style={{ borderRadius: '8px' }} height={120} width={210} />
                       <div>
-                        <p
-                          style={newsHeading}
-                        >
-                          {news.heading}
-                        </p>
-                        <p
-                          style={newsFeed}
-                        >
-                          {news.news}
-                        </p>
+                        <p style={newsHeading}>{news.heading}</p>
+                        <p style={newsFeed}>{news.news}</p>
                       </div>
                     </div>
                   </Grid>
