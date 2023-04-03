@@ -28,7 +28,7 @@ const DailyStatus = () => {
       <Box sx={mainDivStyle}>
         <NavBar name={'Daily Status'} />
         <TopGraphs />
-        <Grid container columnGap={spacing} rowGap={6}>
+        <Grid container justifyContent="space-between" rowGap={6}>
           <Grid item lg={8} md={12} sm={12}>
             <DailyTradeGraph />
             <DailyTradeDetails />

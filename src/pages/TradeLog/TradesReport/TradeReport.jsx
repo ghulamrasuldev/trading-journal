@@ -84,42 +84,45 @@ const TradeReport = () => {
   };
 
   const selectText = {
-    fontWeight: "500",
-    fontSize: "20px",
-    padding: "5px 20px",
-    paddingTop: "10px",
+    fontWeight: '500',
+    fontSize: '20px',
+    padding: '5px 20px',
+    paddingTop: '10px',
     color: `${lightTheme.lightDarkBlue}`,
   };
   const noneDefault = {
-    padding: "0 10px",
-    color: "#022658",
-    fontWeight: "700",
-    cursor: "pointer",
+    padding: '0 10px',
+    color: '#022658',
+    fontWeight: '700',
+    cursor: 'pointer',
     color: `${lightTheme.lightDarkBlue}`,
     // color:'red'
   };
   const cancleBtn = {
     backgroundColor: `${lightTheme.ComponentBackgroundColor}`,
     color: `${lightTheme.textColor}`,
-    cursor: "pointer",
+    cursor: 'pointer',
   };
   const saveBtn = {
     backgroundColor: `${lightTheme.lightDarkBlue}`,
-    color:'white',
-    cursor: "pointer",
+    color: 'white',
+    cursor: 'pointer',
   };
   const tableHead = {
     color: `${lightTheme.headingTextColor}`,
     borderBottom: `1px solid ${lightTheme.tableBorderColor}`,
+    // padding: '0px 5px 0px 5px',
+    // fontSize: '12px',
   };
   const tableData = {
     color: `${lightTheme.textColor}`,
     borderBottom: `1px solid ${lightTheme.tableBorderColor}`,
+    // fontSize: '12px',
   };
   const checkBoxLabel = {
     color: `${lightTheme.textColor}`,
-    fontSize: "15px",
-    fontWeight: "500",
+    fontSize: '15px',
+    fontWeight: '500',
   };
   return (
     <Box sx={TradeReportMain}>
@@ -160,13 +163,13 @@ const TradeReport = () => {
               <Table sx={{ minWidth: 650 }} aria-label="simple table">
                 <TableHead>
                   <TableRow>
-                    <TableCell align="right" style={tableHead}>
+                    <TableCell align="center" style={tableHead}>
                       Ticker
                     </TableCell>
-                    <TableCell align="right" style={tableHead}>
+                    <TableCell align="center" style={tableHead}>
                       Setups
                     </TableCell>
-                    <TableCell align="right" style={tableHead}>
+                    <TableCell align="center" style={tableHead}>
                       Net P%L
                     </TableCell>
                     <TableCell align="center" style={tableHead}>
@@ -174,10 +177,10 @@ const TradeReport = () => {
                       <br />
                       <span>(US/Eastern)</span>
                     </TableCell>
-                    <TableCell align="right" style={tableHead}>
+                    <TableCell align="center" style={tableHead}>
                       Average_Entry
                     </TableCell>
-                    <TableCell align="right" style={tableHead}>
+                    <TableCell align="center" style={tableHead}>
                       Average_Exit
                     </TableCell>
                     <TableCell align="center" style={tableHead}>
@@ -185,28 +188,28 @@ const TradeReport = () => {
                       <br />
                       (US/Eastern)
                     </TableCell>
-                    <TableCell align="right" style={tableHead}>
+                    <TableCell align="center" style={tableHead}>
                       Duration
                     </TableCell>
-                    <TableCell align="right" style={tableHead}>
+                    <TableCell align="center" style={tableHead}>
                       Adjusted_Cost
                     </TableCell>
-                    <TableCell align="right" style={tableHead}>
+                    <TableCell align="center" style={tableHead}>
                       Side
                     </TableCell>
-                    <TableCell align="right" style={tableHead}>
+                    <TableCell align="center" style={tableHead}>
                       Gross P&L
                     </TableCell>
-                    <TableCell align="right" style={tableHead}>
+                    <TableCell align="center" style={tableHead}>
                       Volume
                     </TableCell>
-                    <TableCell align="right" style={tableHead}>
+                    <TableCell align="center" style={tableHead}>
                       R_Multiple
                     </TableCell>
-                    <TableCell align="right" style={tableHead}>
+                    <TableCell align="center" style={tableHead}>
                       Initial_Target
                     </TableCell>
-                    <TableCell align="right" style={tableHead}>
+                    <TableCell align="center" style={tableHead}>
                       Instrument_Type
                     </TableCell>
                   </TableRow>
@@ -324,9 +327,7 @@ const TradeReport = () => {
                               <FormControlLabel
                                 control={
                                   <Checkbox
-                                    /*checked={allChecked? true: false}*/ value={
-                                      data
-                                    }
+                                    /*checked={allChecked? true: false}*/ value={data}
                                     size="medium"
                                     onChange={(e) => handleCheck(e)}
                                   />
@@ -346,13 +347,7 @@ const TradeReport = () => {
                       return (
                         <div key={index}>
                           <FormControlLabel
-                            control={
-                              <Checkbox
-                                value={data}
-                                size="medium"
-                                onChange={(e) => handleCheck(e)}
-                              />
-                            }
+                            control={<Checkbox value={data} size="medium" onChange={(e) => handleCheck(e)} />}
                             label={<p style={checkBoxLabel}>{data}</p>}
                           />
                         </div>
@@ -361,12 +356,15 @@ const TradeReport = () => {
                   </FormGroup>
                 </Grid>
               </Grid>
-                <div className="checkBoxBtns" style={{display:'flex',justifyContent:'end',columnGap:'10px'}}>
-                  <SecondaryButton buttonTitle={"Cancel"}/>
-                  <PrimaryButton buttonTitle={"Save"}  onClick={() => {
+              <div className="checkBoxBtns" style={{ display: 'flex', justifyContent: 'end', columnGap: '10px' }}>
+                <SecondaryButton buttonTitle={'Cancel'} />
+                <PrimaryButton
+                  buttonTitle={'Save'}
+                  onClick={() => {
                     filterTable();
                     setToggle(true);
-                  }} />
+                  }}
+                />
                 {/* <button className="checkBoxCancelBtn" style={cancleBtn}>
                   Cancel
                 </button>
