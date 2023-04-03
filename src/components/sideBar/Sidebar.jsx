@@ -112,7 +112,7 @@ const Sidebar = ({ children }) => {
             width: "100%",
             position: "relative",
             top: "-18px",
-            zIndex: "1",
+            zIndex: "-1",
             boxShadow: "0px 2px 4px rgba(0, 0, 0, 0.03)",
           }}
         />

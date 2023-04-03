@@ -76,14 +76,17 @@ const RuningPlAndImg = () => {
     borderRadius:'8px'
   };
   const imgUpload = {
-    marginTop: '20px',
+    // marginBottom: '20px',
     cursor: 'pointer',
+    // border: '1px solid yellow',
+    // width:'100%'
+    backgroundColor:`${lightTheme.ComponentBackgroundColor}`
   }
   return (
     <div>
       <Box sx={mainDiv}>
-        <Grid container columnGap={4} rowGap={4}>
-          <Grid item lg={5} py={4} px={3}>
+        <Grid container columnGap={4} rowGap={4} py={2}>
+          <Grid item lg={5} py={3} px={3} >
             <p
               style={{
                 color: `${lightTheme.headingTextColor}`,
@@ -102,7 +105,7 @@ const RuningPlAndImg = () => {
               />
             </div>
           </Grid>
-          <Grid item lg={6} pb={4} sx={imgUpload}>
+          <Grid item lg={6.5}  sx={imgUpload} >
             <ImageUploading
               multiple
               value={images}
@@ -119,8 +122,11 @@ const RuningPlAndImg = () => {
                 isDragging,
                 dragProps,
               }) => (
-                // write your building UI
-                <div  style={{ height: "80%" }}>
+                  // write your building UI
+                <div style={{ height: '100%', display: 'flex', flexDirection: 'column', justifyContent:'center' }}>
+                
+                <div style={{ height: "100%"}}>
+                 
                   <div
                    
                     className="ImgUploadDiv"
@@ -134,6 +140,7 @@ const RuningPlAndImg = () => {
                       borderWidth: '2px',
                       borderStyle: 'dashed',
                       borderColor: '#e2e2e2',
+                      backgroundColor:`${lightTheme.ComponentBackgroundColor}`
                       
                     }}
                     onClick={onImageUpload}
@@ -146,27 +153,29 @@ const RuningPlAndImg = () => {
                   {/* <button onClick={onImageRemoveAll}>Remove all images</button> */}
 
 
-                  <div style={{display:'flex'}}>
-                  {imageList.map((image, index) => (
-                   
-                    <div key={index} className="image-item" >
-                      <img src={image["data_url"]} alt=""  id={toggle? 'large':'small'}
-                        onClick={() => {
-                          ZoomIn();
-                        }}
-                      />
-                      {/* <div className="image-item__btn-wrapper">
-                        <button onClick={() => onImageUpdate(index)}>
-                          Update
-                        </button>
-                        <button onClick={() => onImageRemove(index)}>
-                          Remove
-                        </button>
-                      </div> */}
-                      </div>
-                  ))}
-                  </div>
+                  
                  
+                  </div>
+                  <div style={{display:'flex'}}>
+                {imageList.map((image, index) => (
+                 
+                  <div key={index} className="image-item" >
+                    <img src={image["data_url"]} alt=""  id={toggle? 'large':'small'}
+                      onClick={() => {
+                        ZoomIn();
+                      }}
+                    />
+                    {/* <div className="image-item__btn-wrapper">
+                      <button onClick={() => onImageUpdate(index)}>
+                        Update
+                      </button>
+                      <button onClick={() => onImageRemove(index)}>
+                        Remove
+                      </button>
+                    </div> */}
+                    </div>
+                ))}
+                </div>
                 </div>
               )}
             </ImageUploading>
