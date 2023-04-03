@@ -23,6 +23,7 @@ const PrivacyAndPublicProfile = () => {
 
   const mainAccordion = {
     borderRadius: '8px 8px 0px 0px',
+    background:`${lightTheme.ComponentBackgroundColor}`,
     marginBottom: '30px',
     '&:before': {
       display: 'none',

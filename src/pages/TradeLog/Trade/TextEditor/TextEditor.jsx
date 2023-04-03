@@ -1,6 +1,5 @@
 import React, { useState,useEffect } from "react";
 import { Box } from "@mui/material";
-// import { lightTheme } from "../../../../Theme/theme";
 import { CKEditor } from "@ckeditor/ckeditor5-react";
 import ClassicEditor from "@ckeditor/ckeditor5-build-classic";
 import parser from "html-react-parser";
@@ -9,13 +8,15 @@ import parser from "html-react-parser";
 // import EditorToolbar, { modules, formats } from "./EditorToolbar";
 import "./TextEditor.css";
 import ModeChange from "../../../../Theme/ChangeMode";
+import PrimaryButton from "../../../../components/common/PrimaryButton";
+import { useSelector } from "react-redux";
 
 
 
 
 // to get notes from local storage
 const getLocalStorageData = () => {
-  const lightTheme = ModeChange();
+  
   const Notes = localStorage.getItem('notes')
   if (Notes) {
     return JSON.parse(localStorage.getItem('notes'))
@@ -26,6 +27,7 @@ const getLocalStorageData = () => {
 
 
 const TextEditor = () => {
+  const lightTheme = ModeChange();
     const [editorData, setEditorData] = useState('');
   const [save, setSave] = useState(getLocalStorageData());
     const [toggle, setToggle] = useState(false);
@@ -35,7 +37,7 @@ useEffect(() => {
   localStorage.setItem('notes', JSON.stringify(save));
 },[ ])
 
-  
+  const mode=useSelector(state=>state.mode)
     
 // styling
   const mainDiv = {
@@ -74,17 +76,17 @@ useEffect(() => {
           {
             save.map((data, index) => {
               return (
-                <p onClick={() => setEditorValue(data)} key={index} className="Document">{(data.length > 15) ? parser(`${data.slice(0, 10)}...`) :parser(`${data}`)}</p>
+                <p onClick={() => setEditorValue(data)} key={index} className="Document" style={{border:`1px solid ${lightTheme.lightDarkBlue}`,color:`${lightTheme.textColor}`}}>{(data.length > 15) ? parser(`${data.slice(0, 10)}...`) :parser(`${data}`)}</p>
               )
             })
           }
                  
                   {/* <p>{parser(save)}</p> */}
-        </div>:''}</p>
+            </div> : ''}</p>
           </div>
-          <button className="addNote" style={{color:`${lightTheme.whiteText}`,backgroundColor:`${lightTheme.headingTextColor}`}}  onClick={() => handleData()}>+ NOTE</button>
+            <PrimaryButton buttonTitle={"+ Note"} onClick={() => handleData()}/>
         </div>
-        <div>
+        <div >
           <CKEditor
             editor={ClassicEditor}
             data={editorData}
@@ -92,6 +94,8 @@ useEffect(() => {
               const data = editor.getData();
               setEditorData(data);
             }}
+            // className={mode? 'ck':'ckk'}
+            
           />
           {/* <ReactQuill
             theme="snow"
