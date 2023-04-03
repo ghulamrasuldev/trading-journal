@@ -13,12 +13,14 @@ import settingIcon from "/sidebarImages/setting.png";
 import ModeChange from "../../Theme/ChangeMode";
 
 import NewsCard from "./NewsCard";
-import { useSelector } from "react-redux";
+import { useSelector } from "react-redux";;
+import { useAtom } from 'jotai';
+import { isOpenAtom } from '../../atom/atom.js';
 
 const Sidebar = ({ children }) => {
   const lightTheme = ModeChange();
 
-  const [isOpen, setIsOpen] = useState(false);
+  const [isOpen, setIsOpen] = useAtom(isOpenAtom);
 
   const menuItem = [
     {
@@ -89,6 +91,7 @@ const Sidebar = ({ children }) => {
             </p>
           </div>
           <div className="openArrow">
+           
             {isOpen ? (
               <IoIosArrowDropleftCircle
                 size={30}

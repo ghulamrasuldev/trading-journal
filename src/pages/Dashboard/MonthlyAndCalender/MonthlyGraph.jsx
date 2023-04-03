@@ -120,7 +120,7 @@ const MonthlyGraph = () => {
           options={monthlyGraph.options}
           series={monthlyGraph.series}
           type="area"
-          height={400}
+          height={255}
         />
       </div>
     </div>

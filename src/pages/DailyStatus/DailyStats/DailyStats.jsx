@@ -19,14 +19,14 @@ const DailyStats = () => {
       colors: [`${lightTheme.greenAreaGraph}`],
       chart: {
         // height: 80,
-        type: "area",
+        type: 'area',
         stacked: false,
         toolbar: {
           show: false,
         },
       },
       stroke: {
-        curve: "straight",
+        curve: 'straight',
       },
       xaxis: {
         categories: [
@@ -80,87 +80,87 @@ const DailyStats = () => {
 
   // styling
   const mainDiv = {
-    padding: "30px 25px",
+    padding: '30px 25px',
     backgroundColor: `${lightTheme.PageBackgroundColor}`,
   };
   const DateStyle = {
     color: `${lightTheme.headingTextColor}`,
-    fontWeight: "600",
-    fontSize: "18px",
-    margin: "0 10px",
+    fontWeight: '600',
+    fontSize: '18px',
+    margin: '0 10px',
   };
   const NetPLStyle = {
     color: `${lightTheme.netPL}`,
-    fontWeight: "600",
-    fontSize: "18px",
-    margin: "0 10px",
+    fontWeight: '600',
+    fontSize: '18px',
+    margin: '0 10px',
   };
   const DateAndPLDiv = {
-    display: "flex",
-    alignItems: "center",
+    display: 'flex',
+    alignItems: 'center',
   };
   const EditNoteDiv = {
-    display: "flex",
-    alignItems: "center",
-    padding: "5px 25px",
+    display: 'flex',
+    alignItems: 'center',
+    padding: '5px 25px',
     border: `1px solid ${lightTheme.headingTextColor}`,
-    borderRadius: "8px",
-    marginRight: "10px",
-    cursor: "pointer",
+    borderRadius: '8px',
+    marginRight: '10px',
+    cursor: 'pointer',
   };
   const EditNote = {
     color: `${lightTheme.headingTextColor}`,
-    fontSize: "14px",
-    fontWeight: "500",
-    marginLeft: "5px",
-    marginTop: "3px",
+    fontSize: '14px',
+    fontWeight: '500',
+    marginLeft: '5px',
+    marginTop: '3px',
   };
   const mainDivStyle = {
-    display: "flex",
-    justifyContent: "space-between",
-    alignItems: "center",
-    padding: "10px 10px",
+    display: 'flex',
+    justifyContent: 'space-between',
+    alignItems: 'center',
+    padding: '10px 10px',
   };
 
   const mainChartDiv = {
-    display: "flex",
-    justifyContent: "spaceBetween",
-    alignItems: "center",
+    display: 'flex',
+    justifyContent: 'spaceBetween',
+    alignItems: 'center',
   };
   const mainTradeDiv = {
-    display: "flex",
+    display: 'flex',
     // alignItems: "center",
-    justifyContent: "space-between",
-    width: "100%",
+    justifyContent: 'space-between',
+    width: '100%',
     // border: "1px solid black",
-    height: "70px",
+    height: '70px',
   };
   const mainTotalTrade = {
-    display: "flex",
-    flexDirection: "column",
+    display: 'flex',
+    flexDirection: 'column',
     // alignItems:'center',
-    justifyContent: "space-between",
+    justifyContent: 'space-between',
     // minWidth: "155px",
-    margin: "0 5px",
+    margin: '0 5px',
     // border: "1px solid red",
-    width: "100%",
+    width: '100%',
   };
   const totalTradeDiv = {
-    display: "flex",
-    justifyContent: "space-between",
-    alignItems: "center",
-    width: "100%",
+    display: 'flex',
+    justifyContent: 'space-between',
+    alignItems: 'center',
+    width: '100%',
   };
   const winRateDiv = {
-    display: "flex",
-    justifyContent: "space-between",
-    alignItems: "center",
-    width: "100%",
+    display: 'flex',
+    justifyContent: 'space-between',
+    alignItems: 'center',
+    width: '100%',
   };
   const trade = {
     color: `${lightTheme.textColor}`,
-    fontSize: "14px",
-    fontWeight: "500",
+    fontSize: '14px',
+    fontWeight: '500',
   };
   const tradeValue = {
     color: `${lightTheme.headingTextColor}`,
@@ -169,7 +169,7 @@ const DailyStats = () => {
   };
 
   const mainStatDiv = {
-    display: "flex",
+    display: 'flex',
     // flexDirection: "row",
     justifyContent: "space-between",
     columnGap: "30px",
@@ -178,14 +178,14 @@ const DailyStats = () => {
   };
   const graphDiv = {
     backgroundColor: `${lightTheme.ComponentBackgroundColor}`,
-    borderRadius: "8px",
-    padding: "10px 10px",
+    borderRadius: '8px',
+    padding: '10px 10px',
     // flexDirection:'column',
-    maxHeight: "230px",
-    width: "100%",
+    maxHeight: '230px',
+    width: '100%',
     // flex: "0 1 70%",
     //   border: "1px solid red",
-    marginBottom:'10px'
+    marginBottom: '10px',
   };
   const graphMain = {
       width:'75%',
@@ -193,17 +193,17 @@ const DailyStats = () => {
   };
   const calendarDiv = {
     backgroundColor: `${lightTheme.ComponentBackgroundColor}`,
-    borderRadius: "8px",
-    padding: "5px 5px",
-    height: "100%",
-    width: "25%",
-    flex: "0 1 25%",
+    borderRadius: '8px',
+    padding: '5px 5px',
+    height: '100%',
+    width: '25%',
+    flex: '0 1 25%',
   };
 
   return (
     <div>
       <Box sx={mainDiv}>
-        <NavBar name={"Daily Stats"} />
+        <NavBar name={'Daily Stats'} />
         <div style={mainStatDiv}>
           {/* detail Div */}
 
@@ -218,24 +218,19 @@ const DailyStats = () => {
                       <Divider orientation="vertical" flexItem />
                       <p style={NetPLStyle}>Net P&L $1,234.43</p>
                     </div>
-                    <div style={{ display: "flex", alignItems: "center" }}>
+                    <div style={{ display: 'flex', alignItems: 'center' }}>
                       <div style={EditNoteDiv}>
                         <MdOutlineNoteAdd />
                         <p style={EditNote}>Edit Note</p>
                       </div>
                       <Divider orientation="vertical" flexItem />
-                      <p style={{ marginLeft: "10px" }}>Icon</p>
+                      <p style={{ marginLeft: '10px' }}>Icon</p>
                     </div>
                   </div>
                   <div style={mainChartDiv}>
                     {/* chart */}
                     <div>
-                      <Chart
-                        options={areaChart.options}
-                        series={areaChart.series}
-                        type="area"
-                        height={150}
-                      />
+                      <Chart options={areaChart.options} series={areaChart.series} type="area" height={150} />
                     </div>
                     <div style={mainTradeDiv}>
                       <div style={mainTotalTrade}>

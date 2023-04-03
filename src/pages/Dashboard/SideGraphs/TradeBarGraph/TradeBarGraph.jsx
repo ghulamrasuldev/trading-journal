@@ -53,7 +53,10 @@ const TradeBarGraph = () => {
         },
       });
   return (
-      <div className='tradeBarGraphMain' style={{backgroundColor:`${lightTheme.ComponentBackgroundColor}`}}>
+    <div
+      className="tradeBarGraphMain"
+      style={{ backgroundColor: `${lightTheme.ComponentBackgroundColor}`, marginTop: '30px' }}
+    >
       <div className="tradeDiv">
     <p className="totalTrade" style={{color:`${lightTheme.headingTextColor}`}}>
       Total number of trades:<span style={{fontWeight:'300',paddingLeft:'5px',color:`${lightTheme.lightDarkBlue}`}}>8</span>
@@ -63,11 +66,12 @@ const TradeBarGraph = () => {
         options={tradeChart.options}
         series={tradeChart.series}
         type="bar"
-        height={350}
+        height={310}
       />
-    </div>
-  </div></div>
-  )
-}
+        </div>
+        </div>
+        </div>
+  );
+};
 
-export default TradeBarGraph
+export default TradeBarGraph;

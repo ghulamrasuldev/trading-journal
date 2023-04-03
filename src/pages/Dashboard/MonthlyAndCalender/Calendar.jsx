@@ -27,29 +27,29 @@ const CalendarComponent = () => {
 
   const profitLossData = [
     {
-      profit: "true",
-      value: "$212",
-      trades: "2 Trades",
+      profit: 'true',
+      value: '$212',
+      trades: '2 Trades',
     },
     {
-      profit: "true",
-      value: "$312",
-      trades: "3 Trades",
+      profit: 'true',
+      value: '$312',
+      trades: '3 Trades',
     },
     {
-      profit: "false",
-      value: "$-212",
-      trades: "2 Trades",
+      profit: 'false',
+      value: '$-212',
+      trades: '2 Trades',
     },
     {
-      profit: "false",
-      value: "$-12",
-      trades: "1 Trades",
+      profit: 'false',
+      value: '$-12',
+      trades: '1 Trades',
     },
     {
-      profit: "true",
-      value: "$512",
-      trades: "5 Trades",
+      profit: 'true',
+      value: '$512',
+      trades: '5 Trades',
     },
   ];
 
@@ -70,22 +70,17 @@ const CalendarComponent = () => {
           prev2Label={null}
           next2Label={null}
           onClickDay={() => checkTradeFunc(1)}
-          
-        //  style={{textColor:'red'}}
           tileContent={({ activeStartDate, date, view }) => {
-            return (
-              view === "month"? 
-                <div className="tileContent">
-                  <p>{profitLossData.map((val, index) => {
-                    return (
-                      <p>{val.value}</p>
-                    )
-                  })}</p>
-                  <p>{profitLossData.trades}</p>
-                </div>
-                : null
-              
-            );
+            return view === 'month' ? (
+              <div className="tileContent">
+                <p>
+                  {/* {profitLossData.map((val, index) => {
+                    return <p>{val.value}</p>;
+                  })} */}
+                </p>
+                <p>{profitLossData.trades}</p>
+              </div>
+            ) : null;
           }}
           //   tileContent={({ date, view }) => view === 'day' &&
           //       mark.find(x=>x===4)? "profit": "loss"

@@ -10,16 +10,20 @@ const UpcomingEvents = () => {
   
   const Events = [
     {
-      event: "Market analysis with Zak",
-      date: "Sat, Oct 22 4 - 4:30pm (EDT)",
+      event: 'Market analysis with Zak',
+      date: 'Sat, Oct 22 4 - 4:30pm (EDT)',
     },
     {
       event: "Webinar with Mark O'brin",
-      date: "Sat, Oct 22 4 - 4:30pm (EDT)",
+      date: 'Sat, Oct 22 4 - 4:30pm (EDT)',
     },
     {
-      event: "BTC / USD",
-      date: "Sat, Oct 22 4 - 4:30pm (EDT)",
+      event: 'BTC / USD',
+      date: 'Sat, Oct 22 4 - 4:30pm (EDT)',
+    },
+    {
+      event: 'BTC / USD',
+      date: 'Sat, Oct 22 4 - 4:30pm (EDT)',
     },
   ];
   const mainEventsDiv = {
@@ -37,11 +41,14 @@ const UpcomingEvents = () => {
           <>
             <div className="eventDiv" style={eventDiv} key={index}>
               <ul>
-                <li className="event" style={{color:`${lightTheme.headingTextColor}`}}>{event.event}</li>
+                <li className="event" style={{ color: `${lightTheme.headingTextColor}` }}>
+                  {event.event}
+                </li>
               </ul>
-              <p className="eventDate" style={{color:`${lightTheme.textColor}`}}>{event.date}</p>
+              <p className="eventDate" style={{ color: `${lightTheme.textColor}` }}>
+                {event.date}
+              </p>
             </div>
-            {/* <Divider /> */}
           </>
         );
       })}

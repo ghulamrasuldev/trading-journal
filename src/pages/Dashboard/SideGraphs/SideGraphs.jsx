@@ -64,9 +64,12 @@ const SideGraphs = () => {
         </div>
         <div className="pieChart">
           <Chart
+            
+            style={{marginLeft:'30px',marginTop:'-10px',marginBottom:'26px'}}
             options={pieChart.options}
             series={pieChart.series}
             type="donut"
+            height={156}
           />
         </div>
         <Divider />
@@ -89,10 +92,8 @@ const SideGraphs = () => {
             </p>
           </div>
         </div>
-        <Divider />
+        {/* <Divider /> */}
       </div>
-      <TradeBarGraph />
-      <UpcomingEvents />
     </div>
   );
 };

@@ -1,44 +1,50 @@
-import React, { useState } from "react";
-import "./TradeReport.css";
-import { Box, Divider, Grid } from "@mui/material";
-import FormGroup from "@mui/material/FormGroup";
-import FormControlLabel from "@mui/material/FormControlLabel";
-import Checkbox from "@mui/material/Checkbox";
-import Select from "react-select";
-import menuDotIcon from "../../../assets/menuDotIcon.png";
-import Table from "@mui/material/Table";
-import TableBody from "@mui/material/TableBody";
-import TableCell from "@mui/material/TableCell";
-import TableContainer from "@mui/material/TableContainer";
-import TableHead from "@mui/material/TableHead";
-import TableRow from "@mui/material/TableRow";
-import Paper from "@mui/material/Paper";
-// import { lightTheme } from "../../../Theme/theme";
-import { TradeReportData } from "../TradeTableData.js";
-import ModeChange from "../../../Theme/ChangeMode";
+import React, { useState } from 'react';
+import './TradeReport.css';
+import { Box, Divider, Grid } from '@mui/material';
+import FormGroup from '@mui/material/FormGroup';
+import FormControlLabel from '@mui/material/FormControlLabel';
+import Checkbox from '@mui/material/Checkbox';
+import Select from 'react-select';
+import menuDotIcon from '../../../assets/menuDotIcon.png';
+import Table from '@mui/material/Table';
+import TableBody from '@mui/material/TableBody';
+import TableCell from '@mui/material/TableCell';
+import TableContainer from '@mui/material/TableContainer';
+import TableHead from '@mui/material/TableHead';
+import TableRow from '@mui/material/TableRow';
+import Paper from '@mui/material/Paper';
+// import { lightTheme } from '../../../Theme/theme';
+import { TradeReportData } from '../TradeTableData.js';
+import { useAtom } from 'jotai';
+import { isOpenAtom } from '../../../atom/atom.js';
+import ModeChange from '../../../Theme/ChangeMode';
+import PrimaryButton from '../../../components/common/PrimaryButton';
+import SecondaryButton from '../../../components/common/SecondaryButton';
 
 const TradeReport = () => {
   const lightTheme = ModeChange();
+  const [isOpen] = useAtom(isOpenAtom);
+  const spacing = isOpen ? 80 : 90;
+
   const [toggle, setToggle] = useState(true);
   const [checkBoxValue, setCheckBoxValue] = useState([]);
-  const [filteredTradeReportData, setFilteredTradeReportData] =
-    useState(TradeReportData);
+  const [filteredTradeReportData, setFilteredTradeReportData] = useState(TradeReportData);
   const [allChecked, setAllChecked] = useState(false);
 
   // dataLabels for checkbox
   const CheckboxData = [
-    "Account Name",
-    "Adjusted Cost",
-    "Adjusted Proceeds",
-    "Average Entry",
-    "Close Date",
-    "Close Time",
-    "Commissions",
-    "Custom Tags",
-    "Entry Price",
-    "Executions",
-    "Duration",
-    "Average Exit",
+    'Account Name',
+    'Adjusted Cost',
+    'Adjusted Proceeds',
+    'Average Entry',
+    'Close Date',
+    'Close Time',
+    'Commissions',
+    'Custom Tags',
+    'Entry Price',
+    'Executions',
+    'Duration',
+    'Average Exit',
   ];
 
   // filter table on selected checkbox
@@ -62,7 +68,7 @@ const TradeReport = () => {
     }
     // setCheckBoxValue([...checkBoxValue, data])
     // console.log(e.target.checked)
-    localStorage.setItem("checkboxValue", checkBoxValue);
+    localStorage.setItem('checkboxValue', checkBoxValue);
     // console.log(localStorage.getItem('checkboxValue'));
 
     // console.log('label',data)
@@ -70,10 +76,11 @@ const TradeReport = () => {
 
   // styling
   const TradeReportMain = {
-    boxShadow: "0px 4px 4px rgba(0, 0, 0, 0.02)",
+    boxShadow: '0px 4px 4px rgba(0, 0, 0, 0.02)',
     backgroundColor: `${lightTheme.ComponentBackgroundColor}`,
-    // border: '1px solid black',
-    borderRadius: "8px",
+    borderRadius: '8px',
+    maxWidth: `${spacing}vw`,
+    overflow: 'auto',
   };
 
   const selectText = {
@@ -115,36 +122,32 @@ const TradeReport = () => {
     fontWeight: "500",
   };
   return (
-    <div>
-      <Box sx={TradeReportMain}>
-        <div className="topDivTradeReprot">
-          <div>
-            <p
-              style={{
-                fontWeight: "700",
-                fontSize: "15px",
-                color: `${lightTheme.headingTextColor}`,
-              }}
-            >
-              Your Trades Report
-            </p>
-          </div>
-          <div className="tradeReportSelectDiv">
-            <Select
-              className="tradeReportSelect"
-              placeholder="Bulk Action"
-              isSearchable={false}
-            />
-            <img
-              src={menuDotIcon}
-              alt="menuIcon"
-              height={30}
-              onClick={() => setToggle(!toggle)}
-              style={{ cursor: "pointer" }}
-            />
-          </div>
+    <Box sx={TradeReportMain}>
+      <div className="topDivTradeReprot">
+        <div>
+          <p
+            style={{
+              fontWeight: '700',
+              fontSize: '15px',
+              color: `${lightTheme.headingTextColor}`,
+            }}
+          >
+            Your Trades Report
+          </p>
         </div>
-        <Divider />
+        <div className="tradeReportSelectDiv">
+          <Select className="tradeReportSelect" placeholder="Bulk Action" isSearchable={false} />
+          <img
+            src={menuDotIcon}
+            alt="menuIcon"
+            height={30}
+            onClick={() => setToggle(!toggle)}
+            style={{ cursor: 'pointer' }}
+          />
+        </div>
+      </div>
+      <Divider />
+      <div>
         {toggle ? (
           <div className="tradeReportTable">
             <TableContainer
@@ -281,9 +284,9 @@ const TradeReport = () => {
             <p style={selectText}>Select Columns</p>
             <p
               style={{
-                fontWeight: "500",
+                fontWeight: '500',
                 color: `${lightTheme.textColor}`,
-                padding: "0 20px",
+                padding: '0 20px',
               }}
             >
               Choose the columns you want to display in the table
@@ -291,14 +294,14 @@ const TradeReport = () => {
             <div className="selectCheckBox">
               <p
                 style={{
-                  padding: "0 5px",
+                  padding: '0 5px',
                   color: `${lightTheme.textColor}`,
-                  fontWeight: "700",
+                  fontWeight: '700',
                 }}
               >
                 Select
               </p>
-              {/* <Divider flexItem orientation="vertical"/> */}
+
               <p style={noneDefault} onClick={() => setAllChecked(true)}>
                 All
               </p>
@@ -358,8 +361,13 @@ const TradeReport = () => {
                   </FormGroup>
                 </Grid>
               </Grid>
-              <div className="checkBoxBtns">
-                <button className="checkBoxCancelBtn" style={cancleBtn}>
+                <div className="checkBoxBtns" style={{display:'flex',justifyContent:'end',columnGap:'10px'}}>
+                  <SecondaryButton buttonTitle={"Cancel"}/>
+                  <PrimaryButton buttonTitle={"Save"}  onClick={() => {
+                    filterTable();
+                    setToggle(true);
+                  }} />
+                {/* <button className="checkBoxCancelBtn" style={cancleBtn}>
                   Cancel
                 </button>
                 <button
@@ -371,13 +379,13 @@ const TradeReport = () => {
                   style={saveBtn}
                 >
                   Save
-                </button>
+                </button> */}
               </div>
             </div>
           </div>
         )}
-      </Box>
-    </div>
+      </div>
+    </Box>
   );
 };
 

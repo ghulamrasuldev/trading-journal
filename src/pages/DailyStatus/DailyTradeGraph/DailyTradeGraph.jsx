@@ -18,14 +18,14 @@ const DailyTradeGraph = () => {
       colors: [`${lightTheme.greenAreaGraph}`],
       chart: {
         // height: 80,
-        type: "area",
+        type: 'area',
         stacked: false,
         toolbar: {
           show: false,
         },
       },
       stroke: {
-        curve: "straight",
+        curve: 'straight',
       },
       xaxis: {
         categories: [
@@ -56,7 +56,7 @@ const DailyTradeGraph = () => {
         }
       },
       grid: {
-        position: "front",
+        position: 'front',
         xaxis: {
           lines: {
             show: true,
@@ -82,31 +82,28 @@ const DailyTradeGraph = () => {
 
   const tradeData = [
     {
-      trades: "3",
-      percentage: "70%",
+      trades: '3',
+      percentage: '70%',
     },
     {
-      trades: "2",
-      percentage: "80%",
+      trades: '2',
+      percentage: '80%',
     },
     {
-      trades: "5",
-      percentage: "60%",
+      trades: '5',
+      percentage: '60%',
     },
   ];
 
   return (
-    <div className="mainDailyTrade" style={{backgroundColor:`${lightTheme.ComponentBackgroundColor}`}}>
-      <p className="dailyTradeDate" style={{color:`${lightTheme.headingTextColor}`}}>{date}</p>
-      <div >
+    <div className="mainDailyTrade" style={{ backgroundColor: `${lightTheme.ComponentBackgroundColor}` }}>
+      <p className="dailyTradeDate" style={{ color: `${lightTheme.headingTextColor}` }}>
+        {date}
+      </p>
+      <div>
         <Grid container>
           <Grid item lg={7}>
-          <Chart
-          options={dailyGraph.options}
-          series={dailyGraph.series}
-          type="area"
-          height={250}
-        />
+            <Chart options={dailyGraph.options} series={dailyGraph.series} type="area" height={180} />
           </Grid>
           <Grid item lg={5}>
           <div className="tradeDetails">
@@ -122,16 +119,15 @@ const DailyTradeGraph = () => {
                   <p style={{color:`${lightTheme.lightDarkBlue}`}}>Total Trades</p>
                         <p className="tradePercentage" style={{color:`${lightTheme.textColor}`}}>{trade.percentage}</p>
                     </div>
-              </div>
-                    <Divider flexItem orientation="vertical"/>
-              </>
-            );
-          })}
-        </div>
+                  <Divider flexItem orientation="vertical" />
+                  </div>
+                  </>
+                );
+              })}
+            </div>
+          
           </Grid>
         </Grid>
-        
-       
       </div>
     </div>
   );

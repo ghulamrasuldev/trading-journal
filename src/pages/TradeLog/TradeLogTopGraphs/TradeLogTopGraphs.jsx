@@ -1,12 +1,16 @@
-import React, { useState } from "react";
-import { Box, Grid } from "@mui/material";
-import Chart from "react-apexcharts";
-import "./TradeLogTopGraph.css";
+import React, { useState } from 'react';
+import { Box, Grid } from '@mui/material';
+import Chart from 'react-apexcharts';
+import './TradeLogTopGraph.css';
+import { useAtom } from 'jotai';
+
+import { isOpenAtom } from '../../../atom/atom.js';
 import ModeChange from "../../../Theme/ChangeMode";
-// import { lightTheme } from "../../../Theme/theme";
+// import { lightTheme } from '../../../Theme/theme';
 
 const TradeLogTopGraphs = () => {
-
+  const [isOpen] = useAtom(isOpenAtom);
+  const spacing = isOpen ? 2.8 : 3;
   const lightTheme = ModeChange();
   // first top graph
   const [graphData, setGraphData] = useState({
@@ -17,14 +21,14 @@ const TradeLogTopGraphs = () => {
     ],
     optionsSpark1: {
       chart: {
-        type: "area",
+        type: 'area',
         height: 160,
         sparkline: {
           enabled: true,
         },
       },
       stroke: {
-        curve: "straight",
+        curve: 'straight',
       },
       fill: {
         opacity: 0.3,
@@ -41,36 +45,36 @@ const TradeLogTopGraphs = () => {
     },
   });
 
-     // second top graph
+  // second top graph
   const [pieChart, setPieChart] = useState({
     series: [50, 50],
     options: {
       // dataLabels: {
       //     enabled:false
       //   },
-        plotOptions: {
-            pie: {
-            customScale: 0.9,
-            donut: {
-              labels: {
-                show: true,
-              }
-            }
-            }
+      plotOptions: {
+        pie: {
+          customScale: 0.9,
+          donut: {
+            labels: {
+              show: true,
+            },
           },
-      chart: {
-        type: "donut",
         },
+      },
+      chart: {
+        type: 'donut',
+      },
       colors: [`${lightTheme.darkGreencolorGraph}`, `${lightTheme.darkRedcolorGraph}`],
       responsive: [
         {
-        //   breakpoint: 480,
+          //   breakpoint: 480,
           options: {
             chart: {
               width: 180,
             },
             legend: {
-              position: "bottom",
+              position: 'bottom',
             },
           },
         },
@@ -78,7 +82,7 @@ const TradeLogTopGraphs = () => {
     },
   });
 
-   // third top graph
+  // third top graph
   const [NetPLgraphData, setNetPLGraphData] = useState({
     seriesSpark1: [
       {
@@ -87,13 +91,13 @@ const TradeLogTopGraphs = () => {
     ],
     optionsSpark1: {
       markers: {
-        size:3,
+        size: 3,
         colors: [`${lightTheme.tradeLogGreenAreaGraph}`],
         strokeColor: `${lightTheme.tradeLogGreenAreaGraph}`,
         // strokeWidth:1
       },
       chart: {
-        type: "area",
+        type: 'area',
         height: 160,
         sparkline: {
           enabled: true,
@@ -102,7 +106,7 @@ const TradeLogTopGraphs = () => {
       stroke: {
         // curve: "straight",
       },
-     
+
       fill: {
         opacity: 0.3,
       },
@@ -120,20 +124,24 @@ const TradeLogTopGraphs = () => {
 
   // styling
   const topGraphStyle = {
-    boxShadow: "0px 4px 4px rgba(0, 0, 0, 0.02)",
+    boxShadow: '0px 4px 4px rgba(0, 0, 0, 0.02)',
     backgroundColor: `${lightTheme.ComponentBackgroundColor}`,
     // border: '1px solid black',
-    borderRadius: "8px",
+    borderRadius: '8px',
+    maxHeight: '160px',
+    overflow: 'hidden',
   };
 
   return (
     <Box>
-      <Grid container columnGap={3} mt={5} mb={5} rowGap={4}>
-        <Grid item lg={3.5} md={12} sm={12} xm={12} sx={topGraphStyle} >
+      <Grid container columnGap={spacing} mt={5} mb={5} rowGap={4}>
+        <Grid item lg={3.5} md={12} sm={12} xm={12} sx={topGraphStyle}>
           <div className="TradeLogTopSection">
             <div>
-              <p className="graphTitle" style={{color:`${lightTheme.headingTextColor}`}}>Net Cumulative PL</p>
-              <p className="graphSubTitle" style={{color:`${lightTheme.headingColor}`}}>
+              <p className="graphTitle" style={{ color: `${lightTheme.headingTextColor}` }}>
+                Net Cumulative PL
+              </p>
+              <p className="graphSubTitle" style={{ color: `${lightTheme.headingColor}` }}>
                 Total Trades:
                 <span style={{ fontWeight: "500", paddingLeft: "5px",color:`${lightTheme.lightDarkBlue}` }}>
                   83
@@ -141,40 +149,49 @@ const TradeLogTopGraphs = () => {
               </p>
             </div>
             <div>
-              <p className="profitTopGraph" style={{ color:`${lightTheme.profit}`}}>$35,520.80</p>
+              <p className="profitTopGraph" style={{ color: `${lightTheme.profit}` }}>
+                $35,520.80
+              </p>
             </div>
           </div>
           <div>
-            <Chart
-              options={graphData.optionsSpark1}
-              series={graphData.seriesSpark1}
-              type="area"
-              height={160}
-            />
+            <Chart options={graphData.optionsSpark1} series={graphData.seriesSpark1} type="area" height={84} />
           </div>
         </Grid>
-              <Grid item lg={4} md={12} sm={12} xm={12} sx={topGraphStyle} >
-                  <div className="tradeLogPieChartDiv">
-                      
-                  <div style={{padding:'15px'}}>
-                      <p style={{fontWeight:'500',fontSize:'15px',marginBottom:'15px',color:`${lightTheme.headingTextColor}`}}>Win/Loss %</p>
-                      <div>
-                          <p className="winnerTradeLog" style={{color:`${lightTheme.profit}`}}>Winers</p>
-                          <p className="winnerValueTradeLog" style={{color:`${lightTheme.profit}`}}>879,09</p>
-                      </div>
-                      <div>
-                          <p className="loserTradeLog" style={{color:`${lightTheme.loss}`}}>Losers</p>
-                          <p className="loserValueTradeLog" style={{color:`${lightTheme.loss}`}}>13,09</p>
-                      </div>
-                  </div> 
-                  <div className="pieChartTradeLog">
-                  <Chart
-                    options={pieChart.options}
-                    series={pieChart.series}
-                    type="donut"
-                    />
-                  </div>
-                    </div>
+        <Grid item lg={4} md={12} sm={12} xm={12} sx={topGraphStyle}>
+          <div className="tradeLogPieChartDiv">
+            <div style={{ padding: '20px 10px 20px 20px' }}>
+              <p
+                style={{
+                  fontWeight: '500',
+                  fontSize: '15px',
+                  marginBottom: '5px',
+                  color: `${lightTheme.headingTextColor}`,
+                }}
+              >
+                Win/Loss %
+              </p>
+              <div>
+                <p className="winnerTradeLog" style={{ color: `${lightTheme.profit}` }}>
+                  Winers
+                </p>
+                <p className="winnerValueTradeLog" style={{ color: `${lightTheme.profit}` }}>
+                  879,09
+                </p>
+              </div>
+              <div>
+                <p className="loserTradeLog" style={{ color: `${lightTheme.loss}` }}>
+                  Losers
+                </p>
+                <p className="loserValueTradeLog" style={{ color: `${lightTheme.loss}` }}>
+                  13,09
+                </p>
+              </div>
+            </div>
+            <div className="pieChartTradeLog">
+              <Chart options={pieChart.options} series={pieChart.series} type="donut" height={150} />
+            </div>
+          </div>
         </Grid>
         <Grid item lg={4} md={12} sm={12} xm={12} sx={topGraphStyle}>
           <div>
@@ -194,12 +211,12 @@ const TradeLogTopGraphs = () => {
             </div>
             </div>
             <div>
-            <Chart
-              options={NetPLgraphData.optionsSpark1}
-              series={NetPLgraphData.seriesSpark1}
-              type="area"
-              height={160}
-            />
+              <Chart
+                options={NetPLgraphData.optionsSpark1}
+                series={NetPLgraphData.seriesSpark1}
+                type="area"
+                height={91}
+              />
             </div>
           </div>
         </Grid>

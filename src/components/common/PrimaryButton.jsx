@@ -2,7 +2,7 @@ import React from 'react';
 // import { lightTheme } from '../../Theme/theme';
 import ModeChange from '../../Theme/ChangeMode';
 
-const PrimaryButton = ({ buttonTitle, disabled }) => {
+const PrimaryButton = ({ buttonTitle, disabled, ...inputProps }) => {
   const lightTheme = ModeChange()
   const buttonStyle={
     borderRadius: '5px',
@@ -18,6 +18,7 @@ const PrimaryButton = ({ buttonTitle, disabled }) => {
     <button
       disabled={disabled === true ? true : false}
       style={buttonStyle}
+      {...inputProps}
     >
       {buttonTitle}
     </button>

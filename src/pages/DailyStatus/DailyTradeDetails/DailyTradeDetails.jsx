@@ -10,29 +10,32 @@ import ModeChange from "../../../Theme/ChangeMode";
 const DailyTradeDetails = () => {
   const lightTheme = ModeChange();
   const Graphs = {
-    boxShadow: "0px 4px 4px rgba(0, 0, 0, 0.02)",
-    backgroundColor:`${lightTheme.ComponentBackgroundColor}`,
+    boxShadow: '0px 4px 4px rgba(0, 0, 0, 0.02)',
+    backgroundColor: `${lightTheme.ComponentBackgroundColor}`,
     // border: '1px solid black',
-    borderRadius: "8px",
-    marginTop: "20px",
-    paddingBottom:'20px'
-    };
+    borderRadius: '8px',
+    marginTop: '20px',
+    paddingBottom: '20px',
+    minWidth: '759px',
+    // maxHeight: '461px',
+  };
   return (
     <div>
-          <Box sx={Graphs}>
-              <div className="dividerDiv">
-                  
-        <div className="EditNotesDiv">
-          <p className="editNote" style={{color:`${lightTheme.headingTextColor}`}}>Edit Notes</p>
-          <img src={EditImg} alt="EditNote" height={20} style={{color:'red'}}/>
-              </div>
-              <Divider />
+      <Box sx={Graphs}>
+        <div className="dividerDiv">
+          <div className="EditNotesDiv">
+            <p className="editNote" style={{ color: `${lightTheme.headingTextColor}` }}>
+              Edit Notes
+            </p>
+            <img src={EditImg} alt="EditNote" height={15} />
+          </div>
+          <Divider />
         </div>
-              <div>
+        <div>
           <DailyTradeGraph />
-          <Divider/>
-                  <DailyTradeTable />
-              </div>
+          <Divider />
+          <DailyTradeTable />
+        </div>
       </Box>
     </div>
   );

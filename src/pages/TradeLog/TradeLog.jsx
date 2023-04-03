@@ -16,13 +16,11 @@ const TradeLog = () => {
   };
 
   return (
-    <div>
-      <Box sx={TradeLogMain}>
-        <NavBar name={'Trade Log'} />
-        <TradeLogTopGraphs />
-        <TradeReport />
-      </Box>
-    </div>
+    <Box sx={TradeLogMain}>
+      <NavBar name={'Trade Log'} />
+      <TradeLogTopGraphs />
+      <TradeReport />
+    </Box>
   );
 };
 

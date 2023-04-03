@@ -1,17 +1,15 @@
-.EditNotesDiv{
-    display: flex;
-    justify-content: flex-end;
-    align-items: center;
-    padding-bottom:10px;
-    /* padding:15px 15px; */
-    /* border: 1px solid black; */
+.EditNotesDiv {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  padding-bottom: 10px;
 }
-.editNote{
-    font-weight: 400;
-    font-size: 15px;
-    padding-right:5px;
-    margin-top:5px;
+.editNote {
+  font-weight: 400;
+  font-size: 13px;
+  padding-right: 5px;
 }
-.dividerDiv{
-    padding:15px 20px;
+.dividerDiv {
+  padding: 15px 20px;
+  min-width: 759px;
 }

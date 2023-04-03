@@ -1,26 +1,25 @@
-.mainEventsDiv{
-    /* border: 1px solid #E2E2E2; */
-    /* padding:15px 10px ; */
-    margin:10px 10px;
-    border-radius:8px;
+.mainEventsDiv {
+  /* margin: 10px 0px; */
+  border-radius: 8px;
+  height: 100%;
 }
-.upcomingEvent{
-    font-family:Overpass;
-    font-size:18px;
-    font-weight: 500;
-    padding:15px 15px;
+.upcomingEvent {
+  font-family: Overpass;
+  font-size: 18px;
+  font-weight: 500;
+  padding: 15px 20px;
 }
 .eventDiv{
 padding:15px 40px;
 /* border-bottom:1px solid #e2e2e2; */
 margin-bottom: 5px;
 }
-.event{
-    font-weight:500;
-    font-size:15px;
+.event {
+  font-weight: 500;
+  font-size: 15px;
 }
-.eventDate{
-    font-weight:200;
-    font-size:12px;
-    margin-top:5px;
+.eventDate {
+  font-weight: 200;
+  font-size: 12px;
+  margin-top: 5px;
 }

@@ -10,8 +10,14 @@ import TradeBarGraph from '../Dashboard/SideGraphs/TradeBarGraph/TradeBarGraph';
 import ModeChange from '../../Theme/ChangeMode';
 // import { lightTheme } from '../../Theme/theme';
 
+import { useAtom } from 'jotai';
+import { isOpenAtom } from '../../atom/atom.js';
+
 const DailyStatus = () => {
   const lightTheme = ModeChange();
+  const [isOpen] = useAtom(isOpenAtom);
+  const spacing = isOpen ? 10 : 12;
+
   const mainDivStyle = {
     padding: '30px 25px',
     backgroundColor: `${lightTheme.lightPageBackground}`,
@@ -22,12 +28,12 @@ const DailyStatus = () => {
       <Box sx={mainDivStyle}>
         <NavBar name={'Daily Status'} />
         <TopGraphs />
-        <Grid container columnGap={6} rowGap={6}>
-          <Grid item lg={7} md={12} sm={12}>
+        <Grid container columnGap={spacing} rowGap={6}>
+          <Grid item lg={8} md={12} sm={12}>
             <DailyTradeGraph />
             <DailyTradeDetails />
           </Grid>
-          <Grid item lg={4.5} md={12} sm={12}>
+          <Grid item lg={3} md={12} sm={12}>
             <DailyCalendar />
             <TradeBarGraph />
           </Grid>

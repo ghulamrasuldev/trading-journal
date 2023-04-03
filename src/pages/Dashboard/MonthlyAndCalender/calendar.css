@@ -4,7 +4,8 @@
   border-radius: 8px;
   padding: 5px 0;
   margin-top: 40px;
-  /* border: 1px solid black; */
+  max-height: 842px;
+  overflow-y: auto;
 }
 .calendarDiv {
   /* border: 1px solid black; */
@@ -65,8 +66,16 @@
   display: flex;
   justify-content: space-between;
   align-items: end;
-  /* border: 1px solid black; */
   padding: 0 1px;
   margin-bottom: -10px;
   margin-top: 10px;
+}
+
+.react-calendar__navigation__label {
+  max-width: 100px;
+}
+.react-calendar__navigation {
+  display: flex;
+  justify-content: center;
+  margin: -35px auto 20px auto;
 }
