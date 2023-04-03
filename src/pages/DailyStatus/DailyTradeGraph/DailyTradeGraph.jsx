@@ -1,10 +1,12 @@
-import React, { useState } from 'react';
-import './dailyTradeGraph.css';
-import Chart from 'react-apexcharts';
-import { Divider, Grid } from '@mui/material';
-import { lightTheme } from '../../../Theme/theme';
+import React, { useState } from "react";
+import "./dailyTradeGraph.css";
+import Chart from "react-apexcharts";
+import { Divider, Grid } from "@mui/material";
+import ModeChange from "../../../Theme/ChangeMode";
+// import { lightTheme } from "../../../Theme/theme";
 
 const DailyTradeGraph = () => {
+  const lightTheme = ModeChange();
   const date = new Date().toDateString();
   const [dailyGraph, setDailyGraph] = useState({
     series: [
@@ -26,12 +28,32 @@ const DailyTradeGraph = () => {
         curve: 'straight',
       },
       xaxis: {
-        categories: ['0.9284', '0.987650', '0.456700', '0.987654', '0.4444', '0.9812', '0.23333', '0.33232', '0.99999'],
+        categories: [
+          "0.9284",
+          "0.987650",
+          "0.456700",
+          "0.987654",
+          "0.4444",
+          "0.9812",
+          "0.23333",
+          "0.33232",
+          "0.99999",
+        ],
+        labels: {
+          style: {
+            colors:`${lightTheme.graphLabels}`
+          }
+        }
       },
       yaxis: {
         min: 0,
         max: 2500,
         tickAmount: 5,
+        labels: {
+          style: {
+            colors:`${lightTheme.graphLabels}`
+          }
+        }
       },
       grid: {
         position: 'front',
@@ -84,29 +106,26 @@ const DailyTradeGraph = () => {
             <Chart options={dailyGraph.options} series={dailyGraph.series} type="area" height={180} />
           </Grid>
           <Grid item lg={5}>
-            <div className="tradeDetails">
-              {tradeData.map((trade, inde) => {
-                return (
-                  <>
-                    <div className="insideTradeDetail">
-                      <div>
-                        <p style={{ color: `${lightTheme.headingTextColor}` }}>Total Trades</p>
-                        <p className="noOfTrade" style={{ color: `${lightTheme.textColor}` }}>
-                          {trade.trades}
-                        </p>
-                      </div>
-                      <div>
-                        <p style={{ color: `${lightTheme.headingTextColor}` }}>Total Trades</p>
-                        <p className="tradePercentage" style={{ color: `${lightTheme.textColor}` }}>
-                          {trade.percentage}
-                        </p>
-                      </div>
+          <div className="tradeDetails">
+          {tradeData.map((trade, inde) => {
+            return (
+              <>
+              <div className="insideTradeDetail">
+                <div>
+                  <p style={{color:`${lightTheme.lightDarkBlue}`}}>Total Trades</p>
+                        <p className="noOfTrade" style={{color:`${lightTheme.textColor}`}}>{ trade.trades}</p>
+                </div>
+                <div>
+                  <p style={{color:`${lightTheme.lightDarkBlue}`}}>Total Trades</p>
+                        <p className="tradePercentage" style={{color:`${lightTheme.textColor}`}}>{trade.percentage}</p>
                     </div>
-                    <Divider flexItem orientation="vertical" />
+                  <Divider flexItem orientation="vertical" />
+                  </div>
                   </>
                 );
               })}
             </div>
+          
           </Grid>
         </Grid>
       </div>

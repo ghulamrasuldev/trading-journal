@@ -5,38 +5,45 @@
   padding: 5px 0;
   margin-top: 40px;
   max-height: 842px;
-  /* overflow: hidden; */
   overflow-y: auto;
 }
 .calendarDiv {
-  margin-top: 30px;
-  padding: 5px 20px;
+  /* border: 1px solid black; */
+  /* margin-top: 30px; */
+  /* padding: 5px 20px; */
 }
-.calendar {
+.calendarDashboard{
   border: none !important;
   width: 100% !important;
-  /* margin-top: -35px; */
+  /* padding: 10px 15px !important; */
+  background-color: white !important;
+  /* color: #022658!important; */
+}
+.react-calendarDashboard {
+  border: none !important;
+  width: 100% !important;
+  /* padding: 10px 15px !important; */
+  background-color: #30334e !important;
+  /* color: #ffffff!important; */
 }
 .dateDiv {
   display: flex;
   align-items: center;
   border: 1px solid #022658;
-  border-radius: 10px;
-  /* width: 30%; */
-  padding: 5px 10px;
+  border-radius: 8px;
+  width: 25%;
+  padding: 10px 10px;
   margin-left: 20px;
-  max-height: 35px;
-  max-width: 153px;
-  /* z-index: 111px; */
 }
 .currentDate {
-  font-size: 12px;
+  font-size: 15px;
   margin-top: 5px;
   margin-left: 5px;
 }
 .react-calendar__month-view__days {
   border: 1px solid #e2e2e2;
   border-radius: 8px;
+  /* color: #ffffff; */
 }
 .react-calendar__tile {
   border: 1px solid #e2e2e2 !important;
@@ -44,6 +51,7 @@
   padding-left: 5px !important;
   padding-bottom: 30px !important;
   text-align: left !important;
+  /* color: #ffffff; */
 }
 .react-calendar__tile--active {
   background-color: #222c89 !important;

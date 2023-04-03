@@ -1,6 +1,6 @@
 import React, { useState,useEffect } from "react";
 import { Box } from "@mui/material";
-import { lightTheme } from "../../../../Theme/theme";
+// import { lightTheme } from "../../../../Theme/theme";
 import { CKEditor } from "@ckeditor/ckeditor5-react";
 import ClassicEditor from "@ckeditor/ckeditor5-build-classic";
 import parser from "html-react-parser";
@@ -8,12 +8,14 @@ import parser from "html-react-parser";
 // import "react-quill/dist/quill.snow.css";
 // import EditorToolbar, { modules, formats } from "./EditorToolbar";
 import "./TextEditor.css";
+import ModeChange from "../../../../Theme/ChangeMode";
 
 
 
 
 // to get notes from local storage
 const getLocalStorageData = () => {
+  const lightTheme = ModeChange();
   const Notes = localStorage.getItem('notes')
   if (Notes) {
     return JSON.parse(localStorage.getItem('notes'))

@@ -7,12 +7,14 @@ import DailyTradeGraph from './DailyTradeGraph/DailyTradeGraph';
 import DailyTradeDetails from './DailyTradeDetails/DailyTradeDetails';
 import DailyCalendar from '../../components/common/DailyCalendar/DailyCalendar';
 import TradeBarGraph from '../Dashboard/SideGraphs/TradeBarGraph/TradeBarGraph';
-import { lightTheme } from '../../Theme/theme';
+import ModeChange from '../../Theme/ChangeMode';
+// import { lightTheme } from '../../Theme/theme';
 
 import { useAtom } from 'jotai';
 import { isOpenAtom } from '../../atom/atom.js';
 
 const DailyStatus = () => {
+  const lightTheme = ModeChange();
   const [isOpen] = useAtom(isOpenAtom);
   const spacing = isOpen ? 10 : 12;
 

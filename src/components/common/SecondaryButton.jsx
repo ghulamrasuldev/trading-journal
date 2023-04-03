@@ -1,7 +1,10 @@
 import React from 'react';
-import { lightTheme } from '../../Theme/theme';
+import ModeChange from '../../Theme/ChangeMode';
+// import { lightTheme } from '../../Theme/theme';
+
 
 const SecondaryButton = ({ buttonTitle, disabled }) => {
+  const lightTheme=ModeChange()
   return (
     <button
       disabled={disabled === true ? true : false}

@@ -1,11 +1,13 @@
 import React from 'react';
 import { AiOutlineBell } from 'react-icons/ai';
 import { Badge, Avatar, Divider, Popover } from '@mui/material';
-import { lightTheme } from '../../../Theme/theme';
+// import { lightTheme } from '../../../Theme/theme';
+import ModeChange from '../../../Theme/ChangeMode';
 import person from '../../../assets/person.png';
 import './Notifications.css';
 
 const NotificationMenu = () => {
+  const lightTheme = ModeChange();
   const [anchorEl, setAnchorEl] = React.useState(null);
   const handleOpen = (event) => {
     setAnchorEl(event.currentTarget);

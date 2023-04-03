@@ -1,12 +1,14 @@
 import React, { useState } from "react";
 import "./runingPlAndImg.css";
-import { lightTheme } from "../../../../Theme/theme";
+// import { lightTheme } from "../../../../Theme/theme";
 import { Box, Grid } from "@mui/material";
 import ImageUploading from "react-images-uploading";
 import Chart from "react-apexcharts";
 import UploadImage from "../../../../assets/uploadImage.png";
+import ModeChange from "../../../../Theme/ChangeMode";
 
 const RuningPlAndImg = () => {
+  const lightTheme = ModeChange();
   const [lineChart, setLineChart] = useState({
     series: [
       {

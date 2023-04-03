@@ -13,12 +13,16 @@ import TableContainer from '@mui/material/TableContainer';
 import TableHead from '@mui/material/TableHead';
 import TableRow from '@mui/material/TableRow';
 import Paper from '@mui/material/Paper';
-import { lightTheme } from '../../../Theme/theme';
+// import { lightTheme } from '../../../Theme/theme';
 import { TradeReportData } from '../TradeTableData.js';
 import { useAtom } from 'jotai';
 import { isOpenAtom } from '../../../atom/atom.js';
+import ModeChange from '../../../Theme/ChangeMode';
+import PrimaryButton from '../../../components/common/PrimaryButton';
+import SecondaryButton from '../../../components/common/SecondaryButton';
 
 const TradeReport = () => {
+  const lightTheme = ModeChange();
   const [isOpen] = useAtom(isOpenAtom);
   const spacing = isOpen ? 80 : 90;
 
@@ -80,27 +84,42 @@ const TradeReport = () => {
   };
 
   const selectText = {
-    fontWeight: '500',
-    fontSize: '20px',
-    padding: '5px 20px',
-    paddingTop: '10px',
-    color: `${lightTheme.headingTextColor}`,
+    fontWeight: "500",
+    fontSize: "20px",
+    padding: "5px 20px",
+    paddingTop: "10px",
+    color: `${lightTheme.lightDarkBlue}`,
   };
   const noneDefault = {
-    padding: '0 10px',
-    color: '#022658',
-    fontWeight: '700',
-    cursor: 'pointer',
+    padding: "0 10px",
+    color: "#022658",
+    fontWeight: "700",
+    cursor: "pointer",
+    color: `${lightTheme.lightDarkBlue}`,
+    // color:'red'
   };
   const cancleBtn = {
     backgroundColor: `${lightTheme.ComponentBackgroundColor}`,
     color: `${lightTheme.textColor}`,
-    cursor: 'pointer',
+    cursor: "pointer",
   };
   const saveBtn = {
-    backgroundColor: `${lightTheme.headingTextColor}`,
-    color: `${lightTheme.saveButton}`,
-    cursor: 'pointer',
+    backgroundColor: `${lightTheme.lightDarkBlue}`,
+    color:'white',
+    cursor: "pointer",
+  };
+  const tableHead = {
+    color: `${lightTheme.headingTextColor}`,
+    borderBottom: `1px solid ${lightTheme.tableBorderColor}`,
+  };
+  const tableData = {
+    color: `${lightTheme.textColor}`,
+    borderBottom: `1px solid ${lightTheme.tableBorderColor}`,
+  };
+  const checkBoxLabel = {
+    color: `${lightTheme.textColor}`,
+    fontSize: "15px",
+    fontWeight: "500",
   };
   return (
     <Box sx={TradeReportMain}>
@@ -131,113 +150,127 @@ const TradeReport = () => {
       <div>
         {toggle ? (
           <div className="tradeReportTable">
-            <TableContainer component={Paper}>
+            <TableContainer
+              component={Paper}
+              elevation={0}
+              sx={{
+                backgroundColor: `${lightTheme.ComponentBackgroundColor}`,
+              }}
+            >
               <Table sx={{ minWidth: 650 }} aria-label="simple table">
                 <TableHead>
                   <TableRow>
-                    <TableCell align="right" style={{ color: `${lightTheme.headingTextColor}` }}>
+                    <TableCell align="right" style={tableHead}>
                       Ticker
                     </TableCell>
-                    <TableCell align="right" style={{ color: `${lightTheme.headingTextColor}` }}>
+                    <TableCell align="right" style={tableHead}>
                       Setups
                     </TableCell>
-                    <TableCell align="right" style={{ color: `${lightTheme.headingTextColor}` }}>
+                    <TableCell align="right" style={tableHead}>
                       Net P%L
                     </TableCell>
-                    <TableCell align="center" style={{ color: `${lightTheme.headingTextColor}` }}>
+                    <TableCell align="center" style={tableHead}>
                       OpenTime
                       <br />
                       <span>(US/Eastern)</span>
                     </TableCell>
-                    <TableCell align="right" style={{ color: `${lightTheme.headingTextColor}` }}>
+                    <TableCell align="right" style={tableHead}>
                       Average_Entry
                     </TableCell>
-                    <TableCell align="right" style={{ color: `${lightTheme.headingTextColor}` }}>
+                    <TableCell align="right" style={tableHead}>
                       Average_Exit
                     </TableCell>
-                    <TableCell align="center" style={{ color: `${lightTheme.headingTextColor}` }}>
+                    <TableCell align="center" style={tableHead}>
                       CloseTime
                       <br />
                       (US/Eastern)
                     </TableCell>
-                    <TableCell align="right" style={{ color: `${lightTheme.headingTextColor}` }}>
+                    <TableCell align="right" style={tableHead}>
                       Duration
                     </TableCell>
-                    <TableCell align="right" style={{ color: `${lightTheme.headingTextColor}` }}>
+                    <TableCell align="right" style={tableHead}>
                       Adjusted_Cost
                     </TableCell>
-                    <TableCell align="right" style={{ color: `${lightTheme.headingTextColor}` }}>
+                    <TableCell align="right" style={tableHead}>
                       Side
                     </TableCell>
-                    <TableCell align="right">Gross P&L</TableCell>
-                    <TableCell align="right" style={{ color: `${lightTheme.headingTextColor}` }}>
+                    <TableCell align="right" style={tableHead}>
+                      Gross P&L
+                    </TableCell>
+                    <TableCell align="right" style={tableHead}>
                       Volume
                     </TableCell>
-                    <TableCell align="right" style={{ color: `${lightTheme.headingTextColor}` }}>
+                    <TableCell align="right" style={tableHead}>
                       R_Multiple
                     </TableCell>
-                    <TableCell align="right" style={{ color: `${lightTheme.headingTextColor}` }}>
+                    <TableCell align="right" style={tableHead}>
                       Initial_Target
                     </TableCell>
-                    <TableCell align="right" style={{ color: `${lightTheme.headingTextColor}` }}>
+                    <TableCell align="right" style={tableHead}>
                       Instrument_Type
                     </TableCell>
                   </TableRow>
                 </TableHead>
                 <TableBody>
                   {filteredTradeReportData.map((row, index) => (
-                    <TableRow key={index} sx={{ '&:last-child td, &:last-child th': { border: 0 } }}>
-                      <TableCell component="th" scope="row" style={{ color: `${lightTheme.textColor}` }}>
+                    <TableRow
+                      key={index}
+                      // sx={{ "&:last-child td, &:last-child th": { border: 0 } }}
+                      style={{
+                        borderBottom: `1px solid ${lightTheme.tableBorderColor}`,
+                      }}
+                    >
+                      <TableCell component="th" scope="row" style={tableData}>
                         {row.ticker}
                       </TableCell>
-                      <TableCell align="right">
+                      <TableCell align="right" style={tableData}>
                         <p
                           className="TradeReportSetup"
                           style={{
                             color: `${lightTheme.whiteText}`,
-                            backgroundColor: `${lightTheme.headingTextColor}`,
+                            backgroundColor: `${lightTheme.lightDarkBlue}`,
                           }}
                         >
                           {row.setups}
                         </p>
                       </TableCell>
-                      <TableCell align="right" style={{ color: `${lightTheme.textColor}` }}>
+                      <TableCell align="right" style={tableData}>
                         {row.NetPL}
                       </TableCell>
-                      <TableCell align="right" style={{ color: `${lightTheme.textColor}` }}>
+                      <TableCell align="right" style={tableData}>
                         {row.openTime}
                       </TableCell>
-                      <TableCell align="right" style={{ color: `${lightTheme.textColor}` }}>
+                      <TableCell align="right" style={tableData}>
                         {row.avgEntry}
                       </TableCell>
-                      <TableCell align="right" style={{ color: `${lightTheme.textColor}` }}>
+                      <TableCell align="right" style={tableData}>
                         {row.avgExit}
                       </TableCell>
-                      <TableCell align="right" style={{ color: `${lightTheme.textColor}` }}>
+                      <TableCell align="right" style={tableData}>
                         {row.closeTime}
                       </TableCell>
-                      <TableCell align="right" style={{ color: `${lightTheme.textColor}` }}>
+                      <TableCell align="right" style={tableData}>
                         {row.duration}
                       </TableCell>
-                      <TableCell align="right" style={{ color: `${lightTheme.textColor}` }}>
+                      <TableCell align="right" style={tableData}>
                         {row.adjCost}
                       </TableCell>
-                      <TableCell align="right" style={{ color: `${lightTheme.textColor}` }}>
+                      <TableCell align="right" style={tableData}>
                         {row.side}
                       </TableCell>
-                      <TableCell align="right" style={{ color: `${lightTheme.textColor}` }}>
+                      <TableCell align="right" style={tableData}>
                         {row.grossPL}
                       </TableCell>
-                      <TableCell align="right" style={{ color: `${lightTheme.textColor}` }}>
+                      <TableCell align="right" style={tableData}>
                         {row.volume}
                       </TableCell>
-                      <TableCell align="right" style={{ color: `${lightTheme.textColor}` }}>
+                      <TableCell align="right" style={tableData}>
                         {row.rMultiple}
                       </TableCell>
-                      <TableCell align="right" style={{ color: `${lightTheme.textColor}` }}>
+                      <TableCell align="right" style={tableData}>
                         {row.initialTarget}
                       </TableCell>
-                      <TableCell align="right" style={{ color: `${lightTheme.textColor}` }}>
+                      <TableCell align="right" style={tableData}>
                         {row.instrumentType}
                       </TableCell>
                     </TableRow>
@@ -289,9 +322,16 @@ const TradeReport = () => {
                           return (
                             <div key={index}>
                               <FormControlLabel
-                                control={<Checkbox value={data} size="medium" onChange={(e) => handleCheck(e)} />}
-                                label={data}
-                                color={`${lightTheme.textColor}`}
+                                control={
+                                  <Checkbox
+                                    /*checked={allChecked? true: false}*/ value={
+                                      data
+                                    }
+                                    size="medium"
+                                    onChange={(e) => handleCheck(e)}
+                                  />
+                                }
+                                label={<p style={checkBoxLabel}>{data}</p>}
                               />
                             </div>
                           );
@@ -306,8 +346,14 @@ const TradeReport = () => {
                       return (
                         <div key={index}>
                           <FormControlLabel
-                            control={<Checkbox value={data} size="medium" onChange={(e) => handleCheck(e)} />}
-                            label={data}
+                            control={
+                              <Checkbox
+                                value={data}
+                                size="medium"
+                                onChange={(e) => handleCheck(e)}
+                              />
+                            }
+                            label={<p style={checkBoxLabel}>{data}</p>}
                           />
                         </div>
                       );
@@ -315,8 +361,13 @@ const TradeReport = () => {
                   </FormGroup>
                 </Grid>
               </Grid>
-              <div className="checkBoxBtns">
-                <button className="checkBoxCancelBtn" style={cancleBtn}>
+                <div className="checkBoxBtns" style={{display:'flex',justifyContent:'end',columnGap:'10px'}}>
+                  <SecondaryButton buttonTitle={"Cancel"}/>
+                  <PrimaryButton buttonTitle={"Save"}  onClick={() => {
+                    filterTable();
+                    setToggle(true);
+                  }} />
+                {/* <button className="checkBoxCancelBtn" style={cancleBtn}>
                   Cancel
                 </button>
                 <button
@@ -328,7 +379,7 @@ const TradeReport = () => {
                   style={saveBtn}
                 >
                   Save
-                </button>
+                </button> */}
               </div>
             </div>
           </div>

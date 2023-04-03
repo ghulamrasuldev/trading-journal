@@ -1,6 +1,16 @@
 import React from 'react';
-import { lightTheme } from '../../Theme/theme';
+import ModeChange from '../../Theme/ChangeMode';
+// import { lightTheme } from '../../Theme/theme';
 const InputTextField = ({ placeholder = '', writable }) => {
+  const lightTheme = ModeChange()
+  const inputStyle={
+    width: '100%',
+    padding: '8px 10px 8px 10px',
+    borderRadius: '5px 5px 5px 5px',
+    outline: 'none',
+    border: `1px solid ${lightTheme.PageBackgroundColor}`,
+    color: `${lightTheme.textColor}`,
+  }
   return (
     <div
       style={{
@@ -12,14 +22,7 @@ const InputTextField = ({ placeholder = '', writable }) => {
         type="text"
         placeholder={placeholder}
         disabled={writable === false ? true : false}
-        style={{
-          width: '100%',
-          padding: '8px 10px 8px 10px',
-          borderRadius: '5px 5px 5px 5px',
-          outline: 'none',
-          border: `1px solid ${lightTheme.PageBackgroundColor}`,
-          color: `${lightTheme.textColor}`,
-        }}
+        style={inputStyle}
       ></input>
     </div>
   );

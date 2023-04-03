@@ -1,17 +1,19 @@
-import React, { useState } from 'react';
-// import UpcomingEvents from '.././upcomingEvents/upcomingEvents';
-import './SideGraphs.css';
-import Chart from 'react-apexcharts';
-import { Divider } from '@mui/material';
-// import TradeBarGraph from './TradeBarGraph/TradeBarGraph';
-import { lightTheme } from '../../../Theme/theme';
+import React, { useState } from "react";
+import UpcomingEvents from ".././upcomingEvents/upcomingEvents";
+import "./SideGraphs.css";
+import Chart from "react-apexcharts";
+import { Divider } from "@mui/material";
+import TradeBarGraph from "./TradeBarGraph/TradeBarGraph";
+import ModeChange from "../../../Theme/ChangeMode";
+// import {lightTheme} from '../../../Theme/theme'
 
 const SideGraphs = () => {
+  const lightTheme = ModeChange();
   const [pieChart, setPieChart] = useState({
     series: [50, 50],
     options: {
       chart: {
-        type: 'donut',
+        type: "donut",
       },
       plotOptions: {
         pie: {
@@ -23,7 +25,10 @@ const SideGraphs = () => {
           },
         },
       },
-      colors: [`${lightTheme.darkGreencolorGraph}`, `${lightTheme.darkRedcolorGraph}`],
+      colors: [
+        `${lightTheme.darkGreencolorGraph}`,
+        `${lightTheme.darkRedcolorGraph}`,
+      ],
       responsive: [
         {
           breakpoint: 480,
@@ -32,7 +37,7 @@ const SideGraphs = () => {
               width: 150,
             },
             legend: {
-              position: 'bottom',
+              position: "bottom",
             },
           },
         },
@@ -40,11 +45,17 @@ const SideGraphs = () => {
     },
   });
 
+  const graphTitle = {
+    color: `${lightTheme.headingTextColor}`,
+    fontWeight: "500",
+    fontSize: "18px",
+  };
+
   return (
     <div>
       <div className="dailyStatus">
         <div className="dailyStatusTop">
-          <p className="daily" style={{ color: `${lightTheme.headingTextColor}` }}>
+          <p className="daily" style={graphTitle}>
             Daily
           </p>
           <p className="winLoss" style={{ color: `${lightTheme.textColor}` }}>
@@ -53,16 +64,17 @@ const SideGraphs = () => {
         </div>
         <div className="pieChart">
           <Chart
+            
+            style={{marginLeft:'30px',marginTop:'-10px',marginBottom:'26px'}}
             options={pieChart.options}
             series={pieChart.series}
             type="donut"
             height={156}
-            style={{ marginLeft: '30px', marginTop: '-10px', marginBottom: '26px' }}
           />
         </div>
         <Divider />
         <div className="winLossPercentage">
-          <div style={{ padding: '15px 15px' }}>
+          <div style={{ padding: "15px 15px" }}>
             <p className="win" style={{ color: `${lightTheme.profit}` }}>
               Win
             </p>
@@ -71,7 +83,7 @@ const SideGraphs = () => {
             </p>
           </div>
           <Divider orientation="vertical" variant="fullWidth" flexItem />
-          <div style={{ padding: '15px 15px' }}>
+          <div style={{ padding: "15px 15px" }}>
             <p className="lossPie" style={{ color: `${lightTheme.loss}` }}>
               Loss
             </p>
@@ -80,6 +92,7 @@ const SideGraphs = () => {
             </p>
           </div>
         </div>
+        {/* <Divider /> */}
       </div>
     </div>
   );

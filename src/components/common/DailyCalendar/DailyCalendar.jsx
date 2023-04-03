@@ -1,33 +1,42 @@
-import React,{useState} from 'react'
-import './dailyCalendar.css'
+import React, { useState } from "react";
+import "./dailyCalendar.css";
 import Calendar from "react-calendar";
 import "react-calendar/dist/Calendar.css";
-import {lightTheme} from '../../../Theme/theme'
+import ModeChange from "../../../Theme/ChangeMode";
+import { useSelector } from "react-redux";
+// import {lightTheme} from '../../../Theme/theme'
 
 const DailyCalendar = ({ arrow }) => {
-  console.log('arrow value',arrow)
-    const [date, setDate] = useState(new Date());
+  const lightTheme = ModeChange();
+  const mode=useSelector(state=>state.mode)
 
-    const getDate = (date) => {
-      setDate(date);
-      console.log(date)
-    };
+  // console.log('arrow value',arrow)
+  const [date, setDate] = useState(new Date());
+
+  const getDate = (date) => {
+    setDate(date);
+    console.log(date);
+  };
   return (
-      <div className='dailyCalendarMain' style={{backgroundColor:`${lightTheme.ComponentBackgroundColor}`}}>
-                  <Calendar
-          onChange={getDate}
+    <div
+      className="dailyCalendarMain"
+      style={{ backgroundColor: `${lightTheme.ComponentBackgroundColor}` }}
+    >
+      <Calendar
+        style={{backgroundColor:`${lightTheme.ComponentBackgroundColor}`}}
+        onChange={getDate}
         value={date}
-        
-          prev2Label={null}
-          next2Label={null}
+        prev2Label={null}
+        next2Label={null}
         // prevLabel={null}
         // nextLabel={null}
         selectRange={true}
-              className="dailyCalendar"
-              tileClassName={"second"}
-        />
-    </div>
-  )
-}
+        className={mode? "react-calendarDaily":"dailyCalendar"}
+        tileClassName={"second"}
 
-export default DailyCalendar
+      />
+    </div>
+  );
+};
+
+export default DailyCalendar;

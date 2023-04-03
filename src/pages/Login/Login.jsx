@@ -7,11 +7,13 @@ import MailIcon from '../../assets/login/mail.png'
 import passwordIcon from '../../assets/login/key.png'
 import { BiShow, BiHide } from 'react-icons/bi'
 import { useNavigate } from 'react-router-dom'
-import {lightTheme} from '../../Theme/theme'
+import ModeChange from '../../Theme/ChangeMode'
+// import {lightTheme} from '../../Theme/theme'
 
 const Login = () => {
 
   const navigation = useNavigate();
+  const lightTheme=ModeChange()
 
   const [credentials, setCredentials] = useState({
     email: "",

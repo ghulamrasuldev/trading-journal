@@ -2,12 +2,15 @@ import React, { useState } from 'react';
 import { Box, Grid } from '@mui/material';
 import Chart from 'react-apexcharts';
 import './TopGraph.css';
-import { lightTheme } from '../../../Theme/theme';
+import ModeChange from '../../../Theme/ChangeMode';
+// import { lightTheme } from '../../../Theme/theme';
 import { useAtom } from 'jotai';
 import { isOpenAtom } from '../../../atom/atom.js';
 
 const TopGraphs = () => {
   const [isOpen] = useAtom(isOpenAtom);
+
+  const lightTheme = ModeChange();
 
   const spacing = isOpen ? 1.6 : 2;
 
@@ -178,7 +181,7 @@ const TopGraphs = () => {
           </div>
         </Grid>
         <Grid item lg={2.5} md={12} sm={12} rowGap={1} className="rMultipleAndOpen">
-          <div className="rMultipleMain">
+          <div className="rMultipleMain" style={{backgroundColor:`${lightTheme.ComponentBackgroundColor}`}}>
             <p className="rMultiple" style={{ color: `${lightTheme.headingTextColor}` }}>
               R. Multiple
             </p>
@@ -191,7 +194,7 @@ const TopGraphs = () => {
               </p>
             </div>
           </div>
-          <div className="openMain">
+          <div className="openMain" style={{ backgroundColor: `${lightTheme.ComponentBackgroundColor}` }}>
             <p className="open" style={{ color: `${lightTheme.headingTextColor}` }}>
               Open
             </p>

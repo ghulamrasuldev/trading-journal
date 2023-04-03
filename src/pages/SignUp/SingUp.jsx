@@ -7,10 +7,13 @@ import MailIcon from '../../assets/login/mail.png'
 import passwordIcon from '../../assets/login/key.png'
 import { BiShow, BiHide } from 'react-icons/bi'
 import { FaUserAlt } from 'react-icons/fa'
-import {lightTheme} from '../../Theme/theme'
+import { ModeComment } from '@mui/icons-material'
+import ModeChange from '../../Theme/ChangeMode'
+// import {lightTheme} from '../../Theme/theme'
 
 const SingUp = () => {
 
+  const lightTheme = ModeChange();
   
   const navigation = useNavigate();
 

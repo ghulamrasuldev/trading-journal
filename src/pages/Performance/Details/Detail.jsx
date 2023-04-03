@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import './Detail.css';
-import { lightTheme } from '../../../Theme/theme';
+// import { lightTheme } from '../../../Theme/theme';
 import { Box } from '@mui/material';
 import AggregatePL from './AggredatePL/AggregatePL';
 import PerTradeAverage from './PerTradeAverage/PerTradeAverage';
@@ -12,7 +12,10 @@ import MarketBehaviour from './Marketbehaviour/MarketBehaviour';
 import WinLossExpectation from './WinLossExpectation/WinLossExpectation';
 import { useAtom } from 'jotai';
 import { isOpenAtom } from '../../../atom/atom.js';
+import ModeChange from "../../../Theme/ChangeMode";
+
 const Detail = () => {
+  const lightTheme = ModeChange();
   const [isOpen] = useAtom(isOpenAtom);
   const spacing = isOpen ? 1 : 6;
 

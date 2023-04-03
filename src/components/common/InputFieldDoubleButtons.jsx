@@ -1,5 +1,6 @@
 import React from 'react';
-import { lightTheme } from '../../Theme/theme';
+import ModeChange from '../../Theme/ChangeMode';
+// import { lightTheme } from '../../Theme/theme';
 const InputFieldDoubleButtons = ({
   placeholder = '',
   showLeftButton,
@@ -8,6 +9,24 @@ const InputFieldDoubleButtons = ({
   leftButtonTitle = '',
   rightButtonTitle = '',
 }) => {
+  const lightTheme = ModeChange()
+  const buttonStyle={
+    textTransform: 'none',
+    borderRadius: '0px',
+    padding: '5px 10px',
+    background: `${lightTheme.lightgrey}`,
+    color: `${lightTheme.headingTextColor}`,
+    cursor: 'pointer',
+    border: 'none',
+  }
+  const inputOne={
+    width: '100%',
+    padding: '8px 10px 8px 10px',
+    borderRadius: '0px',
+    border: `1px solid ${lightTheme.lightgrey}`,
+    outline: 'none',
+    color: `${lightTheme.textColor}`,
+  }
   return (
     <div
       style={{
@@ -17,15 +36,7 @@ const InputFieldDoubleButtons = ({
     >
       {showLeftButton && (
         <button
-          style={{
-            textTransform: 'none',
-            borderRadius: '0px',
-            padding: '5px 10px',
-            background: `${lightTheme.lightgrey}`,
-            color: `${lightTheme.headingTextColor}`,
-            cursor: 'pointer',
-            border: 'none',
-          }}
+          style={buttonStyle}
         >
           {leftButtonTitle}
         </button>
@@ -34,26 +45,11 @@ const InputFieldDoubleButtons = ({
         type="text"
         placeholder={placeholder}
         disabled={writable === false ? true : false}
-        style={{
-          width: '100%',
-          padding: '8px 10px 8px 10px',
-          borderRadius: '0px',
-          border: `1px solid ${lightTheme.lightgrey}`,
-          outline: 'none',
-          color: `${lightTheme.textColor}`,
-        }}
+        style={inputOne}
       ></input>
       {showRightButton && (
         <button
-          style={{
-            textTransform: 'none',
-            borderRadius: '0px',
-            padding: '5px 10px',
-            background: `${lightTheme.lightgrey}`,
-            color: `${lightTheme.headingTextColor}`,
-            cursor: 'pointer',
-            border: 'none',
-          }}
+          style={buttonStyle}
         >
           {rightButtonTitle}
         </button>

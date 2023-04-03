@@ -1,9 +1,11 @@
 import { Box, Grid, Divider } from "@mui/material";
 import React, { useState } from "react";
-import { lightTheme } from "../../../../Theme/theme";
+// import { lightTheme } from "../../../../Theme/theme";
 import { MdOutlineLock } from "react-icons/md";
+import ModeChange from "../../../../Theme/ChangeMode";
 
 const WinLossAggregatePL = () => {
+  const lightTheme = ModeChange();
   const [applyFllter, setApplyFilter] = useState("0");
   const [showLock, setShowLock] = useState(true);
 

@@ -1,11 +1,14 @@
-import React, { useState } from 'react';
-import Calendar from 'react-calendar';
-import 'react-calendar/dist/Calendar.css';
-import CalendarMonthSharpIcon from '@mui/icons-material/CalendarMonthSharp';
-import './calendar.css';
-import { lightTheme } from '../../../Theme/theme';
+import React, { useState } from "react";
+import Calendar from "react-calendar";
+import "react-calendar/dist/Calendar.css";
+import CalendarMonthSharpIcon from "@mui/icons-material/CalendarMonthSharp";
+import "./calendar.css";
+import ModeChange from "../../../Theme/ChangeMode";
+import { useSelector } from "react-redux";
+// import {lightTheme} from '../../../Theme/theme'
 
 const CalendarComponent = () => {
+  const lightTheme=ModeChange()
   const [check, setCheck] = useState(false);
   const [date, setDate] = useState(new Date());
 
@@ -50,14 +53,15 @@ const CalendarComponent = () => {
     },
   ];
 
+  const dateDiv = {backgroundColor:`${lightTheme.currentDateDiv}`,border:`1px solid ${lightTheme.dateBorderColor}`}
+
+  const mode =useSelector(state=>state.mode)
   return (
-    <div className="calendarMain" style={{ backgroundColor: `${lightTheme.ComponentBackgroundColor}` }}>
-      <div className="calendarDiv">
-        <div className="dateDiv">
+    <div className="calendarMain" style={{backgroundColor:`${lightTheme.ComponentBackgroundColor}`}}>
+      <div className="calendarDiv" style={{backgroundColor:`${lightTheme.ComponentBackgroundColor}`}}>
+        <div className="dateDiv" style={dateDiv}>
           <CalendarMonthSharpIcon color={`${lightTheme.textColor}`} fontSize="small" />
-          <p className="currentDate" style={{ color: `${lightTheme.textColor}` }}>
-            {date.toDateString()}
-          </p>
+          <p className="currentDate" style={{color: `${lightTheme.textColor}`}}> {date.toDateString()}</p>
         </div>
 
         <Calendar
@@ -78,7 +82,15 @@ const CalendarComponent = () => {
               </div>
             ) : null;
           }}
-          className="calendar"
+          //   tileContent={({ date, view }) => view === 'day' &&
+          //       mark.find(x=>x===4)? "profit": "loss"
+          //   }
+          //   tileClassName={({ date, view }) => view === 'month' &&
+          //       mark? "tileContentProfit":"tileContentLoss"
+          //   }
+
+
+          className={mode? "react-calendarDashboard":"calendarDashboard"}
         />
       </div>
     </div>

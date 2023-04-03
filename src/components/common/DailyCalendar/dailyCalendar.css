@@ -8,20 +8,18 @@
   /* margin-top:40px; */
   /* border: 1px solid black; */
 }
-.calendarDiv {
-  /* border: 1px solid black; */
-  margin-top: 30px;
-  padding: 5px 20px;
-}
 .dailyCalendar {
   border: none !important;
   width: 100% !important;
   padding: 10px 15px !important;
+  background-color:white;
 }
-/* .react-calendar__month-view__days{
-        border:none;
-        border-radius:8px;
-    } */
+.react-calendarDaily{
+  border: none !important;
+  width: 100% !important;
+  padding: 10px 15px !important;
+  background-color:#30334E;
+}
 .second {
   border: none !important;
   padding-top: 10px !important;
@@ -29,6 +27,7 @@
   padding-bottom: 15px !important;
   text-align: center !important;
 }
-.react-calendar__navigation {
+.react-calendar__navigation{
   margin-top: 10px;
 }
+

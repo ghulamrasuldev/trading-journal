@@ -5,11 +5,13 @@ import './TradeLogTopGraph.css';
 import { useAtom } from 'jotai';
 
 import { isOpenAtom } from '../../../atom/atom.js';
-import { lightTheme } from '../../../Theme/theme';
+import ModeChange from "../../../Theme/ChangeMode";
+// import { lightTheme } from '../../../Theme/theme';
 
 const TradeLogTopGraphs = () => {
   const [isOpen] = useAtom(isOpenAtom);
   const spacing = isOpen ? 2.8 : 3;
+  const lightTheme = ModeChange();
   // first top graph
   const [graphData, setGraphData] = useState({
     seriesSpark1: [
@@ -141,7 +143,9 @@ const TradeLogTopGraphs = () => {
               </p>
               <p className="graphSubTitle" style={{ color: `${lightTheme.headingColor}` }}>
                 Total Trades:
-                <span style={{ fontWeight: '500', paddingLeft: '5px', color: `${lightTheme.textColor}` }}>83</span>
+                <span style={{ fontWeight: "500", paddingLeft: "5px",color:`${lightTheme.lightDarkBlue}` }}>
+                  83
+                </span>
               </p>
             </div>
             <div>
@@ -191,30 +195,20 @@ const TradeLogTopGraphs = () => {
         </Grid>
         <Grid item lg={4} md={12} sm={12} xm={12} sx={topGraphStyle}>
           <div>
-            <div className="TradeLogTopSection">
-              <div>
-                <p className="graphTitle" style={{ color: `${lightTheme.headingTextColor}` }}>
-                  Net Daily P&L
-                </p>
-                <p className="graphSubTitle" style={{ color: `${lightTheme.headingColor}` }}>
-                  Total Trades:
-                  <span style={{ fontWeight: '500', paddingLeft: '5px', color: `${lightTheme.textColor}` }}>83</span>
-                </p>
-              </div>
-              <div>
-                <p className="profitTopGraph">
-                  <span style={{ fontWeight: '700', marginRight: '5px', color: '#022658', fontSize: '10px' }}>
-                    Profit:
-                  </span>
-                  $35,520.80
-                </p>
-                <p className="lossTopGraph">
-                  <span style={{ fontWeight: '700', marginRight: '5px', color: '#022658', fontSize: '10px' }}>
-                    Lost:
-                  </span>
-                  $35,520.80
-                </p>
-              </div>
+          <div className="TradeLogTopSection">
+            <div>
+              <p className="graphTitle" style={{color:`${lightTheme.headingTextColor}`}}>Net Daily P&L</p>
+              <p className="graphSubTitle" style={{color:`${lightTheme.headingColor}`}}>
+                Total Trades:
+                <span style={{ fontWeight: "500", paddingLeft: "5px",color:`${lightTheme.lightDarkBlue}` }}>
+                  83
+                </span>
+              </p>
+            </div>
+            <div>
+              <p className="profitTopGraph"><span style={{fontWeight:'700',marginRight:'5px',color:'#022658',fontSize:'10px',color:`${lightTheme.profitloss}`}}>Profit:</span>$35,520.80</p>
+              <p className="lossTopGraph"><span style={{fontWeight:'700',marginRight:'5px',color:'#022658',fontSize:'10px',color:`${lightTheme.profitloss}`}}>Lost:</span>$35,520.80</p>
+            </div>
             </div>
             <div>
               <Chart

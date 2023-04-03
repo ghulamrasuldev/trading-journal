@@ -1,12 +1,14 @@
 import React, { useState } from 'react';
 import { Grid, Box } from '@mui/material';
-import { lightTheme } from '../../../../Theme/theme';
+// import { lightTheme } from '../../../../Theme/theme';
 import Chart from 'react-apexcharts';
 import { useAtom } from 'jotai';
 
 import { isOpenAtom } from '../../../../atom/atom.js';
+import ModeChange from "../../../../Theme/ChangeMode";
 
 const DailyGraph = () => {
+  const lightTheme = ModeChange();
   const [isOpen] = useAtom(isOpenAtom);
   const spacing = isOpen ? 4.5 : 5;
 

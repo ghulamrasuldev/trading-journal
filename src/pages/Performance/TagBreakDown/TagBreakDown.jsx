@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { lightTheme } from "../../../Theme/theme";
+// import { lightTheme } from "../../../Theme/theme";
 import { MdOutlineLock } from "react-icons/md";
 import { Box, Divider } from "@mui/material";
 import Table from "@mui/material/Table";
@@ -9,8 +9,10 @@ import TableContainer from "@mui/material/TableContainer";
 import TableHead from "@mui/material/TableHead";
 import TableRow from "@mui/material/TableRow";
 import Paper from "@mui/material/Paper";
+import ModeChange from "../../../Theme/ChangeMode";
 
 const TagBreakDown = () => {
+  const lightTheme = ModeChange();
   const [applyFllter, setApplyFilter] = useState("0");
   const [AggregateToggle, setAggregateToggle] = useState("0");
   const [tagToggle, setTagToggle] = useState("0");

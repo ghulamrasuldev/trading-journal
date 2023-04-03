@@ -10,34 +10,38 @@ import Paper from '@mui/material/Paper';
 import PortfolioData from './PortfolioConstantData';
 import delBaskit from '../../../assets/delBaskit.png';
 import { Tooltip } from '@mui/material';
-import { lightTheme } from '../../../Theme/theme';
+import ModeChange from '../../../Theme/ChangeMode';
+// import { lightTheme } from '../../../Theme/theme';
 
-const tableDataStyling = {
-  color: `${lightTheme.headingTextColor}`,
-  fontSize: '12px',
-  fontWeight: '400',
-  borderBottom: `1px solid ${lightTheme.performanceButtonsBackground}`,
-};
 
-const tableHeadingStyling = {
-  color: `${lightTheme.textColor}`,
-  fontSize: '12px',
-  fontWeight: '400',
-  borderBottom: `1px solid ${lightTheme.performanceButtonsBackground}`,
-  borderTop: `1px solid ${lightTheme.performanceButtonsBackground}`,
-};
-
-const divStyle = {
-  backgroundColor: `${lightTheme.badgeBackColor}`,
-  width: '40px',
-  height: '26px',
-  borderRadius: '5px',
-  display: 'flex',
-  alignItems: 'center',
-  justifyContent: 'center',
-};
 
 const Portfolio = () => {
+  const lightTheme = ModeChange();
+  // styling
+  const tableDataStyling = {
+    color: `${lightTheme.headingTextColor}`,
+    fontSize: '12px',
+    fontWeight: '400',
+    borderBottom: `1px solid ${lightTheme.performanceButtonsBackground}`,
+  };
+  
+  const tableHeadingStyling = {
+    color: `${lightTheme.textColor}`,
+    fontSize: '12px',
+    fontWeight: '400',
+    borderBottom: `1px solid ${lightTheme.performanceButtonsBackground}`,
+    borderTop: `1px solid ${lightTheme.performanceButtonsBackground}`,
+  };
+  
+  const divStyle = {
+    backgroundColor: `${lightTheme.badgeBackColor}`,
+    width: '40px',
+    height: '26px',
+    borderRadius: '5px',
+    display: 'flex',
+    alignItems: 'center',
+    justifyContent: 'center',
+  };
   return (
     <TableContainer component={Paper} elevation={0}>
       <Table sx={{ minWidth: 650 }} aria-label="simple table">

@@ -1,13 +1,15 @@
-import React,{useState} from "react";
-import { Box, Grid,Divider } from "@mui/material";
+import React, { useState } from "react";
+import { Box, Grid, Divider } from "@mui/material";
 import NavBar from "../../../components/NavBar/NavBar";
-import { lightTheme } from "../../../Theme/theme";
+// import { lightTheme } from "../../../Theme/theme";
 import downArrow from "../../../assets/downArrow.png";
-import {TotalProfitLossData} from '../Overview/ConstantData'
-import { AverageTradeProfitLoss } from '../Overview/ConstantData'
-import './report.css'
+import { TotalProfitLossData } from "../Overview/ConstantData";
+import { AverageTradeProfitLoss } from "../Overview/ConstantData";
+import "./report.css";
+import ModeChange from "../../../Theme/ChangeMode";
 
 const Reports = () => {
+  const lightTheme = ModeChange();
   const [TotalProfit, setTotalProfitLossData] = useState(TotalProfitLossData);
   const [AverageTradeProfit, setAverageTradeProfitLoss] = useState(
     AverageTradeProfitLoss
@@ -65,7 +67,7 @@ const Reports = () => {
     display: "flex",
     justifyContent: "space-between",
     alignItems: "center",
-      padding: "10px 15px",
+    padding: "10px 15px",
   };
   const name = {
     fontWeight: "500",
@@ -76,13 +78,13 @@ const Reports = () => {
     fontWeight: "400",
     fontSize: "16px",
     color: `${lightTheme.textColor}`,
-    };
-    const mainGrid= {
-        '& .gridData:nth-child(odd)': {
-            backgroundColor:`${lightTheme.reportDataColor}`
-        },
-        padding:'10px 0'
-    }
+  };
+  const mainGrid = {
+    "& .gridData:nth-child(odd)": {
+      backgroundColor: `${lightTheme.reportDataColor}`,
+    },
+    padding: "10px 0",
+  };
 
   return (
     <div>
@@ -124,18 +126,26 @@ const Reports = () => {
               </Grid>
             </Grid>
           </div>
-                  <Grid container columnGap={4} rowGap={4} style={{ borderTop: `1px solid ${lightTheme.borderColor}`,borderBottom: `1px solid ${lightTheme.borderColor}` }}>
+          <Grid
+            container
+            columnGap={4}
+            rowGap={4}
+            style={{
+              borderTop: `1px solid ${lightTheme.borderColor}`,
+              borderBottom: `1px solid ${lightTheme.borderColor}`,
+            }}
+          >
             <Grid item lg={5.8} md={12} sm={12} sx={mainGrid}>
               <div
                 style={{
-                //   border: `1px solid ${lightTheme.borderColor}`,
+                  //   border: `1px solid ${lightTheme.borderColor}`,
                   borderRadius: "8px",
                 }}
               >
                 {TotalProfit.map((data, index) => {
                   return (
                     <div className="gridData">
-                      <div key={index} style={profitLossMain} >
+                      <div key={index} style={profitLossMain}>
                         <p style={name}>{data.name}</p>
                         <p style={nameVal}>{data.value}</p>
                       </div>
@@ -148,7 +158,7 @@ const Reports = () => {
             <Grid item lg={5.8} md={12} sm={12} sx={mainGrid}>
               <div
                 style={{
-                //   border: `1px solid ${lightTheme.borderColor}`,
+                  //   border: `1px solid ${lightTheme.borderColor}`,
                   borderRadius: "8px",
                 }}
               >

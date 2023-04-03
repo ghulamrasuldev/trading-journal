@@ -1,12 +1,14 @@
 import React from 'react';
-import { lightTheme } from '../../../Theme/theme';
+// import { lightTheme } from '../../../Theme/theme';
 import Select, { components } from 'react-select';
 import { Checkbox, FormControlLabel } from '@mui/material';
 import IndicatorUpDown from '../../../assets/IndicatorUpDown.png';
 
 import InputFieldDoubleButtons from '../../../components/common/InputFieldDoubleButtons';
+import ModeChange from '../../../Theme/ChangeMode';
 
 const ApplyCommission = () => {
+  const lightTheme = ModeChange();
   const headerStyling = {
     fontSize: '20px',
     fontWeight: 500,

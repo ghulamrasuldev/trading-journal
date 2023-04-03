@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import './Performance.css';
 import { Box } from '@mui/material';
-import { lightTheme } from '../../Theme/theme';
+// import { lightTheme } from '../../Theme/theme';
 import NavBar from '../../components/NavBar/NavBar';
 import Overview from './Overview/OverView';
 // import Compare from './Compare/DaysAndTimes/DaysAndTimes'
@@ -11,8 +11,10 @@ import Compare from './Compare/Compare';
 import WinVSLossDays from './WinVSLossDays/WinVSLossDays';
 import Drawdown from './DrawDown/Drawdown';
 import TagBreakDown from './TagBreakDown/TagBreakDown';
+import ModeChange from '../../Theme/ChangeMode';
 
 const Performance = () => {
+  const lightTheme = ModeChange();
   const [showComponent, setShowComponent] = useState('0');
 
   // styling

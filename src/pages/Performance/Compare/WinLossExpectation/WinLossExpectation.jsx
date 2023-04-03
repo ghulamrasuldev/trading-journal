@@ -1,9 +1,11 @@
 import React, { useState } from "react";
 import { Box, Grid } from "@mui/material";
-import { lightTheme } from "../../../../Theme/theme";
+// import { lightTheme } from "../../../../Theme/theme";
 import Chart from "react-apexcharts";
+import ModeChange from "../../../../Theme/ChangeMode";
 
 const WinLossExpectation = () => {
+  const lightTheme = ModeChange();
   const [winLossRatio, setWinlossRatio] = useState({
     series: [34, 75],
     options: {

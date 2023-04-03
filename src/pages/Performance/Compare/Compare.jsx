@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { Box, Divider, Grid, TextField } from '@mui/material';
-import { lightTheme } from '../../../Theme/theme';
+// import { lightTheme } from '../../../Theme/theme';
 import { MdOutlineLock } from 'react-icons/md';
 import DaysAndTimes from './DaysAndTimes/DaysAndTimes';
 import PriceVolume from './PriceVolume/PriceVolume';
@@ -9,9 +9,11 @@ import PerTradeAverage from './PerTradeAverage/PerTradeAverage.jsx';
 import Instrument from './Instrument/Instrument.jsx';
 import WinLossExpectation from './WinLossExpectation/WinLossExpectation';
 import Liquidity from './Liquidity/Liquidity';
-import MarketBehaviour from './Marketbehaviour/MarketBehaviour';
+import MarketBehaviour from './Marketbehaviour/MarketBehaviour'
+import ModeChange from '../../../Theme/ChangeMode';
 
 const Compare = () => {
+  const lightTheme = ModeChange();
   const [showLock, setShowLock] = useState(true);
   const [applyFllter, setApplyFilter] = useState('0');
   const [AggregateToggle, setAggregateToggle] = useState('0');

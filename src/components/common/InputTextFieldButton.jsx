@@ -1,6 +1,26 @@
 import React from 'react';
-import { lightTheme } from '../../Theme/theme';
+// import { lightTheme } from '../../Theme/theme';
+import ModeChange from '../../Theme/ChangeMode';
 const InputTextFieldButton = ({ placeholder = '', showSideButton, writable, buttonTitle = '' }) => {
+  const lightTheme = ModeChange()
+  
+  const inputStyle={
+    width: '100%',
+    padding: '8px 10px 8px 10px',
+    borderRadius: '5px 0px 0px 5px',
+    outline: 'none',
+    border: `1px solid ${lightTheme.PageBackgroundColor}`,
+    color: `${lightTheme.textColor}`,
+  }
+  const buttonstyle={
+    textTransform: 'none',
+    borderRadius: '0px 5px 5px 0px',
+    padding: '5px 5px',
+    background: `${lightTheme.headingTextColor}`,
+    color: `${lightTheme.whiteText}`,
+    cursor: 'pointer',
+    border: 'none',
+  }
   return (
     <div
       style={{
@@ -12,26 +32,11 @@ const InputTextFieldButton = ({ placeholder = '', showSideButton, writable, butt
         type="text"
         placeholder={placeholder}
         disabled={writable === false ? true : false}
-        style={{
-          width: '100%',
-          padding: '8px 10px 8px 10px',
-          borderRadius: '5px 0px 0px 5px',
-          outline: 'none',
-          border: `1px solid ${lightTheme.PageBackgroundColor}`,
-          color: `${lightTheme.textColor}`,
-        }}
+        style={inputStyle}
       ></input>
       {showSideButton && (
         <button
-          style={{
-            textTransform: 'none',
-            borderRadius: '0px 5px 5px 0px',
-            padding: '5px 5px',
-            background: `${lightTheme.headingTextColor}`,
-            color: `${lightTheme.whiteText}`,
-            cursor: 'pointer',
-            border: 'none',
-          }}
+          style={buttonstyle}
         >
           {buttonTitle}
         </button>

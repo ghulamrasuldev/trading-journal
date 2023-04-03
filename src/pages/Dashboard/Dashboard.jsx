@@ -7,13 +7,16 @@ import './Dashboard.css';
 import SideGraphs from './SideGraphs/SideGraphs.jsx';
 import MonthlyGraph from './MonthlyAndCalender/MonthlyGraph';
 import CalendarComponent from './MonthlyAndCalender/Calendar';
-import { lightTheme } from '../../Theme/theme';
+import ModeChange from '../../Theme/ChangeMode';
+// import { lightTheme } from '../../Theme/theme';
 import TradeBarGraph from './SideGraphs/TradeBarGraph/TradeBarGraph';
 import UpcomingEvents from './upcomingEvents/upcomingEvents';
 import { useAtom } from 'jotai';
 import { isOpenAtom } from '../../atom/atom.js';
 
 const Dashboard = () => {
+
+  const lightTheme = ModeChange();
   const [isOpen] = useAtom(isOpenAtom);
   const spacing = isOpen ? 1 : 6;
 

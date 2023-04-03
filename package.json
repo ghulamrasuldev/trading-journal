@@ -25,9 +25,12 @@
     "react-icons": "^4.7.1",
     "react-images-uploading": "^3.1.7",
     "react-quill": "^2.0.0",
+    "react-redux": "^8.0.5",
     "react-router-dom": "^6.8.1",
     "react-select": "^5.7.0",
-    "react-select-currency": "^1.0.7"
+    "react-select-currency": "^1.0.7",
+    "redux": "^4.2.1",
+    "redux-thunk": "^2.4.2"
   },
   "devDependencies": {
     "@types/react": "^18.0.27",

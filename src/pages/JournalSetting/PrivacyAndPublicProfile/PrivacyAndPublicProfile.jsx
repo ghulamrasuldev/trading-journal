@@ -4,15 +4,17 @@ import AccordionSummary from '@mui/material/AccordionSummary';
 import AccordionDetails from '@mui/material/AccordionDetails';
 import Typography from '@mui/material/Typography';
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
-import { lightTheme } from '../../../Theme/theme';
+// import { lightTheme } from '../../../Theme/theme';
 import { Button, Checkbox, FormControlLabel, InputAdornment, TextField } from '@mui/material';
 import { FormGroup } from '@mui/material';
 import { tradeDetail, tradeTable } from './ConstantData';
 import InputTextFieldButton from '../../../components/common/InputTextFieldButton';
 import InputTextField from '../../../components/common/InputTextField';
 import CustomButton from '../../../components/common/CustomButton';
+import ModeChange from '../../../Theme/ChangeMode';
 
 const PrivacyAndPublicProfile = () => {
+  const lightTheme = ModeChange();
   const [expanded, setExpanded] = useState('panel1');
 
   const handleChange = (panel) => (event, isExpanded) => {

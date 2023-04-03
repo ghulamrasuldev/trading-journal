@@ -1,8 +1,12 @@
 import React from 'react';
 import Select from 'react-select';
-import { lightTheme } from '../../Theme/theme';
+// import { lightTheme } from '../../Theme/theme';
+import ModeChange from '../../Theme/ChangeMode';
 
 const CustomSelect = ({ ...inputProps }) => {
+
+  const lightTheme=ModeChange()
+
   const customStyles = {
     control: (provided, state) => ({
       ...provided,
