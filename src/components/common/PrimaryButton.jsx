@@ -7,7 +7,7 @@ const PrimaryButton = ({ buttonTitle, disabled, ...inputProps }) => {
   const buttonStyle={
     borderRadius: '5px',
     padding: '10px 20px',
-    background: `${lightTheme.headingTextColor}`,
+    background: `${lightTheme.lightDarkBlue}`,
     color: `${lightTheme.whiteText}`,
     cursor: 'pointer',
     margin: '5px 0px 5px 0px',

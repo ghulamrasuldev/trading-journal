@@ -38,6 +38,7 @@ const TradeSetting = () => {
 
   const accordianStyle = {
     // margin: "30px 0",
+    background:`${lightTheme.ComponentBackgroundColor}`,
     marginBottom: '30px',
     '&:before': {
       display: 'none',

@@ -56,11 +56,14 @@ const ModeChange = () => {
         dateBorderColor: '#e2e2e2',
         tableHeadColor: '#4C4E64',
         tableBorderColor: '#e2e2e2',
-        // grayBlueColor:''
+        newsText:'#022658',
+        tradeBorderColor:'#e2e2e2',
         
     };
     const darkTheme = {
-        currentDateDiv:'#666CFF',
+        tradeBorderColor:'#595D75',
+        currentDateDiv: '#666CFF',
+        newsText: '#EAEAFF',
         ComponentBackgroundColor: '#30334E',
         graphGridLinesColor: '#26293E',
         tableBorderColor:'#262A3F',
