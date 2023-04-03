@@ -64,7 +64,7 @@ const ModeChange = () => {
         ComponentBackgroundColor: '#30334E',
         graphGridLinesColor: '#26293E',
         tableBorderColor:'#262A3F',
-        graphLabels: '#ffffff',
+        graphLabels: 'yellow',
         profitloss:'#EAEAFF',
         whiteText: 'white',
         eventsColor: '#26293E',
