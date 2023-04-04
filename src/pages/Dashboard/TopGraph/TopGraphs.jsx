@@ -4,15 +4,9 @@ import Chart from 'react-apexcharts';
 import './TopGraph.css';
 import ModeChange from '../../../Theme/ChangeMode';
 // import { lightTheme } from '../../../Theme/theme';
-import { useAtom } from 'jotai';
-import { isOpenAtom } from '../../../atom/atom.js';
 
 const TopGraphs = () => {
-  const [isOpen] = useAtom(isOpenAtom);
-
   const lightTheme = ModeChange();
-
-  const spacing = isOpen ? 1.6 : 2;
 
   const [graphData, setGraphData] = useState({
     seriesSpark1: [
@@ -115,8 +109,8 @@ const TopGraphs = () => {
   };
   return (
     <Box>
-      <Grid container columnGap={spacing} rowGap={4} mt={5} mb={5}>
-        <Grid item lg={3} md={12} sm={12} sx={topGraphStyle}>
+      <Grid container justifyContent="space-between" alignItems="center" mt={5} mb={5}>
+        <Grid item lg={3.1} md={12} sm={12} sx={topGraphStyle}>
           <div className="graphTopSection">
             <div>
               <p className="graphTitle" style={{ color: `${lightTheme.headingTextColor}` }}>
@@ -140,7 +134,7 @@ const TopGraphs = () => {
             <Chart options={graphData.optionsSpark1} series={graphData.seriesSpark1} type="area" height={60} />
           </div>
         </Grid>
-        <Grid item lg={3} md={12} sm={12} sx={topGraphStyle}>
+        <Grid item lg={3.1} md={12} sm={12} sx={topGraphStyle}>
           <div className="graphTopSectionb">
             <div>
               <p className="graphTitle" style={{ color: `${lightTheme.headingTextColor}` }}>
@@ -160,7 +154,7 @@ const TopGraphs = () => {
             <Chart options={graphData.optionsSpark2} series={graphData.seriesSpark2} type="area" height={74} />
           </div>
         </Grid>
-        <Grid item lg={3} md={12} sm={12} sx={topGraphStyle}>
+        <Grid item lg={3.1} md={12} sm={12} sx={topGraphStyle}>
           <div className="graphTopSectionb">
             <div>
               <p className="graphTitle" style={{ color: `${lightTheme.headingTextColor}` }}>
@@ -181,7 +175,7 @@ const TopGraphs = () => {
           </div>
         </Grid>
         <Grid item lg={2.5} md={12} sm={12} rowGap={1} className="rMultipleAndOpen">
-          <div className="rMultipleMain" style={{backgroundColor:`${lightTheme.ComponentBackgroundColor}`}}>
+          <div className="rMultipleMain" style={{ backgroundColor: `${lightTheme.ComponentBackgroundColor}` }}>
             <p className="rMultiple" style={{ color: `${lightTheme.headingTextColor}` }}>
               R. Multiple
             </p>

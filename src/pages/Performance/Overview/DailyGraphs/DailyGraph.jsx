@@ -2,15 +2,11 @@ import React, { useState } from 'react';
 import { Grid, Box } from '@mui/material';
 // import { lightTheme } from '../../../../Theme/theme';
 import Chart from 'react-apexcharts';
-import { useAtom } from 'jotai';
 
-import { isOpenAtom } from '../../../../atom/atom.js';
-import ModeChange from "../../../../Theme/ChangeMode";
+import ModeChange from '../../../../Theme/ChangeMode';
 
 const DailyGraph = () => {
   const lightTheme = ModeChange();
-  const [isOpen] = useAtom(isOpenAtom);
-  const spacing = isOpen ? 4.5 : 5;
 
   const [DailyPLGraph, setDailyPLGraph] = useState({
     series: [
@@ -120,7 +116,7 @@ const DailyGraph = () => {
   return (
     <div>
       <Box sx={mainDiv}>
-        <Grid container columnGap={spacing} rowGap={4}>
+        <Grid container justifyContent="space-between" alignItems="center" rowGap={4}>
           <Grid item lg={5.8} md={12} sm={12} sx={GridItem}>
             <p style={graphTitle}>Gross Daily P&L (Lasts 30 Trading Days)</p>
             <div>

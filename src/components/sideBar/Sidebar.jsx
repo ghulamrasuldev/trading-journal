@@ -1,57 +1,52 @@
-import React, { useState } from "react";
-import "./Sidebar.css";
-import {
-  IoIosArrowDroprightCircle,
-  IoIosArrowDropleftCircle,
-} from "react-icons/io";
-import logo from "../../assets/login/logo.png";
+import React, { useState } from 'react';
+import './Sidebar.css';
+import { IoIosArrowDroprightCircle, IoIosArrowDropleftCircle } from 'react-icons/io';
+import logo from '../../assets/login/logo.png';
 // import { menuItem } from './MenuItem'
-import { NavLink } from "react-router-dom";
-import { Divider, Tooltip } from "@mui/material";
+import { NavLink } from 'react-router-dom';
+import { Divider, Tooltip } from '@mui/material';
 // import { lightTheme } from '../../Theme/theme'
-import settingIcon from "/sidebarImages/setting.png";
-import ModeChange from "../../Theme/ChangeMode";
+import settingIcon from '/sidebarImages/setting.png';
+import ModeChange from '../../Theme/ChangeMode';
 
-import NewsCard from "./NewsCard";
-import { useSelector } from "react-redux";;
-import { useAtom } from 'jotai';
-import { isOpenAtom } from '../../atom/atom.js';
+import NewsCard from './NewsCard';
+import { useSelector } from 'react-redux';
 
 const Sidebar = ({ children }) => {
   const lightTheme = ModeChange();
 
-  const [isOpen, setIsOpen] = useAtom(isOpenAtom);
+  const [isOpen, setIsOpen] = useState(false);
 
   const menuItem = [
     {
-      path: "/dashboard",
-      name: "Dashboard",
-      icon: "./sidebarImages/dashboard.png",
+      path: '/dashboard',
+      name: 'Dashboard',
+      icon: './sidebarImages/dashboard.png',
     },
     {
-      path: "/dailyStatus",
-      name: "Daily Status",
-      icon: "./sidebarImages/dailystatus.png",
+      path: '/dailyStatus',
+      name: 'Daily Status',
+      icon: './sidebarImages/dailystatus.png',
     },
     {
-      path: "/tradelog",
-      name: "Trade Log",
-      icon: "./sidebarImages/loop.png",
+      path: '/tradelog',
+      name: 'Trade Log',
+      icon: './sidebarImages/loop.png',
     },
     {
-      path: "/performance",
-      name: "Performance",
-      icon: "./sidebarImages/performance.png",
+      path: '/performance',
+      name: 'Performance',
+      icon: './sidebarImages/performance.png',
     },
     {
-      path: "/journal",
-      name: "Journal",
-      icon: "./sidebarImages/edit.png",
+      path: '/journal',
+      name: 'Journal',
+      icon: './sidebarImages/edit.png',
     },
     {
-      path: "/news",
-      name: "News",
-      icon: "./sidebarImages/news.png",
+      path: '/news',
+      name: 'News',
+      icon: './sidebarImages/news.png',
     },
   ];
 
@@ -64,14 +59,14 @@ const Sidebar = ({ children }) => {
     },
   };
 
-  const mode =useSelector(state=>state.mode)
+  const mode = useSelector((state) => state.mode);
 
   return (
     <div className="container">
       <div
         className="sidebar"
         style={{
-          width: isOpen ? "250px" : "70px",
+          width: isOpen ? '250px' : '70px',
           backgroundColor: lightTheme.ComponentBackgroundColor,
         }}
       >
@@ -79,11 +74,11 @@ const Sidebar = ({ children }) => {
 
         <div className="topSection">
           <div className="logoSection">
-            <img src={logo} alt="logo Image" className="logoImg" style={{backgroundColor:'transparent'}}/>
+            <img src={logo} alt="logo Image" className="logoImg" style={{ backgroundColor: 'transparent' }} />
             <p
               className="name"
               style={{
-                display: isOpen ? "block" : "none",
+                display: isOpen ? 'block' : 'none',
                 color: lightTheme.textColor,
               }}
             >
@@ -91,7 +86,6 @@ const Sidebar = ({ children }) => {
             </p>
           </div>
           <div className="openArrow">
-           
             {isOpen ? (
               <IoIosArrowDropleftCircle
                 size={30}
@@ -109,11 +103,11 @@ const Sidebar = ({ children }) => {
         </div>
         <Divider
           style={{
-            width: "100%",
-            position: "relative",
-            top: "-18px",
-            zIndex: "-1",
-            boxShadow: "0px 2px 4px rgba(0, 0, 0, 0.03)",
+            width: '100%',
+            position: 'relative',
+            top: '-18px',
+            zIndex: '-1',
+            boxShadow: '0px 2px 4px rgba(0, 0, 0, 0.03)',
           }}
         />
 
@@ -127,26 +121,19 @@ const Sidebar = ({ children }) => {
                 key={index}
                 className={mode? "darklink":"link"}
                 style={{
-                  margin: isOpen ? "5px 10px" : "5px 8px",
+                  margin: isOpen ? '5px 10px' : '5px 8px',
                   color: lightTheme.textColor,
                 }}
               >
                 <Tooltip title={item.name} placement="right-start">
-                  <div
-                    className="icon"
-                    style={{ color: lightTheme.sidebarIcon }}
-                  >
-                    <img
-                      src={item.icon}
-                      alt={item.name}
-                      className="sidebarImages"
-                    />
+                  <div className="icon" style={{ color: lightTheme.sidebarIcon }}>
+                    <img src={item.icon} alt={item.name} className="sidebarImages" />
                   </div>
                 </Tooltip>
                 <div
                   className="link_text"
                   style={{
-                    display: isOpen ? "block" : "none",
+                    display: isOpen ? 'block' : 'none',
                     color: lightTheme.textColor,
                   }}
                 >
@@ -164,32 +151,25 @@ const Sidebar = ({ children }) => {
         ) : null}
 
         {/* setting navigation */}
-        <div
-          className="setting"
-          style={{ position: isOpen ? "absolute" : "absolute" }}
-        >
+        <div className="setting" style={{ position: isOpen ? 'absolute' : 'absolute' }}>
           <NavLink
             to="/setting"
             className="link"
             activeclassname="active"
             style={{
-              margin: isOpen ? "5px 10px" : "0 5px",
+              margin: isOpen ? '5px 10px' : '0 5px',
               color: lightTheme.textColor,
             }}
           >
             <Tooltip title="Setting" placement="right-start">
               <div className="icon" style={{ color: lightTheme.sidebarIcon }}>
-                <img
-                  src={settingIcon}
-                  alt="setting"
-                  className="sidebarImages"
-                />
+                <img src={settingIcon} alt="setting" className="sidebarImages" />
               </div>
             </Tooltip>
             <div
               className="link_text"
               style={{
-                display: isOpen ? "block" : "none",
+                display: isOpen ? 'block' : 'none',
                 color: lightTheme.textColor,
               }}
             >

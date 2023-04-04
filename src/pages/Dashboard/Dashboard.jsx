@@ -11,14 +11,9 @@ import ModeChange from '../../Theme/ChangeMode';
 // import { lightTheme } from '../../Theme/theme';
 import TradeBarGraph from './SideGraphs/TradeBarGraph/TradeBarGraph';
 import UpcomingEvents from './upcomingEvents/upcomingEvents';
-import { useAtom } from 'jotai';
-import { isOpenAtom } from '../../atom/atom.js';
 
 const Dashboard = () => {
-
   const lightTheme = ModeChange();
-  const [isOpen] = useAtom(isOpenAtom);
-  const spacing = isOpen ? 1 : 6;
 
   // styling props
   const mainDivStyle = {
@@ -47,7 +42,7 @@ const Dashboard = () => {
       <Box sx={mainDivStyle}>
         <NavBar name={'Dashboard'} />
         <TopGraphs />
-        <Grid container columnGap={spacing} rowGap={4}>
+        <Grid container justifyContent="space-between" alignItems="center" rowGap={4}>
           <Grid item lg={7.5} md={12} sm={12}>
             <MonthlyGraph />
           </Grid>
@@ -55,7 +50,7 @@ const Dashboard = () => {
             <SideGraphs />
           </Grid>
         </Grid>
-        <Grid container columnGap={spacing} rowGap={4}>
+        <Grid container justifyContent="space-between" alignItems="center" rowGap={4}>
           <Grid item lg={7.5} md={12} sm={12} style={{ marginTop: '20px' }}>
             <TradeBarGraph />
           </Grid>
