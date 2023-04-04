@@ -24,7 +24,7 @@ const WinVSLossDays = () => {
     padding: "5px 0",
   };
   const selected = {
-    backgroundColor: `${lightTheme.headingTextColor}`,
+    backgroundColor: `${lightTheme.lightDarkBlue}`,
     color: `${lightTheme.whiteText}`,
   };
   const notSelected = { background: "none", color: `${lightTheme.textColor}` };
@@ -39,13 +39,13 @@ const WinVSLossDays = () => {
           <div className="winlossBtns">
             <p style={silverGold}>
               These reports are only available for silver and gold users.
-              <span style={{ color: `${lightTheme.headingTextColor}` }}>
+              <span style={{ color: `${lightTheme.lightDarkBlue}` }}>
                 Upgrade now!
               </span>
             </p>
             <div
               style={{
-                backgroundColor: `${lightTheme.performanceButtonsBackground}`,
+                backgroundColor: `${lightTheme.performanceBTnDiv}`,
               }}
               className="winlossBTnDiv"
             >

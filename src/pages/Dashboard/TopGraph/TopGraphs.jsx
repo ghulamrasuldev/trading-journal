@@ -124,7 +124,7 @@ const TopGraphs = () => {
               </p>
               <p className="graphSubTitle" style={{ color: `${lightTheme.headingColor}` }}>
                 Total Trades:
-                <span style={{ fontWeight: '500', paddingLeft: '5px' }}>83</span>
+                <span style={{ fontWeight: '500', paddingLeft: '5px',color:`${lightTheme.lightDarkBlue}` }}>83</span>
               </p>
             </div>
             <div style={{ paddingBottom: '10px' }}>

@@ -137,6 +137,7 @@ const WinLossAggregatePL = () => {
   const gridItem = {
     border: `1px solid ${lightTheme.borderColor}`,
     borderRadius: "8px",
+    backgroundColor:`${lightTheme.performanceComponentColor}`
   };
   const note = {
     color: `${lightTheme.textColor}`,
@@ -156,7 +157,7 @@ const WinLossAggregatePL = () => {
     fontSize: "14px",
   };
   const selected = {
-    backgroundColor: `${lightTheme.headingTextColor}`,
+    backgroundColor: `${lightTheme.lightDarkBlue}`,
     color: `${lightTheme.whiteText}`,
   };
   const notSelected = { background: "none", color: `${lightTheme.textColor}` };
@@ -236,7 +237,7 @@ const WinLossAggregatePL = () => {
           <div
             className="plBtnDiv"
             style={{
-              backgroundColor: `${lightTheme.performanceButtonsBackground}`,
+              backgroundColor: `${lightTheme.performanceBTnDiv}`,
             }}
           >
             <button
@@ -309,7 +310,7 @@ const WinLossAggregatePL = () => {
         </div>
         <div style={{ padding: "30px 15px" }}>
           <Grid container columnGap={4} rowGap={4}>
-            <Grid lg={5.5} md={12} sm={12} sx={gridItem}>
+            <Grid lg={5.7} md={12} sm={12} sx={gridItem}>
               <div
                 style={{
                   borderRadius: "8px",
@@ -353,7 +354,7 @@ const WinLossAggregatePL = () => {
                 })}
               </div>
             </Grid>
-            <Grid lg={5.5} md={12} sm={12} sx={gridItem}>
+            <Grid lg={5.7} md={12} sm={12} sx={gridItem}>
               <div
                 style={{
                   borderRadius: "8px",

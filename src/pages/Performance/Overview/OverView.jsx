@@ -93,6 +93,7 @@ const OverView = () => {
               style={{
                 border: `1px solid ${lightTheme.borderColor}`,
                 borderRadius: '8px',
+                backgroundColor:`${lightTheme.performanceBTnDiv}`
               }}
             >
               {TotalProfit.map((data, index) => {
@@ -113,6 +114,7 @@ const OverView = () => {
               style={{
                 border: `1px solid ${lightTheme.borderColor}`,
                 borderRadius: '8px',
+                backgroundColor:`${lightTheme.performanceBTnDiv}`
               }}
             >
               {AverageTradeProfit.map((data, index) => {

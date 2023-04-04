@@ -23,7 +23,7 @@ const Performance = () => {
     backgroundColor: `${lightTheme.lightPageBackground}`,
   };
   const selected = {
-    backgroundColor: `${lightTheme.headingTextColor}`,
+    backgroundColor: `${lightTheme.lightDarkBlue}`,
     color: `${lightTheme.whiteText}`,
   };
   const notSelected = {
@@ -37,10 +37,10 @@ const Performance = () => {
         <TradeLogTopGraph />
         <div className="performanceMain" style={{ backgroundColor: `${lightTheme.ComponentBackgroundColor}` }}>
           <div className="ReportBtns">
-            <p>Reports</p>
+            <p style={{color:`${lightTheme.bluegrayColor}`}}>Reports</p>
             <div
               style={{
-                backgroundColor: `${lightTheme.performanceButtonsBackground}`,
+                backgroundColor: `${lightTheme.performanceBTnDiv}`,
               }}
               className="performanceBTnDiv"
             >

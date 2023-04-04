@@ -259,8 +259,10 @@ const WinLossExpectation = () => {
 
   const gridItem = {
     border: `1px solid ${lightTheme.borderColor}`,
+    padding: "15px 10px",
     borderRadius: "8px",
-    padding: "10px 10px",
+    margin: "10px 0",
+    backgroundColor:`${lightTheme.performanceComponentColor}`
   };
   const goldUser = {
     fontSize: "18px",
@@ -336,12 +338,7 @@ const WinLossExpectation = () => {
             lg={5.8}
             md={12}
             sm={12}
-            style={{
-              border: `1px solid ${lightTheme.borderColor}`,
-              padding: "15px 10px",
-              borderRadius: "8px",
-              margin: "10px 0",
-            }}
+            style={gridItem}
           >
             <div
               style={{
@@ -374,12 +371,7 @@ const WinLossExpectation = () => {
             lg={5.8}
             md={12}
             sm={12}
-            style={{
-              border: `1px solid ${lightTheme.borderColor}`,
-              padding: "15px 10px",
-              borderRadius: "8px",
-              margin: "10px 0",
-            }}
+            style={gridItem}
           >
             <div
               style={{
@@ -414,12 +406,7 @@ const WinLossExpectation = () => {
             lg={5.8}
             md={12}
             sm={12}
-            style={{
-              border: `1px solid ${lightTheme.borderColor}`,
-              padding: "15px 10px",
-              borderRadius: "8px",
-              margin: "10px 0",
-            }}
+            style={gridItem}
           >
             <p style={graphTitleB}>Win/Loss P&L Comparison</p>
             <Chart
@@ -435,12 +422,7 @@ const WinLossExpectation = () => {
             lg={5.8}
             md={12}
             sm={12}
-            style={{
-              border: `1px solid ${lightTheme.borderColor}`,
-              padding: "15px 10px",
-              borderRadius: "8px",
-              margin: "10px 0",
-            }}
+            style={gridItem}
           >
             <p style={graphTitleB}>Trade Expectation</p>
             <Chart
@@ -457,12 +439,7 @@ const WinLossExpectation = () => {
             lg={5.8}
             md={12}
             sm={12}
-            style={{
-              border: `1px solid ${lightTheme.borderColor}`,
-              padding: "15px 10px",
-              borderRadius: "8px",
-              margin: "10px 0",
-            }}
+            style={gridItem}
           >
             <p style={graphTitleB}>Cumulative P&L</p>
             <Chart
@@ -478,12 +455,7 @@ const WinLossExpectation = () => {
             lg={5.8}
             md={12}
             sm={12}
-            style={{
-              border: `1px solid ${lightTheme.borderColor}`,
-              padding: "15px 10px",
-              borderRadius: "8px",
-              margin: "10px 0",
-            }}
+            style={gridItem}
           >
             <p style={graphTitleB}>Cumulative Drawdown</p>
             <Chart

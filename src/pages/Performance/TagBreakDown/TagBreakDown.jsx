@@ -53,7 +53,7 @@ const TagBreakDown = () => {
     alignItems: "center",
   };
   const selected={
-    backgroundColor: `${lightTheme.headingTextColor}`,
+    backgroundColor: `${lightTheme.lightDarkBlue}`,
     color: `${lightTheme.whiteText}`,
   }
   const notSelected = { background: "none", color: `${lightTheme.textColor}` };
@@ -86,7 +86,7 @@ const TagBreakDown = () => {
     cursor: "pointer",
     padding: "0 10px",
   }
-  const tableHead={ color: `${lightTheme.textColor}` }
+  const tableHead={ color: `${lightTheme.tableHeadColor}`,borderBottom:`1px solid ${lightTheme.tableBorderColor}` }
   return (
     <div>
       <Box sx={mainDiv}>
@@ -94,7 +94,7 @@ const TagBreakDown = () => {
           {/* Aggregare and per-trade filters button */}
           <div
             style={{
-              backgroundColor: `${lightTheme.performanceButtonsBackground}`,
+              backgroundColor: `${lightTheme.performanceBTnDiv}`,
               borderRadius: "20px",
             }}
           >
@@ -103,7 +103,7 @@ const TagBreakDown = () => {
               style={
                 AggregateToggle == "0"
                   ? {
-                      backgroundColor: `${lightTheme.headingTextColor}`,
+                      backgroundColor: `${lightTheme.lightDarkBlue}`,
                       color: `${lightTheme.whiteText}`,
                       borderRadius: "9999px 100px 100px 9999px",
                     }
@@ -118,7 +118,7 @@ const TagBreakDown = () => {
               style={
                 AggregateToggle == "1"
                   ? {
-                      backgroundColor: `${lightTheme.headingTextColor}`,
+                      backgroundColor: `${lightTheme.lightDarkBlue}`,
                       color: `${lightTheme.whiteText}`,
                       borderRadius: "100px 9999px 9999px 100px",
                     }
@@ -141,7 +141,7 @@ const TagBreakDown = () => {
             <div
               className="plBtnDiv"
               style={{
-                backgroundColor: `${lightTheme.performanceButtonsBackground}`,
+                backgroundColor: `${lightTheme.performanceBTnDiv}`,
               }}
             >
               <button
@@ -210,7 +210,7 @@ const TagBreakDown = () => {
 
           <div
             style={{
-              backgroundColor: `${lightTheme.performanceButtonsBackground}`,
+              backgroundColor: `${lightTheme.performanceBTnDiv}`,
               borderRadius: "20px",
             }}
           >
@@ -219,7 +219,7 @@ const TagBreakDown = () => {
               style={
                 tagToggle == "0"
                   ? {
-                      backgroundColor: `${lightTheme.headingTextColor}`,
+                      backgroundColor: `${lightTheme.lightDarkBlue}`,
                       color: `${lightTheme.whiteText}`,
                       borderRadius: "9999px 100px 100px 9999px",
                     }
@@ -234,7 +234,7 @@ const TagBreakDown = () => {
               style={
                 tagToggle == "1"
                   ? {
-                      backgroundColor: `${lightTheme.headingTextColor}`,
+                      backgroundColor: `${lightTheme.lightDarkBlue}`,
                       color: `${lightTheme.whiteText}`,
                       borderRadius: "100px 9999px 9999px 100px",
                     }
@@ -269,7 +269,7 @@ const TagBreakDown = () => {
         </div>
         {/* table div */}
         <div style={{ marginTop: "10px" }}>
-          <TableContainer component={Paper}>
+          <TableContainer component={Paper} elevation={0} style={{backgroundColor:`${lightTheme.ComponentBackgroundColor}`,border:`1px solid ${lightTheme.tableBorderColor}`}}>
             <Table sx={{ minWidth: 650 }} aria-label="simple table">
               <TableHead>
                 <TableRow>
@@ -306,9 +306,14 @@ const TagBreakDown = () => {
                 {tableData.map((data, index) => (
                   <TableRow
                     key={index}
-                    sx={{ "&:last-child td, &:last-child th": { border: 0 } }}
+                    // sx={{ "&:last-child td, &:last-child th": { border: 0, } }}
+                    sx={{
+                      "& td": {
+                        borderBottom: `1px solid ${lightTheme.tableBorderColor}`,
+                      },
+                    }}
                   >
-                    <TableCell component="th" scope="row">
+                    <TableCell component="th" scope="row" style={{borderBottom: `1px solid ${lightTheme.tableBorderColor}`,}}>
                       0{index+1}
                     </TableCell>
                     <TableCell align="left">{data.graph}</TableCell>

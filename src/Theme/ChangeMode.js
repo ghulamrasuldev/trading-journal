@@ -57,10 +57,14 @@ const ModeChange = () => {
         tableHeadColor: '#4C4E64',
         tableBorderColor: '#e2e2e2',
         newsText:'#022658',
-        tradeBorderColor:'#e2e2e2',
+        tradeBorderColor: '#e2e2e2',
+        bluegrayColor: '#022658',
+        performanceBTnDiv: '#EDF2F6',
+        performanceComponentColor:'white'
         
     };
     const darkTheme = {
+        performanceComponentColor:'#3A3E5B',
         tradeBorderColor:'#595D75',
         currentDateDiv: '#666CFF',
         newsText: '#EAEAFF',
@@ -116,7 +120,9 @@ const ModeChange = () => {
         reportDataColor: '#f2e9ef',
         avatarBackground: '#7367F0',
         avatarBackgroundRGBA: 'rgba(115, 103, 240, 0.5)',
-        boxShadow:' '
+        boxShadow: ' ',
+        bluegrayColor: '#EAEAFF',
+        performanceBTnDiv:'#3A3E5B'
     };
     return (Mode? darkTheme : lightTheme)
 }
