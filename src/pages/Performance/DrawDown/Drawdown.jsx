@@ -158,7 +158,7 @@ const Drawdown = () => {
       // },
       grid: {
         row: {
-          colors: ["#f3f3f3", "transparent"], // takes an array which will be repeated on columns
+          // colors: ["#f3f3f3", "transparent"], // takes an array which will be repeated on columns
           opacity: 0.5,
         },
       },
@@ -211,7 +211,7 @@ const Drawdown = () => {
   const gridItem = {
     marginTop: "30px",
     border: `1px solid ${lightTheme.borderColor}`,
-    backgroundColor: `${lightTheme.ComponentBackgroundColor}`,
+    backgroundColor: `${lightTheme.performanceComponentColor}`,
     borderRadius: "8px",
   };
   const silverGold = {
@@ -233,7 +233,7 @@ const Drawdown = () => {
     fontSize: "14px",
   };
   const selected = {
-    backgroundColor: `${lightTheme.headingTextColor}`,
+    backgroundColor: `${lightTheme.lightDarkBlue}`,
     color: `${lightTheme.whiteText}`,
   };
   const notSelected = { background: "none", color: `${lightTheme.textColor}` };
@@ -283,7 +283,7 @@ const Drawdown = () => {
             <div
               className="plBtnDiv"
               style={{
-                backgroundColor: `${lightTheme.performanceButtonsBackground}`,
+                backgroundColor: `${lightTheme.performanceBTnDiv}`,
               }}
             >
               <button
@@ -337,12 +337,15 @@ const Drawdown = () => {
                     lg={6}
                     md={12}
                     sm={12}
-                    style={{ paddingTop: "0px" }}
+                    style={{ paddingTop: "0px"}}
+                    
                   >
                     {/* statictics data maping */}
                     <div
                       style={{
                         border: `1px solid ${lightTheme.borderColor}`,
+                        backgroundColor:`${lightTheme.performanceComponentColor}` 
+
                       }}
                     >
                       <div key={index} style={dataMain}>

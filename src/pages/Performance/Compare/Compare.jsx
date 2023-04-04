@@ -109,7 +109,7 @@ const Compare = () => {
     fontSize: '14px',
   };
   const selected = {
-    backgroundColor: `${lightTheme.headingTextColor}`,
+    backgroundColor: `${lightTheme.lightDarkBlue}`,
     color: `${lightTheme.whiteText}`,
   };
   const notSelected = { background: 'none', color: `${lightTheme.textColor}` };
@@ -126,7 +126,7 @@ const Compare = () => {
           <div
             className="plBtnDiv"
             style={{
-              backgroundColor: `${lightTheme.performanceButtonsBackground}`,
+              backgroundColor: `${lightTheme.performanceBTnDiv}`,
             }}
           >
             <button
@@ -171,7 +171,7 @@ const Compare = () => {
           <div className="winlossBtns">
             <div
               style={{
-                backgroundColor: `${lightTheme.performanceButtonsBackground}`,
+                backgroundColor: `${lightTheme.performanceBTnDiv}`,
               }}
               className="winlossBTnDiv"
             >

@@ -348,6 +348,7 @@ const Liquidity = () => {
     border: `1px solid ${lightTheme.borderColor}`,
     borderRadius: "8px",
     padding: "10px 10px",
+    backgroundColor:`${lightTheme.performanceComponentColor}`
   };
 
   return (

@@ -20,7 +20,7 @@ const Detail = () => {
 
   // styling
   const selected = {
-    backgroundColor: `${lightTheme.headingTextColor}`,
+    backgroundColor: `${lightTheme.lightDarkBlue}`,
     color: `${lightTheme.whiteText}`,
   };
   const notSelected = {
@@ -33,10 +33,10 @@ const Detail = () => {
       <Box>
         <div className="detailMain" style={{ backgroundColor: `${lightTheme.ComponentBackgroundColor}` }}>
           <div className="detailBtns">
-            <p>Details</p>
+            <p style={{color:`${lightTheme.bluegrayColor}`}}>Details</p>
             <div
               style={{
-                backgroundColor: `${lightTheme.performanceButtonsBackground}`,
+                backgroundColor: `${lightTheme.performanceBTnDiv}`,
               }}
               className="detailBTnDiv"
             >

@@ -50,14 +50,14 @@ const Sidebar = ({ children }) => {
     },
   ];
 
-  // const linkStyle = {
-  //   "&:hover": {
-  //     backgroundColor: `${lightTheme.hoverColor}`,
-  //   },
-  //   "&:active": {
-  //     backgroundColor: `${lightTheme.activeColor}`,
-  //   },
-  // };
+  const linkStyle = {
+    "&:hover": {
+      backgroundColor: `${lightTheme.hoverColor}`,
+    },
+    "&:active": {
+      backgroundColor: `${lightTheme.activeColor}`,
+    },
+  };
 
   const mode = useSelector((state) => state.mode);
 
@@ -119,9 +119,7 @@ const Sidebar = ({ children }) => {
               <NavLink
                 to={item.path}
                 key={index}
-                className={mode ? 'darklink' : 'link'}
-                // onClick={()=>setIsOpen(false)}
-                activeclassname={mode ? 'darkActive' : 'active'}
+                className={mode? "darklink":"link"}
                 style={{
                   margin: isOpen ? '5px 10px' : '5px 8px',
                   color: lightTheme.textColor,

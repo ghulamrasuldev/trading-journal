@@ -75,6 +75,7 @@ const AggregatePL = () => {
   };
   const gridStyle = {
     border: `1px solid ${lightTheme.borderColor}`,
+    backgroundColor:`${lightTheme.performanceComponentColor}`
   };
   const mainPLDiv={
     display: "flex",
@@ -83,7 +84,7 @@ const AggregatePL = () => {
     padding: "10px 20px",
   }
   const selected = {
-    backgroundColor: `${lightTheme.headingTextColor}`,
+    backgroundColor: `${lightTheme.lightDarkBlue}`,
     color: `${lightTheme.whiteText}`,
   };
   const notSelected = {
@@ -124,7 +125,7 @@ const AggregatePL = () => {
           <div
             className="plBtnDiv"
             style={{
-              backgroundColor: `${lightTheme.performanceButtonsBackground}`,
+              backgroundColor: `${lightTheme.performanceBTnDiv}`,
             }}
           >
             <button
