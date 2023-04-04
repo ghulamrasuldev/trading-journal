@@ -10,13 +10,8 @@ import TradeBarGraph from '../Dashboard/SideGraphs/TradeBarGraph/TradeBarGraph';
 import ModeChange from '../../Theme/ChangeMode';
 // import { lightTheme } from '../../Theme/theme';
 
-import { useAtom } from 'jotai';
-import { isOpenAtom } from '../../atom/atom.js';
-
 const DailyStatus = () => {
   const lightTheme = ModeChange();
-  const [isOpen] = useAtom(isOpenAtom);
-  const spacing = isOpen ? 10 : 12;
 
   const mainDivStyle = {
     padding: '30px 25px',

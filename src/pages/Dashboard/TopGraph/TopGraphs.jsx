@@ -4,16 +4,9 @@ import Chart from 'react-apexcharts';
 import './TopGraph.css';
 import ModeChange from '../../../Theme/ChangeMode';
 // import { lightTheme } from '../../../Theme/theme';
-import { useAtom } from 'jotai';
-import { isOpenAtom } from '../../../atom/atom.js';
 
 const TopGraphs = () => {
-  const [isOpen] = useAtom(isOpenAtom);
-
   const lightTheme = ModeChange();
-
-  // const spacing = isOpen ? 1.6 : 2;
-  const spacing = isOpen ? 1 : 3;
 
   const [graphData, setGraphData] = useState({
     seriesSpark1: [
@@ -117,7 +110,6 @@ const TopGraphs = () => {
   return (
     <Box>
       <Grid container justifyContent="space-between" alignItems="center" mt={5} mb={5}>
-        {/* <Grid container columnGap={spacing} rowGap={4} mt={5} mb={5}> */}
         <Grid item lg={3.1} md={12} sm={12} sx={topGraphStyle}>
           <div className="graphTopSection">
             <div>

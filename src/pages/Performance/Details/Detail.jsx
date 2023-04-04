@@ -10,14 +10,11 @@ import Liquidity from './Liquidity/Liquidity';
 import Instrument from './Instrument/Instrument';
 import MarketBehaviour from './Marketbehaviour/MarketBehaviour';
 import WinLossExpectation from './WinLossExpectation/WinLossExpectation';
-import { useAtom } from 'jotai';
-import { isOpenAtom } from '../../../atom/atom.js';
-import ModeChange from "../../../Theme/ChangeMode";
+
+import ModeChange from '../../../Theme/ChangeMode';
 
 const Detail = () => {
   const lightTheme = ModeChange();
-  const [isOpen] = useAtom(isOpenAtom);
-  const spacing = isOpen ? 1 : 6;
 
   const [showComponent, setShowComponent] = useState('0');
 
