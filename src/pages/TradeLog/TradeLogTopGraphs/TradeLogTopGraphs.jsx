@@ -2,15 +2,11 @@ import React, { useState } from 'react';
 import { Box, Grid } from '@mui/material';
 import Chart from 'react-apexcharts';
 import './TradeLogTopGraph.css';
-import { useAtom } from 'jotai';
 
-import { isOpenAtom } from '../../../atom/atom.js';
 import ModeChange from '../../../Theme/ChangeMode';
 // import { lightTheme } from '../../../Theme/theme';
 
 const TradeLogTopGraphs = () => {
-  const [isOpen] = useAtom(isOpenAtom);
-  const spacing = isOpen ? 2.8 : 3;
   const lightTheme = ModeChange();
   // first top graph
   const [graphData, setGraphData] = useState({

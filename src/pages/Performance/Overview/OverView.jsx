@@ -1,19 +1,18 @@
-import { Box, Divider, Grid } from "@mui/material";
-import React,{useState} from "react";
-import "./Overview.css";
-import downArrow from "../../../assets/downArrow.png";
+import { Box, Divider, Grid } from '@mui/material';
+import React, { useState } from 'react';
+import './Overview.css';
+import downArrow from '../../../assets/downArrow.png';
 // import { lightTheme } from "../../../Theme/theme";
-import DailyGraph from "./DailyGraphs/DailyGraph";
-import DailyVolumegraph from "./DailyGraphs/DailyVolumegraph";
-import {TotalProfitLossData} from './ConstantData'
-import {AverageTradeProfitLoss} from './ConstantData'
-import ModeChange from "../../../Theme/ChangeMode";
+import DailyGraph from './DailyGraphs/DailyGraph';
+import DailyVolumegraph from './DailyGraphs/DailyVolumegraph';
+import { TotalProfitLossData } from './ConstantData';
+import { AverageTradeProfitLoss } from './ConstantData';
+import ModeChange from '../../../Theme/ChangeMode';
 
 const OverView = () => {
-  
   const lightTheme = ModeChange();
-  const[TotalProfit,setTotalProfitLossData]=useState(TotalProfitLossData)
-  const [AverageTradeProfit,setAverageTradeProfitLoss]=useState(AverageTradeProfitLoss)
+  const [TotalProfit, setTotalProfitLossData] = useState(TotalProfitLossData);
+  const [AverageTradeProfit, setAverageTradeProfitLoss] = useState(AverageTradeProfitLoss);
   // styling
   const mainDiv = {
     padding: '15px 20px',
@@ -87,7 +86,7 @@ const OverView = () => {
             </Grid>
           </Grid>
         </div>
-        <Grid container columnGap={6} rowGap={4}>
+        <Grid container justifyContent="space-around" alignItems="center" rowGap={4}>
           <Grid item lg={5.5} md={12} sm={12}>
             <div
               style={{
