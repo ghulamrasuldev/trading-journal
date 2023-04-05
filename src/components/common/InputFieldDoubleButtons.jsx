@@ -14,7 +14,7 @@ const InputFieldDoubleButtons = ({
     textTransform: 'none',
     borderRadius: '0px',
     padding: '5px 10px',
-    background: `${lightTheme.lightgrey}`,
+    background: `${lightTheme.lightDarkBlue}`,
     color: `${lightTheme.headingTextColor}`,
     cursor: 'pointer',
     border: 'none',
@@ -23,9 +23,10 @@ const InputFieldDoubleButtons = ({
     width: '100%',
     padding: '8px 10px 8px 10px',
     borderRadius: '0px',
-    border: `1px solid ${lightTheme.lightgrey}`,
+    border: `1px solid ${lightTheme.selectBorderColor}`,
     outline: 'none',
     color: `${lightTheme.textColor}`,
+    background:`${lightTheme.ComponentBackgroundColor}`
   }
   return (
     <div

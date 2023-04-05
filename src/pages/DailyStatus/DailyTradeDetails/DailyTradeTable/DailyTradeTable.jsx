@@ -10,6 +10,7 @@ import Paper from "@mui/material/Paper";
 import "./dailyTradeTable.css";
 import ModeChange from "../../../../Theme/ChangeMode";
 import { light } from "@mui/material/styles/createPalette";
+import { Tooltip } from "@mui/material";
 
 const tradeTableData = [
   {
@@ -126,7 +127,7 @@ const DailyTradeTable = () => {
                 <TableCell align="left" style={tableData}>
                   {row.OpenTime}
                 </TableCell>
-                <TableCell align="left" style={tableData}>
+                <TableCell align="center" style={tableData}>
                   <p
                     className={row.Volume < 10 ? "loss" : "profit"}
                     style={
@@ -170,9 +171,11 @@ const DailyTradeTable = () => {
                   {row.Tags}
                 </TableCell>
                 <TableCell
-                  align="left"
+                  align="center"
                   style={{ fontSize: "12px", fontWeight: "400" }}
                 >
+                  <Tooltip title="add record">
+
                   <p
                     className="addBtn"
                     onClick={() => {
@@ -182,9 +185,10 @@ const DailyTradeTable = () => {
                       backgroundColor: `${lightTheme.lightDarkBlue}`,
                       color: `${lightTheme.whiteText}`,
                     }}
-                  >
+                    >
                     +
                   </p>
+                    </Tooltip>
                 </TableCell>
               </TableRow>
             ))}

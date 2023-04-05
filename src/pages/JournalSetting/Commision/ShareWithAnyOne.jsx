@@ -21,7 +21,7 @@ const ShareWithAnyOne = () => {
     display: 'flex',
     justifyContent: 'space-between',
     alignItems: 'center',
-    borderBottom: `2px solid ${lightTheme.badgeBackColorRGBA}`,
+    borderBottom: `1px solid ${lightTheme.badgeBackColorRGBA}`,
     padding: '5px 0px 5px 8px',
   };
   const checkBoxColor = {
@@ -35,6 +35,8 @@ const ShareWithAnyOne = () => {
       '&:hover': {
         borderColor: 'none',
       },
+      backgroundColor: `${lightTheme.selectColor}`,
+      border: `1px solid ${lightTheme.selectBorderColor}`,
     }),
     indicatorSeparator: (provided, state) => ({
       ...provided,
@@ -42,15 +44,22 @@ const ShareWithAnyOne = () => {
     }),
     option: (provided, state) => ({
       ...provided,
-      backgroundColor: state.isSelected ? `${lightTheme.headingTextColor}` : 'white',
-      color: state.isSelected ? 'white' : `${lightTheme.textColor}`,
+      backgroundColor: state.isSelected ? `${lightTheme.lightDarkBlue}` : 'white',
+      color: state.isSelected ? `${lightTheme.textColor}` : `${lightTheme.textColor}`,
       '&:hover': {
-        backgroundColor: 'lightgray',
+        backgroundColor: `${lightTheme.lightDarkBlue}`,
+        color:'white'
       },
+      cursor: 'pointer',
+      backgroundColor:`${lightTheme.selectColor}`
     }),
     singleValue: (provided, state) => ({
       ...provided,
-      color: `${lightTheme.textColor}`,
+      color: `${lightTheme.selectValueColor}`,
+    }),
+    placeholder: (provided) => ({
+      ...provided,
+      color:`${lightTheme.selectValueColor}`,
     }),
   };
 

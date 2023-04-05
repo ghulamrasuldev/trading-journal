@@ -9,6 +9,13 @@ const MonthlyGraph = () => {
   
   const lightTheme = ModeChange();
 
+  const mode = useSelector(state => state.mode);
+  var check=false;
+  useEffect(() => {
+     check=mode
+  }, [mode])
+  
+  
 
   const [monthlyGraph, setMonthlyGraph] = useState({
     series: [
@@ -43,7 +50,7 @@ const MonthlyGraph = () => {
         ],
         labels: {
           style: {
-            colors:`${lightTheme.graphLabels}`,
+            colors:check? 'red':'yellow',
           },
 
           fontSize: '32px'
@@ -55,7 +62,7 @@ const MonthlyGraph = () => {
         tickAmount: 5,
         labels: {
           style: {
-            colors:`${lightTheme.graphLabels}`,
+            colors:`red`,
             // fontSize: '32px'
           },
         },

@@ -3,6 +3,8 @@
 }
 #outlined-multiline-flexible{
     height:5px!important;
+    border:none!important;
+    outline: none!important;
 }
 .slideSelect{
     width:210px;

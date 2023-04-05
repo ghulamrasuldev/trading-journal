@@ -43,6 +43,8 @@ const ApplyCommission = () => {
       ...provided,
       border: state.isFocused ? provided.border : provided.border,
       boxShadow: 'none',
+      backgroundColor: `${lightTheme.selectColor}`,
+      border: `1px solid ${lightTheme.selectBorderColor}`,
     }),
     indicatorSeparator: (provided, state) => ({
       ...provided,
@@ -60,15 +62,18 @@ const ApplyCommission = () => {
     }),
     option: (provided, state) => ({
       ...provided,
-      backgroundColor: state.isSelected ? `${lightTheme.headingTextColor}` : 'white',
-      color: state.isSelected ? 'white' : `${lightTheme.textColor}`,
+      backgroundColor: state.isSelected ? `${lightTheme.lightDarkBlue}` : 'white',
+      color: state.isSelected ? `${lightTheme.textColor}` : `${lightTheme.textColor}`,
       '&:hover': {
-        backgroundColor: 'lightgray',
+        backgroundColor: `${lightTheme.lightDarkBlue}`,
+        color:'white'
       },
+      cursor: 'pointer',
+      backgroundColor:`${lightTheme.selectColor}`
     }),
     singleValue: (provided, state) => ({
       ...provided,
-      color: `${lightTheme.textColor}`,
+      color: `${lightTheme.selectValueColor}`,
     }),
   };
   const DropdownIndicator = (props) => {

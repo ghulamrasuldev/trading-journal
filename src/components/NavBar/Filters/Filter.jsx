@@ -11,15 +11,9 @@ import navMenu from '../../../assets/navMenu.png';
 import SecondaryButton from '../../common/SecondaryButton';
 import PrimaryButton from '../../common/PrimaryButton';
 import CustomSelect from '../../common/CustomSelect';
+import ModeChange from '../../../Theme/ChangeMode';
 
-const filterBtn = {
-  padding: '0!important',
-  minWidth: '10px!important',
-};
-const notificationMenuStyling = {
-  maxWidth: '440px',
-  maxHeight: '540px',
-};
+
 const options = [
   { value: 'chocolate', label: 'Chocolate' },
   { value: 'strawberry', label: 'Strawberry' },
@@ -45,6 +39,8 @@ const mutualOptionsRight = [
 ];
 
 const Filter = () => {
+
+  const lightTheme = ModeChange();
   const [anchorEl, setAnchorEl] = React.useState(null);
   const handleOpen = (event) => {
     setAnchorEl(event.currentTarget);
@@ -54,6 +50,18 @@ const Filter = () => {
   };
   const open = Boolean(anchorEl);
   const id = open ? 'simple-popover' : undefined;
+
+  // styling
+  const filterBtn = {
+    padding: '0!important',
+    minWidth: '10px!important',
+  };
+  const filterStyling = {
+    // maxWidth: '440px',
+    maxHeight: '540px',
+    backgroundColor: `${lightTheme.ComponentBackgroundColor}`,
+    border:`1px solid ${lightTheme.ComponentBackgroundColor}`
+  };
 
   return (
     <>
@@ -89,7 +97,7 @@ const Filter = () => {
           style: { minWidth: 462, minHeight: 447 },
         }}
       >
-        <div style={{ notificationMenuStyling }}>
+        <div style={ filterStyling }>
           <div
             style={{
               padding: '20px',
@@ -108,7 +116,7 @@ const Filter = () => {
               options={options}
             />
           </div>
-          <div className="allFilters">
+          <div className="allFilters" style={{border:`1px solid ${lightTheme.selectBorderColor}`}}>
             <div>
               <CustomSelect className="symbolFilter" options={symbolOptions} defaultValue={[symbolOptions[0]]} />
             </div>

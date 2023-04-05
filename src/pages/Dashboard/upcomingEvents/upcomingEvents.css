@@ -3,6 +3,9 @@
   border-radius: 8px;
   height: 100%;
 }
+.mainEventsDiv::-webkit-scrollbar{
+  display: none;
+}
 .upcomingEvent {
   font-family: Overpass;
   font-size: 18px;

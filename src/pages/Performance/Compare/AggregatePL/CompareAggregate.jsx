@@ -1,10 +1,8 @@
 import React, { useState } from "react";
 import { Box, Divider, Grid, TextField } from "@mui/material";
-// import { lightTheme } from "../../../../Theme/theme";
-import { MdOutlineLock } from "react-icons/md";
-import Select from "react-select";
 import "./CompareAggregate.css";
 import ModeChange from "../../../../Theme/ChangeMode";
+import CustomSelect from "../../../../components/common/CustomSelect";
 
 const CompareAggregate = () => {
   const lightTheme = ModeChange();
@@ -161,7 +159,7 @@ const CompareAggregate = () => {
     width: "130px",
     marginLeft: "10px",
     cursor: "pointer",
-    border: `1px solid ${lightTheme.borderColor}`,
+    border: `1px solid ${lightTheme.selectBorderColor}`,
   };
   const formMain = {
     display: "flex",
@@ -191,7 +189,6 @@ const CompareAggregate = () => {
     fontSize: "16px",
     color: `${lightTheme.headingTextColor}`,
   };
-
   const value = {
     fontWeight: "400",
     fontSize: "16px",
@@ -203,6 +200,16 @@ const CompareAggregate = () => {
     borderTopLeftRadius: "8px",
     borderTopRightRadius: "8px",
   };
+  const inputStyle = {
+    width: "210px",
+    height: "38px",
+    border: `1px solid ${lightTheme.selectBorderColor}`,
+    borderRadius: "4px",
+    outline: "none",
+    backgroundColor: `${lightTheme.selectColor}`,
+    color: `${lightTheme.selectValueColor}`,
+  };
+
   return (
     <div>
       <Box sx={mainDiv}>
@@ -210,7 +217,8 @@ const CompareAggregate = () => {
           <p style={{ color: `${lightTheme.textColor}`, padding: "0 15px" }}>
             Quick Report:{" "}
           </p>
-          <Select placeholder="Select" className="reportSelect" />
+          {/* <Select placeholder="Select" className="reportSelect" /> */}
+          <CustomSelect placeholder="Select" className="reportSelect" />
           <p style={{ color: `${lightTheme.textColor}`, padding: "0 10px" }}>
             or build a custom report below.
           </p>
@@ -247,37 +255,37 @@ const CompareAggregate = () => {
             <div style={formMain}>
               <div>
                 <p style={formInputText}>Symbol</p>
-                <TextField id="outlined-multiline-flexible" />
+                <input style={inputStyle}></input>
               </div>
               <div>
                 <p style={formInputText}>Tag</p>
-                <TextField id="outlined-multiline-flexible" />
+                <input style={inputStyle}></input>
               </div>
             </div>
             <div style={formMain}>
               <div>
                 <p style={formInputText}>Slide</p>
-                <Select placeholder="All" className="slideSelect" />
+                <CustomSelect placeholder="All" className="slideSelect" />
               </div>
               <div>
                 <p style={formInputText}>Start Date</p>
-                <TextField id="outlined-multiline-flexible" />
+                <input style={inputStyle}></input>
               </div>
             </div>
             <div style={formMain}>
               <div>
                 <p style={formInputText}>Duration</p>
-                <Select placeholder="All" className="slideSelect" />
+                <CustomSelect placeholder="All" className="slideSelect" />
               </div>
               <div>
                 <p style={formInputText}>End Date</p>
-                <TextField id="outlined-multiline-flexible" />
+                <input style={inputStyle}></input>
               </div>
             </div>
             <div style={formMain}>
               <div>
                 <p style={formInputText}>Trade P&L</p>
-                <Select placeholder="All" className="slideSelect" />
+                <CustomSelect placeholder="All" className="slideSelect" />
               </div>
             </div>
           </Grid>
@@ -296,37 +304,37 @@ const CompareAggregate = () => {
             <div style={formMain}>
               <div>
                 <p style={formInputText}>Symbol</p>
-                <TextField id="outlined-multiline-flexible" />
+                <input style={inputStyle}></input>
               </div>
               <div>
                 <p style={formInputText}>Tag</p>
-                <TextField id="outlined-multiline-flexible" />
+                <input style={inputStyle}></input>
               </div>
             </div>
             <div style={formMain}>
               <div>
                 <p style={formInputText}>Slide</p>
-                <Select placeholder="All" className="slideSelect" />
+                <CustomSelect placeholder="All" className="slideSelect" />
               </div>
               <div>
                 <p style={formInputText}>Start Date</p>
-                <TextField id="outlined-multiline-flexible" />
+                <input style={inputStyle}></input>
               </div>
             </div>
             <div style={formMain}>
               <div>
                 <p style={formInputText}>Duration</p>
-                <Select placeholder="All" className="slideSelect" />
+                <CustomSelect placeholder="All" className="slideSelect" />
               </div>
               <div>
                 <p style={formInputText}>End Date</p>
-                <TextField id="outlined-multiline-flexible" />
+                <input style={inputStyle}></input>
               </div>
             </div>
             <div style={formMain}>
               <div>
                 <p style={formInputText}>Trade P&L</p>
-                <Select placeholder="All" className="slideSelect" />
+                <CustomSelect placeholder="All" className="slideSelect" />
               </div>
             </div>
           </Grid>
@@ -336,7 +344,7 @@ const CompareAggregate = () => {
               style={{
                 borderRadius: "8px",
                 border: `1px solid ${lightTheme.borderColor}`,
-                backgroundColor:`${lightTheme.performanceComponentColor}`
+                backgroundColor: `${lightTheme.performanceComponentColor}`,
               }}
             >
               <div style={staticGroupOne}>
@@ -353,6 +361,7 @@ const CompareAggregate = () => {
                         justifyContent: "space-between",
                         alignItems: "center",
                         padding: "15px 15px",
+                        borderBottom:`1px solid ${lightTheme.selectBorderColor}`
                       }}
                     >
                       <p style={name}>{data.name}</p>
@@ -364,7 +373,7 @@ const CompareAggregate = () => {
                         )}
                       </p>
                     </div>
-                    <Divider />
+                    {/* <Divider /> */}
                   </>
                 );
               })}
@@ -374,8 +383,8 @@ const CompareAggregate = () => {
             <div
               style={{
                 borderRadius: "8px",
-                border: `1px solid ${lightTheme.borderColor}`,
-                backgroundColor:`${lightTheme.performanceComponentColor}`
+                border: `1px solid ${lightTheme.selectBorderColor}`,
+                backgroundColor: `${lightTheme.performanceComponentColor}`,
               }}
             >
               <div style={staticGroupTwo}>
@@ -392,6 +401,7 @@ const CompareAggregate = () => {
                         justifyContent: "space-between",
                         alignItems: "center",
                         padding: "15px 15px",
+                        borderBottom: `1px solid ${lightTheme.selectBorderColor}`,
                       }}
                     >
                       <p style={name}>{data.name}</p>
@@ -403,7 +413,7 @@ const CompareAggregate = () => {
                         )}
                       </p>
                     </div>
-                    <Divider />
+                    {/* <Divider /> */}
                   </>
                 );
               })}

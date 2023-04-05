@@ -12,7 +12,8 @@ const SwitchMode = () => {
 
   // styling
   const iconStyle = {
-    marginRight:'20px'
+    marginRight: '20px',
+    cursor:'pointer'
   }
   return (
     <div style={iconStyle}>

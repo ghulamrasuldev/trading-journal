@@ -12,7 +12,7 @@ const SettingAndConfigurations = () => {
     display: 'flex',
     justifyContent: 'space-between',
     alignItems: 'center',
-    borderBottom: `2px solid ${lightTheme.badgeBackColorRGBA}`,
+    borderBottom: `1px solid ${lightTheme.badgeBackColorRGBA}`,
     padding: '5px 0px 5px 8px',
   };
   const accordionDataTitle = {
