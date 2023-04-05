@@ -60,10 +60,16 @@ const ModeChange = () => {
         tradeBorderColor: '#e2e2e2',
         bluegrayColor: '#022658',
         performanceBTnDiv: '#EDF2F6',
-        performanceComponentColor:'white'
+        performanceComponentColor: 'white',
+        selectColor: 'white',
+        selectBorderColor: '#e2e2e2',
+        selectValueColor:'#636578'
         
     };
     const darkTheme = {
+        selectValueColor:'white',
+        selectColor:'#3A3E5B',
+        selectBorderColor:'#61667F',
         performanceComponentColor:'#3A3E5B',
         tradeBorderColor:'#595D75',
         currentDateDiv: '#666CFF',
@@ -100,7 +106,7 @@ const ModeChange = () => {
         darkRedcolorGraph: '#D94848',
         blueGraphColor: '#4C91FE',
         tradeLogGreenAreaGraph: '#07E098',
-        notficationColor: '#1A1F36',
+        notficationColor: 'white',
         dateColor: ' #A5ACB8',
         saveButton: '#666CFF',
         sliderColor: '#3CD856',
@@ -114,7 +120,7 @@ const ModeChange = () => {
         linkColor: '#3366CC',
         staticGroupOne: '#5072C0',
         staticGroupTwo: '#FF9600',
-        badgeBackColor: '#F0F0F0',
+        badgeBackColor: '#61667F',
         badgeBackColorRGBA: 'rgba(240, 240, 240, 0.5)',
         lightgrey: '#BFBFBF',
         reportDataColor: '#f2e9ef',

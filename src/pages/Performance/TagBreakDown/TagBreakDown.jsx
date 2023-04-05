@@ -52,41 +52,55 @@ const TagBreakDown = () => {
     justifyContent: "space-between",
     alignItems: "center",
   };
-  const selected={
+  const selected = {
     backgroundColor: `${lightTheme.lightDarkBlue}`,
     color: `${lightTheme.whiteText}`,
-  }
+  };
   const notSelected = { background: "none", color: `${lightTheme.textColor}` };
-  const plMain={
+  const plMain = {
     display: "flex",
     justifyContent: "flex-end",
     alignItems: "center",
     padding: "10px 20px",
-  }
-  const plType={
+  };
+  const plType = {
     color: `${lightTheme.headingTextColor}`,
     fontWeight: "500",
     fontSize: "14px",
-  }
-  const tagFilterMain={
+  };
+  const tagFilterMain = {
     display: "flex",
     justifyContent: "center",
     alignItems: "center",
-  }
-  const selectText = { fontSize: "14px", fontWeight: "400", marginRight: "10px" }
-  const showText={
+  };
+  const selectText = {
+    fontSize: "14px",
+    fontWeight: "400",
+    marginRight: "10px",
+  };
+  const showText = {
     color: `${lightTheme.textColor}`,
     fontSize: "14px",
     fontWeight: "400",
-  }
-  const summaryAndDetail={
+  };
+  const summaryAndDetail = {
     color: `${lightTheme.linkColor}`,
     fontSize: "14px",
     fontWeight: "400",
     cursor: "pointer",
     padding: "0 10px",
+  };
+  const tableHead = {
+    color: `${lightTheme.tableHeadColor}`,
+    borderBottom: `1px solid ${lightTheme.tableBorderColor}`,
+  };
+  const tableDataStyle = {
+    color:`${lightTheme.bluegrayColor}`
   }
-  const tableHead={ color: `${lightTheme.tableHeadColor}`,borderBottom:`1px solid ${lightTheme.tableBorderColor}` }
+  const tableMain = {
+    backgroundColor: `${lightTheme.ComponentBackgroundColor}`,
+    // border: `1px solid ${lightTheme.tableBorderColor}`,
+  };
   return (
     <div>
       <Box sx={mainDiv}>
@@ -130,14 +144,8 @@ const TagBreakDown = () => {
             </button>
           </div>
           {/* P & L type filters button */}
-          <div
-            style={plMain}
-          >
-            <p
-              style={plType}
-            >
-              P&L Type :
-            </p>
+          <div style={plMain}>
+            <p style={plType}>P&L Type :</p>
             <div
               className="plBtnDiv"
               style={{
@@ -146,33 +154,21 @@ const TagBreakDown = () => {
             >
               <button
                 className="left-roundedPLType"
-                style={
-                  applyFllter == "0"
-                    ? selected
-                    : notSelected
-                }
+                style={applyFllter == "0" ? selected : notSelected}
                 onClick={() => setApplyFilter("0")}
               >
                 $
               </button>
               <button
                 className="plBtn"
-                style={
-                  applyFllter == "1"
-                    ? selected
-                    : notSelected
-                }
+                style={applyFllter == "1" ? selected : notSelected}
                 onClick={() => setApplyFilter("1")}
               >
                 T
               </button>
               <button
                 className="right-roundedPLType"
-                style={
-                  applyFllter == "2"
-                    ? selected
-                    : notSelected
-                }
+                style={applyFllter == "2" ? selected : notSelected}
                 onClick={() => setApplyFilter("2")}
               >
                 R{" "}
@@ -199,14 +195,8 @@ const TagBreakDown = () => {
           </div>
         </div>
         {/* Tag filter button */}
-        <div
-          style={tagFilterMain}
-        >
-          <p
-            style={selectText}
-          >
-            Select :{" "}
-          </p>
+        <div style={tagFilterMain}>
+          <p style={selectText}>Select : </p>
 
           <div
             style={{
@@ -248,56 +238,30 @@ const TagBreakDown = () => {
         </div>
         {/* summary and detial div */}
         <div style={{ display: "flex", alignItems: "center" }}>
-          <p
-            style={showText}
-          >
-            Show :{" "}
-          </p>
+          <p style={showText}>Show : </p>
           <div style={{ display: "flex", alignItems: "center" }}>
-            <p
-              style={summaryAndDetail}
-            >
-              Summary
-            </p>
+            <p style={summaryAndDetail}>Summary</p>
             <Divider orientation="vertical" flexItem />
-            <p
-              style={summaryAndDetail}
-            >
-              Detailed
-            </p>
+            <p style={summaryAndDetail}>Detailed</p>
           </div>
         </div>
         {/* table div */}
         <div style={{ marginTop: "10px" }}>
-          <TableContainer component={Paper} elevation={0} style={{backgroundColor:`${lightTheme.ComponentBackgroundColor}`,border:`1px solid ${lightTheme.tableBorderColor}`}}>
+          <TableContainer component={Paper} elevation={0} style={tableMain}>
             <Table sx={{ minWidth: 650 }} aria-label="simple table">
               <TableHead>
                 <TableRow>
-                  <TableCell style={tableHead}>
-                    Tag
-                  </TableCell>
-                  <TableCell
-                    align="left"
-                    style={tableHead}
-                  >
+                  <TableCell style={tableHead}>Tag</TableCell>
+                  <TableCell align="left" style={tableHead}>
                     Graph
                   </TableCell>
-                  <TableCell
-                    align="left"
-                    style={tableHead}
-                  >
+                  <TableCell align="left" style={tableHead}>
                     Gross P&L
                   </TableCell>
-                  <TableCell
-                    align="left"
-                    style={tableHead}
-                  >
+                  <TableCell align="left" style={tableHead}>
                     Count
                   </TableCell>
-                  <TableCell
-                    align="left"
-                    style={tableHead}
-                  >
+                  <TableCell align="left" style={tableHead}>
                     Volume
                   </TableCell>
                 </TableRow>
@@ -313,13 +277,20 @@ const TagBreakDown = () => {
                       },
                     }}
                   >
-                    <TableCell component="th" scope="row" style={{borderBottom: `1px solid ${lightTheme.tableBorderColor}`,}}>
-                      0{index+1}
+                    <TableCell
+                      component="th"
+                      scope="row"
+                      style={{
+                        color:`${lightTheme.selectValueColor}`,
+                        borderBottom: `1px solid ${lightTheme.tableBorderColor}`,
+                      }}
+                    >
+                      0{index + 1}
                     </TableCell>
-                    <TableCell align="left">{data.graph}</TableCell>
-                    <TableCell align="left">{data.grossPl}</TableCell>
-                    <TableCell align="left">{data.count}</TableCell>
-                    <TableCell align="left">{data.voulme}</TableCell>
+                    <TableCell align="left" style={tableDataStyle}>{data.graph}</TableCell>
+                    <TableCell align="left" style={tableDataStyle}>{data.grossPl}</TableCell>
+                    <TableCell align="left" style={tableDataStyle}>{data.count}</TableCell>
+                    <TableCell align="left" style={tableDataStyle}>{data.voulme}</TableCell>
                   </TableRow>
                 ))}
               </TableBody>

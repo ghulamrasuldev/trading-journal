@@ -36,6 +36,7 @@ const OverView = () => {
     justifyContent: 'space-between',
     alignItems: 'center',
     padding: '15px 15px',
+    borderBottom: `1px solid ${lightTheme.selectBorderColor}`,
   };
   const name = {
     fontWeight: '500',
@@ -86,13 +87,13 @@ const OverView = () => {
             </Grid>
           </Grid>
         </div>
-        <Grid container justifyContent="space-around" alignItems="center" rowGap={4}>
-          <Grid item lg={5.5} md={12} sm={12}>
+        <Grid container  rowGap={4} columnGap={4} >
+          <Grid item lg={5.7} md={12} sm={12}>
             <div
               style={{
-                border: `1px solid ${lightTheme.borderColor}`,
+                border: `1px solid ${lightTheme.selectBorderColor}`,
                 borderRadius: '8px',
-                backgroundColor:`${lightTheme.performanceBTnDiv}`
+                backgroundColor:`${lightTheme.performanceComponentColor}`
               }}
             >
               {TotalProfit.map((data, index) => {
@@ -102,18 +103,18 @@ const OverView = () => {
                       <p style={name}>{data.name}</p>
                       <p style={nameVal}>{data.value}</p>
                     </div>
-                    <Divider />
+                    {/* <Divider /> */}
                   </>
                 );
               })}
             </div>
           </Grid>
-          <Grid item lg={5.5} md={12} sm={12}>
+          <Grid item lg={5.7} md={12} sm={12}>
             <div
               style={{
-                border: `1px solid ${lightTheme.borderColor}`,
+                border: `1px solid ${lightTheme.selectBorderColor}`,
                 borderRadius: '8px',
-                backgroundColor:`${lightTheme.performanceBTnDiv}`
+                backgroundColor:`${lightTheme.performanceComponentColor}`
               }}
             >
               {AverageTradeProfit.map((data, index) => {
@@ -123,7 +124,7 @@ const OverView = () => {
                       <p style={name}>{data.name}</p>
                       <p style={nameVal}>{data.value}</p>
                     </div>
-                    <Divider />
+                    {/* <Divider /> */}
                   </>
                 );
               })}

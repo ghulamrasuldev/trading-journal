@@ -25,10 +25,21 @@ const UpcomingEvents = () => {
       event: 'BTC / USD',
       date: 'Sat, Oct 22 4 - 4:30pm (EDT)',
     },
+    {
+      event: 'BTC / USD',
+      date: 'Sat, Oct 22 4 - 4:30pm (EDT)',
+    },
+    {
+      event: 'BTC / USD',
+      date: 'Sat, Oct 22 4 - 4:30pm (EDT)',
+    },
   ];
   const mainEventsDiv = {
-    backgroundColor:`${lightTheme.eventsColor}`,
-    border:`1px solid ${lightTheme.eventsColor}`,
+    backgroundColor:`${lightTheme.ComponentBackgroundColor}`,
+    border: `1px solid ${lightTheme.eventsColor}`,
+
+    maxHeight: '382px',
+    overflow:'scroll'
   }
   const eventDiv={
     borderBottom:`1px solid ${lightTheme.eventBorderColor}`

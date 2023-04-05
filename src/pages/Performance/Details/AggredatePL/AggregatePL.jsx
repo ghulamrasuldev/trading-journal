@@ -74,8 +74,9 @@ const AggregatePL = () => {
     borderBottomRightRadius: "8px",
   };
   const gridStyle = {
-    border: `1px solid ${lightTheme.borderColor}`,
-    backgroundColor:`${lightTheme.performanceComponentColor}`
+    border: `1px solid ${lightTheme.selectBorderColor}`,
+    backgroundColor: `${lightTheme.performanceComponentColor}`,
+    borderRadius:'8px'
   };
   const mainPLDiv={
     display: "flex",
@@ -96,6 +97,7 @@ const AggregatePL = () => {
     justifyContent: "space-between",
     alignItems: "center",
     padding: "15px 15px",
+    borderBottom: `1px solid ${lightTheme.selectBorderColor}`,
   }
   const name={
     fontWeight: "500",
@@ -188,7 +190,7 @@ const AggregatePL = () => {
             Statistics
           </p>
           <Grid container sx={gridStyle}>
-            <Grid item lg={6}>
+            <Grid item lg={6} md={12} sm={12}>
               <div
                 style={{
                   borderRadius: "8px",
@@ -223,13 +225,13 @@ const AggregatePL = () => {
                           )}
                         </p>
                       </div>
-                      <Divider />
+                      {/* <Divider /> */}
                     </>
                   );
                 })}
               </div>
             </Grid>
-            <Grid item lg={6}>
+            <Grid item lg={6} md={12} sm={12}>
               <div
                 style={{
                   borderRadius: "8px",
@@ -264,7 +266,7 @@ const AggregatePL = () => {
                           )}
                         </p>
                       </div>
-                      <Divider />
+                      {/* <Divider /> */}
                     </>
                   );
                 })}

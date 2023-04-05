@@ -22,15 +22,15 @@ const Portfolio = () => {
     color: `${lightTheme.headingTextColor}`,
     fontSize: '12px',
     fontWeight: '400',
-    borderBottom: `1px solid ${lightTheme.performanceButtonsBackground}`,
+    borderBottom: `1px solid ${lightTheme.tableBorderColor}`,
   };
   
   const tableHeadingStyling = {
-    color: `${lightTheme.textColor}`,
+    color: `${lightTheme.tableHeadColor}`,
     fontSize: '12px',
     fontWeight: '400',
-    borderBottom: `1px solid ${lightTheme.performanceButtonsBackground}`,
-    borderTop: `1px solid ${lightTheme.performanceButtonsBackground}`,
+    borderBottom: `1px solid ${lightTheme.tableBorderColor}`,
+    borderTop: `1px solid ${lightTheme.tableBorderColor}`,
   };
   
   const divStyle = {
@@ -43,7 +43,7 @@ const Portfolio = () => {
     justifyContent: 'center',
   };
   return (
-    <TableContainer component={Paper} elevation={0}>
+    <TableContainer component={Paper} elevation={0} style={{backgroundColor:`${lightTheme.ComponentBackgroundColor}`}}>
       <Table sx={{ minWidth: 650 }} aria-label="simple table">
         <TableHead>
           <TableRow>
@@ -75,7 +75,11 @@ const Portfolio = () => {
         <TableBody>
           {PortfolioData.map((val) => {
             return (
-              <TableRow key={val.id}>
+              <TableRow key={val.id}  sx={{
+                "& td": {
+                  borderBottom: `1px solid ${lightTheme.tableBorderColor}`,
+                },
+              }}>
                 <TableCell component="th" scope="row" style={tableDataStyling}>
                   {val.name}
                 </TableCell>

@@ -202,6 +202,7 @@ const WinLossAggregatePL = () => {
     justifyContent: "space-between",
     alignItems: "center",
     padding: "15px 15px",
+    borderBottom:`1px solid ${lightTheme.selectBorderColor}`
   }
   const name={
     fontWeight: "500",
@@ -348,7 +349,7 @@ const WinLossAggregatePL = () => {
                           )}
                         </p>
                       </div>
-                      <Divider />
+                      {/* <Divider /> */}
                     </>
                   );
                 })}
@@ -392,7 +393,7 @@ const WinLossAggregatePL = () => {
                           )}
                         </p>
                       </div>
-                      <Divider />
+                      {/* <Divider /> */}
                     </>
                   );
                 })}

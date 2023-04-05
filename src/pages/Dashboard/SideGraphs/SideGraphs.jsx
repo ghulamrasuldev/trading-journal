@@ -64,7 +64,6 @@ const SideGraphs = () => {
         </div>
         <div className="pieChart">
           <Chart
-            
             style={{marginLeft:'30px',marginTop:'-10px',marginBottom:'26px'}}
             options={pieChart.options}
             series={pieChart.series}

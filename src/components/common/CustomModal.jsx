@@ -22,7 +22,7 @@ const CustomModal = ({ open, handleClose, components, modalHeading = '' }) => {
   };
   const headerStyling = {
     minHeight: '90px',
-    bgcolor: `${lightTheme.headingTextColor}`,
+    bgcolor: `${lightTheme.lightDarkBlue}`,
     borderRadius: '20px 20px 0px 0px',
     fontSize: '24px',
     fontWeight: 500,

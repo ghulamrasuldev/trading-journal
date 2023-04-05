@@ -2,6 +2,8 @@ import React from 'react';
 import Select from 'react-select';
 // import { lightTheme } from '../../Theme/theme';
 import ModeChange from '../../Theme/ChangeMode';
+import { red } from '@mui/material/colors';
+import { light } from '@mui/material/styles/createPalette';
 
 const CustomSelect = ({ ...inputProps }) => {
 
@@ -15,6 +17,10 @@ const CustomSelect = ({ ...inputProps }) => {
         borderColor: 'none',
       },
       cursor: 'pointer',
+      backgroundColor: `${lightTheme.selectColor}`,
+      border: `1px solid ${lightTheme.selectBorderColor}`,
+      // color:'red'
+
     }),
     indicatorSeparator: (provided, state) => ({
       ...provided,
@@ -22,17 +28,24 @@ const CustomSelect = ({ ...inputProps }) => {
     }),
     option: (provided, state) => ({
       ...provided,
-      backgroundColor: state.isSelected ? `${lightTheme.headingTextColor}` : 'white',
-      color: state.isSelected ? 'white' : `${lightTheme.textColor}`,
+      backgroundColor: state.isSelected ? `${lightTheme.lightDarkBlue}` : 'white',
+      color: state.isSelected ? `${lightTheme.textColor}` : `${lightTheme.textColor}`,
       '&:hover': {
-        backgroundColor: 'lightgray',
+        backgroundColor: `${lightTheme.lightDarkBlue}`,
+        color:'white'
       },
       cursor: 'pointer',
+      backgroundColor:`${lightTheme.selectColor}`
     }),
     singleValue: (provided, state) => ({
       ...provided,
-      color: `${lightTheme.textColor}`,
+      color:`${lightTheme.selectValueColor}`,
     }),
+    placeholder: (provided) => ({
+      ...provided,
+      color:`${lightTheme.selectValueColor}`,
+    }),
+    
   };
 
   return (

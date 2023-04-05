@@ -109,7 +109,7 @@ const TopGraphs = () => {
   };
   return (
     <Box>
-      <Grid container justifyContent="space-between" alignItems="center" mt={5} mb={5}>
+      <Grid container justifyContent="space-between" alignItems="center" rowGap={4} mt={5} mb={5}>
         <Grid item lg={3.1} md={12} sm={12} sx={topGraphStyle}>
           <div className="graphTopSection">
             <div>

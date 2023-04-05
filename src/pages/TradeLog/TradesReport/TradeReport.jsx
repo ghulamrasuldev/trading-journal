@@ -19,6 +19,7 @@ import { TradeReportData } from '../TradeTableData.js';
 import ModeChange from '../../../Theme/ChangeMode';
 import PrimaryButton from '../../../components/common/PrimaryButton';
 import SecondaryButton from '../../../components/common/SecondaryButton';
+import CustomSelect from '../../../components/common/CustomSelect';
 
 const TradeReport = () => {
   const lightTheme = ModeChange();
@@ -76,7 +77,7 @@ const TradeReport = () => {
     boxShadow: '0px 4px 4px rgba(0, 0, 0, 0.02)',
     backgroundColor: `${lightTheme.ComponentBackgroundColor}`,
     borderRadius: '8px',
-    maxWidth: '79vw',
+    width: '90vw',
   };
 
   const selectText = {
@@ -94,16 +95,6 @@ const TradeReport = () => {
     color: `${lightTheme.lightDarkBlue}`,
     // color:'red'
   };
-  const cancleBtn = {
-    backgroundColor: `${lightTheme.ComponentBackgroundColor}`,
-    color: `${lightTheme.textColor}`,
-    cursor: 'pointer',
-  };
-  const saveBtn = {
-    backgroundColor: `${lightTheme.lightDarkBlue}`,
-    color: 'white',
-    cursor: 'pointer',
-  };
   const tableHead = {
     color: `${lightTheme.headingTextColor}`,
     borderBottom: `1px solid ${lightTheme.tableBorderColor}`,
@@ -117,8 +108,16 @@ const TradeReport = () => {
     fontSize: '15px',
     fontWeight: '500',
   };
+  const options=[
+    {
+    label:'option1',value:'value1'
+    },
+    {
+    label:'option2',value:'value2'
+    },
+  ]
   return (
-    <Box sx={TradeReportMain}>
+    <div style={TradeReportMain}>
       <div className="topDivTradeReprot">
         <div>
           <p
@@ -132,18 +131,18 @@ const TradeReport = () => {
           </p>
         </div>
         <div className="tradeReportSelectDiv">
-          <Select className="tradeReportSelect" placeholder="Bulk Action" isSearchable={false} />
+          <CustomSelect placeholder="Bulk Action" isSearchable={false} options={options} />
           <img
             src={menuDotIcon}
             alt="menuIcon"
             height={30}
             onClick={() => setToggle(!toggle)}
-            style={{ cursor: 'pointer' }}
+            style={{ cursor: 'pointer',margin:'0 10px' }}
           />
         </div>
       </div>
       <Divider />
-      <div>
+      <div >
         {toggle ? (
           <div className="tradeReportTable">
             <TableContainer
@@ -364,7 +363,7 @@ const TradeReport = () => {
           </div>
         )}
       </div>
-    </Box>
+    </div>
   );
 };
 

@@ -32,9 +32,8 @@ const Dashboard = () => {
     boxShadow: '0px 4px 4px rgba(0, 0, 0, 0.02)',
     backgroundColor: `${lightTheme.ComponentBackgroundColor}`,
     borderRadius: '8px',
-    minWidth: '397px',
-    maxHeight: '386px',
-    marginTop: '50px',
+    // minWidth: '397px',
+    marginTop: '27px',
   };
 
   return (
@@ -50,8 +49,8 @@ const Dashboard = () => {
             <SideGraphs />
           </Grid>
         </Grid>
-        <Grid container justifyContent="space-between" alignItems="center" rowGap={4}>
-          <Grid item lg={7.5} md={12} sm={12} style={{ marginTop: '20px' }}>
+        <Grid container justifyContent="space-between" alignItems="center"  rowGap={4}>
+          <Grid item lg={7.5} md={12} sm={12}>
             <TradeBarGraph />
           </Grid>
           <Grid item lg={4} md={12} sm={12} sx={tradeAndUpcoming}>

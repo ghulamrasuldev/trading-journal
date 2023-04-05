@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import "./TradeTable.css";
-import { Box } from "@mui/material";
+import { Box, Tooltip } from "@mui/material";
 import Table from "@mui/material/Table";
 import TableBody from "@mui/material/TableBody";
 import TableCell from "@mui/material/TableCell";
@@ -188,12 +188,15 @@ const TradeTable = () => {
                         borderBottom:`1px solid ${lightTheme.tableBorderColor}`
                       }}
                     >
+                      <Tooltip title="delete record">
+
                       <img
                         src={DelIcon}
                         alt="deleteIcon"
                         height={20}
                         onClick={(e) => handleDelete(index, e)}
-                      />
+                        />
+                        </Tooltip>
                     </TableCell>
                     <TableCell
                       align="left"
@@ -281,15 +284,6 @@ const TradeTable = () => {
           }}
         >
           <PrimaryButton buttonTitle={"+Trade"}/>
-          {/* <button
-            className="addTradeBtn"
-            style={{
-              backgroundColor: `${lightTheme.headingTextColor}`,
-              color: `${lightTheme.whiteText}`,
-            }}
-          >
-            + TRADE
-          </button> */}
         </div>
       </Box>
     </div>
