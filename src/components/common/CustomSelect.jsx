@@ -2,8 +2,6 @@ import React from 'react';
 import Select from 'react-select';
 // import { lightTheme } from '../../Theme/theme';
 import ModeChange from '../../Theme/ChangeMode';
-import { red } from '@mui/material/colors';
-import { light } from '@mui/material/styles/createPalette';
 
 const CustomSelect = ({ ...inputProps }) => {
 

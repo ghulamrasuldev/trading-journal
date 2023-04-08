@@ -40,6 +40,7 @@ import Journal from '../pages/Journal/Journal';
 import './App.css';
 import News from '../pages/News/News';
 import DailyStats from '../pages/DailyStatus/DailyStats/DailyStats';
+import TradingViewWidget from '../pages/TradingViewChart/tradingViewChart';
 // import Reports from '../pages/Performance/Reports/Reports'
 
 const App = () => {
@@ -47,6 +48,7 @@ const App = () => {
     <Router>
       <Sidebar>
         <Routes>
+          <Route path='/tradingViewchart' element={<TradingViewWidget />} />
           <Route path="/navbar" element={<NavBar />} />
           <Route path="/footer" element={<Footer />} />
           <Route path="/sidebar" element={<Sidebar />} />

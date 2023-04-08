@@ -79,7 +79,7 @@ const RuningPlAndImg = () => {
     // marginBottom: '20px',
     cursor: 'pointer',
     // border: '1px solid yellow',
-    // width:'100%'
+    width:'50%',
     backgroundColor:`${lightTheme.ComponentBackgroundColor}`
   }
   return (
@@ -123,7 +123,7 @@ const RuningPlAndImg = () => {
                 dragProps,
               }) => (
                   // write your building UI
-                <div style={{ height: '100%', display: 'flex', flexDirection: 'column', justifyContent:'center' }}>
+                <div style={{ height: '100%',width:'100%', display: 'flex', flexDirection: 'column', justifyContent:'center' }}>
                 
                 <div style={{ height: "100%"}}>
                  
