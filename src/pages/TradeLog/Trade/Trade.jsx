@@ -10,6 +10,7 @@ import RuningPlAndImg from './RunningPLandImage/RuningPlAndImg'
 import TradeTable from './TradeTable/TradeTable'
 import TextEditor from './TextEditor/TextEditor'
 import ModeChange from '../../../Theme/ChangeMode'
+import TradingViewWidget from '../../TradingViewChart/tradingViewChart'
 
 const Trade = () => {
 
@@ -40,8 +41,8 @@ const Trade = () => {
     <div>
       <Box sx={mainTradeDiv}>
         <NavBar name={"Trade"} />
-        <Grid container columnGap={6} rowGap={5} sx={mainTradeGrid}>
-          <Grid item lg={3}>
+        <Grid container justifyContent="space-between" rowGap={5} sx={mainTradeGrid}>
+          <Grid item lg={3.5} md={3} sm={12}>
             <div className="tradeGraphOptions">
               <div className="optionDiv" style={{backgroundColor:`${lightTheme.hoverColor}`}}>
                 <p style={{fontWeight:"500",color:`${lightTheme.headingTextColor}`}}>Net P&L</p>
@@ -174,8 +175,8 @@ const Trade = () => {
           {/* <Divider/> */}
           </div>
           </Grid>
-          <Grid item lg={8} border={1}>
-
+          <Grid item lg={8} md={8} sm={12} >
+              <TradingViewWidget/>
           </Grid>
         </Grid>
         <RuningPlAndImg />

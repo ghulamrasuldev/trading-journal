@@ -78,7 +78,7 @@ const CalendarComponent = () => {
     >
       <div
         className="calendarDiv"
-        style={{ backgroundColor: `${lightTheme.ComponentBackgroundColor}`,border:'1px solid red' }}
+        style={{ backgroundColor: `${lightTheme.ComponentBackgroundColor}` }}
       >
         <div className="dateDiv" style={dateDiv}>
           <CalendarMonthSharpIcon
