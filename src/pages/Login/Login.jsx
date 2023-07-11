@@ -9,12 +9,19 @@ import { BiShow, BiHide } from "react-icons/bi";
 import { useNavigate } from "react-router-dom";
 import ModeChange from "../../Theme/ChangeMode";
 import { ToastContainer, toast } from "react-toastify";
-import 'react-toastify/dist/ReactToastify.css';
-import axios from "axios";
+import "react-toastify/dist/ReactToastify.css";
+import apiService from "../../services/api/api";
+import { useDispatch } from "react-redux";
+import { bindActionCreators } from "redux";
+import { actionCreator } from "../../Redux/AllAccess";
+import { useEffect } from "react";
 
 const Login = () => {
   const navigation = useNavigate();
   const lightTheme = ModeChange();
+
+  const dispatch = useDispatch();
+  const {authenticateRoute}=bindActionCreators(actionCreator,dispatch)
 
   const [credentials, setCredentials] = useState({
     email: "",
@@ -22,7 +29,6 @@ const Login = () => {
   });
   const [emailError, setMailError] = useState("");
   const [passwordError, setPasswordError] = useState("");
-
   const [togglePassword, setTogglePassword] = useState(false);
 
   // handling Inputs
@@ -31,14 +37,12 @@ const Login = () => {
       ...credentials,
       email: e.target.value,
     });
-    console.log(credentials.email);
   };
   const handlePassword = (e) => {
     setCredentials({
       ...credentials,
       password: e.target.value,
     });
-    console.log(credentials.password);
   };
 
   // password validitons function
@@ -90,30 +94,33 @@ const Login = () => {
     });
   };
 
+ 
+
   // loginIn user from databse
-  const LoginInFunc = (e) => {
+  const LoginInFunc = async (e) => {
     e.preventDefault();
     if (emailValidation() === true && passwordValidation() === true) {
       try {
-        axios.post("http://localhost:3000/signIn", credentials).then((res) => {
-          console.log("request response", res);
-          let data = res.data;
-          let authToken = data.AuthToken;
-          if (authToken) {
-            goToDashboard();
-            setCredentials({
-              email: "",
-              password: "",
-            });
-          } else {
-            // alert('user not exit');
-            inValidUser();
-            setCredentials({
-              email: "",
-              password: "",
-            });
-          }
-        });
+        const res = await apiService("post", "/auth/login", {}, credentials);
+        let data = res;
+        let loginUser = data.ValidUser.name;
+        let Token = data.AuthToken;
+        localStorage.setItem("userName",loginUser)
+        localStorage.setItem("AuthToken", Token);
+        const authToken=localStorage.getItem("AuthToken")
+        if (authToken) {
+          authenticateRoute(true);
+          setCredentials({
+            email: "",
+            password: "",
+          });
+        } else {
+          inValidUser();
+          setCredentials({
+            email: "",
+            password: "",
+          });
+        }
       } catch (error) {
         console.log("Error", error.message);
       }
@@ -130,12 +137,12 @@ const Login = () => {
     navigation("/dashboard", { replace: true });
   };
 
+
   return (
     <div>
       <div className="mainContainer">
         <div className="insideMain">
           <Grid container className="grid" columnGap={10}>
-            
             <Grid item lg={4} md={6} sm={6}>
               <div className="imageDiv">
                 <img src={LoginImage} alt="LoginImage" className="img" />
@@ -240,7 +247,11 @@ const Login = () => {
                   )}
                 </div>
                 <div className="checkBox">
-                  <input type="checkbox" name="remember" id="remember" />
+                  <input
+                    type="checkbox"
+                    name="remember"
+                    id="remember"
+                  />
                   <label
                     For="remember"
                     className="checkboxLabel"
@@ -256,8 +267,8 @@ const Login = () => {
                       LoginInFunc(e);
                     }}
                     style={{
-                      backgroundColor: `${lightTheme.headingTextColor}`,
-                      color: `${lightTheme.whiteText}`,
+                      backgroundColor: lightTheme.headingTextColor,
+                      color: lightTheme.whiteText,
                     }}
                   >
                     Login

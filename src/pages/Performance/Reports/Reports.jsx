@@ -3,17 +3,17 @@ import { Box, Grid, Divider } from "@mui/material";
 import NavBar from "../../../components/NavBar/NavBar";
 // import { lightTheme } from "../../../Theme/theme";
 import downArrow from "../../../assets/downArrow.png";
-import { TotalProfitLossData } from "../Overview/ConstantData";
-import { AverageTradeProfitLoss } from "../Overview/ConstantData";
+// import { TotalProfitLossData } from "../Overview/ConstantData";
+// import { AverageTradeProfitLoss } from "../Overview/ConstantData";
 import "./report.css";
 import ModeChange from "../../../Theme/ChangeMode";
 
 const Reports = () => {
   const lightTheme = ModeChange();
-  const [TotalProfit, setTotalProfitLossData] = useState(TotalProfitLossData);
-  const [AverageTradeProfit, setAverageTradeProfitLoss] = useState(
-    AverageTradeProfitLoss
-  );
+  // const [TotalProfit, setTotalProfitLossData] = useState(TotalProfitLossData);
+  // const [AverageTradeProfit, setAverageTradeProfitLoss] = useState(
+  //   AverageTradeProfitLoss
+  // );
 
   // styling
   const mainDiv = {
@@ -142,7 +142,7 @@ const Reports = () => {
                   borderRadius: "8px",
                 }}
               >
-                {TotalProfit.map((data, index) => {
+                {/* {TotalProfit.map((data, index) => {
                   return (
                     <div className="gridData">
                       <div key={index} style={profitLossMain}>
@@ -152,7 +152,7 @@ const Reports = () => {
                       <Divider />
                     </div>
                   );
-                })}
+                })} */}
               </div>
             </Grid>
             <Grid item lg={5.8} md={12} sm={12} sx={mainGrid}>
@@ -162,7 +162,7 @@ const Reports = () => {
                   borderRadius: "8px",
                 }}
               >
-                {AverageTradeProfit.map((data, index) => {
+                {/* {AverageTradeProfit.map((data, index) => {
                   return (
                     <div className="gridData">
                       <div key={index} style={profitLossMain}>
@@ -172,7 +172,7 @@ const Reports = () => {
                       <Divider />
                     </div>
                   );
-                })}
+                })} */}
               </div>
             </Grid>
           </Grid>

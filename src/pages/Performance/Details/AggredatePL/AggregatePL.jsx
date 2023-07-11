@@ -4,67 +4,45 @@ import "./Aggregate.css";
 // import { lightTheme } from "../../../../Theme/theme";
 import { MdOutlineLock } from "react-icons/md";
 import ModeChange from "../../../../Theme/ChangeMode";
+import { useEffect } from "react";
+import Loading from '../../../../components/common/Loading'
+import apiService from "../../../../services/api/api";
 
 const AggregatePL = () => {
   const lightTheme = ModeChange();
   const [applyFllter, setApplyFilter] = useState("0");
   const [showLock, setShowLock] = useState(true);
+  const [statistics1,setStatistics1]=useState()
+  const [statistics2, setStatistics2] = useState()
+  const [loading, setLoading] = useState(false)
 
-  //  total gain loss Data
-  const TotalGainLossData = [
-    {
-      name: "Total gain/loss:",
-      value: "$-4578.54",
-    },
-    {
-      name: "Average daily gain/loss:",
-      value: "$3578.54",
-    },
-    {
-      name: "Average daily volume",
-      value: "4",
-    },
-    {
-      name: "Average winning trade:",
-      value: "$665.00",
-    },
-    {
-      name: "Average losing trade:",
-      value: "$-989.00",
-    },
-    {
-      name: "Kelly percentage:",
-      value: "$-4578.54",
-      lock: "./lockIcon.png",
-    },
-    {
-      name: "Total number of trades:",
-      value: "$-4578.54",
-      lock: "./lockIcon.png",
-    },
-    {
-      name: "Number of losing trades:",
-      value: "12 (46.0%)",
-    },
-    {
-      name: "Max consecutive wins:",
-      value: "12 (46.0%)",
-    },
-    {
-      name: "Average position MFE:",
-      value: "4(show)",
-    },
-    {
-      name: "Total Commissions:",
-      value: "$-4578.54",
-      lock: "./lockIcon.png",
-    },
-    {
-      name: "Number of winning trades:",
-      value: "$-4578.54",
-      lock: "./lockIcon.png",
-    },
-  ];
+ 
+  const getStatistic = async () => {
+    setLoading(true);
+    try {
+      const authToken = localStorage.getItem('AuthToken');
+      const res = await apiService('get', '/performance/detail/tradeStatistics', { 'x-usertoken': authToken }, null)
+      const data = res;
+      const TotalProfitLossData = Object.entries(data[0]).map(([name, value]) => ({
+        name,
+        value,
+      }));
+      const AverageTradeProfitLoss = Object.entries(data[1]).map(([name, value]) => ({
+        name,
+        value,
+      }));
+      setStatistics1(TotalProfitLossData);
+      setStatistics2(AverageTradeProfitLoss);
+      setLoading(false);
+    } catch (error) {
+      console.log("Error",error)
+    }
+  }
+
+
+  useEffect(() => {
+    getStatistic();
+  },[])
 
   // styling
   const mainDiv = {
@@ -109,6 +87,9 @@ const AggregatePL = () => {
     fontSize: "16px",
     color: `${lightTheme.textColor}`,
   }
+
+
+
   return (
     <div>
       <Box sx={mainDiv}>
@@ -189,90 +170,94 @@ const AggregatePL = () => {
           >
             Statistics
           </p>
-          <Grid container sx={gridStyle}>
-            <Grid item lg={6} md={12} sm={12}>
-              <div
-                style={{
-                  borderRadius: "8px",
-                }}
-              >
-                {TotalGainLossData.map((data, index) => {
-                  return (
-                    <>
-                      <div
-                        key={index}
-                        style={statisticMain}
-                      >
-                        <p
-                          style={name}
+          {
+            loading ?
+              <Loading/>: <Grid container sx={gridStyle}>
+              <Grid item lg={6} md={12} sm={12}>
+                <div
+                  style={{
+                    borderRadius: "8px",
+                  }}
+                >
+                  {statistics1&&statistics1.map((data, index) => {
+                    return (
+                      <>
+                        <div
+                          key={index}
+                          style={statisticMain}
                         >
-                          {data.name}
-                        </p>
-                        <p
-                          style={nameVal}
+                          <p
+                            style={name}
+                          >
+                            {data.name}
+                          </p>
+                          <p
+                            style={nameVal}
+                          >
+                            {(data.name == "Kelly percentage:" &&
+                              showLock === true) ||
+                            (data.name == "Total number of trades:" &&
+                              showLock === true) ||
+                            (data.name == "Total Commissions:" &&
+                              showLock === true) ||
+                            (data.name == "Number of winning trades:" &&
+                              showLock === true) ? (
+                              <img src='lockIcon.png' alt="lockIcon" height={20} />
+                            ) : (
+                              `${data.value}`
+                            )}
+                          </p>
+                        </div>
+                        {/* <Divider /> */}
+                      </>
+                    );
+                  })}
+                </div>
+              </Grid>
+              <Grid item lg={6} md={12} sm={12}>
+                <div
+                  style={{
+                    borderRadius: "8px",
+                  }}
+                >
+                  {statistics2&&statistics2.map((data, index) => {
+                    return (
+                      <>
+                        <div
+                          key={index}
+                          style={statisticMain}
                         >
-                          {(data.name == "Kelly percentage:" &&
-                            showLock === true) ||
-                          (data.name == "Total number of trades:" &&
-                            showLock === true) ||
-                          (data.name == "Total Commissions:" &&
-                            showLock === true) ||
-                          (data.name == "Number of winning trades:" &&
-                            showLock === true) ? (
-                            <img src={data.lock} alt="lockIcon" height={20} />
-                          ) : (
-                            `${data.value}`
-                          )}
-                        </p>
-                      </div>
-                      {/* <Divider /> */}
-                    </>
-                  );
-                })}
-              </div>
+                          <p
+                            style={name}
+                          >
+                            {data.name}
+                          </p>
+                          <p
+                            style={nameVal}
+                          >
+                            {(data.name == "Kelly percentage:" &&
+                              showLock === true) ||
+                            (data.name == "Total number of trades:" &&
+                              showLock === true) ||
+                            (data.name == "Total Commissions:" &&
+                              showLock === true) ||
+                            (data.name == "Number of winning trades:" &&
+                              showLock === true) ? (
+                              <img src='lockIcon.png' alt="lockIcon" height={20} />
+                            ) : (
+                              `${data.value}`
+                            )}
+                          </p>
+                        </div>
+                        {/* <Divider /> */}
+                      </>
+                    );
+                  })}
+                </div>
+              </Grid>
             </Grid>
-            <Grid item lg={6} md={12} sm={12}>
-              <div
-                style={{
-                  borderRadius: "8px",
-                }}
-              >
-                {TotalGainLossData.map((data, index) => {
-                  return (
-                    <>
-                      <div
-                        key={index}
-                        style={statisticMain}
-                      >
-                        <p
-                          style={name}
-                        >
-                          {data.name}
-                        </p>
-                        <p
-                          style={nameVal}
-                        >
-                          {(data.name == "Kelly percentage:" &&
-                            showLock === true) ||
-                          (data.name == "Total number of trades:" &&
-                            showLock === true) ||
-                          (data.name == "Total Commissions:" &&
-                            showLock === true) ||
-                          (data.name == "Number of winning trades:" &&
-                            showLock === true) ? (
-                            <img src={data.lock} alt="lockIcon" height={20} />
-                          ) : (
-                            `${data.value}`
-                          )}
-                        </p>
-                      </div>
-                      {/* <Divider /> */}
-                    </>
-                  );
-                })}
-              </div>
-            </Grid>
-          </Grid>
+          }
+          
         </div>
       </Box>
     </div>

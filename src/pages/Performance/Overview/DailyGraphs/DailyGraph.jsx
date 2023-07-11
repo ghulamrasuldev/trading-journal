@@ -1,101 +1,93 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { Grid, Box } from '@mui/material';
 // import { lightTheme } from '../../../../Theme/theme';
 import Chart from 'react-apexcharts';
-
+import axios from 'axios'
+import { base_Url } from '../../../../Config/Config';
 import ModeChange from '../../../../Theme/ChangeMode';
+import DailyVolumegraph from './DailyVolumegraph';
+import apiService from '../../../../services/api/api';
 
 const DailyGraph = () => {
   const lightTheme = ModeChange();
 
   const [DailyPLGraph, setDailyPLGraph] = useState({
-    series: [
-      {
-        name: 'Cash Flow',
-        data: [
-          1.45, 5.42, 5.9, -0.42, -12.6, -18.1, -18.2, -14.16, -11.1, -6.09, 0.34, 3.88, 13.07, 5.8, 2, 7.37, 8.1,
-          55.75, 17.1, 19.8, -27.03, -24.4, -47.2, -43.3, -18.6, -48.6, -41.1, -39.6, -61.4,
-        ],
-      },
-    ],
-    options: {
-      chart: {
-        type: 'bar',
-        height: 350,
-        toolbar: {
-          show: false,
-        },
-      },
-      plotOptions: {
-        bar: {
-          colors: {
-            ranges: [
-              {
-                from: -100,
-                to: 0,
-                color: `${lightTheme.nagativeBar}`,
-              },
-            ],
-          },
-          columnWidth: '80%',
-        },
-      },
-      dataLabels: {
-        enabled: false,
-      },
-      yaxis: {
-        //   title: {
-        //     text: 'Growth',
-        //   },
-        // max: '4000',
-        // min:'2000',
-        tickAmount: 5,
-        labels: {
-          formatter: function (y) {
-            return '$' + y.toFixed(0);
-          },
-        },
-      },
-      xaxis: {
-        //   type: 'datetime',
-        categories: [
-          '2022-03-01',
-          '2022-03-01',
-          '2022-03-01',
-          '2022-03-01',
-          '2022-03-01',
-          '2022-03-01',
-          '2022-03-01',
-          '2022-03-01',
-          '2022-03-01',
-          '2022-03-01',
-          '2022-03-01',
-          '2022-03-01',
-          '2022-03-01',
-          '2022-03-01',
-          '2022-03-01',
-          '2022-03-01',
-          '2022-03-01',
-          '2022-03-01',
-          '2022-03-01',
-          '2022-03-01',
-          '2022-03-01',
-          '2022-03-01',
-          '2022-03-01',
-          '2022-03-01',
-          '2022-03-01',
-          '2022-03-01',
-          '2022-03-01',
-          '2022-03-01',
-          '2022-03-01',
-          '2022-03-01',
-        ],
-        //   labels: {
-        //     rotate: -90
-        //   }
-      },
-    },
+    series: [],
+    options:{},
   });
+
+  const getDailyPL = async () => {
+    try {
+      const authToken = localStorage.getItem('AuthToken');
+      const res = await apiService('get', '/performance/overview/DailyPAndL', { 'x-usertoken': authToken }, null)
+      const data = res;
+      const transformedData = Object.entries(data).map(([key, value]) => ({
+        name: key,
+        value: value.toFixed(2),
+      }));
+      const seriesData = [
+        {
+          data: transformedData.map((item) => item.value),
+        },
+      ]
+      const optionsData = transformedData.map((item) => item.name);
+        
+      setDailyPLGraph({
+        series: seriesData,
+        options: {
+          chart: {
+            type: 'bar',
+            height: 350,
+            toolbar: {
+              show: false,
+            },
+          },
+          plotOptions: {
+            bar: {
+              colors: {
+                ranges: [
+                  {
+                    from: -100,
+                    to: 0,
+                    color: `${lightTheme.nagativeBar}`,
+                  },
+                ],
+              },
+              columnWidth: '80%',
+            },
+          },
+          dataLabels: {
+            enabled: false,
+          },
+          yaxis: {
+            //   title: {
+            //     text: 'Growth',
+            //   },
+            // max: '4000',
+            // min:'2000',
+            tickAmount: 5,
+            labels: {
+              formatter: function (y) {
+                return '$' + y.toFixed(0);
+              },
+            },
+          },
+          xaxis: {
+            //   type: 'datetime',
+            categories:optionsData
+            
+          },
+        },
+       
+      })
+    } catch (error) {
+      console.log("Error",error)
+    }
+  }
+
+  useEffect(() => {
+    getDailyPL();
+  },[])
 
   // styling
   const mainDiv = {
@@ -116,19 +108,17 @@ const DailyGraph = () => {
   return (
     <div>
       <Box sx={mainDiv}>
-        <Grid container justifyContent="space-between" alignItems="center" rowGap={4}>
-          <Grid item lg={5.8} md={12} sm={12} sx={GridItem}>
+        <Grid container justifyContent={"space-between"}>
+          <Grid item lg={5.7} md={12} sm={12} sx={GridItem}>
             <p style={graphTitle}>Gross Daily P&L (Lasts 30 Trading Days)</p>
             <div>
               <Chart options={DailyPLGraph.options} series={DailyPLGraph.series} type="bar" height={350} />
             </div>
           </Grid>
-          <Grid item lg={5.8} md={12} sm={12} sx={GridItem}>
-            <p style={graphTitle}>Gross Daily P&L (Lasts 30 Trading Days)</p>
-            <div>
-              <Chart options={DailyPLGraph.options} series={DailyPLGraph.series} type="bar" height={350} />
-            </div>
+          <Grid item lg={5.9} md={12} sm={12} sx={GridItem}>
+            <DailyVolumegraph/>
           </Grid>
+       
         </Grid>
       </Box>
     </div>

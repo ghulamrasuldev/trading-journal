@@ -8,12 +8,14 @@ import SwitchMode from './Switch/SwitchMode';
 // import { lightTheme } from '../../Theme/theme';
 
 import ModeChange from '../../Theme/ChangeMode';
+import { useEffect } from 'react';
 
 const NavBar = ({ name }) => {
 
   const lightTheme = ModeChange();
 
 
+  const userName = localStorage.getItem("userName");
   
 
 
@@ -111,7 +113,7 @@ const NavBar = ({ name }) => {
         </div>
         <Stack sx={personInfo}>
           <Box sx={NameandDesignation}>
-            <p style={userStyle}>John Doe</p>
+            <p style={userStyle}>{userName && userName}</p>
             <p style={admin}>Admin</p>
           </Box>
           <StyledBadge overlap="circular" anchorOrigin={{ vertical: 'bottom', horizontal: 'right' }} variant="dot">

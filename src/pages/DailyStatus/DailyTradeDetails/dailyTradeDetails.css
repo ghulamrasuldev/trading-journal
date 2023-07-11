@@ -13,3 +13,19 @@
   padding: 15px 20px;
   min-width: 759px;
 }
+.mainDetailDiv{
+  /* border: 1px solid black; */
+  width: 100%;
+  display: flex;
+  align-items: center;
+}
+.chartDetailDiv{
+  /* border: 1px solid rgb(238, 4, 4); */
+  width: 45%;
+  margin-bottom:30px;
+}
+.chartDiv{
+  /* border: 1px solid rgb(70, 238, 4); */
+  width: 55%;
+
+}

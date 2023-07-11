@@ -15,10 +15,13 @@
   font-size: 16px;
   padding-right: 10px;
   color: #022658;
+  cursor: pointer;
 }
 .monthlyM {
   padding-left: 10px;
+  padding-right:10px;
   font-weight: 600;
   font-size: 16px;
   color: #636578;
+  cursor: pointer;
 }

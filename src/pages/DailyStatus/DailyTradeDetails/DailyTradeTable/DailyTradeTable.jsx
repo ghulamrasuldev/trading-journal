@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect,useState } from "react";
 import Table from "@mui/material/Table";
 import TableBody from "@mui/material/TableBody";
 import TableCell from "@mui/material/TableCell";
@@ -11,47 +11,12 @@ import "./dailyTradeTable.css";
 import ModeChange from "../../../../Theme/ChangeMode";
 import { light } from "@mui/material/styles/createPalette";
 import { Tooltip } from "@mui/material";
+import { useSelector } from "react-redux";
+import axios from 'axios'
+import { base_Url } from "../../../../Config/Config";
 
-const tradeTableData = [
-  {
-    id: "1",
-    OpenTime: "11:54:36",
-    Put: "Buy",
-    Ticker: "Dow",
-    Volume: "13",
-    NetPL: "$3,654.34",
-    Setup: "LH Check",
-    Notes: "./NotesIcon.png",
-    NotesLoss: "./NotesIcon2.png",
-    Tags: "RSI EMA",
-  },
-  {
-    id: "2",
-    OpenTime: "11:54:36",
-    Put: "Buy",
-    Ticker: "Dow",
-    Volume: "2",
-    NetPL: "$3,64.34",
-    Setup: "LH Check",
-    Notes: "./NotesIcon.png",
-    NotesLoss: "./NotesIcon2.png",
-    Tags: "RSI EMA",
-  },
-  {
-    id: "3",
-    OpenTime: "11:54:36",
-    Put: "Buy",
-    Ticker: "Dow",
-    Volume: "19",
-    NetPL: "$3,34.34",
-    Setup: "LH Check",
-    Notes: "./NotesIcon.png",
-    NotesLoss: "./NotesIcon2.png",
-    Tags: "RSI EMA",
-  },
-];
 
-const DailyTradeTable = () => {
+const DailyTradeTable = ({data}) => {
   const lightTheme = ModeChange();
 
   const tableHead = {
@@ -111,7 +76,7 @@ const DailyTradeTable = () => {
             </TableRow>
           </TableHead>
           <TableBody>
-            {tradeTableData.map((row, index) => (
+            {data && data.slice(0,-1).map((row, index) => (
               <TableRow
                 key={index}
                 // sx={{ '&:last-child td, &:last-child th': { border: 0 } }}
@@ -122,16 +87,16 @@ const DailyTradeTable = () => {
                 }}
               >
                 <TableCell align="left" style={tableData}>
-                  0{row.id}
+                  0{index+1}
                 </TableCell>
                 <TableCell align="left" style={tableData}>
-                  {row.OpenTime}
+                  {row.openTime}
                 </TableCell>
                 <TableCell align="center" style={tableData}>
                   <p
-                    className={row.Volume < 10 ? "loss" : "profit"}
+                    className={row.volume < 10 ? "loss" : "profit"}
                     style={
-                      row.Volume < 10
+                      row.volume< 10
                         ? {
                             backgroundColor: `${lightTheme.loss}`,
                             color: `${lightTheme.whiteText}`,
@@ -142,33 +107,33 @@ const DailyTradeTable = () => {
                           }
                     }
                   >
-                    {row.Put}
+                    Put
                   </p>
                 </TableCell>
                 <TableCell align="left" style={tableData}>
-                  {row.Ticker}
+                  {row.ticker}
                 </TableCell>
                 <TableCell align="left" style={tableData}>
-                  {row.Volume}
+                  {row.volume}
                 </TableCell>
                 <TableCell align="left" style={tableData}>
-                  {row.NetPL}
+                  {Number(row.netpl).toFixed(3)}
                 </TableCell>
                 <TableCell align="left" style={tableData}>
-                  {row.Setup}
+                 setUp
                 </TableCell>
                 <TableCell
                   align="left"
                   style={{ fontSize: "12px", fontWeight: "400" }}
                 >
                   {row.Volume < 10 ? (
-                    <img src={row.NotesLoss} alt="noteIcon" height={20} />
+                    <img src='NotesIcon.png' alt="noteIcon" height={20} />
                   ) : (
-                    <img src={row.Notes} alt="noteIcon" height={20} />
+                    <img src='NotesIcon2.png' alt="noteIcon" height={20} />
                   )}
                 </TableCell>
                 <TableCell align="left" style={tableData}>
-                  {row.Tags}
+                  Tags
                 </TableCell>
                 <TableCell
                   align="center"

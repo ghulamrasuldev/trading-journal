@@ -10,7 +10,8 @@
 }
 .tradeDiv {
   /* border: 1px solid black; */
-  padding-top: 20px;
+  padding:10px 0;
+  display: flex;
 }
 .totalTrade {
   font-family: Overpass;

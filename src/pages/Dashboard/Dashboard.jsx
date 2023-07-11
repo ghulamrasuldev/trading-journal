@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { Box, Divider, Grid } from '@mui/material';
 import NavBar from '../../components/NavBar/NavBar';
 // import Chart from "react-apexcharts";
@@ -11,6 +11,7 @@ import ModeChange from '../../Theme/ChangeMode';
 // import { lightTheme } from '../../Theme/theme';
 import TradeBarGraph from './SideGraphs/TradeBarGraph/TradeBarGraph';
 import UpcomingEvents from './upcomingEvents/upcomingEvents';
+
 
 const Dashboard = () => {
   const lightTheme = ModeChange();

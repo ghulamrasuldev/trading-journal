@@ -8,9 +8,11 @@ import Portfolio from './Portfolio/Portfolio';
 import Commission from './Commision/Commission';
 import ModeChange from '../../Theme/ChangeMode';
 
+
 const JournalComponent = ({ setNavbarTitle }) => {
   const lightTheme=ModeChange()
   const [showComponent, setShowComponent] = useState('0');
+
 
   // styling
   const mainDiv = {
