@@ -6,9 +6,11 @@ import './journal.css';
 import JournalComponent from '../JournalSetting/JournalComponent';
 import ModeChange from '../../Theme/ChangeMode';
 
+
 const Journal = () => {
   const lightTheme=ModeChange()
   const [navbarTitle, setNavbarTitle] = useState('Trade Setting');
+
 
   const mainDiv = {
     padding: '30px 25px',

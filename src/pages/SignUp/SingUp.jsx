@@ -9,7 +9,12 @@ import { BiShow, BiHide } from 'react-icons/bi'
 import { FaUserAlt } from 'react-icons/fa'
 import { ModeComment } from '@mui/icons-material'
 import ModeChange from '../../Theme/ChangeMode'
-// import {lightTheme} from '../../Theme/theme'
+import axios from 'axios';
+import {base_Url} from '../../Config/Config'
+import apiService from '../../services/api/api'
+import { ToastContainer, toast } from "react-toastify";
+import 'react-toastify/dist/ReactToastify.css';
+
 
 const SingUp = () => {
 
@@ -34,14 +39,12 @@ const SingUp = () => {
         ...credentials,
         email: e.target.value,
       });
-      console.log(credentials.email);
     };
     const handlePassword = (e) => {
       setCredentials({
         ...credentials,
         password: e.target.value,
       });
-      console.log(credentials.password);
     };
   
     const handleName = (e) => {
@@ -49,7 +52,6 @@ const SingUp = () => {
         ...credentials,
         name: e.target.value,
       });
-      console.log(credentials.name);
     };
   
       // password validitons function
@@ -106,14 +108,33 @@ const SingUp = () => {
               setMailError(" ")
           }
           return result
-      };
+  };
+  
+   // toast message for user not created
+   const userNot = () => {
+    toast("User not created!!!", {
+      position: "top-left",
+      autoClose: 5000,
+      hideProgressBar: false,
+      closeOnClick: true,
+      pauseOnHover: true,
+      draggable: true,
+      progress: undefined,
+      theme: "light",
+    });
+  };
     
      // Signup user 
      const SignupFunc = async () => {
       if ( nameValidation()===true && emailValidation()===true && passwordValidation()===true) {
         try {
-          console.log('data Send')
-          goToLogin();
+          const response = await apiService('post', '/auth/signup', {}, credentials);
+          if (response) {
+            goToLogin();
+          } else {
+            userNot();
+          }
+         
         } catch (error) {
           console.log("Error", error.message);
         }
@@ -180,7 +201,7 @@ const SingUp = () => {
           </Grid>
         </div>
       </div>
-
+      <ToastContainer />
     </div>
   )
 }

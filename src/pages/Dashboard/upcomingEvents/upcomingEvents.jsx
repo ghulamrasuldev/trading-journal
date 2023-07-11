@@ -49,8 +49,8 @@ const UpcomingEvents = () => {
       <p className="upcomingEvent" style={{color:`${lightTheme.headingTextColor}`}}>Upcoming Events</p>
       {Events.map((event, index) => {
         return (
-          <>
-            <div className="eventDiv" style={eventDiv} key={index}>
+          <div key={index}>
+            <div className="eventDiv" style={eventDiv} >
               <ul>
                 <li className="event" style={{ color: `${lightTheme.headingTextColor}` }}>
                   {event.event}
@@ -60,7 +60,7 @@ const UpcomingEvents = () => {
                 {event.date}
               </p>
             </div>
-          </>
+          </div>
         );
       })}
     </div>

@@ -6,9 +6,12 @@ import { NewsContent } from '../../components/sideBar/NewsContent.js';
 import NewsImg from '../../assets/news.png';
 import ModeChange from '../../Theme/ChangeMode';
 
+
 const News = () => {
   const lightTheme = ModeChange();
   const [news, setNews] = useState(NewsContent);
+
+ 
 
   const mainDiv = {
     padding: '30px 25px',

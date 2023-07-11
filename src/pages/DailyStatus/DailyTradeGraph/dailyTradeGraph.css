@@ -1,10 +1,11 @@
 .mainDailyTrade {
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.02);
-  background-color: #ffffff;
+  /* background-color: #ffffff; */
   border-radius: 8px;
   min-width: 759px;
   min-height: 200px;
   overflow: hidden;
+  /* border: 1px solid red; */
 }
 .dailyTradeDate {
   padding-top: 15px;
@@ -14,19 +15,24 @@
 }
 .tradeDetails {
   display: flex;
-  /* justify-content: center; */
+  justify-content: center;
+  /* align-items: center; */
+ 
+  flex-wrap: wrap;
   /* border: 1px solid black; */
   padding-top: 15px;
   /* padding-inline:20px; */
-  height: 150px;
+  /* height: 150px; */
 }
 .insideTradeDetail {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  /* border: 1px solid yellow; */
+  /* border-right: 1px solid yellow; */
   padding: 0px 10px 0px 05px;
   font-size: 15px;
+  margin-top:10px;
+  text-align: center;
 }
 .noOfTrade {
   color: #636578;
@@ -37,4 +43,11 @@
   font-size: 15px;
   color: #636578;
   padding-top: 10px;
+}
+.loading{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 200px;
+  cursor: not-allowed;
 }

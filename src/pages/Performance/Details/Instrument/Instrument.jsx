@@ -3,120 +3,20 @@ import React, { useState } from "react";
 // import { lightTheme } from "../../../../Theme/theme";
 import Chart from "react-apexcharts";
 import ModeChange from "../../../../Theme/ChangeMode";
+import { useEffect } from "react";
+import apiService from "../../../../services/api/api";
 
 const Instrument = () => {
   const lightTheme = ModeChange();
   const [performanceBySymbolTopGraph, setPerformanceBySymbolTopGraph] =
     useState({
-      series: [
-        {
-          data: [4, -5, -9, -7, -5, -2],
-        },
-      ],
-      options: {
-        chart: {
-          toolbar: {
-            show: false,
-          },
-          type: "bar",
-          height: 350,
-        },
-        plotOptions: {
-          bar: {
-            borderRadius: 4,
-            distributed: true,
-            horizontal: true,
-          },
-        },
-
-        fill: {
-          colors: ["#EDC161", "#6CB9AD", "#FF696D", "#5D45DB", "#689BE2"],
-        },
-        dataLabels: {
-          enabled: false,
-        },
-        xaxis: {
-          categories: ["RTY-", "NQ-", "YM", "CL-", "ES-", "FDAX-"],
-          labels: {
-            formatter: function (x) {
-              return "$" + x.toFixed(0);
-            },
-          },
-          // min:500
-        },
-
-        grid: {
-          yaxis: {
-            lines: {
-              show: false,
-            },
-          },
-          xaxis: {
-            lines: {
-              show: true,
-            },
-          },
-        },
-        yaxis: {
-          tickAmount: 3,
-        },
-      },
+      series: [],
+      options: {},
     });
   const [performanceBySymbolBottomGraph, setPerformanceBySymbolBottomGraph] =
     useState({
-      series: [
-        {
-          data: [4, 5, 9, 7, 5, -2],
-        },
-      ],
-      options: {
-        chart: {
-          toolbar: {
-            show: false,
-          },
-          type: "bar",
-          height: 350,
-        },
-        plotOptions: {
-          bar: {
-            borderRadius: 4,
-            distributed: true,
-            horizontal: true,
-          },
-        },
-
-        fill: {
-          colors: ["#EDC161", "#6CB9AD", "#FF696D", "#5D45DB", "#689BE2"],
-        },
-        dataLabels: {
-          enabled: false,
-        },
-        xaxis: {
-          categories: ["FDAX-", "ES-", "CL-", "YM-", "NQ-", "RTY-"],
-          labels: {
-            formatter: function (x) {
-              return "$" + x.toFixed(0);
-            },
-          },
-          // min:500
-        },
-
-        grid: {
-          yaxis: {
-            lines: {
-              show: false,
-            },
-          },
-          xaxis: {
-            lines: {
-              show: true,
-            },
-          },
-        },
-        yaxis: {
-          tickAmount: 3,
-        },
-      },
+      series: [],
+      options: {},
     });
   const [
     distributionByInstrumentVolumeGraph,
@@ -512,6 +412,166 @@ const Instrument = () => {
     },
   });
 
+  const getTopPerformanceSymbol = async () => {
+    try {
+      const authToken = localStorage.getItem("AuthToken");
+      const res = await apiService(
+        "get",
+        `/performance/detail/instrument/topPerformance/symbol/${
+          (0, 0)
+        }`,
+        { "x-usertoken": authToken },
+        null
+      );
+      const data = res;
+      let seriesData = [];
+      let optionsData = [];
+      for (const key in data) {
+        seriesData.push(data[key].toFixed(4));
+        optionsData.push(key);
+      }
+      setPerformanceBySymbolTopGraph({
+        series: [
+          {
+            data: seriesData,
+          },
+        ],
+        options: {
+          chart: {
+            toolbar: {
+              show: false,
+            },
+            type: "bar",
+            height: 350,
+          },
+          plotOptions: {
+            bar: {
+              borderRadius: 4,
+              distributed: true,
+              horizontal: true,
+            },
+          },
+
+          fill: {
+            colors: ["#EDC161", "#6CB9AD", "#FF696D", "#5D45DB", "#689BE2"],
+          },
+          dataLabels: {
+            enabled: false,
+          },
+          xaxis: {
+            categories: optionsData,
+            labels: {
+              formatter: function (x) {
+                return "$" + x.toFixed(0);
+              },
+            },
+            // min:500
+          },
+
+          grid: {
+            yaxis: {
+              lines: {
+                show: false,
+              },
+            },
+            xaxis: {
+              lines: {
+                show: true,
+              },
+            },
+          },
+          yaxis: {
+            tickAmount: 3,
+          },
+        },
+      });
+    } catch (error) {
+      console.log("Error",error)
+    }
+  };
+  const getBottomPerformanceSymbol = async () => {
+    try {
+      const authToken = localStorage.getItem("AuthToken");
+      const res = await apiService(
+        "get",
+        `/performance/detail/instrument/BottomPerformance/symbol/${
+          (0, 0)
+        }`,
+        { "x-usertoken": authToken },
+        null
+      );
+      const data = res;
+      let seriesData = [];
+      let optionsData = [];
+      for (const key in data) {
+        seriesData.push(data[key].toFixed(4));
+        optionsData.push(key);
+      }
+      setPerformanceBySymbolBottomGraph({
+        series: [
+          {
+            data: seriesData,
+          },
+        ],
+        options: {
+          chart: {
+            toolbar: {
+              show: false,
+            },
+            type: "bar",
+            height: 350,
+          },
+          plotOptions: {
+            bar: {
+              borderRadius: 4,
+              distributed: true,
+              horizontal: true,
+            },
+          },
+
+          fill: {
+            colors: ["#EDC161", "#6CB9AD", "#FF696D", "#5D45DB", "#689BE2"],
+          },
+          dataLabels: {
+            enabled: false,
+          },
+          xaxis: {
+            categories: optionsData,
+            labels: {
+              formatter: function (x) {
+                return "$" + x.toFixed(0);
+              },
+            },
+            // min:500
+          },
+
+          grid: {
+            yaxis: {
+              lines: {
+                show: false,
+              },
+            },
+            xaxis: {
+              lines: {
+                show: true,
+              },
+            },
+          },
+          yaxis: {
+            tickAmount: 3,
+          },
+        },
+      });
+    } catch (error) {
+      console.log("Error",error)
+    }
+  };
+
+  useEffect(() => {
+    getTopPerformanceSymbol();
+    getBottomPerformanceSymbol();
+  },[]);
+
   // styling
   const mainDiv = {
     padding: "25px 15px",
@@ -524,7 +584,7 @@ const Instrument = () => {
     border: `1px solid ${lightTheme.borderColor}`,
     borderRadius: "8px",
     padding: "10px 10px",
-    backgroundColor:`${lightTheme.performanceComponentColor}`
+    backgroundColor: `${lightTheme.performanceComponentColor}`,
   };
   const graphTilte = {
     color: `${lightTheme.headingTextColor}`,

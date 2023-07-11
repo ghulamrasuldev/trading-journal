@@ -6,6 +6,7 @@ import { RiArrowDropRightLine } from "react-icons/ri";
 import { MdOutlineNoteAdd } from "react-icons/md";
 import Chart from "react-apexcharts";
 import DailyCalendar from "../../../components/common/DailyCalendar/DailyCalendar";
+import ModeChange from "../../../Theme/ChangeMode";
 
 const DailyStats = () => {
   const lightTheme = ModeChange();

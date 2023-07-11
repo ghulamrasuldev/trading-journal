@@ -48,6 +48,11 @@ const Sidebar = ({ children }) => {
       name: 'News',
       icon: './sidebarImages/news.png',
     },
+    {
+      path: '/usercsv',
+      name: 'uploadFile',
+      icon: './sidebarImages/upload.png',
+    },
   ];
 
   const linkStyle = {

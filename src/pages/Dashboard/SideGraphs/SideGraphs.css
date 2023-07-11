@@ -24,6 +24,7 @@
   font-weight: 500;
   font-size: 12px;
   margin-top: 5px;
+  margin-right:15px;
 }
 .winLossPercentage {
   display: flex;
@@ -56,4 +57,8 @@
   font-family: Overpass;
   font-size: 13px;
   color: #d94848;
+}
+.endPoints{
+  /* border: 1px solid black; */
+  display: flex;
 }

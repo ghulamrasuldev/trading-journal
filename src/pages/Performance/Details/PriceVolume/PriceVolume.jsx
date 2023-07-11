@@ -3,289 +3,34 @@ import React, { useState } from "react";
 // import { lightTheme } from "../../../../Theme/theme";
 import Chart from "react-apexcharts";
 import ModeChange from "../../../../Theme/ChangeMode";
+import axios from 'axios'
+import {base_Url} from '../../../../Config/Config'
+import { useEffect } from "react";
+import apiService from "../../../../services/api/api";
 
 const PriceVolume = () => {
   const lightTheme=ModeChange();
-  const [tradeDistributionPriceGraph, setTradeDistributionPriceGraph] =
-    useState({
-      series: [
-        {
-          data: [0, , , 10, 5, , 120],
-        },
-      ],
-      options: {
-        chart: {
-          toolbar: {
-            show: false,
-          },
-          type: "bar",
-          height: 100,
-        },
-        plotOptions: {
-          bar: {
-            borderRadius: 4,
-            distributed: true,
-            horizontal: true,
-          },
-        },
-
-        fill: {
-          colors: [
-            "#EDC161",
-            "#6CB9AD",
-            "#6CB9AD",
-            "#FF696D",
-            "#5D45DB",
-            "#689BE2",
-          ],
-        },
-        dataLabels: {
-          enabled: false,
-        },
-        grid: {
-          yaxis: {
-            lines: {
-              show: false,
-            },
-          },
-          xaxis: {
-            lines: {
-              show: true,
-            },
-          },
-        },
-        xaxis: {
-          categories: [
-            "$0-$9.99",
-            "$10-$19.99",
-            "$20-$49.99",
-            "$50-$99.99",
-            "$100-$199.99",
-            "$200-$499.99",
-            "$500-$999.99",
-            "$1000-send over",
-          ],
-        },
-
-        yaxis: {
-          tickAmount: 3,
-        },
-      },
-    });
+ 
   const [performancePriceGraph, setPerformancePriceGraph] = useState({
-    series: [
-      {
-        data: [0, , , -10, -5, , -50],
-      },
-    ],
-    options: {
-      chart: {
-        toolbar: {
-          show: false,
-        },
-        type: "bar",
-        height: 250,
-      },
-      plotOptions: {
-        bar: {
-          borderRadius: 4,
-          distributed: true,
-          horizontal: true,
-        },
-      },
-
-      fill: {
-        colors: [
-          "#EDC161",
-          "#6CB9AD",
-          "#6CB9AD",
-          "#FF696D",
-          "#5D45DB",
-          "#689BE2",
-        ],
-      },
-      dataLabels: {
-        enabled: false,
-      },
-      grid: {
-        yaxis: {
-          lines: {
-            show: false,
-          },
-        },
-        xaxis: {
-          lines: {
-            show: true,
-          },
-          labels: {
-            formatter: function (x) {
-              return "$" + x.toFixed(0);
-            },
-          },
-        },
-      },
-      xaxis: {
-        categories: [
-          "$0-$9.99",
-          "$10-$19.99",
-          "$20-$49.99",
-          "$50-$99.99",
-          "$100-$199.99",
-          "$200-$499.99",
-          "$500-$999.99",
-          "$1000-send over",
-        ],
-        labels: {
-          formatter: function (x) {
-            return "$" + x.toFixed(0);
-          },
-        },
-      },
-
-      yaxis: {
-        tickAmount: 3,
-      },
-    },
+    series:[],
+    options:{}
   });
-  const [distributionVolumeTradedGraph, setDistributionVolumeTradedGraph] =
-    useState({
-      series: [
-        {
-          data: [80, 60, , , , ,],
-        },
-      ],
-      options: {
-        chart: {
-          toolbar: {
-            show: false,
-          },
-          type: "bar",
-          height: 100,
-        },
-        plotOptions: {
-          bar: {
-            borderRadius: 4,
-            distributed: true,
-            horizontal: true,
-          },
-        },
-
-        fill: {
-          colors: [
-            "#FF696D",
-            "#5D45DB",
-            "#EDC161",
-            "#6CB9AD",
-            "#6CB9AD",
-            "#689BE2",
-          ],
-        },
-        dataLabels: {
-          enabled: false,
-        },
-        grid: {
-          yaxis: {
-            lines: {
-              show: false,
-            },
-          },
-          xaxis: {
-            lines: {
-              show: true,
-            },
-          },
-        },
-        xaxis: {
-          categories: [
-            "2-5",
-            "6-9",
-            "10-19",
-            "20-49",
-            "50-99",
-            "100-499",
-            "500-999",
-            "1000-1999",
-            "2000-2999",
-          ],
-        },
-
-        yaxis: {
-          tickAmount: 3,
-        },
-      },
-    });
   const [performanceVolumeTradedGraph, setPerformanceVolumeTradedGraph] =
     useState({
-      series: [
-        {
-          data: [-80, -40, , , , ,],
-        },
-      ],
-      options: {
-        chart: {
-          toolbar: {
-            show: false,
-          },
-          type: "bar",
-          height: 250,
-        },
-        plotOptions: {
-          bar: {
-            borderRadius: 4,
-            distributed: true,
-            horizontal: true,
-          },
-        },
-
-        fill: {
-          colors: [
-            "#FF696D",
-            "#5D45DB",
-            "#EDC161",
-            "#6CB9AD",
-            "#6CB9AD",
-            "#689BE2",
-          ],
-        },
-        dataLabels: {
-          enabled: false,
-        },
-        grid: {
-          yaxis: {
-            lines: {
-              show: false,
-            },
-          },
-          xaxis: {
-            lines: {
-              show: true,
-            },
-          },
-        },
-        xaxis: {
-          categories: [
-            "2-5",
-            "6-9",
-            "10-19",
-            "20-49",
-            "50-99",
-            "100-499",
-            "500-999",
-            "1000-1999",
-            "2000-2999",
-          ],
-          labels: {
-            formatter: function (x) {
-              return "$" + x.toFixed(0);
-            },
-          },
-        },
-
-        yaxis: {
-          tickAmount: 3,
-        },
-      },
+      series: [],
+      options:{}
+    })
+    const [tradeDistributionPriceGraph, setTradeDistributionPriceGraph] =
+    useState({
+      series:[],
+      options:{},
     });
+  const [distributionVolumeTradedGraph, setDistributionVolumeTradedGraph] =
+    useState({
+      series:[],
+      options:{}
+    });
+  ;
   const [tradeDistributionInPriceRangeGraph, setTradeDistributionInPriceRange] =
     useState({
       series: [
@@ -433,6 +178,335 @@ const PriceVolume = () => {
       },
     },
   });
+
+
+  const getPerformanceByPrice = async () => {
+    try {
+      const authToken = localStorage.getItem("AuthToken");
+      const res = await apiService(
+        "get",
+        `/performance/detail/pricevolume/performanceByPrice/${(0, 0)}`,
+        { "x-usertoken": authToken },
+        null
+      );
+      const data = res;
+      let seriesData = [];
+      let optionsData = [];
+      for (const key in data) {
+        seriesData.push(data[key].toFixed(4));
+        optionsData.push(key);
+      }
+      setPerformancePriceGraph({
+        series: [
+        {
+          data:seriesData
+        },
+        ],
+        options: {
+          chart: {
+            toolbar: {
+              show: false,
+            },
+            type: "bar",
+            height: 250,
+          },
+          plotOptions: {
+            bar: {
+              borderRadius: 4,
+              distributed: true,
+              horizontal: true,
+            },
+          },
+    
+          fill: {
+            colors: [
+              "#EDC161",
+              "#6CB9AD",
+              "#6CB9AD",
+              "#FF696D",
+              "#5D45DB",
+              "#689BE2",
+            ],
+          },
+          dataLabels: {
+            enabled: false,
+          },
+          grid: {
+            yaxis: {
+              lines: {
+                show: false,
+              },
+            },
+            xaxis: {
+              lines: {
+                show: true,
+              },
+              labels: {
+                formatter: function (x) {
+                  return "$" + x.toFixed(0);
+                },
+              },
+            },
+          },
+          xaxis: {
+            categories:optionsData,
+            labels: {
+              formatter: function (x) {
+                return "$" + x.toFixed(0);
+              },
+            },
+          },
+    
+          yaxis: {
+            tickAmount: 3,
+          },
+        },
+      })
+    } catch (error) {
+      console.log("Error",error)
+    }
+  }
+  const getPerformanceByVolume = async () => {
+    try {
+      const authToken = localStorage.getItem("AuthToken");
+      const res = await apiService(
+        "get",
+        `/performance/detail/pricevolume/performanceByVolume/${(0, 0)}`,
+        { "x-usertoken": authToken },
+        null
+      );
+      const data = res;
+      let seriesData = [];
+      let optionsData = [];
+      for (const key in data) {
+        seriesData.push(data[key].toFixed(4));
+        optionsData.push(key);
+      }
+      setPerformanceVolumeTradedGraph({
+        series: [
+        {
+          data:seriesData
+        },
+        ],
+        options: {
+          chart: {
+            toolbar: {
+              show: false,
+            },
+            type: "bar",
+            height: 250,
+          },
+          plotOptions: {
+            bar: {
+              borderRadius: 4,
+              distributed: true,
+              horizontal: true,
+            },
+          },
+  
+          fill: {
+            colors: [
+              "#FF696D",
+              "#5D45DB",
+              "#EDC161",
+              "#6CB9AD",
+              "#6CB9AD",
+              "#689BE2",
+            ],
+          },
+          dataLabels: {
+            enabled: false,
+          },
+          grid: {
+            yaxis: {
+              lines: {
+                show: false,
+              },
+            },
+            xaxis: {
+              lines: {
+                show: true,
+              },
+            },
+          },
+          xaxis: {
+            categories:optionsData,
+            labels: {
+              formatter: function (x) {
+                return "$" + x.toFixed(0);
+              },
+            },
+          },
+  
+          yaxis: {
+            tickAmount: 3,
+          },
+        },
+      })
+    } catch (error) {
+      console.log("Error",error)
+    }
+  }
+  const getTradeDistributionByVolume = async () => {
+    try {
+      const authToken = localStorage.getItem("AuthToken");
+      const res = await apiService(
+        "get",
+        `/performance/detail/pricevolume/tradeDistributionByVolume/${(0, 0)}`,
+        { "x-usertoken": authToken },
+        null
+      );
+      const data = res;
+      let seriesData = [];
+      let optionsData = [];
+      for (const key in data) {
+        seriesData.push(data[key].toFixed(4));
+        optionsData.push(key);
+      }
+      setDistributionVolumeTradedGraph({
+        series: [
+          {
+            data:seriesData
+          },
+        ],
+        options: {
+          chart: {
+            toolbar: {
+              show: false,
+            },
+            type: "bar",
+            height: 100,
+          },
+          plotOptions: {
+            bar: {
+              borderRadius: 4,
+              distributed: true,
+              horizontal: true,
+            },
+          },
+  
+          fill: {
+            colors: [
+              "#FF696D",
+              "#5D45DB",
+              "#EDC161",
+              "#6CB9AD",
+              "#6CB9AD",
+              "#689BE2",
+            ],
+          },
+          dataLabels: {
+            enabled: false,
+          },
+          grid: {
+            yaxis: {
+              lines: {
+                show: false,
+              },
+            },
+            xaxis: {
+              lines: {
+                show: true,
+              },
+            },
+          },
+          xaxis: {
+            categories:optionsData,
+          },
+  
+          yaxis: {
+            tickAmount: 3,
+          },
+        },
+      })
+    } catch (error) {
+      console.log("Error",error)
+    }
+  }
+  const getTradeDistributionByPrice = async () => {
+    try {
+      const authToken = localStorage.getItem("AuthToken");
+      const res = await apiService(
+        "get",
+        `/performance/detail/pricevolume/tradeDistributionByPrice/${(0, 0)}`,
+        { "x-usertoken": authToken },
+        null
+      );
+      const data = res;
+      let seriesData = [];
+      let optionsData = [];
+      for (const key in data) {
+        seriesData.push(data[key].toFixed(4));
+        optionsData.push(key);
+      }
+      setTradeDistributionPriceGraph({
+        series: [
+          {
+            data:seriesData
+          },
+        ],
+        options: {
+          chart: {
+            toolbar: {
+              show: false,
+            },
+            type: "bar",
+            height: 100,
+          },
+          plotOptions: {
+            bar: {
+              borderRadius: 4,
+              distributed: true,
+              horizontal: true,
+            },
+          },
+  
+          fill: {
+            colors: [
+              "#EDC161",
+              "#6CB9AD",
+              "#6CB9AD",
+              "#FF696D",
+              "#5D45DB",
+              "#689BE2",
+            ],
+          },
+          dataLabels: {
+            enabled: false,
+          },
+          grid: {
+            yaxis: {
+              lines: {
+                show: false,
+              },
+            },
+            xaxis: {
+              lines: {
+                show: true,
+              },
+            },
+          },
+          xaxis: {
+            categories:optionsData,
+          },
+  
+          yaxis: {
+            tickAmount: 3,
+          },
+        },
+      })
+    } catch (error) {
+     console.log("Error",error)
+    }
+  }
+
+
+  useEffect(() => {
+    getPerformanceByPrice();
+    getPerformanceByVolume();
+    getTradeDistributionByVolume();
+    getTradeDistributionByPrice();
+  },[])
 
   // styling
   const mainDiv = {

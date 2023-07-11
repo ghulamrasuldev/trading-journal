@@ -13,10 +13,15 @@ import ModeChange from '../../Theme/ChangeMode';
 const DailyStatus = () => {
   const lightTheme = ModeChange();
 
+
+
+
   const mainDivStyle = {
     padding: '30px 25px',
     backgroundColor: `${lightTheme.lightPageBackground}`,
   };
+
+  
 
   return (
     <div>

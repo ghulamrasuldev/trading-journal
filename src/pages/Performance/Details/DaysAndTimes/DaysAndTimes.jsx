@@ -1,604 +1,824 @@
 import { Box, Grid } from "@mui/material";
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 // import { lightTheme } from "../../../../Theme/theme";
 import Chart from "react-apexcharts";
 import ModeChange from "../../../../Theme/ChangeMode";
-
+import apiService from "../../../../services/api/api";
 const DaysAndTimes = () => {
   const lightTheme = ModeChange();
-  const [tradeDistributionGraph, setTradeDistributionGraph] = useState({
-    series: [
-      {
-        data: [4, 7, 3, 8, 9],
-      },
-    ],
-    options: {
-      chart: {
-        toolbar: {
-          show: false,
-        },
-        type: "bar",
-        height: 350,
-      },
-      plotOptions: {
-        bar: {
-          borderRadius: 4,
-          distributed: true,
-          horizontal: true,
-        },
-      },
 
-      fill: {
-        colors: ["#EDC161", "#6CB9AD", "#FF696D", "#5D45DB", "#689BE2"],
-      },
-      dataLabels: {
-        enabled: false,
-      },
-      grid: {
-        yaxis: {
-          lines: {
-            show: false,
-          },
-        },
-        xaxis: {
-          lines: {
-            show: true,
-          },
-        },
-      },
-      xaxis: {
-        categories: ["Mon", "Tue", "Wed", "Thus", "Fri"],
-      },
-      // grid: {
-      //   yaxis: {
-      //     lines: {
-      //       show: false
-      //     }
-      //   },
-      //   xaxis: {
-      //     lines: {
-      //       show: true
-      //     }
-      //   }
-      // },
-      yaxis: {
-        tickAmount: 3,
-      },
-    },
-  });
   const [performanceGraph, setPerformanceGraph] = useState({
-    series: [
-      {
-        data: [-4, -7, -3, -8, -9],
-      },
-    ],
-    options: {
-      chart: {
-        toolbar: {
-          show: false,
-        },
-        type: "bar",
-        height: 350,
-      },
-      plotOptions: {
-        bar: {
-          borderRadius: 4,
-          distributed: true,
-          horizontal: true,
-        },
-      },
-
-      fill: {
-        colors: ["#EDC161", "#6CB9AD", "#FF696D", "#5D45DB", "#689BE2"],
-      },
-      dataLabels: {
-        enabled: false,
-      },
-      grid: {
-        yaxis: {
-          lines: {
-            show: false,
-          },
-        },
-        xaxis: {
-          lines: {
-            show: true,
-          },
-        },
-      },
-      yaxis: {
-        // reversed: true,
-      },
-      xaxis: {
-        categories: ["Mon", "Tue", "Wed", "Thus", "Fri"],
-
-        labels: {
-          formatter: function (x) {
-            return "$" + x.toFixed(0);
-          },
-        },
-      },
-    },
-  });
-  const [tradeDistributionHourGraph, setTradeDistributionHourGraph] = useState({
-    series: [
-      {
-        data: [4, 10, , 15, , 22, 9, , , , 12, , , , , , , ,],
-      },
-    ],
-    options: {
-      chart: {
-        toolbar: {
-          show: false,
-        },
-        type: "bar",
-        height: 350,
-      },
-      plotOptions: {
-        bar: {
-          borderRadius: 4,
-          distributed: true,
-          horizontal: true,
-        },
-      },
-
-      fill: {
-        colors: ["#EDC161", "#6CB9AD", "#FF696D", "#5D45DB", "#689BE2"],
-      },
-      dataLabels: {
-        enabled: false,
-      },
-      xaxis: {
-        categories: [
-          200, 300, 400, 500, 600, 700, 800, 900, 1000, 1100, 1200, 1300, 1400,
-          1500, 1600, 1700, 1800, 1900,
-        ],
-      },
-      grid: {
-        yaxis: {
-          lines: {
-            show: false,
-          },
-        },
-        xaxis: {
-          lines: {
-            show: true,
-          },
-        },
-      },
-      yaxix: {
-        tickAmount: 3,
-      },
-    },
+    series: [],
+    options: {},
   });
   const [performanceHourGraph, setPerformanceHourGraph] = useState({
-    series: [
-      {
-        data: [4, 10, , 15, , 22, -9, , 3, , 12, , , , , , , ,],
-      },
-    ],
-    options: {
-      chart: {
-        toolbar: {
-          show: false,
-        },
-        type: "bar",
-        height: 350,
-      },
-      plotOptions: {
-        bar: {
-          borderRadius: 4,
-          distributed: true,
-          horizontal: true,
-        },
-      },
-
-      fill: {
-        colors: ["#EDC161", "#6CB9AD", "#FF696D", "#5D45DB", "#689BE2"],
-      },
-      dataLabels: {
-        enabled: false,
-      },
-      xaxis: {
-        categories: [
-          200, 300, 400, 500, 600, 700, 800, 900, 1000, 1100, 1200, 1300, 1400,
-          1500, 1600, 1700, 1800, 1900,
-        ],
-        labels: {
-          formatter: function (x) {
-            return "$" + x.toFixed(0);
-          },
-        },
-        // min:500
-      },
-
-      grid: {
-        yaxis: {
-          lines: {
-            show: false,
-          },
-        },
-        xaxis: {
-          lines: {
-            show: true,
-          },
-        },
-      },
-      yaxis: {
-        tickAmount: 3,
-      },
-    },
+    series: [],
+    options: {},
   });
+  const [performanceMonthGraph, setPerformanceMonthGraph] = useState({
+    series: [],
+    options: {},
+  });
+  const [tradeDistributionGraph, setTradeDistributionGraph] = useState({
+    series: [],
+    options: {},
+  });
+  const [tradeDistributionHourGraph, setTradeDistributionHourGraph] = useState({
+    series: [],
+    options: {},
+  });
+
   const [tradeDistributionByMonthGraph, setTradeDistributionByMonthGraph] =
     useState({
-      series: [
-        {
-          data: [4, 9, 3, , 5, , , 7, , 4, , 9],
-        },
-      ],
-      options: {
-        chart: {
-          toolbar: {
-            show: false,
-            stacked: true,
-          },
-          type: "bar",
-          // height: 350
-        },
-        plotOptions: {
-          bar: {
-            borderRadius: 4,
-            distributed: true,
-            horizontal: true,
-            // barHeight: '80%'
-          },
-        },
-
-        fill: {
-          colors: ["#EDC161", "#6CB9AD", "#FF696D", "#5D45DB", "#689BE2"],
-        },
-        dataLabels: {
-          enabled: false,
-        },
-        xaxis: {
-          categories: [
-            "Jan",
-            "Feb",
-            "Mar",
-            "Apr",
-            "May",
-            "Jun",
-            "Jul",
-            "Aug",
-            "Sep",
-            "Oct",
-            "Nov",
-            "Dec",
-          ],
-        },
-        grid: {
-          yaxis: {
-            lines: {
-              show: false,
-            },
-          },
-          xaxis: {
-            lines: {
-              show: true,
-            },
-          },
-        },
-        yaxis: {
-          tickAmount: 3,
-        },
-      },
+      series: [],
+      options: {},
     });
-  const [performanceMonthGraph, setPerformanceMonthGraph] = useState({
-    series: [
-      {
-        data: [-4, , , , , -3, -9, -5, , ,],
-      },
-    ],
-    options: {
-      chart: {
-        toolbar: {
-          show: false,
-        },
-        type: "bar",
-        height: 350,
-      },
-      plotOptions: {
-        bar: {
-          borderRadius: 4,
-          distributed: true,
-          horizontal: true,
-        },
-      },
 
-      fill: {
-        colors: ["#EDC161", "#6CB9AD", "#FF696D", "#5D45DB", "#689BE2"],
-      },
-      dataLabels: {
-        enabled: false,
-      },
-      xaxis: {
-        categories: [
-          "Jan",
-          "Feb",
-          "Mar",
-          "Apr",
-          "May",
-          "Jun",
-          "Jul",
-          "Aug",
-          "Sep",
-          "Oct",
-          "Nov",
-          "Dec",
-        ],
-        labels: {
-          formatter: function (x) {
-            return "$" + x.toFixed(0);
-          },
-        },
-        // min:500
-      },
-
-      grid: {
-        yaxis: {
-          lines: {
-            show: false,
-          },
-        },
-        xaxis: {
-          lines: {
-            show: true,
-          },
-        },
-      },
-      yaxis: {
-        tickAmount: 3,
-        // reversed: true,
-      },
-    },
-  });
   const [
     tradeDistributionByDurationGraph,
     setTradeDistributionByDurationGraph,
   ] = useState({
-    series: [
-      {
-        data: [30, ,],
-      },
-    ],
-    options: {
-      chart: {
-        toolbar: {
-          show: false,
-          stacked: true,
-        },
-        type: "bar",
-        // height: 350
-      },
-      plotOptions: {
-        bar: {
-          borderRadius: 4,
-          distributed: true,
-          horizontal: true,
-          // barHeight: '100%'
-        },
-      },
-
-      fill: {
-        colors: ["#EDC161", "#6CB9AD", "#FF696D", "#5D45DB", "#689BE2"],
-      },
-      dataLabels: {
-        enabled: false,
-      },
-      xaxis: {
-        categories: ["IntoDay", "MultiDay"],
-      },
-      grid: {
-        yaxis: {
-          lines: {
-            show: false,
-          },
-        },
-        xaxis: {
-          lines: {
-            show: true,
-          },
-        },
-      },
-      yaxis: {
-        tickAmount: 3,
-      },
-    },
+    series: [],
+    options: {},
   });
   const [performanceDurationGraph, setPerformanceDurationGraph] = useState({
-    series: [
-      {
-        data: [-30, ,],
-      },
-    ],
-    options: {
-      chart: {
-        toolbar: {
-          show: false,
-        },
-        type: "bar",
-        height: 350,
-      },
-      plotOptions: {
-        bar: {
-          borderRadius: 4,
-          distributed: true,
-          horizontal: true,
-        },
-      },
-
-      fill: {
-        colors: ["#EDC161", "#6CB9AD", "#FF696D", "#5D45DB", "#689BE2"],
-      },
-      dataLabels: {
-        enabled: false,
-      },
-      xaxis: {
-        categories: ["IntroDay", "MultiDay"],
-        labels: {
-          formatter: function (x) {
-            return "$" + x.toFixed(0);
-          },
-        },
-        // min:500
-      },
-
-      grid: {
-        yaxis: {
-          lines: {
-            show: false,
-          },
-        },
-        xaxis: {
-          lines: {
-            show: true,
-          },
-        },
-      },
-      yaxis: {
-        tickAmount: 3,
-        // reversed: true,
-      },
-    },
+    series: [],
+    options: {},
   });
   const [tradeDistributionByIntrDayGraph, setTradeDistributionByIntraDayGraph] =
     useState({
-      series: [
-        {
-          data: [4, 5, 9, 7, 5, 2, 6, 1, 5, ,],
-        },
-      ],
-      options: {
-        chart: {
-          toolbar: {
-            show: false,
-            stacked: true,
-          },
-          type: "bar",
-          // height: 350
-        },
-        plotOptions: {
-          bar: {
-            borderRadius: 4,
-            distributed: true,
-            horizontal: true,
-            // barHeight: '100%'
-          },
-        },
+      series: [],
+      options: {},
+    });
+  const [performanceIntraDayGraph, setPerformanceIntraDayGraph] = useState({
+    series: [],
+    options: {},
+  });
 
-        fill: {
-          colors: ["#EDC161", "#6CB9AD", "#FF696D", "#5D45DB", "#689BE2"],
-        },
-        dataLabels: {
-          enabled: false,
-        },
-        xaxis: {
-          categories: [
-            "Under 1:00",
-            "1:00-1:59",
-            "2:00-4:59",
-            "5:00-9:59",
-            "10:00-19:59",
-            "20:00-39:59",
-            "40:00-59:59",
-            "1:00:00-1:50:50",
-            "2:00:00-3:59:59",
-            "4:00:00-Send Over",
-          ],
-        },
-        grid: {
-          yaxis: {
-            lines: {
+  const getPerformanceByDayOfWeek = async () => {
+    try {
+      const authToken = localStorage.getItem("AuthToken");
+      const res = await apiService(
+        "get",
+        "/performance/detail/daytime/PerformanceDayOfWeek",
+        { "x-usertoken": authToken },
+        null
+      );
+      const data = res;
+      let seriesData = [];
+      let optionData = [];
+      const dayNames = {
+        Sunday: "Sun",
+        Monday: "Mon",
+        Tuesday: "Tue",
+        Wednesday: "Wed",
+        Thursday: "Thu",
+        Friday: "Fri",
+        Saturday: "Sat",
+      };
+
+      for (const date in data.weekData) {
+        const day = date.split("/")[0];
+        const abbrivatedDay = dayNames[day];
+        optionData.push(abbrivatedDay);
+        seriesData.push(data.weekData[date].netpl.toFixed(4));
+      }
+      setPerformanceGraph({
+        series: [
+          {
+            data: seriesData,
+          },
+        ],
+        options: {
+          chart: {
+            toolbar: {
               show: false,
+            },
+            type: "bar",
+            height: 350,
+          },
+          plotOptions: {
+            bar: {
+              borderRadius: 4,
+              distributed: true,
+              horizontal: true,
+            },
+          },
+
+          fill: {
+            colors: ["#EDC161", "#6CB9AD", "#FF696D", "#5D45DB", "#689BE2"],
+          },
+          dataLabels: {
+            enabled: false,
+          },
+          grid: {
+            yaxis: {
+              lines: {
+                show: false,
+              },
+            },
+            xaxis: {
+              lines: {
+                show: true,
+              },
+            },
+          },
+          yaxis: {
+            // reversed: true,
+          },
+          xaxis: {
+            categories: optionData,
+
+            labels: {
+              formatter: function (x) {
+                return "$" + x.toFixed(0);
+              },
+            },
+          },
+        },
+      });
+    } catch (error) {
+      console.log("Error", error);
+    }
+  };
+  const getPerformanceByHourOfDay = async () => {
+    try {
+      const authToken = localStorage.getItem("AuthToken");
+      const res = await apiService(
+        "get",
+        "/performance/detail/daytime/PerformanceHourOfDay",
+        { "x-usertoken": authToken },
+        null
+      );
+      const data = res;
+      const optionsData = [];
+      const seriesData = [];
+
+      const date = Object.keys(data)[0];
+
+      data[date].trades.forEach((trade) => {
+        optionsData.push(trade.hour);
+        seriesData.push(trade.netpl.toFixed(4));
+      });
+      setPerformanceHourGraph({
+        series: [
+          {
+            data: seriesData,
+          },
+        ],
+        options: {
+          chart: {
+            toolbar: {
+              show: false,
+            },
+            type: "bar",
+            height: 350,
+          },
+          plotOptions: {
+            bar: {
+              borderRadius: 4,
+              distributed: true,
+              horizontal: true,
+            },
+          },
+
+          fill: {
+            colors: ["#EDC161", "#6CB9AD", "#FF696D", "#5D45DB", "#689BE2"],
+          },
+          dataLabels: {
+            enabled: false,
+          },
+          xaxis: {
+            categories: optionsData,
+            labels: {
+              formatter: function (x) {
+                return "$" + x.toFixed(0);
+              },
+            },
+            // min:500
+          },
+
+          grid: {
+            yaxis: {
+              lines: {
+                show: false,
+              },
+            },
+            xaxis: {
+              lines: {
+                show: true,
+              },
+            },
+          },
+          yaxis: {
+            tickAmount: 3,
+          },
+        },
+      });
+    } catch (error) {
+      console.log("Error", error);
+    }
+  };
+  const getPerformanceByMonthOfYear = async () => {
+    try {
+      const authToken = localStorage.getItem("AuthToken");
+      const res = await apiService(
+        "get",
+        "/performance/detail/daytime/PerformanceByMonthOfYear",
+        { "x-usertoken": authToken },
+        null
+      );
+      const data = res;
+      const optionsData = [];
+      const seriesData = [];
+
+      data.forEach((item) => {
+        optionsData.push(item.month);
+        seriesData.push(item.totalNetpl.toFixed(4));
+      });
+      setPerformanceMonthGraph({
+        series: [
+          {
+            data: seriesData,
+          },
+        ],
+        options: {
+          chart: {
+            toolbar: {
+              show: false,
+            },
+            type: "bar",
+            height: 350,
+          },
+          plotOptions: {
+            bar: {
+              borderRadius: 4,
+              distributed: true,
+              horizontal: true,
+            },
+          },
+
+          fill: {
+            colors: ["#EDC161", "#6CB9AD", "#FF696D", "#5D45DB", "#689BE2"],
+          },
+          dataLabels: {
+            enabled: false,
+          },
+          xaxis: {
+            categories: optionsData,
+            labels: {
+              formatter: function (x) {
+                return "$" + x.toFixed(0);
+              },
+            },
+            // min:500
+          },
+
+          grid: {
+            yaxis: {
+              lines: {
+                show: false,
+              },
+            },
+            xaxis: {
+              lines: {
+                show: true,
+              },
+            },
+          },
+          yaxis: {
+            tickAmount: 3,
+            // reversed: true,
+          },
+        },
+      });
+    } catch (error) {
+      console.log("Error", error);
+    }
+  };
+  const getPerformanceByDuration = async () => {
+    try {
+      const authToken = localStorage.getItem("AuthToken");
+      const res = await apiService(
+        "get",
+        `/performance/detail/daytime/performanceByDuration/${(0, 0)}`,
+        { "x-usertoken": authToken },
+        null
+      );
+      const data = res;
+      let seriesData = [];
+      seriesData.push(data.intraDayPerformance.toFixed(4));
+      seriesData.push(data.multiDayPerformance.toFixed(4));
+      setPerformanceDurationGraph({
+        series: [
+          {
+            data: seriesData,
+          },
+        ],
+        options: {
+          chart: {
+            toolbar: {
+              show: false,
+            },
+            type: "bar",
+            height: 350,
+          },
+          plotOptions: {
+            bar: {
+              borderRadius: 4,
+              distributed: true,
+              horizontal: true,
+            },
+          },
+
+          fill: {
+            colors: ["#EDC161", "#6CB9AD", "#FF696D", "#5D45DB", "#689BE2"],
+          },
+          dataLabels: {
+            enabled: false,
+          },
+          xaxis: {
+            categories: ["IntraDay", "MultiDay"],
+            labels: {
+              formatter: function (x) {
+                return "$" + x.toFixed(0);
+              },
+            },
+            // min:500
+          },
+
+          grid: {
+            yaxis: {
+              lines: {
+                show: false,
+              },
+            },
+            xaxis: {
+              lines: {
+                show: true,
+              },
+            },
+          },
+          yaxis: {
+            tickAmount: 3,
+            // reversed: true,
+          },
+        },
+      });
+    } catch (error) {
+      console.log("Error", error);
+    }
+  };
+  const getPerformanceByIntraDayDuration = async () => {
+    try {
+      const authToken = localStorage.getItem("AuthToken");
+      const res = await apiService(
+        "get",
+        `/performance/detail/daytime/performanceByIntrdayDuration/${(0, 0)}`,
+        { "x-usertoken": authToken },
+        null
+      );
+      const data = res;
+      let seriesData = [];
+      let optionsData = [];
+      for (const key in data) {
+        seriesData.push(data[key].toFixed(4));
+        optionsData.push(key);
+      }
+      setPerformanceIntraDayGraph({
+        series: [
+          {
+            data: seriesData,
+          },
+        ],
+        options: {
+          chart: {
+            toolbar: {
+              show: false,
+            },
+            type: "bar",
+            height: 350,
+          },
+          plotOptions: {
+            bar: {
+              borderRadius: 4,
+              distributed: true,
+              horizontal: true,
+            },
+          },
+
+          fill: {
+            colors: ["#EDC161", "#6CB9AD", "#FF696D", "#5D45DB", "#689BE2"],
+          },
+          dataLabels: {
+            enabled: false,
+          },
+          xaxis: {
+            categories: optionsData,
+            labels: {
+              formatter: function (x) {
+                return "$" + x.toFixed(0);
+              },
+            },
+            // min:500
+          },
+
+          grid: {
+            yaxis: {
+              lines: {
+                show: false,
+              },
+            },
+            xaxis: {
+              lines: {
+                show: true,
+              },
+            },
+          },
+          yaxis: {
+            tickAmount: 3,
+          },
+        },
+      });
+    } catch (error) {
+      console.log("Error", error);
+    }
+  };
+  const getTradeDistributionByDayOfWeek = async () => {
+    try {
+      const authToken = localStorage.getItem("AuthToken");
+      const res = await apiService(
+        "get",
+        `/performance/detail/daytime/tradeDistributionByDayOfWeek`,
+        { "x-usertoken": authToken },
+        null
+      );
+      const data = res;
+      let seriesData = [];
+      let optionData = [];
+      const dayNames = {
+        Sunday: "Sun",
+        Monday: "Mon",
+        Tuesday: "Tue",
+        Wednesday: "Wed",
+        Thursday: "Thu",
+        Friday: "Fri",
+        Saturday: "Sat",
+      };
+
+      for (const date in data.weekData) {
+        const day = date.split("/")[0];
+        const abbrivatedDay = dayNames[day];
+        optionData.push(abbrivatedDay);
+        seriesData.push(data.weekData[date].totalTrade);
+      }
+
+      setTradeDistributionGraph({
+        series: [
+          {
+            data: seriesData,
+          },
+        ],
+        options: {
+          chart: {
+            toolbar: {
+              show: false,
+            },
+            type: "bar",
+            height: 350,
+          },
+          plotOptions: {
+            bar: {
+              borderRadius: 4,
+              distributed: true,
+              horizontal: true,
+            },
+          },
+
+          fill: {
+            colors: ["#EDC161", "#6CB9AD", "#FF696D", "#5D45DB", "#689BE2"],
+          },
+          dataLabels: {
+            enabled: false,
+          },
+          grid: {
+            yaxis: {
+              lines: {
+                show: false,
+              },
+            },
+            xaxis: {
+              lines: {
+                show: true,
+              },
             },
           },
           xaxis: {
-            lines: {
-              show: true,
+            categories: optionData,
+          },
+          // grid: {
+          //   yaxis: {
+          //     lines: {
+          //       show: false
+          //     }
+          //   },
+          //   xaxis: {
+          //     lines: {
+          //       show: true
+          //     }
+          //   }
+          // },
+          yaxis: {
+            tickAmount: 3,
+          },
+        },
+      });
+    } catch (error) {
+      console.log("Error", error);
+    }
+  };
+  const getTradeDistributionByHourOfDay = async () => {
+    try {
+      const authToken = localStorage.getItem("AuthToken");
+      const res = await apiService(
+        "get",
+        `/performance/detail/daytime/tradeDistributionByHourOfDay`,
+        { "x-usertoken": authToken },
+        null
+      );
+      const data = res;
+      const optionsData = [];
+      const seriesData = [];
+
+      const date = Object.keys(data)[0];
+
+      data[date].trades.forEach((trade) => {
+        optionsData.push(trade.hour);
+        seriesData.push(trade.totalTrade);
+      });
+      setTradeDistributionHourGraph({
+        series: [
+          {
+            data: seriesData,
+          },
+        ],
+        options: {
+          chart: {
+            toolbar: {
+              show: false,
+            },
+            type: "bar",
+            height: 350,
+          },
+          plotOptions: {
+            bar: {
+              borderRadius: 4,
+              distributed: true,
+              horizontal: true,
+              barWidth: "10%",
             },
           },
-        },
-        yaxis: {
-          tickAmount: 3,
-        },
-      },
-    });
-  const [performanceIntraDayGraph, setPerformanceIntraDayGraph] = useState({
-    series: [
-      {
-        data: [-4, 5, -9, 7, 5, -2, -6, 1, 5, ,],
-      },
-    ],
-    options: {
-      chart: {
-        toolbar: {
-          show: false,
-        },
-        type: "bar",
-        height: 350,
-      },
-      plotOptions: {
-        bar: {
-          borderRadius: 4,
-          distributed: true,
-          horizontal: true,
-        },
-      },
 
-      fill: {
-        colors: ["#EDC161", "#6CB9AD", "#FF696D", "#5D45DB", "#689BE2"],
-      },
-      dataLabels: {
-        enabled: false,
-      },
-      xaxis: {
-        categories: [
-          "Under 1:00",
-          "1:00-1:59",
-          "2:00-4:59",
-          "5:00-9:59",
-          "10:00-19:59",
-          "20:00-39:59",
-          "40:00-59:59",
-          "1:00:00-1:50:50",
-          "2:00:00-3:59:59",
-          "4:00:00-Send Over",
+          fill: {
+            colors: ["#EDC161", "#6CB9AD", "#FF696D", "#5D45DB", "#689BE2"],
+          },
+          dataLabels: {
+            enabled: false,
+          },
+          xaxis: {
+            categories: optionsData,
+          },
+          grid: {
+            yaxis: {
+              lines: {
+                show: false,
+              },
+            },
+            xaxis: {
+              lines: {
+                show: true,
+              },
+            },
+          },
+          yaxix: {
+            tickAmount: 3,
+          },
+        },
+      });
+    } catch (error) {
+      console.log("Error", error);
+    }
+  };
+  const getTradeDistributionByMonthOfYear = async () => {
+    try {
+      const authToken = localStorage.getItem('AuthToken');
+      const res = await apiService('get', `/performance/detail/daytime/tradeDistributionByMonthOfYear`, { 'x-usertoken': authToken }, null)
+      const data = res;
+      const optionsData = [];
+      const seriesData = [];
+      data.forEach((item) => {
+        optionsData.push(item.month);
+        seriesData.push(item.totalTrades.toFixed(4));
+      });
+      setTradeDistributionByMonthGraph({
+        series: [
+          {
+            data: seriesData,
+          },
         ],
-        labels: {
-          formatter: function (x) {
-            return "$" + x.toFixed(0);
+        options: {
+          chart: {
+            toolbar: {
+              show: false,
+              stacked: true,
+            },
+            type: "bar",
+            // height: 350
           },
-        },
-        // min:500
-      },
+          plotOptions: {
+            bar: {
+              borderRadius: 4,
+              distributed: true,
+              horizontal: true,
+              // barHeight: '80%'
+            },
+          },
 
-      grid: {
-        yaxis: {
-          lines: {
-            show: false,
+          fill: {
+            colors: ["#EDC161", "#6CB9AD", "#FF696D", "#5D45DB", "#689BE2"],
+          },
+          dataLabels: {
+            enabled: false,
+          },
+          xaxis: {
+            categories: optionsData,
+          },
+          grid: {
+            yaxis: {
+              lines: {
+                show: false,
+              },
+            },
+            xaxis: {
+              lines: {
+                show: true,
+              },
+            },
+          },
+          yaxis: {
+            tickAmount: 3,
           },
         },
-        xaxis: {
-          lines: {
-            show: true,
+      });
+    } catch (error) {
+      console.log("Error",error)
+    }
+  };
+  const getTradeDistributionByDuration = async () => {
+    try {
+      const authToken = localStorage.getItem('AuthToken');
+      const res = await apiService('get', `/performance/detail/daytime/tradeDistributionByDuration/${
+        (0, 0)
+      }`, { 'x-usertoken': authToken }, null)
+      const data = res;
+      let seriesData = [];
+      seriesData.push(data.intraDay);
+      seriesData.push(data.multiDay);
+      console.log(">>>>>>>>>>>", data);
+      setTradeDistributionByDurationGraph({
+        series: [
+          {
+            data: seriesData,
+          },
+        ],
+        options: {
+          chart: {
+            toolbar: {
+              show: false,
+              stacked: true,
+            },
+            type: "bar",
+            // height: 350
+          },
+          plotOptions: {
+            bar: {
+              borderRadius: 4,
+              distributed: true,
+              horizontal: true,
+              // barHeight: '100%'
+            },
+          },
+
+          fill: {
+            colors: ["#EDC161", "#6CB9AD", "#FF696D", "#5D45DB", "#689BE2"],
+          },
+          dataLabels: {
+            enabled: false,
+          },
+          xaxis: {
+            categories: ["IntraDay", "MultiDay"],
+          },
+          grid: {
+            yaxis: {
+              lines: {
+                show: false,
+              },
+            },
+            xaxis: {
+              lines: {
+                show: true,
+              },
+            },
+          },
+          yaxis: {
+            tickAmount: 3,
           },
         },
-      },
-      yaxis: {
-        tickAmount: 3,
-      },
-    },
-  });
+      });
+    } catch (error) {
+      console.log("Error",error)
+    }
+  };
+  const getTradeDistributionByIntraDayDuration = async () => {
+    try {
+      const authToken = localStorage.getItem('AuthToken');
+      const res = await apiService('get', `/performance/detail/daytime/tradeDistributionByIntradayDuration/${
+        (0, 0)
+      }`, { 'x-usertoken': authToken }, null)
+      const data = res;
+      let seriesData = [];
+        let optionsData = [];
+        for (const key in data) {
+          seriesData.push(data[key]);
+          optionsData.push(key);
+        }
+        setTradeDistributionByIntraDayGraph({
+          series: [
+            {
+              data: seriesData,
+            },
+          ],
+          options: {
+            chart: {
+              toolbar: {
+                show: false,
+                stacked: true,
+              },
+              type: "bar",
+              // height: 350
+            },
+            plotOptions: {
+              bar: {
+                borderRadius: 4,
+                distributed: true,
+                horizontal: true,
+                // barHeight: '100%'
+              },
+            },
+
+            fill: {
+              colors: ["#EDC161", "#6CB9AD", "#FF696D", "#5D45DB", "#689BE2"],
+            },
+            dataLabels: {
+              enabled: false,
+            },
+            xaxis: {
+              categories: optionsData,
+            },
+            grid: {
+              yaxis: {
+                lines: {
+                  show: false,
+                },
+              },
+              xaxis: {
+                lines: {
+                  show: true,
+                },
+              },
+            },
+            yaxis: {
+              tickAmount: 3,
+            },
+          },
+        });
+    } catch (error) {
+      console.log("Error",error)
+    }
+  };
+
+  useEffect(() => {
+    getPerformanceByDayOfWeek();
+    getPerformanceByHourOfDay();
+    getPerformanceByMonthOfYear();
+    getPerformanceByDuration();
+    getPerformanceByIntraDayDuration();
+    getTradeDistributionByDayOfWeek();
+    getTradeDistributionByHourOfDay();
+    getTradeDistributionByMonthOfYear();
+    getTradeDistributionByDuration();
+    getTradeDistributionByIntraDayDuration();
+  }, []);
 
   // styling
   const mainDiv = {
@@ -612,7 +832,7 @@ const DaysAndTimes = () => {
     border: `1px solid ${lightTheme.borderColor}`,
     borderRadius: "8px",
     padding: "10px 10px",
-    backgroundColor:`${lightTheme.performanceComponentColor}`
+    backgroundColor: `${lightTheme.performanceComponentColor}`,
   };
   const graphTilte = {
     color: `${lightTheme.headingTextColor}`,
@@ -687,7 +907,7 @@ const DaysAndTimes = () => {
         </Grid>
         <Grid container columnGap={4} rowGap={4} my={3}>
           <Grid item lg={5.5} md={12} sm={12} sx={gridItem}>
-            <p style={graphTilte}>Trade Distribution By Duration</p>
+            <p style={graphTilte}>Trade Distribution By Month Of Year</p>
             <Chart
               options={tradeDistributionByMonthGraph.options}
               series={tradeDistributionByMonthGraph.series}
@@ -696,7 +916,7 @@ const DaysAndTimes = () => {
             />
           </Grid>
           <Grid item lg={5.5} md={12} sm={12} sx={gridItem}>
-            <p style={graphTilte}>Performance by month of year</p>
+            <p style={graphTilte}>Performance By Month Of Year</p>
             <Chart
               options={performanceMonthGraph.options}
               series={performanceMonthGraph.series}
@@ -716,7 +936,7 @@ const DaysAndTimes = () => {
             />
           </Grid>
           <Grid item lg={5.5} md={12} sm={12} sx={gridItem}>
-            <p style={graphTilte}>Performance by month of year</p>
+            <p style={graphTilte}>Performance By Duration</p>
             <Chart
               options={performanceDurationGraph.options}
               series={performanceDurationGraph.series}
@@ -727,7 +947,7 @@ const DaysAndTimes = () => {
         </Grid>
         <Grid container columnGap={4} rowGap={4} my={3}>
           <Grid item lg={5.5} md={12} sm={12} sx={gridItem}>
-            <p style={graphTilte}>Trade Distribution by intraday Duration</p>
+            <p style={graphTilte}>Trade Distribution By Intraday Duration</p>
             <Chart
               options={tradeDistributionByIntrDayGraph.options}
               series={tradeDistributionByIntrDayGraph.series}
@@ -736,7 +956,7 @@ const DaysAndTimes = () => {
             />
           </Grid>
           <Grid item lg={5.5} md={12} sm={12} sx={gridItem}>
-            <p style={graphTilte}>Trade Distribution by intraday Duration</p>
+            <p style={graphTilte}>Performance By Intraday Duration</p>
             <Chart
               options={performanceIntraDayGraph.options}
               series={performanceIntraDayGraph.series}

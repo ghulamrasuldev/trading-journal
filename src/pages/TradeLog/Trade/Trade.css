@@ -2,10 +2,21 @@
     /* background-color:white;
     box-shadow:rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
     border-radius:10px; */
-padding:15px 15px;
+    border: 1px solid rgb(216, 215, 215);
+    width: 48%;
+/* padding:15px 15px; */
+border-radius:10px;
 }
+.tradeGraphOptions div:first-child {
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+  }
+  
+  .tradeGraphOptions div:last-child {
+    border-bottom-right-radius: 10px;
+    border-bottom-left-radius: 10px;
+  }
 .optionDiv{
-    border-radius:10px;
     background-color:rgba(215, 215, 218, 0.327);
     display: flex;
     justify-content: space-between;
